@@ -1,0 +1,12 @@
+{
+    "name": "dendron-docs",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dendron-cli": "dendron-cli"
+    },
+    "dependencies": {
+        "@dendronhq/dendron-cli": "^0.63.0"
+    }
+}
