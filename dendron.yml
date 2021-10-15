@@ -1,0 +1,66 @@
+maxPreviewsCached: 10
+vaults:
+    -
+        fsPath: vault
+        name: dendron.dendron-docs
+useFMTitle: true
+useNoteTitleForLink: true
+noAutoCreateOnDefinition: true
+noLegacyNoteRef: true
+noXVaultWikiLink: true
+mermaid: true
+useKatex: true
+autoFoldFrontmatter: true
+usePrettyRefs: true
+dev:
+    enablePreviewV2: true
+journal:
+    dailyDomain: daily
+    name: journal
+    dateFormat: y.MM.dd
+    addBehavior: childOfDomain
+    firstDayOfWeek: 1
+scratch:
+    name: scratch
+    dateFormat: y.MM.dd.HHmmss
+    addBehavior: asOwnDomain
+site:
+    copyAssets: true
+    siteHierarchies:
+        - pkg
+    siteRootDir: docs
+    gh_edit_repository: 'https://github.com/dendronhq/dendron-docs'
+    logo: vault/assets/images/logo.png
+    siteUrl: 'https://docs.dendron.so'
+    usePrettyRefs: true
+    title: Dendron
+    author: dendronhq
+    twitter: dendronhq
+    description: >-
+        Dendron is a local-first, markdown based, hierarchical note taking tool.
+        It is meant to help you create, organize, and collaborate on knowledge
+        bases of any size.
+    siteLastModified: true
+    gh_edit_branch: main
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - vault
+version: 2
+initializeRemoteVaults: true
+useTitleForLink: true
+commands:
+    lookup:
+        note:
+            selectionMode: extract
+            confirmVaultOnCreate: false
+            leaveTrace: false
+    randomNote: {}
+    insertNote:
+        initialValue: templates
+    insertNoteLink:
+        aliasMode: none
+        enableMultiSelect: false
+    insertNoteIndex:
+        enableMarker: false
+dendronVersion: 0.63.0
