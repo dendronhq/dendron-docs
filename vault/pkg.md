@@ -2,14 +2,12 @@
 id: 32cdd4aa-d9f6-4582-8d0c-07f64a00299b
 title: Packages
 desc: ''
-updated: 1631567781819
+updated: 1634257132164
 created: 1596684856906
 nav_order: 10
 ---
 
-## Summary
-
-This goes over all packages in the dendron monorepo
+Dendron Developer Documentation
 
 ## User Facing
 
