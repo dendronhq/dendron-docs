@@ -7,10 +7,10 @@ created: 1633299166158
 ---
 
 ## Build
-- Build dendron monorepo by following steps here: [[Dendron Plugin Quickstart|dendron://dendron.dendron-site/pkg.plugin-core.quickstart]]
+- Build dendron monorepo by following steps here: [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]]
 
 ## Run
-1. Make sure you have a [[symlink|dendron://dendron.dendron-site/pkg.dendron-cli.dev#symlink]] to the [[pkg.dendron-cli]]
+1. Make sure you have a [[symlink|dendron://dendron.docs/pkg.dendron-cli.dev#symlink]] to the [[pkg.dendron-cli]]
 1. Use the pod commands inside the CLI to test out CLI changes
     - eg
     ```sh

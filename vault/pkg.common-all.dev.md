@@ -19,7 +19,7 @@ For server based modules, put them into [[Common Server|pkg.common-server]] inst
 ### Add New Default
 
 1. Update the defaults [here](https://github.com/dendronhq/dendron/blob/master/packages/engine-server/src/config.ts#L39:L39)
-1. [[Tests for Configuration|dendron://dendron.dendron-site/pkg.common-all.dev#tests-for-configuration]]
+1. [[Tests for Configuration|dendron://dendron.docs/pkg.common-all.dev#tests-for-configuration]]
 
 ### Migrating an existing configuration
 

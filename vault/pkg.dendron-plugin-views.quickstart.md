@@ -9,7 +9,7 @@ created: 1635701411866
 
 ## Prerequisites
 
-1. Finish steps from [[Dendron Plugin Quickstart|dendron://dendron.dendron-site/pkg.plugin-core.quickstart]]
+1. Finish steps from [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]]
 1. Launch [[Test Workspace|dendron://dendron.dendron-site/dendron.dev.ref.test-workspace]]
 
 ## Steps
@@ -20,7 +20,7 @@ When working on plugin views, there are two modes of development: browser and ID
 
 ### Developing in Browser Mode
 
-![[dendron://dendron.dendron-site/pkg.dendron-plugin-views.concepts#^FIQf5ZoJXIBP:#*]]
+![[dendron://dendron.docs/pkg.dendron-plugin-views.concepts#^FIQf5ZoJXIBP:#*]]
 
 1. Make sure that [[dendron.dev.ref.test-workspace]] is running on port `3005`
 1. Navigate to package
@@ -50,12 +50,12 @@ When working on plugin views, there are two modes of development: browser and ID
 
 ### Developing in IDE Mode
 
-![[dendron://dendron.dendron-site/pkg.dendron-plugin-views.arch#^FIQf5ZoJXIBP:#*]]
+![[dendron://dendron.docs/pkg.dendron-plugin-views.arch#^FIQf5ZoJXIBP:#*]]
 
 1. After you have made code changes, export all assets by running 
     ```sh
     yarn build:dev
     ```
-1. After assets are compiled, follow the [[Run|dendron://dendron.dendron-site/pkg.plugin-core.dev#run]] extension for [[pkg.plugin-core]]
+1. After assets are compiled, follow the [[Run|dendron://dendron.docs/pkg.plugin-core.dev#run]] extension for [[pkg.plugin-core]]
 
-[^watch]: [[Dendron Plugin Quickstart|dendron://dendron.dendron-site/pkg.plugin-core.quickstart#^QWJj9cTIcwuX]]
+[^watch]: [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart#^QWJj9cTIcwuX]]

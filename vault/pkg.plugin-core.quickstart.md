@@ -66,4 +66,4 @@ _Note: To have the changes reflected as you edit the code you need to run the `.
 
 ## Related
 - [[List of other Dendron Packages|dendron://dendron.dendron-site/pkg]]
-- [[Detailed Developer Docs|dendron://dendron.dendron-site/pkg.plugin-core.dev]]
+- [[Detailed Developer Docs|dendron://dendron.docs/pkg.plugin-core.dev]]

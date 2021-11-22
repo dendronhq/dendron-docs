@@ -203,4 +203,4 @@ version=0.42
 ```
 
 ## Related
-- [[Build|dendron://dendron.dendron-site/pkg.dendron-cli.t.dev#build]]
+- [[Build|dendron://dendron.docs/pkg.dendron-cli.t.dev#build]]

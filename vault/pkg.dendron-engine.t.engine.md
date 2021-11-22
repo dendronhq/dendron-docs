@@ -13,9 +13,9 @@ The engine is the main interface into the core dendron functions (lookup, rename
 
 ## Methods
 
-- [[Create|dendron://dendron.dendron-site/pkg.dendron-engine.t.engine.ref.create]]
-- [[Delete|dendron://dendron.dendron-site/pkg.dendron-engine.t.engine.ref.delete]]
-- [[Rename|dendron://dendron.dendron-site/pkg.dendron-engine.t.engine.ref.rename]]
+- [[Create|dendron://dendron.docs/pkg.dendron-engine.t.engine.ref.create]]
+- [[Delete|dendron://dendron.docs/pkg.dendron-engine.t.engine.ref.delete]]
+- [[Rename|dendron://dendron.docs/pkg.dendron-engine.t.engine.ref.rename]]
 
 ## Related
-- [[Engine|dendron://dendron.dendron-site/pkg.dendron-engine.api.engine]]
+- [[Engine|dendron://dendron.docs/pkg.dendron-engine.api.engine]]

@@ -19,7 +19,7 @@ yarn compile
 ```
 
 ## Run
-1. Follow steps from [[Dendron Plugin Quickstart|dendron://dendron.dendron-site/pkg.plugin-core.quickstart]] to get started
+1. Follow steps from [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]] to get started
 1. Run the `Extension: Local (plugin-core)` [[Launch Task|dendron://dendron.dendron-site/concepts#launch-task]]. 
 
 ## Tips

@@ -98,5 +98,5 @@ cp ../dendron-yml.validator.json dendron-yml.validator.json
 ```
 
 ## Related
-- [[Changelog|dendron://dendron.dendron-site/pkg.plugin-core.ref.build#changelog]]
+- [[Changelog|dendron://dendron.docs/pkg.plugin-core.ref.build#changelog]]
 - [[Dev CLI|dendron://dendron.dendron-site/dendron.dev.cli]]

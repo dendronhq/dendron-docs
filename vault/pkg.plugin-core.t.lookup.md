@@ -9,7 +9,7 @@ created: 1630425853418
 
 ## Related
 - [[Lookup|pkg.dendron-engine.t.lookup.internal]]
-- [[Quickpick|dendron://dendron.dendron-site/pkg.plugin-core.ref.quickpick#quickpick]]
+- [[Quickpick|dendron://dendron.docs/pkg.plugin-core.ref.quickpick#quickpick]]
 
 ## Changelog
 - [chore: lookup provider history service abstraction by hikchoi · Pull Request #1693 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1693)

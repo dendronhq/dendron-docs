@@ -60,10 +60,10 @@ Use the [[State Service|pkg.plugin-core.arch.state]] when working with VSCode wo
 
 ### Add a new Config
 
-See [[Add New Config|dendron://dendron.dendron-site/pkg.common-all.dev.cook#add-new-config]]
+See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
 
 ## Lookup
-- ![[dendron://dendron.dendron-site/pkg.plugin-core.t.lookup.cook]]
+- ![[dendron://dendron.docs/pkg.plugin-core.t.lookup.cook]]
 
 ## Views
 ### Adding a Web UI Component

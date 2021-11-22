@@ -22,7 +22,7 @@ When developing new views, there are two ways of doing development
 
 ### Browser Mode
 
-![[dendron://dendron.dendron-site/pkg.dendron-plugin-views.concepts#^FIQf5ZoJXIBP:#*]]
+![[dendron://dendron.docs/pkg.dendron-plugin-views.concepts#^FIQf5ZoJXIBP:#*]]
 
 Pros:
 - realtime changes without running `webpack export`
@@ -34,7 +34,7 @@ Browser mode is great for development speed but it means we're not acutally test
 
 ### IDE Mode
 
-![[dendron://dendron.dendron-site/pkg.dendron-plugin-views.concepts#^OBOH23affA2J]]
+![[dendron://dendron.docs/pkg.dendron-plugin-views.concepts#^OBOH23affA2J]]
 
 Pros:
 - full fidelity webview testing 

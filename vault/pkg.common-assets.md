@@ -8,7 +8,7 @@ created: 1637163989716
 
 ## Summary
 
-This packages hold assets for Dendron Views. During the [[build step|dendron://dendron.dendron-site/pkg.plugin-core.quickstart#^OI7k28ZBdX9W]], assets from this package are concatenated and copied into [[pkg.nextjs-template]] and [[pkg.dendron-plugin-views]] (TODO: need to refactor logic from `dendron-plugin-views`, currently assets are being built separately there).
+This packages hold assets for Dendron Views. During the [[build step|dendron://dendron.docs/pkg.plugin-core.quickstart#^OI7k28ZBdX9W]], assets from this package are concatenated and copied into [[pkg.nextjs-template]] and [[pkg.dendron-plugin-views]] (TODO: need to refactor logic from `dendron-plugin-views`, currently assets are being built separately there).
 
 - NOTE: we are currently moving away from `dendron-next-server` and transferring all css and assets from it to `common-assets`
     - last updated: 2021-11-18
@@ -46,4 +46,4 @@ This packages hold assets for Dendron Views. During the [[build step|dendron://d
     ```
 
 ## Related
-- [[Plugin Views - Build Styles|dendron://dendron.dendron-site/pkg.dendron-plugin-views.ref.build-styles]]
+- [[Plugin Views - Build Styles|dendron://dendron.docs/pkg.dendron-plugin-views.ref.build-styles]]

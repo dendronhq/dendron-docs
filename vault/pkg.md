@@ -10,7 +10,7 @@ nav_order: 10
 
 This goes over all packages in the dendron monorepo
 
-To understand how to navigate these packages, see [[here|dendron://dendron.dendron-site/pkg.map]]
+To understand how to navigate these packages, see [[here|dendron://dendron.docs/pkg.map]]
 
 
 ## User Facing
@@ -67,7 +67,7 @@ These packages are shared dependencies
 ![[pkg.common-frontend#summary,1]]
 
 ### Common Assets
-![[dendron://dendron.dendron-site/pkg.common-assets#summary,1:#*]]
+![[dendron://dendron.docs/pkg.common-assets#summary,1:#*]]
 
 
 

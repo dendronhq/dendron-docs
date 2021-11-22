@@ -15,7 +15,7 @@ created: 1636432981026
     ```json
     "yarn build:index && node scripts/start.js"
     ```
-    - NOTE: `build:index` generates the `index.html` file that is used to load the plugin. More details in [[Build Index|dendron://dendron.dendron-site/pkg.dendron-plugin-views.ref.build-index]]
+    - NOTE: `build:index` generates the `index.html` file that is used to load the plugin. More details in [[Build Index|dendron://dendron.docs/pkg.dendron-plugin-views.ref.build-index]]
 1. Remaining steps are described in [[view startup|#view-startup]]
 
 

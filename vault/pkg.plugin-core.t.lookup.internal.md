@@ -288,4 +288,4 @@ acceptNewItem(item, picker) {
 ```
 
 ## Related
-- [[Lookup|dendron://dendron.dendron-site/pkg.dendron-engine.t.lookup]]
+- [[Lookup|dendron://dendron.docs/pkg.dendron-engine.t.lookup]]

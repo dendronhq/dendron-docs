@@ -11,7 +11,7 @@ created: 1635517498318
 Reload files as needed
 
 ## Schema
-- related: [[Schema|dendron://dendron.dendron-site/pkg.dendron-engine.t.schema]]
+- related: [[Schema|dendron://dendron.docs/pkg.dendron-engine.t.schema]]
 
 ## Changelog
 - [fix: notes added outside Dendron missing backlinks by SeriousBug · Pull Request #1618 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1618)

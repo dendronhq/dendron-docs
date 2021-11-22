@@ -67,11 +67,11 @@ Wildcards are nodes that can be put as the children of anything. They can also l
 
 ### Nodes
 - Cook: Guide on how to accomplish a specific task
-    - eg: [[Cook|dendron://dendron.dendron-site/pkg.plugin-core.dev.cook]]
+    - eg: [[Cook|dendron://dendron.docs/pkg.plugin-core.dev.cook]]
 - Tip: Optimizations on doing things better
-    - eg: [[Tips|dendron://dendron.dendron-site/pkg.plugin-core.dev#tips]]
+    - eg: [[Tips|dendron://dendron.docs/pkg.plugin-core.dev#tips]]
 - Gotchas: Things to watch out for
-    - eg: [[Gotchas|dendron://dendron.dendron-site/pkg.plugin-core.dev#gotchas]]
+    - eg: [[Gotchas|dendron://dendron.docs/pkg.plugin-core.dev#gotchas]]
 
 ### Types
 
@@ -97,16 +97,16 @@ Following the [[Amoeba pattern|dendron://dendron.dendron-site/dendron.guides.wor
 
 ## Ref vs Topic
 
-A topic is a major component that requires its own `module` hiearchy to properly document. For example, [[Lookup|dendron://dendron.dendron-site/pkg.plugin-core.t.lookup]] is a topic of `plugin-core`.
+A topic is a major component that requires its own `module` hiearchy to properly document. For example, [[Lookup|dendron://dendron.docs/pkg.plugin-core.t.lookup]] is a topic of `plugin-core`.
 
-A reference is a minor component that should hang as a leaf and should be self contained. For example, [[Decorations|dendron://dendron.dendron-site/pkg.plugin-core.ref.decorations]] is a reference in `plugin-core` because it is specific to VSCode. 
+A reference is a minor component that should hang as a leaf and should be self contained. For example, [[Decorations|dendron://dendron.docs/pkg.plugin-core.ref.decorations]] is a reference in `plugin-core` because it is specific to VSCode. 
 
 ## Examples of using the schema
 
 ### How do I get started developing?
 
 - schema: `{module}.quickstart`
-- eg: [[Dendron Plugin Quickstart|dendron://dendron.dendron-site/pkg.plugin-core.quickstart]]
+- eg: [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]]
 
 ### How do I write or read logs?
 
@@ -118,7 +118,7 @@ A reference is a minor component that should hang as a leaf and should be self c
 
 ### How do I create a new {X} in {Y}?
 - schema: `{module}.dev.cook`
-- eg: [[Add a new Command|dendron://dendron.dendron-site/pkg.plugin-core.dev.cook#add-a-new-command]]
+- eg: [[Add a new Command|dendron://dendron.docs/pkg.plugin-core.dev.cook#add-a-new-command]]
 
 ### Architecture
 

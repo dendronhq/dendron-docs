@@ -8,7 +8,7 @@ created: 1609350672493
 
 
 ## Build
-- Build dendron monorepo by following steps here: [[Dendron Plugin Quickstart|dendron://dendron.dendron-site/pkg.plugin-core.quickstart]]
+- Build dendron monorepo by following steps here: [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]]
 
 ## Run
 1. [[Symlink|#symlink]] the dendron-cli from the monorepo 

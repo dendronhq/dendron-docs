@@ -7,7 +7,7 @@ created: 1635210541255
 ---
 
 ## FAQ
-- NOTE: for terms that look unfamiliar, see [[Concepts|dendron://dendron.dendron-site/pkg.pods-core.concepts]] for an explanation
+- NOTE: for terms that look unfamiliar, see [[Concepts|dendron://dendron.docs/pkg.pods-core.concepts]] for an explanation
 
 ### How does a pod know when an entry is new or should be linked to a dendron note?
 
@@ -20,6 +20,6 @@ For all exports, we check if an id record of the destination type exist. If so, 
 When exporting a note with a pod, the pod will write a `dendronId` as part of the exported record. The `dendronId` is linked to the unique id of the note.
 
 ## Related
-- [[Concepts|dendron://dendron.dendron-site/pkg.pods-core.concepts]]
+- [[Concepts|dendron://dendron.docs/pkg.pods-core.concepts]]
 - [enhance(pods): better airtable pod by kevinslin · Pull Request #1457 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1457)
 - [writing destination entry](https://github.com/dendronhq/dendron/pull/1457/commits/9956d7dd2e0bb3f27789e1be4f2fdb49fd843ac2)

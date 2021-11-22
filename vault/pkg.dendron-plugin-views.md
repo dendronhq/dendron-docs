@@ -12,8 +12,8 @@ Webviews for Dendron Plugin
 
 ## Getting Started
 
-- [[Architecture|dendron://dendron.dendron-site/pkg.dendron-plugin-views.arch]]
-- [[Lifecycles|dendron://dendron.dendron-site/pkg.dendron-plugin-views.arch.lifecycle]]
-- [[Quickstart|dendron://dendron.dendron-site/pkg.dendron-plugin-views.quickstart]]
-- [[Quality Assurance|dendron://dendron.dendron-site/pkg.dendron-plugin-views.qa]] (how to debug and test)
+- [[Architecture|dendron://dendron.docs/pkg.dendron-plugin-views.arch]]
+- [[Lifecycles|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle]]
+- [[Quickstart|dendron://dendron.docs/pkg.dendron-plugin-views.quickstart]]
+- [[Quality Assurance|dendron://dendron.docs/pkg.dendron-plugin-views.qa]] (how to debug and test)
 - [Webview API](https://code.visualstudio.com/api/extension-guides/webview)

@@ -13,7 +13,7 @@ In browser mode, we start a [webpack dev server](https://webpack.js.org/configur
 
 ## IDE Mode 
 
-In IDE mode, we run `webpack export` to generate static js and css bundles of all views. We then [[launch the Dendron Plugin|dendron://dendron.dendron-site/pkg.plugin-core.quickstart]] in development mode to see the webview changes integrated with VSCode ^OBOH23affA2J
+In IDE mode, we run `webpack export` to generate static js and css bundles of all views. We then [[launch the Dendron Plugin|dendron://dendron.docs/pkg.plugin-core.quickstart]] in development mode to see the webview changes integrated with VSCode ^OBOH23affA2J
 
 
 
