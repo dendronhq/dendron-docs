@@ -32,7 +32,7 @@ new DendronCodeWorkspace({
 });
 ```
 
-Keep in mind that with [[Native Workspaces|dendron.rfc.31-native-workspace]],
+Keep in mind that with [[Native Workspaces|rfc.31-native-workspace]],
 the root of the VSCode workspace may not be the root of the Dendron workspace.
 If the `dendron.yml` file is located in a subdirectory of the root, then that
 directory is the root for Dendron. Use `findWSRootInWorkspaceFolders` to find

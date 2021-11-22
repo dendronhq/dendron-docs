@@ -83,7 +83,7 @@ You can use this callback to modify the `dendron.yml` configuration for the test
 
 ### Test etiquette
 
-Your tests should follow a [[BDD-Light|dendron.rfc.25-bdd-light]] style. The example above shows how this can be accomplished. If you want to add some "AND" clauses, you can nest your tests inside `describe`s to achieve that.
+Your tests should follow a [[BDD-Light|rfc.25-bdd-light]] style. The example above shows how this can be accomplished. If you want to add some "AND" clauses, you can nest your tests inside `describe`s to achieve that.
 
 Each test should test a single functionality. The tests should not depend on
 each other: mocha allows skipping individual tests, and it should be possible to
