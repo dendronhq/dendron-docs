@@ -2,14 +2,35 @@
 id: dpCnjhyzVVjYZqKQ3wPA4
 title: Logs
 desc: ''
-updated: 1628346708988
+updated: 1637182497681
 created: 1628345272665
 ---
 
-## Logs
+## Writing Logs
+
+Logs are important for debugging and we should strive to have logs that will give enough information that we can debug any errors from the logs alone. Because we're dealing with users personal notes, we also need to ensure not to log any sensitive information.
+
+If you need to log data, use one of the following loggers depending on what package you are in:
+
+- plugin-core: use [Logger](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/logger.ts#L22:L22)
+- react component: use [createLogger](https://github.com/dendronhq/dendron/blob/master/packages/common-frontend/src/utils/logger.ts#L3:L3) in common-frontend
+- everything else: use [createLogger](https://github.com/dendronhq/dendron/blob/master/packages/common-server/src/logger.ts#L36:L36) in common-server
+
+Also note that many objects (eg. commands, pods, etc), have an instance of the logger attached to them. You should use them whenever available. They are usually attached as a `.L` or `.logger` property. 
+
+- pods have loggers attached in `this.L`
+
+Some things to keep in mind:
+
+- Do not use `console.log` to log data
+- Raw note objects contain note content which we never want to log. Instead, use [`NoteUtils.toLogObj`](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/dnode.ts) which strips out sensitive fields to the logger. 
+
+## Reading Logs
 This describes the expected logs for certain Dendron operations
 
-### [[Startup|pkg.plugin-core.arch.startup#summary]]
+- TIP: it's recommended that you install the [Timestamp Converter](https://marketplace.visualstudio.com/items?itemName=Stalinbalraj.timestamp-converter) extension to convert timestamps into your local date
+
+### [[Startup|pkg.plugin-core.arch.lifecycle.startup#summary]]
 
 #### normal
 
@@ -51,6 +72,7 @@ This describes the expected logs for certain Dendron operations
 ```
 
 ##### setup workspace
+- at this point, the workspace is ready
 ```yml
 #setup workspace
 - {"level":30,"time":1628346170255,"pid":10096,"name":"dendron","ctx":"TreeView:getChildren","msg":"reconstructing tree"}

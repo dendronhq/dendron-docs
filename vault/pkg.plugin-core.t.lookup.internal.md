@@ -2,7 +2,7 @@
 id: PZ3IzgdeZBbFRvalzI9fp
 title: Internal
 desc: ''
-updated: 1632929365302
+updated: 1637203158354
 created: 1630426129273
 ---
 
@@ -13,7 +13,6 @@ This describes the logic for Note Lookup
 ## State Diagram
 
 ```mermaid
-
 stateDiagram-v2
     [*] --> LookupCommand
 
@@ -86,12 +85,52 @@ stateDiagram-v2
 ## Code
 
 ### Gather Input
+
+- this method is responsible for configuring and instantiating the lookup controller and provider
+  - controller controls presentation of the quickinput
+  - provider controls the data retrieval behavior 
+  - on success, will return the following [response type](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/components/lookup/LookupProviderV3.ts)
+  - NOTE: because we can't simply block on `showQuickInput`, we return a promise that listens to a `lookupProvider` event with the corresponding `id` of the particular command
+
 - src/commands/NoteLookupCommand.ts
 ```ts
 gatherInputs {
-    lc = this._controller = LookupControllerV3.create
-    this._provider = new NoteLookupProvider("lookup", {
+
+    lc = this._controller = LookupControllerV3.create(buttons:[...], ...)
+    @provider = new NoteLookupProvider("lookup", {
+        allowNewNote: true,
+        ...
+    })
     lc.prepareQuickPick
+}
+```
+
+#### NoteLookup Provider
+
+- src/components/lookup/LookupProviderV3.ts
+```tsx
+
+create {
+    @_onAcceptHooks = [];
+}
+
+provide {
+}
+
+onDidAccept {
+
+    selectedItems := picker
+
+    ...
+    resp = @_onAcceptHooks.map hooks {
+        hook(picker, selectedItems)
+    }
+
+    HistoryService.add(
+        source: lookupProvider,
+        action: done,
+        data: resp
+    )
 }
 ```
 
@@ -163,12 +202,28 @@ onUpdatePickerItems {
 ```
 
 ### OnAccept
+
+This gets triggered when the user selects a result form the quickpick.
+
+Type Signature
+```ts
+quickpick: DendronQuickPick
+selectedItems: NoteItemSelection[]
+```
+
+#### Pseudocode
+
 - src/components/lookup/LookupProviderV3.ts
 ```ts
 onDidAccept {
     selectedItems := picker
-    resp = @_onAcceptHooks.map {
-        it(picker, selectedItems)
+
+    selectedItems ??= fetchPickerResultsNoInput
+    
+    if hasNextPicker(picker)
+
+    resp = @_onAcceptHooks.map { hooks
+        hook(picker, selectedItems)
     }
 
     HistoryInstance.add {
@@ -213,6 +268,11 @@ acceptNewItem(item, picker) {
         delete note.stub
     } else {
         note = Note.create item
+
+        if picker.hasSelectionProcessFunc {
+            picker.hasSelectionProcessFunc(note)
+        }
+
         if matchSchema(note) {
             addSchema(note)
         }
@@ -227,7 +287,5 @@ acceptNewItem(item, picker) {
 
 ```
 
-## Design Decisions
-
-### Debounce
-
+## Related
+- [[Lookup|dendron://dendron.dendron-site/pkg.dendron-engine.t.lookup]]

@@ -1,32 +1,15 @@
-maxPreviewsCached: 10
-vaults:
-    -
-        fsPath: vault
-        name: dendron.dendron-docs
 useFMTitle: true
 useNoteTitleForLink: true
-noAutoCreateOnDefinition: true
 noLegacyNoteRef: true
-noXVaultWikiLink: true
 mermaid: true
 useKatex: true
-autoFoldFrontmatter: true
 usePrettyRefs: true
 dev:
     enablePreviewV2: true
-journal:
-    dailyDomain: daily
-    name: journal
-    dateFormat: y.MM.dd
-    addBehavior: childOfDomain
-    firstDayOfWeek: 1
-scratch:
-    name: scratch
-    dateFormat: y.MM.dd.HHmmss
-    addBehavior: asOwnDomain
 site:
     copyAssets: true
     siteHierarchies:
+        - home
         - pkg
     siteRootDir: docs
     gh_edit_repository: 'https://github.com/dendronhq/dendron-docs'
@@ -46,8 +29,7 @@ site:
         action: useVault
         payload:
             - vault
-version: 2
-initializeRemoteVaults: true
+version: 4
 useTitleForLink: true
 commands:
     lookup:
@@ -55,6 +37,7 @@ commands:
             selectionMode: extract
             confirmVaultOnCreate: false
             leaveTrace: false
+            bubbleUpCreateNew: true
     randomNote: {}
     insertNote:
         initialValue: templates
@@ -63,4 +46,55 @@ commands:
         enableMultiSelect: false
     insertNoteIndex:
         enableMarker: false
-dendronVersion: 0.63.0
+workspace:
+    dendronVersion: 0.69.3-alpha.1
+    vaults:
+        -
+            fsPath: vault
+            name: dendron.dendron-docs
+    journal:
+        dailyDomain: daily
+        name: journal
+        dateFormat: y.MM.dd
+        addBehavior: childOfDomain
+    scratch:
+        name: scratch
+        dateFormat: y.MM.dd.HHmmss
+        addBehavior: asOwnDomain
+    graph:
+        zoomSpeed: 1
+    enableAutoCreateOnDefinition: false
+    enableXVaultWikiLink: false
+    enableRemoteVaultInit: true
+    workspaceVaultSyncMode: noCommit
+    enableAutoFoldFrontmatter: true
+    maxPreviewsCached: 10
+    maxNoteLength: 204800
+    task:
+        name: ''
+        dateFormat: ''
+        addBehavior: childOfCurrent
+        statusSymbols:
+            '': ' '
+            wip: w
+            done: x
+            assigned: a
+            moved: m
+            blocked: b
+            delegated: l
+            dropped: d
+            pending: 'y'
+        prioritySymbols:
+            H: high
+            M: medium
+            L: low
+        todoIntegration: false
+        createTaskSelectionType: selection2link
+    enableUserTags: true
+    enableHashTags: true
+preview:
+    enableFMTitle: true
+    enableNoteTitleForLink: true
+    enableMermaid: true
+    enablePrettyRefs: true
+    enableKatex: true
