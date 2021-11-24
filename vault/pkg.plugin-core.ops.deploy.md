@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ''
-updated: 1637598103717
+updated: 1637697049671
 created: 1635532194153
 ---
 
@@ -39,3 +39,4 @@ git merge --squash $RELEASE_BRANCH
 git commit -m "chore(release): publish $UPGRADE_TYPE"
 git push
 ```
+
