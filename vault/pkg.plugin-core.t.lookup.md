@@ -2,7 +2,7 @@
 id: BliBakrlm2ij4fY4Kq0AA
 title: Lookup
 desc: ''
-updated: 1637779839658
+updated: 1637785618812
 created: 1630425853418
 ---
 
@@ -58,7 +58,20 @@ Different lookup commands with instantiate lookup with different modifiers.
 ### Lookup Modifiers
 
 A lookup modifier modifiers how lookup behaves. More details on that [[here|dendron://dendron.dendron-site/dendron.topic.lookup.modifiers]].
-Modifiers are passed into lookup using the `buttons` property in the constructore
+Modifiers are passed into lookup using the `buttons` property in the constructor. Buttons can be toggled in the UI and when enabled, can affect lookup. 
+
+Button come in the following types
+* LookupEffectType
+    - performs some effect (eg. copy note)
+* LookupNoteType
+    - change the default hiearchy name 
+* LookupSelectionType
+    - performs an action on current selection
+* LookupSplitType
+    - changes how a note is opened
+* LookupFilterType
+    - changes `onUpdateItems` behavior in the [[provider|#lookup-provider]]
+
 
 ### Lookup Provider
 
