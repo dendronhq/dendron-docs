@@ -7,8 +7,8 @@ created: 1634591074560
 ---
 
 ## Checklist
-- [ ] is the subprocess running? [[logs|pkg.plugin-core.ops.logs#start-engine-process]]
-- [ ] did note indexing finish successfully? [[logs|pkg.plugin-core.ops.logs#finish-indexing-notes]]
+- [ ] is the subprocess running? [[logs|pkg.plugin-core.dev.logs#start-engine-process]]
+- [ ] did note indexing finish successfully? [[logs|pkg.plugin-core.dev.logs#finish-indexing-notes]]
 
 ## Troubleshooting
 

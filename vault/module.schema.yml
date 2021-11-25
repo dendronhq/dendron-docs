@@ -42,7 +42,6 @@ schemas:
   desc: |
     Diagnose issues
   children:
-    - pattern: logs
     - pattern: deploy
 - id: quickstart
 - id: architecture
@@ -74,12 +73,13 @@ schemas:
   desc: |
     Development related 
   children:
+    - pattern: trouble
+      title: "Troubleshooting"
     - pattern: cook
+      title: "Cookbook"
     - pattern: build
-      children:
-        - id: internal
-    - pattern: conventions
-- id: conventions
+    - pattern: errors
+    - pattern: logs
 - id: build
 - id: concepts
   desc: basic concepts to do with the project

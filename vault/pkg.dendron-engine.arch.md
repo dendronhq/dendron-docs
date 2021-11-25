@@ -1,36 +1,16 @@
 ---
 id: ebf58a4a-18f8-498d-95eb-04d856c0a000
-title: Dendron Engine Architecture
+title: Architecture
 desc: ''
-updated: 1636583048065
+updated: 1637875662463
 created: 1619535999168
 ---
 
+## Components
+![[dendron://dendron.docs/pkg.dendron-engine.t.engine#summary,1:#*]]
+![[dendron://dendron.docs/pkg.dendron-engine.ref.engine-connector#summary,1:#*]]
 
-## Initialization
-
-Dendron initialization process
-
-```mermaid
-sequenceDiagram
-    participant client
-    participant engine
-    participant store
-    participant fileSystem
-    participant noteParser
-    client->>engine: initialize
-    engine->>store: initialize
-    store->>fileSystem: fetchAllnotes
-    fileSystem->>store: sendNotes;
-    store->>noteParser: parseAllNotes
-    noteParser->>store: parsedNotes
-    store->>engine: return status
-    engine->>client: return status
-```
-
-- [Video walkthrough](https://youtu.be/nWJCP1DR5Io)
-
-## Modules
+## Layout
 
 The Dendron Engine is organized into modules that are a top level folder
 
@@ -45,7 +25,3 @@ The Dendron Engine is organized into modules that are a top level folder
         - index.ts
         - ...
 ```
-
-## Related
-- [[Dendron Startup|pkg.dendron-engine.internal.startup]]
-- [[Lookup|pkg.dendron-engine.t.lookup]]
