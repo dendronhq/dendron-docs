@@ -2,14 +2,13 @@
 id: d1usLHSTfJc-3_JKuYLBr
 title: Arch
 desc: ''
-updated: 1637342138117
+updated: 1637873770319
 created: 1624552964184
 ---
 
 ## Summary
 
 Describes Dendron Plugin Architecture
-
 
 ## Design
 

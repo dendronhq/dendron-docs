@@ -2,44 +2,26 @@
 id: ENeBSPWAtTlQclXYWNm6c
 title: Architecture
 desc: ''
-updated: 1633023652348
+updated: 1637874267564
 created: 1629988601634
 ---
 
-## Summary 
+## Summary
 
-This goes over the major architectural components of Dendron.
+Dendron has many oving parts but at the core, it consists of a traditional client/server model. 
+
+Currently, the clients are: 
+- [[pkg.plugin-core]]: vscode extension
+- [[pkg.dendron-cli]]: dendron CLI
+
+The server is a local express.js server, more details on that [[here|pkg.dendron-api-server]].
+
+Dendron also has many utility packages and libraries that are used in both client and servers of Dendron. 
+You can find an index of all Dendron packages [[here|dendron://dendron.docs/pkg#summary]].
 
 ## Components
-- You can find an index of all Dendron packages [[here|dendron://dendron.dendron-site/pkg]]
 
-## Lifecycle
-- Startup
-  - Plugin startup: [[Summary|pkg.plugin-core.arch.lifecycle.startup#summary]]
-  - Migrations: [[Migration|pkg.dendron-engine.t.migration]]
+### Engine
+- component: [[Dendron Engine|dendron.dev.design#dendron-engine]]
 
-- Regular Execution
-  - Running a plugin command: [[Base Command Lifecycle|pkg.plugin-core.t.commands#base-command-lifecycle]]
-  - Lookup: 
-    - plugin: [[Internal|pkg.plugin-core.t.lookup.internal]]
-    - engine: [[Lookup|dendron://dendron.docs/pkg.dendron-engine.t.lookup]]
-  - Dendron Engine: [[Initialization|pkg.dendron-engine.arch#initialization]]
-
-- Specifics
-  - Analytics
-  - Themes
-  - Publishing: [[Logic to check if a page can be published|pkg.dendron-engine.t.publishing#logic-to-check-if-a-page-can-be-published]]
-  - Markdown: [[pkg.dendron-markdown.arch]]
-  - Notes
-  - CLI: [[pkg.dendron-cli.arch]]
-  - Web Views: [[pkg.dendron-next-server.dev]]
-
-## Other
-- NextJS
-  - Layout: [[Layout|pkg.nextjs-template.t.layout]]
-
-
-## Deployment
-
-## Related
-- [[Dendron Plugin|pkg.plugin-core.arch]]
+Responsible for indexing notes and lookup methods. 

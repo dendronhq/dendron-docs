@@ -10,7 +10,6 @@ schemas:
     - tips
     - faq
     - topic
-    - lifecycle
     - ops
     - dev
     - changelog
@@ -27,7 +26,6 @@ schemas:
 - id: advanced
   pattern: adv
   desc: "Advanced topics"
-- id: lifecycle
 - id: changelog
 - id: qa
   desc: |

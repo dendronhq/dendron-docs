@@ -2,34 +2,10 @@
 id: 849ee8ee-05a5-47bf-b44d-d7c257117bc4
 title: Summary
 desc: ''
-updated: 1616949584388
+updated: 1637874595357
 created: 1598652399447
 stub: false
 ---
-These documents are a high level overview of the code inside Dendron. They are written in a type script like pseudo code. The code blocks are broken down into the following structure:
-
-```
-# {Function}  --> what is happening
-## Summary    --> high level function call of what is happening
-## Flows      --> pseudo code describing high level functions
-
-### {Flow Entry}
-
-- loc: ... --> where code is located. {package}/{basename}
-- desc: ... --> description 
-```
-
-## Pseudo Code
-
-The code description is typescript-ish. The goal isn't to write valid typescript but be a **summarized** version of the code. The syntax is evolving but here is a loosely documented starting point:
-
-- @: equivalent of `this.`
-- $: referencing a global variable
-- `...`: code that is omitted because it would clutter the summary
-- `=:` magic equality, 
-
-The places where you see this convention being broken (eg. actual valid typescript) are areas where the author got lazy and just copied code into the summary. Try to not do this because that defeats the point of a _summarized_ view. That being said, Dendron is all about being pragmatic and taking an iterative approach to things. 
-
 # Initializing the Engine
 
 ## Summary
