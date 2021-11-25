@@ -13,7 +13,7 @@ Depending on the package you are working on, tests are handled differently
 - If you are writing tests for [[pkg.plugin-core]], see [[here|dendron://dendron.docs/pkg.plugin-core.qa.test]].
 - If you are writing tests for any other package, see [[here|dendron://dendron.docs/pkg.engine-test-utils.qa.test#writing]]
 
-For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.qa.style]] when writing test.
+For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.style]] when writing test.
 
 ## Automated Tests (via github actions)
 

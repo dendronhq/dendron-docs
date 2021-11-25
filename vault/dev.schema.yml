@@ -5,16 +5,23 @@ schemas:
     title: dev
     parent: root
     children:
+      - process
       - module.quickstart
-      - module.qa
       - module.concepts
       - module.architecture
       - module.tips
       - module.faq
       - module.topic
       - module.ops
-      - module.dev
       - module.changelog
       - module.config
       - module.advanced
       - module.best
+  - id: process
+    children:
+      - pattern: code
+      - pattern: errors
+      - pattern: logs
+      - id: module.qa
+      - pattern: review
+      - pattern: deploy

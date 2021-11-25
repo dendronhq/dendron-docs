@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ''
-updated: 1637161337425
+updated: 1637876995480
 created: 1634590309804
 ---
 
@@ -43,7 +43,7 @@ sequenceDiagram
    - you can copy the contents of an existing command (eg. `src/commands/ShowHelp.ts`) to help you get started
 4. Write tests
    - tests are in `plugin-core/src/test/suite-integ/{COMMAND}`
-   - testing instructions are [[here|dev.qa]]
+   - testing instructions are [[here|dev.process.qa]]
 5. Write command logic
 6. If it makes sense, add a keyboard shortcut for the command. Make sure it doesn't conflict with an generic VSCode command or existing Dendron commands. You can detect existing keybindings by using the guide [here](https://code.visualstudio.com/docs/getstarted/keybindings#_detecting-keybinding-conflicts)
 7. Add command to `src/commands/index.ts`
@@ -133,12 +133,6 @@ lerna bootstrap
 # build all dependencies
 ./bootstrap/scripts/build.sh
 ```
-
-
-### Remote Development
-
-If you are developing Dendron in a remote environment using VSCode, see additional instructions [[here|dev.remote]].
-
 
 ### Check if file is in vault
 

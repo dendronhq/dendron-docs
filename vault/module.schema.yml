@@ -78,6 +78,8 @@ schemas:
     - pattern: cook
       title: "Cookbook"
     - pattern: build
+    - pattern: run
+      desc: "how to run the program"
     - pattern: errors
     - pattern: logs
 - id: build

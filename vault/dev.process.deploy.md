@@ -60,5 +60,5 @@ env FAST=1 yarn build:$VERSION_UPGRADE:$ENDPOINT
 ```
 
 ## Related
-- [[CLI|dev.cli]]
+- [[CLI|etc.cli]]
 - [[Dev|dendron://dendron.docs/pkg.dendron-cli.ref.dev]]

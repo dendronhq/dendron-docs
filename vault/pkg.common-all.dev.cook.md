@@ -30,11 +30,11 @@ When introducing a new config key, consider these points below:
       - These will later be migrated when the namespace is migrated.
         - Follow the config conventions descirbed below as if you are adding to the new namespace to simplify the migration process.
 1. How should I name the config? Should it be optional or required?
-    - For the sake of consistency, please consult the [[configuration conventions|dev.style.config]] note.
+    - For the sake of consistency, please consult the [[configuration conventions|dev.process.code.config]] note.
 1. When adding a config key to the new namespace type(s), you also have to add a corresponding entry in the [DendronConfigEntryCollection](https://github.com/dendronhq/dendron/blob/6a7be61db3ec7e6fab61871b30ec215c47f1cb59/packages/common-all/src/constants/configs/dendronConfig.ts#L10)
     - This is an object that holds every possible config key's label and description that will later be used to automatically generate a configuration view.
     - If this step is omitted, Typescript will complain that `DendronConfigEntryCollection` is missing a key.
-1. As per the [[configuration conventions|dev.style.config]], consider adding a sensible default of the newly introduced config key in the appropriate `genDefault{namespace}Config` method.
+1. As per the [[configuration conventions|dev.process.code.config]], consider adding a sensible default of the newly introduced config key in the appropriate `genDefault{namespace}Config` method.
     - Each namespace is divided into separate modules [here](https://github.com/dendronhq/dendron/tree/master/packages/common-all/src/types/configs), and the namespace type and default generating methods live in the same module.
     - These default generating methods will be used by the `ConfigUtils` that are used to get and set configs later, so it is important to define a default here to simplify the process down the line.
 1. You will notice that when introducing a new config that is required and has a default value, `Extension.test.ts` will fail. Some test in `engine-test-utils` may fail as well since the snapshot should be updated.

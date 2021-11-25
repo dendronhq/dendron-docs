@@ -1,13 +1,12 @@
 ---
-id: dc017e45-a3d5-4b29-9c4c-0f81d15becf8
-title: Remote
+id: ZB2Rkb66lLlw1adVKiSXj
+title: Run
 desc: ''
-updated: 1621356947643
-created: 1621356586781
+updated: 1637876980097
+created: 1637876951989
 ---
 
-
-## Summary
+## Remote Development
 
 When developing in VSCode, you can use its [remote development](https://code.visualstudio.com/docs/remote/ssh) to ssh into another machine but keep VSCode as your development frontend.
 

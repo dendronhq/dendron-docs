@@ -1,14 +1,14 @@
 ---
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
-title: Pull Request
+title: Review
 desc: ''
-updated: 1634138066874
+updated: 1637876769297
 created: 1623430616135
 ---
 
 ## Summary
 
-This goes into submitting a pull request
+This goes into how we do code review (via pull requests)
 
 ## Process
 
@@ -42,9 +42,9 @@ enhance(publish): speed up publishing by 500%
 - [ ] if its your first pull request and you're on our Discord, make sure that Kevin gives you the [[horticulturalist|community.roles#horticulturalist]] role  👨‍🌾👩‍🌾
 
 ### general
-- [ ] add a [[test|dev.qa#writing-tests]] for the new feature
-- [ ] make sure all the existing [[tests|dev.qa#running-all-tests]] pass
-- [ ] do a spot check by running your feature with our [[test Workspace|dev.qa#test-workspace]]
+- [ ] add a [[test|dev.process.qa#writing-tests]] for the new feature
+- [ ] make sure all the existing [[tests|dev.process.qa#running-all-tests]] pass
+- [ ] do a spot check by running your feature with our [[test Workspace|dev.process.qa#test-workspace]]
 - [ ] if your change reflects documentation changes, also submit a PR to [dendron-site](https://github.com/dendronhq/dendron-site) and mention the doc PR link in your current PR
 - [ ] after you submit your pull request, check the output of our [integration test](https://github.com/dendronhq/dendron/actions) and make sure all tests pass
   - NOTE: if you running mac/linux, check the windows output and vice versa if you are developing on windows
