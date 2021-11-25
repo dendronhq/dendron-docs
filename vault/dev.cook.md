@@ -2,9 +2,9 @@
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
 desc: ''
-updated: 1637873092124
+updated: 1637878708078
 created: 1599151918645
-stub: false
+nav_order: 4.1
 ---
 
 ## Summary

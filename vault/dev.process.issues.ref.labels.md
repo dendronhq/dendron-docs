@@ -1,6 +1,6 @@
 ---
 id: 1e6c8b49-ef88-4e79-b2df-e9d614c38a53
-title: Triage
+title: Labels
 desc: ''
 updated: 1633389425304
 created: 1610468038819

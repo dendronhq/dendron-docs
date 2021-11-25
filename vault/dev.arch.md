@@ -2,8 +2,9 @@
 id: ENeBSPWAtTlQclXYWNm6c
 title: Architecture
 desc: ''
-updated: 1637874267564
+updated: 1637878699671
 created: 1629988601634
+nav_order: 3.1
 ---
 
 ## Summary

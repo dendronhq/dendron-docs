@@ -1,9 +1,11 @@
 ---
 id: 06751374-7982-4df2-b30b-92b10aba733a
-title: Process
+title: Issues
 desc: ''
-updated: 1628730744458
+updated: 1637878959978
 created: 1619524509981
+nav_order: 1.1
+nav_exclude: true
 ---
 
 Triaging an issue is collaboratively performed by the issue bot, the Dendron maintainers and the larger Dendron community. Triaging an issue usually takes around one business day but may take longer, for example, when there's a large incoming rate or the area owners are not available. The goal of triaging is to provide you with a clear understanding of what will happen to your issue. For example, after your feature request was triaged you know whether we plan to tackle the issue or whether we'll wait to hear what the broader community thinks about this request.

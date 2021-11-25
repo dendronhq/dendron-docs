@@ -19,9 +19,11 @@ schemas:
       - module.best
   - id: process
     children:
+      - pattern: issues
       - pattern: code
       - pattern: errors
       - pattern: logs
-      - id: module.qa
+      - pattern: qa
+        id: module.qa
       - pattern: review
       - pattern: deploy
