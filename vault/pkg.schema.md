@@ -1,11 +1,11 @@
 ---
 id: DxucQoYEzu9VnBoYuFiqN
-title: Map
+title: Schema
 desc: ''
-updated: 1637603067919
+updated: 1637863675488
 created: 1634749668693
+nav_order: 1
 ---
-
 
 The following is the module schema which we use to organize code at Dendron. 
 

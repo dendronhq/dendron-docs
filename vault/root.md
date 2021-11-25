@@ -8,7 +8,7 @@ created: 1634256410936
 
 
 ## Hiearchies
-- [[pkg|dendron://dendron.docs/pkg.map]]: packages, how all code in Dendron is organized
+- [[pkg|dendron://dendron.docs/pkg.schema]]: packages, how all code in Dendron is organized
 - Dev: General development
 
 

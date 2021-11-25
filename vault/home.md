@@ -12,4 +12,4 @@ This contains all packages used in [Dendron](https://github.com/dendronhq/dendro
 
 All packages are organized using the following schema:
 
-![[pkg.map#schema,1:#*]]
+![[pkg.schema#schema,1:#*]]
