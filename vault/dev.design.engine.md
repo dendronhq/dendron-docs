@@ -2,33 +2,13 @@
 id: 849ee8ee-05a5-47bf-b44d-d7c257117bc4
 title: Summary
 desc: ''
-updated: 1637874595357
+updated: 1637874897261
 created: 1598652399447
 stub: false
 ---
 # Initializing the Engine
 
 ## Summary
-
-- engine.query
-  - store.query
-    - FileParser.parse
-      ```ts
-      allFiles {
-        getFileMeta
-        toNode
-      }
-      ```
-    - NodeBuilder.buildNoteFromProps
-      ```ts
-      {
-        root, childrenIds = getRoot
-        nodes = [root]
-        while nodes {
-          toNote it
-        }
-      }
-      ```
 
 ## Flow
 
@@ -39,34 +19,13 @@ stub: false
 
 ```ts
 init {
-  @query("**/*", "schema", {
-    fullNode: false,
-    initialQuery: true,
+  query("**/*", "schema", {
   });
 
-  @query("**/*", "note", {
-    fullNode: false,
-    initialQuery: true,
+  query("**/*", "note", {
   });
 }
 
-```
-
-### Query - Engine
-
-- loc: engine-server/engine.ts
-- desc: engine will query the store
-
-```ts
-async query(scope: Scope, queryString: string, opts?: QueryOpts) {
-  opts = _.defaults(opts || {}, {
-    fullNode: false
-  });
-  if (queryString === '**/*') {
-    const data = await this.store.query(scope, '**/*', opts);
-    this.refreshNodes(data.data);
-  }
-}
 ```
 
 ### Query - Store

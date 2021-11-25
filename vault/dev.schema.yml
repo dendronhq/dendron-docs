@@ -12,7 +12,6 @@ schemas:
       - module.tips
       - module.faq
       - module.topic
-      - module.lifecycle
       - module.ops
       - module.dev
       - module.changelog
