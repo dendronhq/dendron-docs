@@ -24,7 +24,7 @@ createEngineByConnectingToDebugServer
   ); 
 ```
 
-In order to debug, [[launch the debug server|pkg.dendron-api-server.qa.debug#^vLg6HUbLAzne]]. Afterwards, follow regular debugging instructions as described in [[debugging|dendron.dev.qa.debug]]. 
+In order to debug, [[launch the debug server|pkg.dendron-api-server.qa.debug#^vLg6HUbLAzne]]. Afterwards, follow regular debugging instructions as described in [[debugging|dev.qa.debug]]. 
 
 ### Existing Workspace
 1. Launch the server using the build task `start debug server` launch task ^vLg6HUbLAzne

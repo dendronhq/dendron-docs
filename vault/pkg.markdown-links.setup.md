@@ -13,7 +13,7 @@ created: 1611516225361
    cd markdown-links
    npm install
    ```
-2. Use `Run Extension` from the [[debug pane|dendron.dev.ref.vscode#debug-pane]] (note: this requires that dendron be installed. VSCode might ask you to install Dendron and reload at this point)
+2. Use `Run Extension` from the [[debug pane|dev.ref.vscode#debug-pane]] (note: this requires that dendron be installed. VSCode might ask you to install Dendron and reload at this point)
 3. Make sure you are inside a Dendron workspace. If not, either initialize one using `Dendron: Initialize Workspace` or change to one using `Dendron: Change Workspace`
 
 ## Setup without Dendron Extension Installed

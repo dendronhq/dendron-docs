@@ -11,7 +11,7 @@ created: 1631471641632
 
 ### Using the Test Workspace
 
-You can use the [[Test Workspace|dendron.dev.ref.test-workspace]] to check publishing changes.
+You can use the [[Test Workspace|dev.ref.test-workspace]] to check publishing changes.
 
 - NOTE: we use `--attach` to speed up the export if a workspace is active. otherwise, drop the flag to initiliaze via the CLI
 ```sh

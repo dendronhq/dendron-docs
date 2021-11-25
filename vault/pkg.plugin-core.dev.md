@@ -28,7 +28,7 @@ yarn compile
 
 1. Checkout a feature branch for your task
 2. Work on code
-3. Submit a [[pull Request|dendron.dev.pull-request]] 
+3. Submit a [[pull Request|dev.pull-request]] 
 
 ### Getting Help
 
@@ -67,4 +67,4 @@ npm link -g @dendronhq/dendron-cli
 
 ### Working with Verdaccio 
 
-![[dendron.dev.cook.common#verdaccio,1:#*]]
+![[dev.cook.common#verdaccio,1:#*]]

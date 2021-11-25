@@ -10,7 +10,7 @@ created: 1631231560375
 
 #### Initialize
 - in a different shell
-![[dendron.dev.cook.common#switch-to-local-npm,1:#*]]
+![[dev.cook.common#switch-to-local-npm,1:#*]]
 
 ```sh
 git clone $NEXTJS_REPO .next

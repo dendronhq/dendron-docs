@@ -10,7 +10,7 @@ created: 1635701411866
 ## Prerequisites
 
 1. Finish steps from [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]]
-1. Launch [[Test Workspace|dendron://dendron.dendron-site/dendron.dev.ref.test-workspace]]
+1. Launch [[Test Workspace|dendron://dendron.dendron-site/dev.ref.test-workspace]]
 
 ## Steps
 
@@ -22,7 +22,7 @@ When working on plugin views, there are two modes of development: browser and ID
 
 ![[dendron://dendron.docs/pkg.dendron-plugin-views.concepts#^FIQf5ZoJXIBP:#*]]
 
-1. Make sure that [[dendron.dev.ref.test-workspace]] is running on port `3005`
+1. Make sure that [[dev.ref.test-workspace]] is running on port `3005`
 1. Navigate to package
     ```sh
     cd $DENDRON_REPO_ROOT/packages/dendron-plugin-views
@@ -44,7 +44,7 @@ When working on plugin views, there are two modes of development: browser and ID
         source: "vscode",
     });
     ```
-    You can change the id to any id inside of [[dendron.dev.ref.test-workspace]] to see how different views function
+    You can change the id to any id inside of [[dev.ref.test-workspace]] to see how different views function
 
 - TIP: to set the theme in browser mode, you can run `env THEME={dark|light} yarn start`
 

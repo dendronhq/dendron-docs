@@ -57,7 +57,7 @@ deleteNote(note) {
 
 ```
 
-- See [[Remark|dendron.dev.design.remark]]
+- See [[Remark|dev.design.remark]]
 
 ## MISC
 

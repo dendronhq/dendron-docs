@@ -16,7 +16,7 @@ Use `Launch Task` and run `Debug One Test (engine-test-utils)` on a `spec` file 
 
 ### Writing
 
-All engine test need to be able to run both over the [[Engine|dendron.dev.design#engine]] as well as the [[Engine Client|dendron.dev.design#engine-client]]. 
+All engine test need to be able to run both over the [[Engine|dev.design#engine]] as well as the [[Engine Client|dev.design#engine-client]]. 
 This is why tests are added to `common-test-utils/src/presets/engine-server`.
 
 

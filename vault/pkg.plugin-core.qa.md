@@ -8,4 +8,4 @@ created: 1609713960639
 
 ## Local
 
-- see [[Dendron Testing|dendron.dev.qa]]
+- see [[Dendron Testing|dev.qa]]

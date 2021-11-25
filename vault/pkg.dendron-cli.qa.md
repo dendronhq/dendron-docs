@@ -7,7 +7,7 @@ created: 1614837254472
 ---
 
 ## Debug
-To debug specific dendron-cli commands, run a CLI [[tasks|dendron.dev.ref.vscode#tasks]] from `dendron-cli/.vscode/tasks.json`
+To debug specific dendron-cli commands, run a CLI [[tasks|dev.ref.vscode#tasks]] from `dendron-cli/.vscode/tasks.json`
 
 See the `build-site` inside `tasks.json` for an example.
 
