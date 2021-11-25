@@ -10,7 +10,7 @@ created: 1635701411866
 ## Prerequisites
 
 1. Finish steps from [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]]
-1. Launch [[Test Workspace|dendron://dendron.dendron-site/dev.ref.test-workspace]]
+1. Launch [[Test Workspace|dendron://dendron.docs/dev.ref.test-workspace]]
 
 ## Steps
 
