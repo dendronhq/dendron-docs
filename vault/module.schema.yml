@@ -44,8 +44,8 @@ schemas:
   desc: |
     Diagnose issues
   children:
-    - logs
-- id: logs
+    - pattern: logs
+    - pattern: deploy
 - id: quickstart
 - id: architecture
   desc: > 
@@ -77,7 +77,6 @@ schemas:
     Development related 
   children:
     - pattern: cook
-    - pattern: quickstart
     - pattern: build
       children:
         - id: internal

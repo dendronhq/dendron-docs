@@ -5,8 +5,8 @@ schemas:
     title: dev
     parent: root
     children:
-      - module.qa
       - module.quickstart
+      - module.qa
       - module.concepts
       - module.architecture
       - module.tips

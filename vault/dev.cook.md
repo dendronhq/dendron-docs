@@ -1,16 +1,17 @@
 ---
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
-title: Cook Book
+title: Cookbook
 desc: ''
-updated: 1636746589678
+updated: 1637873092124
 created: 1599151918645
 stub: false
 ---
-## Build
 
-- See [[Build|dev.build]]
+## Summary
 
-## Packages
+Various recipes on doing various things inside Dendron
+
+## Packaging
 
 ### Install a new package
 
@@ -148,7 +149,6 @@ Markdown related changes are documented [[here|pkg.dendron-markdown.dev]]
 ## Other
 
 
-
 ## Styling and Version Control
 
 ### Manually Formatting the code
@@ -166,10 +166,6 @@ echo $HASH_OF_COMMIT >> .git-blame-ignore-revs
 ```
 
 You can see an explanation of how it works [here](https://git-scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revs-fileltfilegt)
-
-### Adding a new configuration property
-
-![[dendron://dendron.docs/pkg.plugin-core.dev#adding-a-new-config,1:#*]]
 
 ### Synchronously loop through async results
 
