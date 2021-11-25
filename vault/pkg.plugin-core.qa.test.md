@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ''
-updated: 1634591614427
+updated: 1637807862977
 created: 1627140509315
 ---
 
@@ -115,6 +115,22 @@ Note that VSCode uses [mocha](https://mochajs.org/) as its default test runner w
 
 We shim the [jest methods](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/test/testUtilsv2.ts#L418:L418) when testing the plugin though so that we can re-use the same logic between our non-vscode packages and the Dendron VSCode Plugin. 
 
+## Executing Tests
+
+### Run All Tests
+1. Open the debug view inside vscode
+2. Run `Extension Integ Tests` in the dropdown
+
+- TIP: consider enabling "Uncaught Exceptions" under "Breakpoints" when running tests. Otherwise, if you forget to `await` a function that returns a promise and that function throws an exception, the test will appear to pass even though an exception was thrown.
+
+### Running a single test
+1. Open a test inside 'src/test/suite-integ/' from `plugin-core`
+2. Run the build task `Extension Integ Tests - File` 
+
+## Manual Testing
+
+To manually test new changes, launch an instance of the test workspace.
+![[dev.ref.test-workspace]]
 
 ## Cook
 
