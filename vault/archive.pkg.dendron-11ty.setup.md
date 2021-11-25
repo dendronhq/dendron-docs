@@ -21,7 +21,7 @@ npm install
 
 ### 3. Run 11ty
 
-![[pkg.dendron-11ty.quickstart#start-the-server-in-preview]]
+![[archive.pkg.dendron-11ty.quickstart#start-the-server-in-preview]]
 
 ## Running with dendron monorepo
 
@@ -55,5 +55,5 @@ You can run this CLI on any valid workspace. There's a test workspace in `dendro
 cd dendron-11ty/fixtures/test-workspace
 ```
 
-![[pkg.dendron-11ty.quickstart#start-the-server-in-preview,1:#*]]
+![[archive.pkg.dendron-11ty.quickstart#start-the-server-in-preview,1:#*]]
 

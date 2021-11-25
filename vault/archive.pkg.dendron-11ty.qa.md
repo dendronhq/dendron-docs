@@ -20,5 +20,5 @@ site:
 - create `foobar.md` with the frontmatter
 - add whatever syntax you want to test
 - run the CLI
-  ![[pkg.dendron-11ty.quickstart#start-the-server-in-preview,1:#*]]
+  ![[archive.pkg.dendron-11ty.quickstart#start-the-server-in-preview,1:#*]]
 

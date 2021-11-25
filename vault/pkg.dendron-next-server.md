@@ -2,8 +2,9 @@
 id: 7cdd9a74-8b8f-4564-906b-c963bed34273
 title: Dendron Next Server
 desc: ''
-updated: 1631285161160
+updated: 1637808352882
 created: 1604511741960
+nav_exclude: true
 ---
 
 ## Summary
