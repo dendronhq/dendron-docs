@@ -14,3 +14,11 @@ Component responsible for rendering the note on nextjs
 
 ## SubComponents
 - DendronCustomHead: logo or text
+
+
+## Details
+```tsx
+<Note>
+</Note>
+
+```

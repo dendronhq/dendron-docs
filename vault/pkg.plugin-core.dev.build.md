@@ -7,22 +7,33 @@ created: 1635705939396
 ---
 
 
-## Cleanup
-
-```sh
-echo "removing all deps..."
-./bootstrap/scripts/cleanup.sh
-echo "re-installing..."
-yarn setup
-```
-
 ## Build
 
-### Building without uploading to sentry
+### Options
+
+You can pass environmental variables to set the following options while building
+
+- SKIP_SENTRY: don't upload source maps to sentry
+- USE_IN_MEMORY_REGISTRY: this uses local in memory npm registry to do builds
+- FAST: instead of building everything from scratch, assumes that all sub packages are already built
+- LOG_LEVEL: set to `debug|info|error`, controls verbosity of log output
+
+
+Example:
 
 ```sh
-export SKIP_SENTRY=1 yarn build:patch:local
+env USE_IN_MEMORY_REGISTRY=1 LOG_LEVEL=info FAST=1 yarn build:patch:local 
 ```
+
+### Build Locally
+
+- pre-requisites
+    - [[plugin-core already built|dendron://dendron.docs/pkg.plugin-core.quickstart#steps]]
+
+```sh
+env USE_IN_MEMORY_REGISTRY=1 LOG_LEVEL=info FAST=1 yarn build:patch:local 
+```
+
 
 ### Fast Re-build
 
@@ -95,6 +106,15 @@ cp assets/static static
 cp assets/dendron-ws dendron-ws
 cp ../dendron-yml.validator.json dendron-yml.validator.json
 ... 
+```
+
+## Cleanup
+
+```sh
+echo "removing all deps..."
+./bootstrap/scripts/cleanup.sh
+echo "re-installing..."
+yarn setup
 ```
 
 ## Related

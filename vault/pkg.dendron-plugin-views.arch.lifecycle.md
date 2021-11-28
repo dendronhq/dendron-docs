@@ -2,7 +2,7 @@
 id: lZSr7StwPU5ukltzLg4mL
 title: Lifecycle
 desc: ''
-updated: 1636433012356
+updated: 1637981396179
 created: 1636432981026
 ---
 
@@ -68,6 +68,18 @@ TODO
 
 1. Component
     - src/components/DendronNotePage.tsx
+    ```tsx
+    DendronNotePage {
+
+        useRenderedNoteBody(noteProps, noteId) {
+            renderedNoteContentHash = useRef
+            if noteProps.contentHash != renderedNoteContentHash {
+                engineSlice.renderNote noteId
+            }
+        }
+        ...
+    }
+    ```
 
 ### Change Active Editor
 
