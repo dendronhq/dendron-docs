@@ -8,4 +8,3 @@ nav_order: 1.1
 ---
 
 ![[dendron://dendron.docs/pkg.plugin-core.quickstart]]
-

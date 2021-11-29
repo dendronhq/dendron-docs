@@ -10,5 +10,19 @@ If you would like to contribute to the development of dendron, you can do so by 
 
 You can then follow the setup instructions below to prepare your first commit!
 
-![[pkg.plugin-core.quickstart]]
+- [[Quickstart|dendron://dendron.docs/dev.quickstart]]
 
+## Lookup
+
+Useful resources when you are working with the code
+
+- [[Development Process|dendron://dendron.docs/dev.process]]
+    - [[Code Conventions|dendron://dendron.docs/dev.process.code]]
+    - Testing
+        - [[Writing Tests|dendron://dendron.docs/dev.process.qa.test]]
+        - [[Test Convention|dendron://dendron.docs/dev.process.qa.style]]
+        - [[Debugging code|dendron://dendron.docs/dev.process.qa.debug]]
+    - [[Code Review Checklist|dendron://dendron.docs/dev.process.review]]
+- [[Reference|dendron://dendron.docs/dev.ref]]
+    - [[Typescript|dev.ref.typescript]]
+    - [[Vscode|dendron://dendron.docs/dev.ref.vscode]]

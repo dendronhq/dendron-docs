@@ -10,6 +10,12 @@ nav_exclude: true
 
 ## Cook
 
+### Publish current packages
+
+```
+lerna publish from-package --ignore-scripts
+```
+
 ### Manually publish a single package
 
 - publish a version

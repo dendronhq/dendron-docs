@@ -8,6 +8,12 @@ nav_order: 1.1
 nav_exclude: true
 ---
 
+## Summary
+
+How we triage issues in Dendron
+
+## Details
+
 Triaging an issue is collaboratively performed by the issue bot, the Dendron maintainers and the larger Dendron community. Triaging an issue usually takes around one business day but may take longer, for example, when there's a large incoming rate or the area owners are not available. The goal of triaging is to provide you with a clear understanding of what will happen to your issue. For example, after your feature request was triaged you know whether we plan to tackle the issue or whether we'll wait to hear what the broader community thinks about this request.
 
 From your perspective it's straightforward to understand whether or not your issue is triaged:
@@ -63,18 +69,18 @@ Each issue must have a **type** label.
 
 Each issue will also have an **area** label, each representing a stage in the customer journey. This is also loosely how we choose to work on backlog issues.
 
--   area.onboard
--   area.create
--   area.retrieve
--   area.structure
--   area.publish
+- area.onboard
+- area.create
+- area.retrieve
+- area.structure
+- area.publish
 
 ## Assigning a Milestone
 
 In addition to [milestones](https://github.com/dendronhq/dendron/milestones) representing our weekly iterations and releases such as **`v42`** (representing the release of Dendron version 0.42.0 ), we have two milestones with special meaning:
 
--   Issues assigned to **`Backlog`**: Our team is in favor of implementing the feature request/fix the issue. The issue is not yet assigned to a concrete iteration. If and when a Backlog item is scheduled for a concrete iteration depends on how well the issue aligns with our **[[roadmap|dendron.roadmap]]**. We review and update our roadmap at least every quarter. The Backlog helps us shaping our Roadmap but it is not the only source of input. Therefore, some Backlog items will be closed once it becomes clear that they do not align with our Roadmap.
--   Issues assigned to **`Up Next`**: Our team wants to implement the feature/fix the issue. The issue is on the short list to be assigned to a concrete iteration. Note: **`Up Next`** is used sparsely. More commonly, issues go from **`Backlog`** or Triage directly to concrete iterations.
+- Issues assigned to **`Backlog`**: Our team is in favor of implementing the feature request/fix the issue. The issue is not yet assigned to a concrete iteration. If and when a Backlog item is scheduled for a concrete iteration depends on how well the issue aligns with our **[[roadmap|dendron.roadmap]]**. We review and update our roadmap at least every quarter. The Backlog helps us shaping our Roadmap but it is not the only source of input. Therefore, some Backlog items will be closed once it becomes clear that they do not align with our Roadmap.
+- Issues assigned to **`Up Next`**: Our team wants to implement the feature/fix the issue. The issue is on the short list to be assigned to a concrete iteration. Note: **`Up Next`** is used sparsely. More commonly, issues go from **`Backlog`** or Triage directly to concrete iterations.
 
 ## Asking for Help
 
