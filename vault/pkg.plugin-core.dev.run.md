@@ -6,19 +6,25 @@ updated: 1637876980097
 created: 1637876951989
 ---
 
-## Remote Development
+## Steps
+
+Regular run process inside the monorepo is described in [[pkg.plugin-core.quickstart]]
+
+## Running via Webpack
+1. Follow steps in [[Webpack|dendron://dendron.docs/pkg.plugin-core.dev.build#webpack]] to build the webpack version of the plugin
+2. Open VSCode and use the "Run extension - webpack" task
+
+- TIP: when iterating on changes, as long as you are only making changes in `plugin-core`, you can run `yarn webpack:dev:watch` inside `plugin-core` to test plugin changes with the VSCode Build
+
+## Running Remotely
 
 When developing in VSCode, you can use its [remote development](https://code.visualstudio.com/docs/remote/ssh) to ssh into another machine but keep VSCode as your development frontend.
 
 While installation intsructions are the same, there are some differences when running and testing code which are documented here.
 
-## Developing
-
-### Running Plugin Remotely
-
 Use the `Run Extension:Remote` launch task to start the extension. 
 
-## QA
+<!-- ## QA
 
 ### Running All Plugin Tests
 
@@ -36,4 +42,4 @@ let fname = process.env.TEST_TO_RUN;
 
 ### Running Non-Plugin Tests
 
-Non plugin tests behave the same, whether you're running all of them or a single test.
+Non plugin tests behave the same, whether you're running all of them or a single test. -->

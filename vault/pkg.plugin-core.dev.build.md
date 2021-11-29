@@ -7,7 +7,13 @@ created: 1635705939396
 ---
 
 
-## Build
+## Steps
+
+Regular build process inside the monorepo is described in [[pkg.plugin-core.quickstart]]
+
+## Webpack
+
+You can build Dendron with Webpack
 
 ### Options
 
@@ -19,21 +25,11 @@ You can pass environmental variables to set the following options while building
 - LOG_LEVEL: set to `debug|info|error`, controls verbosity of log output
 
 
-Example:
+### Steps
 
 ```sh
 env USE_IN_MEMORY_REGISTRY=1 LOG_LEVEL=info FAST=1 yarn build:patch:local 
 ```
-
-### Build Locally
-
-- pre-requisites
-    - [[plugin-core already built|dendron://dendron.docs/pkg.plugin-core.quickstart#steps]]
-
-```sh
-env USE_IN_MEMORY_REGISTRY=1 LOG_LEVEL=info FAST=1 yarn build:patch:local 
-```
-
 
 ### Fast Re-build
 
@@ -61,52 +57,6 @@ The fast rebuild will only remove `node_modules` from packages where it needs to
     ```
 1. Make your changes
 1. Build again
-
-
-### Fast mode
-
-## Webpack
-
-Dendron uses webpack to bundle all dependencies before creating a VSIX file. 
-
-- Development:
-    - does not apply minimizer
-- Production:
-    - applies minimizer
-
-Assets:
-- assets/static -> dist/static
-
-
-## Static Assets
-- static assets for plugin-core gets synced from multiple sources
-- two phases:
-    - 1. collect 
-    - 2. pack
-
-#### collect
-- loc: src/utils/build.ts
-
-```ts
-syncStaticAssets
-    delete /assets/static
-    cp next-server/out /assets/static
-    cp next-server/assets/js /assets/static/js
-    cp api-server/assets/static /assets/static/js
-
-    cp dendron-plugin-views/build/static/css /assets/static/css
-    cp dendron-plugin-views/build/static/js /assets/static/js
-```
-
-#### pack
-- loc: webpack.common.js
-
-```sh
-cp assets/static static
-cp assets/dendron-ws dendron-ws
-cp ../dendron-yml.validator.json dendron-yml.validator.json
-... 
-```
 
 ## Cleanup
 
