@@ -7,58 +7,31 @@ created: 1634749668693
 nav_order: 1
 ---
 
-The following is the module schema which we use to organize code at Dendron. 
-
 ## Schema
-- you can see an example of a hiearchy implementing this schema at [[pkg.plugin-core]]
+- for module schema, see [[ref.module-schema]]
 
 ```yml
-- title: module
-  id: modulue
+version: 1
+imports: [module]
+schemas:
+- id: pkg
+  desc: a package
+  parent: root
   namespace: true
   children:
-    - pattern: quickstart
-      desc: how to start development
-    - pattern: dev 
-      desc: regular development process
-        - title: troubleshooting
-          pattern: trouble
-        - pattern: build
-          desc: "special instructions for building"
-        - pattern: errors
-          desc: "how to handle exceptions"
-        - pattern: logs
-          desc: "how to handle logs"
-    - title: qa
-      desc: quality assurance
-      children:
-        - title: debug
-        - title: test
-        - title: performance
-          desc: how to profile code
-    - title: ops
-      desc: handle operational issues
-      children:
-        - title: logs
-        - title: errors
-        - title: deploy
-    - title: architecture
-      pattern: arch
-      desc: general architecture for the module
-      children:
-        - title: lifecycle
-        - title: state
-          desc: how we manage state
-    - title: concepts
-    - title: topic
-      pattern: t
-      detail: A major component of the current module. Children are also modules
-      namespace: true
-      extends: module
-    - title: reference
-      pattern: ref
-      detail: A minor component of the current module 
-      namespace: true
+    - module.qa
+    - module.quickstart
+    - module.concepts
+    - module.architecture
+    - module.tips
+    - module.faq
+    - module.topic
+    - module.ops
+    - module.dev
+    - module.changelog
+    - module.config
+    - module.advanced
+    - module.best
 ```
 
 ## Wildcards

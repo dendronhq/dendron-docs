@@ -6,11 +6,14 @@ updated: 1637864009488
 created: 1598645869692
 ---
 
-If you would like to contribute to the development of dendron, you can do so by checkout out the [repo](https://github.com/dendronhq/dendron) from github.
+## Summary
+
+This is a high level guide of how to develop code for Dendron. 
 
 You can then follow the setup instructions below to prepare your first commit!
-
 - [[Quickstart|dendron://dendron.docs/dev.quickstart]]
+
+To understand how to navigate this hiearchy, see the [[schema|dendron://dendron.docs/dev.schema]]
 
 ## Lookup
 

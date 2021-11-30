@@ -10,8 +10,7 @@ nav_order: 10
 
 This goes over all packages in the dendron monorepo
 
-To understand how to navigate these packages, see [[here|dendron://dendron.docs/pkg.schema]]
-
+To understand how to navigate these packages, see the [[schema|dendron://dendron.docs/pkg.schema]]
 
 ## User Facing
 
