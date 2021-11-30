@@ -53,6 +53,15 @@ Conventions:
 
 - if your command involves opening a note, also return it in the `CommandOutput` signature. this makes it easy to compose the command as well as test it
 
+### Executing a command programatically
+
+```ts
+cmd = new {ExistingDendronCommand}()
+// logic to get args
+const args = ....
+cmd.execute(args)
+```
+
 
 ### Add new Workspace State
 

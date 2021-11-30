@@ -10,32 +10,14 @@ created: 1635718751978
 ## Summary
 <!-- What is this module about -->
 
-There are two types of workspaces Dendron supports:
-- native
-- code
+A workspace is the central controller that maintains all state of a running VSCode session
 
-## Types of workspaces
+It holds:
+- all active [[views|pkg.plugin-core.ref.views]]
+- all [[file watchers|dendron://dendron.docs/pkg.plugin-core.ref.workspace-watcher]]
 
-### Native
-
-### Code
-
-TODO
-
-## Lifecycle
-
-- location: src/workspace.ts
-```ts
-activateWatchers {
-
-    ... 
-    fileWatcher = new FileWatcher(vaults)
-    schemaWatcher = new SchemaWatcher(vaults)
-
-}
-```
+## Related
+- [[dendron.topic.workspace]]
 
 ## Changelog
-<!-- All changes -->
-
 - [feat: native workspaces by SeriousBug · Pull Request #1482 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1482)

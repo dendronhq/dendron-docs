@@ -1,16 +1,18 @@
 ---
-id: bxF3WklJUyFBPmAqhNvlZ
-title: Webview
+id: tYCf6nhm7joy1chpSCtXj
+title: Web Views
 desc: ''
-updated: 1635548450278
-created: 1635542102371
+updated: 1638232297416
+created: 1638232297416
 ---
 
-## Summary
+## Architecture
 
-Describes how webview components work in Dendron
+All views are held by the [[pkg.plugin-core.t.workspace]]
+
 
 ## Lifecycle
+
 
 1. We initialize a webview with following javascript
 
@@ -33,6 +35,6 @@ window.addEventListener("message", (e) => {
 - location: common-frontend/src/features/engine/hooks.ts
 ```ts
 useEngine(engineState) {
-    if (engineState = "idle" && isEmpty(engineState.notes)) dispatch(initNotes
+    if (engineState = "idle" && isEmpty(engineState.notes)) dispatch(initNotes)
 }
 ```

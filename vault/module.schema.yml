@@ -91,6 +91,20 @@ schemas:
   pattern: t
   desc: important areas of a project
   namespace: true
+  children:
+    - quickstart
+    - concepts
+    - architecture
+    - tips
+    - faq
+    - ops
+    - dev
+    - changelog
+    - config
+    - advanced
+    - best
+    - design
+    - qa
 - id: cook
 - id: debug
   desc: how to debug an application
