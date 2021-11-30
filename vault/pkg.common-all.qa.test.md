@@ -1,9 +1,34 @@
 ---
 id: HN0PSGZ59GMj737PQGDVr
-title: Test
+title: Common All Tests
 desc: ''
-updated: 1637781921468
+updated: 1638315872993
 created: 1637781827946
 ---
 
 See [[Test|dendron://dendron.docs/pkg.engine-test-utils.qa.test]]
+
+### Tests For [Note Utilities](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/dnode.ts#L775:L775)
+
+* [Test File](https://github.com/dendronhq/dendron/blob/master/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts)
+
+#### Things to Note
+1. Pass in the express server engine
+  - you want to do this when you want to test methods from the DEngineClient
+  - example [engine.spec](https://github.com/dendronhq/dendron/blob/51633edcd0817c9b4aa18ff25f492f7a00e6e088/packages/engine-test-utils/src/__tests__/api-server/engine.spec.ts#L6-L6)
+  ```ts
+  await runEngineTestV5(
+    async () => {
+      ...
+    },
+    {
+      createEngine: createEngineFromServer,
+    }
+  );
+  ```
+
+2. `preSetupHook: ENGINE_HOOKS.setupSchemaPreseet`
+- Use preSetupHook to initialize workspace with precreated notes and templates
+
+### Executing Single Test
+`./node_modules/.bin/jest /Users/tulingma/workspace/dendron/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts`
