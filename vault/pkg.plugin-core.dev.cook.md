@@ -107,6 +107,17 @@ Related:
 ### Listening for copy event in webview
 - See [Webview: Copy to clipboard within internal IFRAME does not work on macOS  · Issue #135017 · microsoft/vscode](https://github.com/microsoft/vscode/issues/135017)
 
+### Getting a view
+
+- See all web view keys [here](https://github.com/dendronhq/dendron/blob/bea9b6501e7699afdecda2ee14ad37fb4415ab32/packages/common-all/src/types/typesv2.ts#L711)
+
+```ts
+const panel = getExtension().getWebView(DendronWebViewKey.{KEY});
+```
+
+### Executing logic when the current editor changes
+See [[Workspace Watcher|dendron://dendron.docs/pkg.plugin-core.ref.workspace-watcher]]
+
 ## Other
 
 ### Access Clipboard

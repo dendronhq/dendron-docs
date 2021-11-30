@@ -8,10 +8,10 @@ created: 1635517498318
 
 ## Summary
 
-Reload files as needed
+Watch files in workspace
 
-## Schema
-- related: [[Schema|dendron://dendron.docs/pkg.dendron-engine.t.schema]]
+## Code
+- [WorkspaceWatcher](https://github.com/dendronhq/dendron/blob/a7227fd4d8991e44729989c821a22560dcb8348b/packages/plugin-core/src/WorkspaceWatcher.ts#L172)
 
 ## Changelog
 - [fix: notes added outside Dendron missing backlinks by SeriousBug · Pull Request #1618 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1618)
