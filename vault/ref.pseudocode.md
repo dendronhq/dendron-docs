@@ -2,7 +2,7 @@
 id: FlKRCylDLzcTiOC6JbgjZ
 title: Pseudocode
 desc: ''
-updated: 1637874488633
+updated: 1638307453265
 created: 1637874320334
 ---
 
@@ -15,6 +15,7 @@ The goal isn't to write valid typescript but be a **summarized** version of the 
 
 Some conventions we use:
 - $: referencing a global variable
+- @: referencing a class variable
 - `...`: code that is omitted because it would clutter the summary
 - `=:` magic equality ()
     - eg: we go `foo` and `bar` from somewhere but its not important how
