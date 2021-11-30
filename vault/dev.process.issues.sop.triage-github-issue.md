@@ -37,19 +37,3 @@ How incoming github issues are triaged
 1. For all cases, 
     - add the issue to the  [[oncall journal|schemas.meet#oncall]] 
     - leave a comment in the ticket acknowledging that we have received it and communicate the next steps to the user 
-
-
-## Examples
-<!-- Examples to what successfully executing the SOP looks like -->
-
-## Checklist
-<!-- Optional, use to check if sop is accomplished -->
-
-## Templates
-<!-- Any additional templates that might be used -->
-
-## Related
-<!-- Related sops or resources -->
-- [[Issues|dendron://dendron.docs/dev.process.issues]]
-
-
