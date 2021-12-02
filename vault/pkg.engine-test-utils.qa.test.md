@@ -2,7 +2,7 @@
 id: FfyL5dSzFwX1iseI56oYy
 title: Test
 desc: ''
-updated: 1637807847471
+updated: 1638488683133
 created: 1636128639000
 ---
 
@@ -46,4 +46,7 @@ dendron/bootstrap/scripts/testAll.sh
 1. Open the `.spec.ts` file you want to test in VSCode
 2. Use command prompt and run `> Tasks: Run tasks`
 3. Run the following task `> npm:test:watch engine-test-utils`
+
+### Run a Single Test using CLI
+`./node_modules/.bin/jest /Users/tulingma/workspace/dendron/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts`
 
