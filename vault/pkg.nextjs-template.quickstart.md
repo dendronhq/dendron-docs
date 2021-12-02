@@ -3,7 +3,7 @@ id: PgwAXFfotfgpFVqHQRlBl
 title: Quickstart
 desc: |
   Development related
-updated: 1638478435972
+updated: 1638482222549
 created: 1628376960868
 ---
 
@@ -57,3 +57,4 @@ See build instructions [[here|pkg.plugin-core.quickstart#build]]
   ```sh
   dendron exportPod --podId dendron.nextjs --config "dest={path/to/nextjs-template}"
   ```
+  Your notes/html files will be copied over to {path-to-template}/nextjs-template/data/notes/
