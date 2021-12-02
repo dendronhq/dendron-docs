@@ -2,9 +2,19 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1638487895418
+updated: 1638489027843
 created: 1638063942917
 ---
+
+## Details
+<!-- Any additional details to give about tests-->
+Tests are run using [cypress](https://www.cypress.io/), an e2e testing framework for the browser. 
+
+## Writing
+<!-- Writing tests -->
+
+## Executing
+<!-- Running tests -->
 
 ## Manual Testing
 
