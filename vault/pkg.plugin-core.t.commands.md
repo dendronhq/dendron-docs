@@ -2,7 +2,7 @@
 id: iplO7IwCeT6qN6DxgTmP5
 title: Commands
 desc: ''
-updated: 1635785770854
+updated: 1638401804761
 created: 1630020205246
 ---
 
@@ -133,7 +133,6 @@ When a command throws an exception that is not caught, it is caught by the paren
 
 
 ## File Watchers
-- [[Summary|pkg.plugin-core.internal.workspace-watcher#summary]]
 
 ### File Changes
 

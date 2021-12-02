@@ -2,7 +2,7 @@
 id: IFbEhk7E7grCE31p5kWbj
 title: Qa
 desc: ''
-updated: 1636670065320
+updated: 1638378469751
 created: 1636669170839
 ---
 
@@ -17,5 +17,3 @@ created: 1636669170839
 1. [[Run|dendron://dendron.docs/pkg.plugin-core.dev#run]] the plugin
 1. Run `> Developer: Open Webview Developer Tools`
 1. Bring up the webview 
-
-
