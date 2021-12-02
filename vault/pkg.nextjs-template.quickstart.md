@@ -3,7 +3,7 @@ id: PgwAXFfotfgpFVqHQRlBl
 title: Quickstart
 desc: |
   Development related
-updated: 1637357930666
+updated: 1638478435972
 created: 1628376960868
 ---
 
@@ -39,7 +39,7 @@ See build instructions [[here|pkg.plugin-core.quickstart#build]]
   ```sh
   yarn dev
   ```
-1. Navigate to your browser. For example http://localhost:3000/notes/b0fe6ef7-1553-4280-bc45-a71824c2ce36 to go to a particular note
+1. Navigate to your browser. For example http://localhost:3000/notes/6322a2de-34fd-4c93-bcbe-d71c30e5f2b6 to go to a particular note
 1. Build your notes for static hosting
   ```sh
   yarn export
