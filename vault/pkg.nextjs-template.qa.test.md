@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1638485033225
+updated: 1638487895418
 created: 1638063942917
 ---
 
@@ -16,7 +16,7 @@ You can use the [[Test Workspace|dev.ref.test-workspace]] to check publishing ch
 ```sh
 export DENDRON_REPO_ROOT={path/to/dendron/repo}
 cd $DENDRON_REPO_ROOT/test-workspace
-     --attach
+dendron exportPod --podId dendron.nextjs --config="dest=$DENDRON_REPO_ROOT/packages/nextjs-template" --attach
 ```
 
 ### Using your own workspace
