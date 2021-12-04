@@ -2,29 +2,58 @@
 id: 74UyCLyLvCxFTQNgGgSRW
 title: Decorations
 desc: ''
-updated: 1635786390960
+updated: 1638522370888
 created: 1630915066783
 ---
 
-Dendron uses [`TextEditorDecorationType`](https://code.visualstudio.com/api/references/vscode-api#TextEditorDecorationType) to render decorations in the editor. See the file [`windowDecorations.ts`](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/features/windowDecorations.ts) for examples.
+Dendron uses a design split between the [[engine|pkg.dendron-engine]] and
+[[plugin|pkg.plugin-core]] to add decorations for the editor. The engine is
+responsible for the heavier work of computing the decorations to be displayed,
+while the plugin then converts the engine output to be displayed by VSCode.
+
+This part of the documentation describes the plugin side, see [[decorators in engine|pkg.dendron-engine.ref.decorations]]
+for the engine side.
+
+## Overview
+
+```mermaid
+sequenceDiagram
+    participant VSCode
+    participant plugin
+    participant engine
+    VSCode->>plugin: user opens new note, scrolls, or types
+    plugin->>engine: ask for decorations
+    VSCode->>plugin: user types again
+    engine->>plugin: plain decoration objects
+    plugin->>engine: ask for decorations
+    engine->>plugin: plain decoration objects
+    plugin->>VSCode: VSCode decorations
+```
+
+This shows a brief example of how VSCode, plugin, and engine interact with each
+other to display the decorations. A few points of importance:
+- The plugin ignores the engine response if the user did something like typing that made the decorations stale. This is because applying stale decorations can cause them to appear in the wrong places inside the document, but not applying decorations at least retains the old decorations at the correct places. This is especially an issue if the user adds new lines in the middle of a note.
+- Engine sends plain objects, which the plugin converts to VSCode objects. This is necessary because the engine API can't pass VSCode objects, and we want to keep the engine more independent from the plugin.
+- The plugin converts the the plain objects into the objects VSCode expects and applies them.
+
+## Updating an existing decoration
+
+First, look at `windowDecorations.ts` and locate the `map*` function for the
+decoration you are interested in. If there is no function for that decoration,
+then check `mapBasicDecoration`. If you can make the change you are interested
+in by changing the VSCode decoration object that is generated, make that change
+and you are done. If not, check [[Updating an existing decoration|dendron://dendron.docs/pkg.dendron-engine.ref.decorations#updating-an-existing-decoration]]
+to find how to add more information to the decoration object.
 
 ## Adding a new decoration
 
-First, edit the `DECORATION_TYPE` object to define the decoration rules for your
-new decoration. You define any text color, background color etc. at this step.
-Also make sure to define `rangeBehavior`, VSCode uses this to decide when it's
-okay to simply expand the decorated region when the user is typing.
+First, go the [[decorators in engine|pkg.dendron-engine.ref.decorations]] to
+make the engine generate your decoration. Once you are done, go to the
+`mapDecoration` function in `windowDecorations.ts`, add a new case for your new
+decoration, and write a `map*` function to map the plain decoration object to a
+VSCode decoration object. Finally, remember to add tests for your new decoration.
 
-Next, add a decorator function. See examples like `decorateUserTag` and
-`decorateWikiLink` in the same file. The function should accept a markdown node,
-then return a list of `DecorationAndType`, which is just a `DECORATION_TYPE` and
-the decoration options for this node. The decoration options must include the
-range to be decorated, but can also add per-node decorations to appear before or
-after the decorated region (see the timestamp decorations, or tags for example).
-
-Finally, add the decorator function to the `DECORATOR` map. Once you're done,
-run the extension and create a new note to test out your new decoration. Make
-sure to include an example note in your PR too.
+## Testing decorations
 
 To test your decoration, edit the file `WindowDecorations.test.ts`. The test
 will roughly look like:
@@ -41,3 +70,4 @@ expect(
 
 ## Changelog
 - [fix: hover & goto note should respect enableUser/HashTags by SeriousBug · Pull Request #1620 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1620)
+- [fix: decorator lag problems by SeriousBug · Pull Request #1822 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1822)
