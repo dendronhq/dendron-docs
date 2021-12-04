@@ -2,7 +2,7 @@
 id: SuyIgH44sJD5P3dRVBaVZ
 title: Quickstart
 desc: ''
-updated: 1637974776346
+updated: 1638585677918
 created: 1635701411866
 ---
 
@@ -29,22 +29,16 @@ When working on plugin views, there are two modes of development: browser and ID
     ```
 1. Run 
     ```sh
-    # this builds stylesheets 
+    # this builds stylesheets and generates a dynamic index.html
     yarn setup
-    yarn start
+    env REACT_APP_VIEW_NAME=$VIEW_NAME yarn start
     ```
-    This will open up the browser at localhost:3000. When developing on the browser, Dendron will have some defaults loaded depending on what view you are using. 
+    - NOTE: $VIEW_NAME is anything in `dendron-plugin-views/src/views/*` minus the `.tsx` extension
+        - Dendron will dynamically `require` the module when `yarn start` is called
+    - This will open up the browser at localhost:3000. When developing on the browser, Dendron will have some defaults loaded depending on what view you are using. 
 1. When developing against the browser, you don't have direct access to the workspace. Instead, you'll need to use `window.postMessage` api to simulate vscode actions.
     To do this, open up the developer console (inside browser) and simulate events by pasting the following event:
-    ```js
-    id = "9eae08fb-5e3f-4a7e-a989-3f206825d490";
-    window.postMessage({
-        type: "onDidChangeActiveTextEditor",
-        data: {note:{id}},
-        source: "vscode",
-    });
-    ```
-    You can change the id to any id inside of [[dev.ref.test-workspace]] to see how different views function
+    ![[dendron://dendron.docs/pkg.dendron-plugin-views.dev.cook#simulate-change-activate-editor-in-browser-mode,1]]
 
 - TIP: to set the theme in browser mode, you can run `env THEME={dark|light} yarn start`
 
