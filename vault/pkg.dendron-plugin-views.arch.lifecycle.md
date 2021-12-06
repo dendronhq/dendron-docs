@@ -2,7 +2,7 @@
 id: lZSr7StwPU5ukltzLg4mL
 title: Lifecycle
 desc: ''
-updated: 1637981396179
+updated: 1638728617918
 created: 1636432981026
 ---
 
@@ -55,15 +55,21 @@ TODO
     ```tsx
     DendronVSCodeApp {
 
+        // see [[useEngine|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#useengine]]
         useEngine
         useEffect {
-            postVSCodeMessage
+            postVSCodeMessage {
+                type: INIT,
+                source: webClient
+            }
         }
         useVSCodeMessage {
             ...
         }
     }
     ```
+
+
 
 
 1. Component
@@ -81,24 +87,90 @@ TODO
     }
     ```
 
-### Change Active Editor
+## Change Active Editor
 
-- DendronVSCodeApp
+- src/components/DendronApp.tsx
 ```tsx
 useVSCodeMessage(msg) {
+    ctx = "useVSCodeMsg"
     switch(msg) {
         case ON_DID_CHANGE_ACTIVE_TEXT_EDITOR {
             note, sync := msg
+            log "onDidChangeActiveTextEditor"
 
+            // update all notes
             if sync {
+                log "syncEngine:pre"
                 dispatch(initNotes)
             }
+            // update one note
+            if (syncChangedNote && note) 
+                log "syncNote:pre"
+                ideDispatch(engineSlice.syncNote)
             ...
-
             dispatch(setNoteActive(note))
 
         }
     }
 
 }
+```
+
+## Common
+
+### useEngine
+- loc: common-frontend/src/features/engine/hooks.ts
+- desc: initialize engine if its not initialized
+
+```tsx
+useEngine(engineState) {
+    useEffect {
+        if !hasInitialized(engineState)
+            // see [[initNotes|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#initnotes]]
+            dispatch(initNotes)
+    }
+}
+
+```
+
+### initNotes
+- loc: common-frontend/src/features/engine/slice.ts
+- desc: initialize notes for redux engine
+
+```ts
+// sideEffect, when initNotes is dispatched, state is set to Pending
+effect(state, requestId) {
+    when initNotes.pending {
+        if (state.loading = "idle") {
+            state.loading = LoadingStatus.PENDING;
+            state.currentRequestId = meta.requestId;
+        }
+    }
+}
+
+initNotes {
+    api = DendronApiV2.new
+    resp = api.workspaceSync
+    setFromInit(resp) {
+        // set all variables
+        state.notes = notes;
+        state.wsRoot = wsRoot;
+        state.schemas = schemas;
+        state.vaults = vaults;
+        state.config = config;
+    }
+}
+
+// side effect, after notes are set, state is set back to idle
+effect(state, requestId) {
+    when initNotes.fulfilled {
+        if (state = "idle" && state.currentRequestId === requestId) {
+            state.loading = "idle"
+            delete state.currentRequestId
+        }
+
+    }
+
+}
+  
 ```

@@ -2,7 +2,7 @@
 id: naGvfhYGH7N0BEmcqc7ET
 title: Cook
 desc: ''
-updated: 1638669074932
+updated: 1638672249711
 created: 1636233555730
 ---
 
@@ -85,10 +85,24 @@ created: 1636233555730
     panel.onDidDispose(() => {
       ext.setWebView(DendronWebViewKey.NOTE_PREVIEW, undefined);
     });
+    ```
 
-```
+### Adding a new WebView Tree Panel
 
-- exampe: src/commands/ShowPreview.ts
+Instructions here are similar to [[#adding-a-new-webview-panel]]. Please jump to documentation there for additional details.
+
+1. Add new enum to `DendronTreeViewKey`
+1. Add webview to `constants.ts`
+    - for `name`: use 
+    ```diff
+    export const DENDRON_VIEWS = [
+    +  {
+    +    id: DendronTreeViewKey.CALENDAR_VIEW,
+    +    name: "Calendar View",
+    +    where: "explorer",
+    +    type: "webview",
+    +  },
+    ```
 
 ### Changing the theme
 

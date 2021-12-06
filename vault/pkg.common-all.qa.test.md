@@ -2,7 +2,7 @@
 id: HN0PSGZ59GMj737PQGDVr
 title: Common All Tests
 desc: ''
-updated: 1638487018949
+updated: 1638489728896
 created: 1637781827946
 ---
 
@@ -31,4 +31,7 @@ See [[Test|dendron://dendron.docs/pkg.engine-test-utils.qa.test]]
 - Use preSetupHook to initialize workspace with precreated notes and templates
 
 ### Executing Single Test
-`./node_modules/.bin/jest /Users/tulingma/workspace/dendron/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts`
+
+```bash
+./node_modules/.bin/jest $REPO_ROOT/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts
+```
