@@ -2,7 +2,7 @@
 id: 64f0e2d5-2c83-43df-9144-40f2c68935aa
 title: Dendron Plugin Quickstart
 desc: ''
-updated: 1637177759808
+updated: 1638917198611
 created: 1598651458825
 ---
 
@@ -38,7 +38,7 @@ Before you begin, you need to make sure to have the following SDKs and tools:
    yarn bootstrap:build  # build package dependencies
    ```
 3. Watch all dependencies ^QWJj9cTIcwuX
-  - NOTE: typescript is a compiled language which means that the executablew on't be updated unless you compile. The watch script will auto-compile all code on change
+  - NOTE: typescript is a compiled language which means that the executable won't be updated unless you compile. The watch script will auto-compile all code on change
   ```sh
    # watch all dependencies
    ./bootstrap/scripts/watch.sh
