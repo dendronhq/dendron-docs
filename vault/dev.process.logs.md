@@ -2,7 +2,7 @@
 id: 94z8iDatFMSwl7cQRDcno
 title: Logs
 desc: ''
-updated: 1638841737096
+updated: 1638886683660
 created: 1638828630942
 ---
 
@@ -47,9 +47,10 @@ function foo(aBar: number, aBaz: number) {
 - NOTE: when using frontend loggers, the `ctx` is initialized with the logger and there is no need to set it
 ```ts
 function foo(aBar: number, aBaz: number) {
-    const logger = createLogger("foo")
+    const logger = createDisposableLogger("foo")
     logger.info({aBar, aBaz, state: "enter", msg: "foo will be initialized"})
     ...
+    logger.dispose()
 }
 ```
 
