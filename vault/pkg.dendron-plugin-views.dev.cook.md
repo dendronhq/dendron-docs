@@ -2,7 +2,7 @@
 id: naGvfhYGH7N0BEmcqc7ET
 title: Cook
 desc: ''
-updated: 1639005435638
+updated: 1639025032144
 created: 1636233555730
 ---
 
@@ -129,6 +129,7 @@ created: 1636233555730
     ```
 
 ### Adding a new Tree View
+- example of adding a tree view [[here|dendron://dendron.docs/pkg.dendron-plugin-views.ref#^BC7MPxEUDlfB]]
 
 #### Creating the view
 Instructions here are similar to [[#adding-a-new-editor-view]]. Please jump to documentation there for additional details.
