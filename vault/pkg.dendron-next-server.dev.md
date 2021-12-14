@@ -3,7 +3,7 @@ id: 6293d9dc-9bd3-4b01-8428-34d8256f0a32
 title: Dev
 desc: |
   Development related
-updated: 1629430815710
+updated: 1639471193809
 created: 1621630111186
 ---
 
@@ -15,16 +15,21 @@ created: 1621630111186
 
 ### Steps
 
-You can test the Dendron Next App by launching a workspace using the CLI and then connecting to it. The instructions below cover using `dendron/test-workspace` which is already pre-configured to use a local nextjs setup.
+You can test the Dendron Next App by launching a workspace using the CLI and then connecting to it. The instructions below cover using `dendron/test-workspace`.
+
+1. Add to `dev` config of `$DENDRON_REPO_ROOT/test-workspace/dendron.yml` 
+   ```yml
+   dev:
+     engineServerPort: 3005
+     nextServerUrl: http://localhost:3000
+   ```
 1. Initialize test-workspace
   ```sh
-  cd dendron/test-workspace
-  ./scripts/dev.sh
+  cd $DENDRON_REPO_ROOT/test-workspace && ./scripts/dev.sh
   ```
 1. In a separate terminal, start the Next Server
   ```sh
-  cd dendron/packages/dendron-next-server
-  yarn dev
+  cd $DENDRON_REPO_ROOT/packages/dendron-next-server && yarn dev
   ```
 1. (optional) To connect to the workspace using chrome, enter the following in your localhost (replace WORKSPACE and PORT with your own values) ^MgEdJdyD
    ```sh
