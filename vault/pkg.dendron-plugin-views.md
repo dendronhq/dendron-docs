@@ -2,7 +2,7 @@
 id: S8zJJGHbNH4bmMP2KGieU
 title: Dendron Plugin Views
 desc: ''
-updated: 1637200571155
+updated: 1639025001394
 created: 1635701386491
 ---
 
@@ -17,3 +17,4 @@ Webviews for Dendron Plugin
 - [[Quickstart|dendron://dendron.docs/pkg.dendron-plugin-views.quickstart]]
 - [[Quality Assurance|dendron://dendron.docs/pkg.dendron-plugin-views.qa]] (how to debug and test)
 - [Webview API](https://code.visualstudio.com/api/extension-guides/webview)
+

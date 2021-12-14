@@ -2,7 +2,7 @@
 id: tMdsz0dYNj3VgOvNAuEUY
 title: Note Preview
 desc: ''
-updated: 1637109556919
+updated: 1639022349767
 created: 1637109406387
 ---
 
@@ -24,5 +24,18 @@ execute {
     panel.webview.onDidReceiveMessage
 
 }
+```
 
+- src/components/DendronNotePage.tsx
+```tsx
+DendronNotePage {
+
+    useRenderedNoteBody(noteProps, noteId) {
+        renderedNoteContentHash = useRef
+        if noteProps.contentHash != renderedNoteContentHash {
+            engineSlice.renderNote noteId
+        }
+    }
+    ...
+}
 ```

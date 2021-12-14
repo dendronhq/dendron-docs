@@ -2,7 +2,7 @@
 id: lZSr7StwPU5ukltzLg4mL
 title: Lifecycle
 desc: ''
-updated: 1638728617918
+updated: 1638842257511
 created: 1636432981026
 ---
 
@@ -51,26 +51,28 @@ TODO
         </Provider>
     }
     ```
-- DendronVSCodeApp
+
+- DendronVSCodeApp ^MXu9QPtvmOvr
     ```tsx
     DendronVSCodeApp {
+        ctx = "DendronVSCodeApp"
 
+        log "enter", workspace
         // see [[useEngine|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#useengine]]
         useEngine
         useEffect {
+            // tell vscode that client has loaded
             postVSCodeMessage {
                 type: INIT,
                 source: webClient
             }
         }
+        // listen to vscode messages
         useVSCodeMessage {
             ...
         }
     }
     ```
-
-
-
 
 1. Component
     - src/components/DendronNotePage.tsx

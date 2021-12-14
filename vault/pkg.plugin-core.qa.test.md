@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ''
-updated: 1637807862977
+updated: 1639173742114
 created: 1627140509315
 ---
 
@@ -16,6 +16,8 @@ You can then place `test`s inside to write your test cases, or even add
 
 ```ts
 // Need these imports
+import { WorkspaceType } from "@dendronhq/common-all";
+import { ENGINE_HOOKS } from "@dendronhq/engine-test-utils";
 import { getDWorkspace } from "../../workspace";
 import { describeMultiWS, setupBeforeAfter } from "../testUtilsV3";
 import { expect } from "../testUtilsv2";

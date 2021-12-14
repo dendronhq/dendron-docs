@@ -2,7 +2,7 @@
 id: AlzFH3ol9ubQhagjAUqq1
 title: Nextjs
 desc: ''
-updated: 1637166636770
+updated: 1639187804427
 created: 1634255542869
 ---
 
@@ -14,8 +14,43 @@ created: 1634255542869
 - loc: src/builtin/NextjsExportPod.ts
 ```ts
 
-plant {
+plant(engine, config) {
+
+    dst :=
+
     copyAssets
+
+    publishedNotes := filterByConfig(engine, config)
+    publishedNotes += addSiteOnlyNotes
+
+    payload = { 
+        publishedNotes
+        ...
+    }
+
+    publishedNotes.forEach note { 
+        @renderBodyToHTML(note)
+        @renderMetaToJSON
+        @renderBodyAsMD
+    }
+
+
+    // write json
+    podDstPath = join(dst, "notes.json")
+    write(
+        join(dst, "notes.json")), 
+        removeBodyFromNotesDict(payload)
+    )
+    write( 
+        join(dst, "dendron.json"),
+        config
+    )
+
+    fuseIndex = createSerializedFuseNoteIndex(publishedNotes)
+    write(j(dst, "fuse.json"), fuseIndex)
+
+    _writeEnvFile ...
+    copySync(dst, `${dst}/../public`)
 }
 
 copyAssets(opts) {

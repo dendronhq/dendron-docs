@@ -2,7 +2,7 @@
 id: 32cdd4aa-d9f6-4582-8d0c-07f64a00299b
 title: Packages
 desc: ''
-updated: 1637177894480
+updated: 1638919167808
 created: 1596684856906
 nav_order: 10
 ---
@@ -27,9 +27,6 @@ To understand how to navigate these packages, see the [[schema|dendron://dendron
 
 ### Dendron Agent
 ![[pkg.dendron-api-server#summary,1:#*]]
-
-### Dendron 11ty
-![[pkg.11ty#summary,1:#*]]
 
 ### Dendron Pods
 ![[pkg.pods-core#summary,1]]
