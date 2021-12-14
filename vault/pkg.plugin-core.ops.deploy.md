@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ''
-updated: 1637697049671
+updated: 1639522387826
 created: 1635532194153
 ---
 
@@ -38,5 +38,19 @@ git checkout master
 git merge --squash $RELEASE_BRANCH
 git commit -m "chore(release): publish $UPGRADE_TYPE"
 git push
+```
+
+### Publish From Artifact
+
+```sh
+# FILL in OSVX value
+export OVSX_PAT=
+dendron dev prep_plugin
+VERSION=$(cat lerna.json | jq -r ".version")
+
+pushd packages/plugin-core
+PLUGIN_PKG=dendron-"$VERSION".vsix
+yarn deploy:vscode:vsix $PLUGIN_PKG
+yarn deploy:ovsx:vsix $PLUGIN_PKG
 ```
 
