@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ''
-updated: 1639522387826
+updated: 1639522815266
 created: 1635532194153
 ---
 
@@ -36,7 +36,7 @@ popd
 echo "sync back with master"
 git checkout master
 git merge --squash $RELEASE_BRANCH
-git commit -m "chore(release): publish $UPGRADE_TYPE"
+git commit -m "chore(release): publish $RELEASE_BRANCH"
 git push
 ```
 
