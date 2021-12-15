@@ -2,7 +2,7 @@
 id: 3489b652-cd0e-4ac8-a734-08094dc043eb
 title: Development
 desc: ""
-updated: 1639351000057
+updated: 1639595902837
 created: 1598645869692
 ---
 
@@ -30,3 +30,4 @@ Useful resources when you are working with the code
 - [[Reference|dendron://dendron.docs/dev.ref]]
   - [[Typescript|dev.ref.typescript]]
   - [[Vscode|dendron://dendron.docs/dev.ref.vscode]]
+  - [[Index of all Packages|dendron://dendron.docs/pkg]]
