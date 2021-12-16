@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ''
-updated: 1639522815266
+updated: 1639608733957
 created: 1635532194153
 ---
 
@@ -50,7 +50,29 @@ VERSION=$(cat lerna.json | jq -r ".version")
 
 pushd packages/plugin-core
 PLUGIN_PKG=dendron-"$VERSION".vsix
+echo "publishing $PLUGIN_PKG..."
 yarn deploy:vscode:vsix $PLUGIN_PKG
 yarn deploy:ovsx:vsix $PLUGIN_PKG
 ```
 
+
+### Recover from failed local publish
+
+- start verdaccio in separate shell
+```sh
+setRegLocal
+npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
+```
+
+- publish 
+```sh
+git stash
+lerna publish from-package --ignore-scripts
+git stash pop
+```
+
+- package and install
+```
+dendron dev package_plugin && rm package.json
+dendron dev install_plugin
+```
