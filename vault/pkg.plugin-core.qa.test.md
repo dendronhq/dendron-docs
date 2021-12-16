@@ -2,11 +2,13 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ''
-updated: 1639173742114
+updated: 1639696757630
 created: 1627140509315
 ---
 
 ## Writing Tests
+
+> Note: You may see references to older test utilities such as `runLegacyMultiWorkspaceTest`. Please use latest test functions as described below
 
 To write a test, please use the `describeMultiWS` and `describeSingleWS`
 functions. These work in the same way as mocha's `describe`, except that they
