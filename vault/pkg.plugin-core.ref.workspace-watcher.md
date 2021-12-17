@@ -1,8 +1,8 @@
 ---
 id: KYzqosd80Xg8C0kNUblOp
 title: Workspace Watcher
-desc: ''
-updated: 1635785345060
+desc: ""
+updated: 1639771248281
 created: 1635517498318
 ---
 
@@ -10,8 +10,43 @@ created: 1635517498318
 
 Watch files in workspace
 
-## Code
-- [WorkspaceWatcher](https://github.com/dendronhq/dendron/blob/a7227fd4d8991e44729989c821a22560dcb8348b/packages/plugin-core/src/WorkspaceWatcher.ts#L172)
+Some functionality that it enables:
 
-## Changelog
+- update decorators
+- update graph view
+- update schema graph view
+- update note preview
+
+## Entry
+
+- [[../packages/plugin-core/src/WorkspaceWatcher.ts]]
+
+## LifeCycle
+
+```ts
+WorkspaceWatcher.activate {
+		...
+    workspace.onDidChangeTextDocument
+        - debounce(@onDidChangeTextDocument)
+        - debounce(@quickOnDidChangeTextDocument)
+
+}
+
+// only updates decorators
+quickOnDidChangeTextDocument {
+    ctx = "WorkspaceWatcher:quickOnDidChangeTextDocument"
+    log "enter"
+
+    windowWatcher?.triggerUpdateDecorations
+
+    log "exit"
+}
+
+onDidChangeTextDocument {
+	NoteSyncService.onDidChange
+}
+```
+
+## Past Tasks
+
 - [fix: notes added outside Dendron missing backlinks by SeriousBug · Pull Request #1618 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1618)
