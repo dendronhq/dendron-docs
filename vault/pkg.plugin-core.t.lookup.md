@@ -2,7 +2,7 @@
 id: BliBakrlm2ij4fY4Kq0AA
 title: Lookup
 desc: ''
-updated: 1637785618812
+updated: 1639381362164
 created: 1630425853418
 ---
 
@@ -26,7 +26,7 @@ class FooLookupCommand extends BaseCommand {
     gatherInputs {
         lc = LookupController.create(...)
         lp = new FooLookupProvider()
-        lc.prepareQuickPikc(lp)
+        lc.prepareQuickPick(lp)
     }
 
     execute {
