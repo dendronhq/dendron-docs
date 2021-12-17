@@ -2,7 +2,7 @@
 id: MRxMtzdumb4TqpgwwQ5Ud
 title: Ref
 desc: ''
-updated: 1639772296590
+updated: 1639773621326
 created: 1636429048393
 ---
 <!-- 
@@ -18,5 +18,11 @@ See [[Ref|dendron://dendron.docs/ref.module-schema#ref]]
 ## Lifecycle
 <!-- Startup process for this module -->
 
+## Reference
+<!-- Anything else that is useful to lookup -->
+
 ## Cook
 <!-- How to do common operations with this code -->
+
+## Past Tasks
+<!-- Link to past pull requests and commits on this given module  -->
