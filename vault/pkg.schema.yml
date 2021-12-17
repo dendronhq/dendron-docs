@@ -19,3 +19,4 @@ schemas:
     - module.config
     - module.advanced
     - module.best
+    - module.ref

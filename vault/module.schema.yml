@@ -18,6 +18,10 @@ schemas:
     - best
     - design
     - qa
+    - ref
+- id: ref
+  template: templates.module.ref
+  namespace: true
 - id: best
   desc: | 
     Best practicess
