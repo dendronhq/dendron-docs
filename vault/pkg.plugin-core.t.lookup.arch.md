@@ -48,3 +48,6 @@ sequenceDiagram
     historyService ->> lookupCommand: notify("lookupProvider", data)
     lookupCommand ->> lookupCommand: calls command.execute()
 ```
+
+## Related
+- [[History Service|dendron://dendron.docs/pkg.dendron-engine.arch.history-service]]
