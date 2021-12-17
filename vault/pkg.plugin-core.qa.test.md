@@ -2,11 +2,13 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ''
-updated: 1637807862977
+updated: 1639696757630
 created: 1627140509315
 ---
 
 ## Writing Tests
+
+> Note: You may see references to older test utilities such as `runLegacyMultiWorkspaceTest`. Please use latest test functions as described below
 
 To write a test, please use the `describeMultiWS` and `describeSingleWS`
 functions. These work in the same way as mocha's `describe`, except that they
@@ -16,6 +18,8 @@ You can then place `test`s inside to write your test cases, or even add
 
 ```ts
 // Need these imports
+import { WorkspaceType } from "@dendronhq/common-all";
+import { ENGINE_HOOKS } from "@dendronhq/engine-test-utils";
 import { getDWorkspace } from "../../workspace";
 import { describeMultiWS, setupBeforeAfter } from "../testUtilsV3";
 import { expect } from "../testUtilsv2";

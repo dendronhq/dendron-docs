@@ -2,10 +2,11 @@
 id: HN0PSGZ59GMj737PQGDVr
 title: Common All Tests
 desc: ''
-updated: 1638489728896
+updated: 1638909991961
 created: 1637781827946
 ---
 
+### Before You Begin
 See [[Test|dendron://dendron.docs/pkg.engine-test-utils.qa.test]]
 
 ### Tests For [Note Utilities](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/dnode.ts#L775:L775)
@@ -26,12 +27,3 @@ See [[Test|dendron://dendron.docs/pkg.engine-test-utils.qa.test]]
     }
   );
   ```
-
-2. `preSetupHook: ENGINE_HOOKS.setupSchemaPreseet` ^HQyi98cDzF1a
-- Use preSetupHook to initialize workspace with precreated notes and templates
-
-### Executing Single Test
-
-```bash
-./node_modules/.bin/jest $REPO_ROOT/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts
-```

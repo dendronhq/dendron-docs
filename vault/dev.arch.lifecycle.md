@@ -13,7 +13,7 @@ This describes the lifecycles of various Dendron functions
 - Frontend
     - Plugin startup: [[Summary|pkg.plugin-core.arch.lifecycle.startup#summary]]
     - Running a plugin command: [[Base Command Lifecycle|pkg.plugin-core.t.commands#base-command-lifecycle]]
-    - Performing a lookup: [[Internal|pkg.plugin-core.t.lookup.internal]]
+    - Performing a lookup: [[Note Lookup|pkg.plugin-core.t.lookup.ref.note-lookup]]
 - Backend
     - Dendron Engine startup: [[Initialization|pkg.dendron-engine.arch#initialization]]
     - Markdown Parsing: [[pkg.dendron-markdown.arch]]

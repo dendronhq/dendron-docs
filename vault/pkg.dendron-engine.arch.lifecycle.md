@@ -2,7 +2,7 @@
 id: 446723ba-c310-4302-a651-df14ce6e002b
 title: Lifecycle
 desc: ''
-updated: 1637875594204
+updated: 1639327888274
 created: 1620614023632
 ---
 
@@ -41,8 +41,34 @@ init {
       ...
   });
 }
-
 ```
+
+- src/drivers/file/storev2.ts
+```ts
+_initNotes(vault) { 
+
+  noteFiles := getAllFiles(vault)
+
+  cache = readNotesFromCache(vault)
+
+  resp = NoteParser.new(cache).parseFiles(noteFiles)
+}
+
+
+parseFiles(allPaths) { 
+  fileMetaDict := allPaths
+
+  ...
+  lvl = 2
+  fileMetaDict[lvl].map(ent) { 
+    out = parseNoteProps(ent)
+    
+  }
+
+}
+```
+
+
 #### Query - Engine
 
 - loc: engine-server/engine.ts

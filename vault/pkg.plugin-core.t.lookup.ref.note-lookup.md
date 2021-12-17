@@ -1,6 +1,6 @@
 ---
 id: PZ3IzgdeZBbFRvalzI9fp
-title: Internal
+title: Note Lookup
 desc: ''
 updated: 1637203158354
 created: 1630426129273
@@ -11,6 +11,8 @@ created: 1630426129273
 This describes the logic for Note Lookup
 
 ## State Diagram
+
+### State transitions for NoteLookupCommand
 
 ```mermaid
 stateDiagram-v2
@@ -62,6 +64,7 @@ stateDiagram-v2
 
     HistoryListener --> lookupExecute
 ```
+
 
 
 ## Steps

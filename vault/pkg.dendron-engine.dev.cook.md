@@ -2,7 +2,7 @@
 id: 1bce1c33-c14b-4e5e-b493-45683c8cf54f
 title: Cook
 desc: ''
-updated: 1637207484869
+updated: 1639011636235
 created: 1610469139531
 ---
 ## General
@@ -128,6 +128,18 @@ const maybeNode = NoteUtilsV2.getNotesByFname({({
     notes: nodes,
 });
 ```
+
+## Vaults
+
+### Getting absolute path for a vault
+
+Dendron has many [[vault types|dendron://dendron.dendron-site/dendron.topic.vaults#vault-types]] which means that getting the path to the vault is not as simple as `path.join(wsRoot, vault.fsPath)`.
+To get the path of the vault relative to `wsRoot`, use the following:
+```ts
+// Path of vault relative to workspace root
+path.join(wsRoot, VaultUtils.getRelPath(vault))
+```
+
 
 
 ## Markdown

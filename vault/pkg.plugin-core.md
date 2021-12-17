@@ -1,27 +1,17 @@
 ---
 id: 87d90002-f480-45eb-a8c4-d00df4d61557
 title: Plugin Core
-desc: ''
-updated: 1627139967177
+desc: ""
+updated: 1639596044115
 created: 1605375348464
 ---
 
 ## Summary
-This is the dendron extension that is installed in VSCode
 
-## Utilities
+This is the Dendron extension that is installed in VSCode
 
-- VSCode specific utilities
-  - loc: `src/utils.ts`
-- VSCode Editor
-  - loc: `src/utils/editor.ts`
+## Entry Point
 
-## Activation
+VSCode will load up the extension according to the `main` field in [[package.json|/../packages/plugin-core/package.json]]
 
-- check if we have an active dendron workspace
-
-
-# Dev
-
-You can control the log level in the workspace settings using `dendron.logLevel`. This sets the log level for the plugin and well any server it launches. You will need to restart the workspace for the log level to take effect. 
-
+By convention, and also in Dendron, this is [[src/extension.ts|/../packages/plugin-core/src/extension.ts]]

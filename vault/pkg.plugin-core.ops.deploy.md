@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ''
-updated: 1637697049671
+updated: 1639608733957
 created: 1635532194153
 ---
 
@@ -36,7 +36,43 @@ popd
 echo "sync back with master"
 git checkout master
 git merge --squash $RELEASE_BRANCH
-git commit -m "chore(release): publish $UPGRADE_TYPE"
+git commit -m "chore(release): publish $RELEASE_BRANCH"
 git push
 ```
 
+### Publish From Artifact
+
+```sh
+# FILL in OSVX value
+export OVSX_PAT=
+dendron dev prep_plugin
+VERSION=$(cat lerna.json | jq -r ".version")
+
+pushd packages/plugin-core
+PLUGIN_PKG=dendron-"$VERSION".vsix
+echo "publishing $PLUGIN_PKG..."
+yarn deploy:vscode:vsix $PLUGIN_PKG
+yarn deploy:ovsx:vsix $PLUGIN_PKG
+```
+
+
+### Recover from failed local publish
+
+- start verdaccio in separate shell
+```sh
+setRegLocal
+npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
+```
+
+- publish 
+```sh
+git stash
+lerna publish from-package --ignore-scripts
+git stash pop
+```
+
+- package and install
+```
+dendron dev package_plugin && rm package.json
+dendron dev install_plugin
+```

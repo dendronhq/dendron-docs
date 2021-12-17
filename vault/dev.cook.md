@@ -2,7 +2,7 @@
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
 desc: ''
-updated: 1637878708078
+updated: 1639011697410
 created: 1599151918645
 nav_order: 4.1
 ---
@@ -148,7 +148,9 @@ Markdown related changes are documented [[here|pkg.dendron-markdown.dev]]
 
 ## Other
 
+### Getting absolute path for a vault
 
+![[dendron://dendron.docs/pkg.dendron-engine.dev.cook#getting-absolute-path-for-a-vault,1:#*]]
 ## Styling and Version Control
 
 ### Manually Formatting the code

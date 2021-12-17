@@ -2,7 +2,7 @@
 id: FfyL5dSzFwX1iseI56oYy
 title: Test
 desc: ''
-updated: 1638488683133
+updated: 1638909983128
 created: 1636128639000
 ---
 
@@ -29,6 +29,9 @@ When writing a test for a package, put the test underneath the `{pkgName}` folde
 
 For any tests where you need to setup a Dendron workspace, reference the engine, or use vaults, you should use [runEngineTestV5](https://github.com/dendronhq/dendron/blob/cba633e4568601485e0cea1ab382e9dd3fbaa305/packages/engine-test-utils/src/engine.ts#L274). This function setups a workspace in a temporary directory with one or more vaults and lets you run your tests against a real Dendron environment. 
 
+#### Things to Note
+1. `preSetupHook: ENGINE_HOOKS.setupSchemaPreseet` ^HQyi98cDzF1a
+- Use preSetupHook to initialize workspace with precreated notes and templates
 
 ### Executing
 <!-- Running unit test -->
@@ -47,6 +50,6 @@ dendron/bootstrap/scripts/testAll.sh
 2. Use command prompt and run `> Tasks: Run tasks`
 3. Run the following task `> npm:test:watch engine-test-utils`
 
-### Run a Single Test using CLI
-`./node_modules/.bin/jest /Users/tulingma/workspace/dendron/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts`
+#### Run a Single Test using CLI
+`./node_modules/.bin/jest $REPO_ROOT/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts`
 
