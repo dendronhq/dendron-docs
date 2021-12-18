@@ -35,7 +35,7 @@ init {
 _initNotes(vault) {
 
   noteFiles := getAllFiles(vault)
-parseFile
+
 	parser = NoteParser.new
 	notes = parser.parse(noteFiles)
 

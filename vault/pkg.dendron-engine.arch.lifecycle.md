@@ -1,7 +1,7 @@
 ---
 id: 446723ba-c310-4302-a651-df14ce6e002b
 title: Lifecycle
-desc: ""
+desc: ''
 updated: 1639851942383
 created: 1620614023632
 ---
@@ -28,7 +28,7 @@ sequenceDiagram
 - [Video walkthrough](https://youtu.be/nWJCP1DR5Io)
 - Entry Point: [[../packages/engine-server/src/enginev2.ts]]
 
-See [[Engine|dendron://dendron.docs/dendron-engine.ref.engine]] for additional details
+See [[Engine|dendron://dendron.docs/pkg.dendron-engine.ref.engine]] for additional details
 
 ### Pseudocode
 
