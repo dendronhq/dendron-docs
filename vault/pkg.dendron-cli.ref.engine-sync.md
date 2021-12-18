@@ -1,8 +1,8 @@
 ---
 id: wJAlKZ0wSat0dDTzOAqqd
 title: Engine Sync
-desc: ''
-updated: 1636919989684
+desc: ""
+updated: 1639853384676
 created: 1636914823812
 ---
 
@@ -10,41 +10,24 @@ created: 1636914823812
 
 How the CLI synchronizes data with the engine
 
-
 ## Lifecycle
 
+- [[../packages/dendron-cli/src/commands/utils.ts]]
 
-- loc: src/commands/utils.ts
 ```ts
 setupEngine(opts) {
     ...
-    if opts.attach || opts.enginePort {
+    if opts.enginePort {
         con = new EngineConnector
         con.init
+    }
+
+    if opts.attach {
+        con = EngineConnector.getOrCreate
 
     }
 }
 ```
 
-- loc: src/topics/connector.ts
-- class: EngineConnector
-```ts
-init(opts) {
-    portOverride := portOverride
-    engine = tryToConnect
-
-    if portOverride {
-        @initEngine
-    } else {
-        @createServerWatcher
-    }
-}
-
-initEngine(opts) {
-    init := opts
-
-    if init { engine.init }
-    else { engine.sync }
-}
-
-```
+- engine connector
+  ![[dendron://dendron.docs/pkg.dendron-engine.ref.engine-connector#initialization,1]]

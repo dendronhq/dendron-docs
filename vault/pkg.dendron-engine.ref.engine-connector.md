@@ -1,8 +1,8 @@
 ---
 id: rEgLFb9EAJPi8Drvxkksq
 title: Engine Connector
-desc: ''
-updated: 1637209649394
+desc: ""
+updated: 1639853242983
 created: 1637209557293
 ---
 
@@ -13,7 +13,9 @@ The Engine Connector describes how clients connect to the engine API ([[pkg.dend
 ## Pseudocode
 
 ### Initialization
-- file: src/topics/connector.ts
+
+[[../packages/engine-server/src/topics/connector.ts]]
+
 ```ts
 EngineConnector.init(opts) {
     portOverride := opts
@@ -52,3 +54,5 @@ initEngine(opts) {
     @initialized = true
 }
 ```
+
+##
