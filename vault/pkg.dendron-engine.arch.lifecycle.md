@@ -1,8 +1,8 @@
 ---
 id: 446723ba-c310-4302-a651-df14ce6e002b
 title: Lifecycle
-desc: ''
-updated: 1639327888274
+desc: ""
+updated: 1639851942383
 created: 1620614023632
 ---
 
@@ -26,48 +26,11 @@ sequenceDiagram
 ```
 
 - [Video walkthrough](https://youtu.be/nWJCP1DR5Io)
+- Entry Point: [[../packages/engine-server/src/enginev2.ts]]
+
+See [[Engine|dendron://dendron.docs/dendron-engine.ref.engine]] for additional details
 
 ### Pseudocode
-
-- loc: engine-server/engine.ts
-- desc: initial query to index all notes 
-```ts
-init {
-  query("**/*", "schema", {
-      ...
-  });
-
-  query("**/*", "note", {
-      ...
-  });
-}
-```
-
-- src/drivers/file/storev2.ts
-```ts
-_initNotes(vault) { 
-
-  noteFiles := getAllFiles(vault)
-
-  cache = readNotesFromCache(vault)
-
-  resp = NoteParser.new(cache).parseFiles(noteFiles)
-}
-
-
-parseFiles(allPaths) { 
-  fileMetaDict := allPaths
-
-  ...
-  lvl = 2
-  fileMetaDict[lvl].map(ent) { 
-    out = parseNoteProps(ent)
-    
-  }
-
-}
-```
-
 
 #### Query - Engine
 
@@ -89,7 +52,7 @@ async query(scope: Scope, queryString: string, opts?: QueryOpts) {
 - loc: engine-server/store.ts
   - FileStore.query
 - desc: gets all notes from the underlying store
-    - store is swappable. currently, we only support `FileStore`
+  - store is swappable. currently, we only support `FileStore`
 
 ```ts
 if (isQueryAll(queryString)) {
