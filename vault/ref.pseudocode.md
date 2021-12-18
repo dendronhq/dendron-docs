@@ -1,25 +1,25 @@
 ---
 id: FlKRCylDLzcTiOC6JbgjZ
-title: Pseudocode
-desc: ''
-updated: 1638465686935
+title: Dendron Pseudocode
+desc: ""
+updated: 1639859736151
 created: 1637874320334
 ---
 
+You might come across sections in the architecture that are titled [Pseudocode](https://en.wikipedia.org/wiki/Pseudocode).
 
-You might come across sections in the architecture that are titled [Pseudocode](https://en.wikipedia.org/wiki/Pseudocode). 
-
-These are high level descriptions of the logic and not the actual code. 
-The code description is typescript-ish. 
+These are high level descriptions of the logic and not the actual code.
+The code description is typescript-ish.
 The goal isn't to write valid typescript but be a **summarized** version of the code. The syntax is evolving but here is a loosely documented starting point.
 
 Some conventions we use:
+
 - $: referencing a global variable
 - @: referencing a class variable
-- %: derived var
+- %: derived var, not the same as whats
 - `...`: code that is omitted because it would clutter the summary
 - `=:` magic equality ()
-    - eg: we go `foo` and `bar` from somewhere but its not important how
-    ```
-    {foo, bar} := 
-    ```
+  - eg: we go `foo` and `bar` from somewhere but its not important how
+  ```
+  {foo, bar} :=
+  ```
