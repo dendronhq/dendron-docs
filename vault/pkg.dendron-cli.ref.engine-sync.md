@@ -30,4 +30,4 @@ setupEngine(opts) {
 ```
 
 - engine connector
-  ![[dendron://dendron.docs/pkg.dendron-engine.ref.engine-connector#initialization,1]]
+  ![[dendron://dendron.docs/pkg.dendron-engine.t.engine.arch-connector#initialization,1]]

@@ -28,7 +28,7 @@ sequenceDiagram
 - [Video walkthrough](https://youtu.be/nWJCP1DR5Io)
 - Entry Point: [[../packages/engine-server/src/enginev2.ts]]
 
-See [[Engine|dendron://dendron.docs/pkg.dendron-engine.ref.engine]] for additional details
+See [[Engine|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch]] for additional details
 
 ### Pseudocode
 

@@ -1,18 +1,10 @@
 ---
-id: gD8YOmOBQrkWVVj57Bu2N
-title: Engine
+id: tYxnZg8ZPnS5ZhCg2V3c0
+title: Arch
 desc: ""
-updated: 1639862998950
-created: 1639850540192
+updated: 1639874977073
+created: 1639873227613
 ---
-
-<!--
-See [[Ref|dendron://dendron.docs/ref.module-schema#ref]]
--->
-
-## Summary
-
-<!-- 2-3 sentences describing what this module does-->
 
 ## Entry
 
@@ -84,7 +76,7 @@ parseFiles(allPaths) {
 
   %nodesOrderedByDistanceFromRoot :=
   %nodesOrderedByDistanceFromRoot notePath => {
-    // see [[Engine|dendron://dendron.docs/pkg.dendron-engine.ref.engine#^45PEWoYX9mr8]]
+    // see [[Engine|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#^45PEWoYX9mr8]]
     resp = @parseNoteProps(notePath)
 
     // update cache
@@ -131,7 +123,7 @@ file2NoteWithCache(notePath, cache) {
 }
 ```
 
-- [[../packages/engine-server/src/drivers/file/storev2.ts#L401]]
+- [[../packages/engine-server/src/drivers/file/storev2.ts]]
 - add backlinks ^wuW4SbA5hVwf
 
 ```ts
@@ -139,78 +131,30 @@ _addBacklinks {
   @_addBacklinksImpl
 }
 
-_addBacklinksImpl {
-  notesWithLinks.forEach note => {
-    ...
+_addBacklinksImpl(allNotes, notesWithLinks) {
+
+  notesWithLinks.forEach noteFrom => {
+    noteFrom.links.forEach link => {
+      fnameTo = link.to.fname
+      // all notes that this points to
+      notes := fnameTo
+
+      notes.forEach noteTo => {
+        addBacklink(noteFrom, noteTo, link)
+      }
+    }
   }
 }
-
 ```
 
-### Write
+- [[../packages/common-all/src/dnode.ts]]
 
 ```ts
-writeNote {
-  @store.writeNote
-  @refreshNote
+addBacklink(from: Note, to: Note) {
+  to.links.push(...)
 }
+
 ```
-
-- store [^store]
-
-```ts
-writeNote(note) {
-  maybeNote = getNote(note.fname)
-
-  shouldUpdate := note
-  changed = []
-
-  if shouldUpdate:
-    note = {...maybeNote, ...note}
-  else:
-    changed = @_writeNewNote(note)
-
-  // apply any schemas as needed
-  schemaMatch = SchemaUtils.match(note)
-
-  // apply any hooks as needed
-  ...
-
-  // write note to disk
-  note2File(note)
-
-  // schema matching logic
-  ...
-
-  // if any other notes were affected, apply changes here
-  // see [[../packages/engine-server/src/drivers/file/storev2.ts#^change]]
-  ...
-
-}
-
-_writeNewNote(note, existingNote?) {
-
-  if existingNote {
-    // logic to take care of existing note
-    ...
-  }
-
-  // we might need to add parents to this note
-  changed = addParent(note)
-  return changed
-}
-```
-
-#### Fast Mode
-
-- #stage.germ
-
-Writing in fast mode means without indexing existing notes. Some notable differences:
-
-- `getNote` calls are done from disk instead of from memory
-- when calling `_writeNewNote`, we don't change parents or children
-
-## Reference
 
 <!-- Anything else that is useful to lookup -->
 

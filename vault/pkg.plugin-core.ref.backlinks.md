@@ -2,7 +2,7 @@
 id: RoXgGa3xzzF9rdYDPDDUY
 title: Backlinks
 desc: ""
-updated: 1639861373113
+updated: 1639874239497
 created: 1635581979547
 ---
 
@@ -10,7 +10,7 @@ created: 1635581979547
 
 Backlinks are used to navigate note links in the other direction.
 
-Backlinks are initialized during workspace init. See [`FileStorage.initNotes`](https://github.com/dendronhq/dendron/blob/be6f85b09229fc5850036b5e5c3eb5428deaf7f4/packages/engine-server/src/drivers/file/storev2.ts#L318) which calls [`FileStorage._addBackLinks`](https://github.com/dendronhq/dendron/blob/be6f85b09229fc5850036b5e5c3eb5428deaf7f4/packages/engine-server/src/drivers/file/storev2.ts#L370) to initialize them.
+Backlinks are initialized during workspace init. See [[workspace init|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#init]] for more details.
 
 The backlinks are not later kept up-to-date as notes change, because it's
 expensive to update them. Instead, they get recalculated on the run by [`BacklinksTreeDataProvider`](https://github.com/dendronhq/dendron/blob/105dc566be371a405d0b1372fe9b9c5afd9a497a/packages/plugin-core/src/features/BacklinksTreeDataProvider.ts#L171) when needed. The view itself might need to get refreshed however, which you can do by using `getExtension().backlinksTreeDataProvider?.refresh()`. See [`FileWatcher.refreshTree`](https://github.com/dendronhq/dendron/blob/a833aa16f7bf8d8c69e07caf5dd1e376de93a974/packages/plugin-core/src/fileWatcher.ts#L202) for an example.
@@ -42,9 +42,20 @@ findReferences(fname) {
 }
 ```
 
+- [[../packages/common-all/src/dnode.ts#^getNotesWithLinkTo]]
+
+```ts
+getNotesWithLinkTo(note, notes) {
+	return notes.filter n => {
+		find(n.links, l => l.to = note.fname
+	}
+}
+
+```
+
 ## Related
 
-- [[Backlink Initialization|dendron://dendron.docs/pkg.dendron-engine.ref.engine#^wuW4SbA5hVwf]]
+- [[Backlink Initialization|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#^wuW4SbA5hVwf]]
 
 ## Common Issues
 

@@ -2,7 +2,7 @@
 id: yjIf0tl2Id7vhluRL8Edz
 title: Caching
 desc: ""
-updated: 1639863431738
+updated: 1639875032860
 created: 1639855161909
 ---
 
@@ -24,6 +24,7 @@ What is NOT cached:
 
 - vault (this is stored by absolute path, can be different if you start vault in different machines)
 - parent/child relationships
+- backlinks
 
 The speedup comes from not parsing the frontmatter on subsequent restarts
 
@@ -142,5 +143,5 @@ Cache of tutorial workspace
 
 ## Related
 
-- [[Engine Initialization|dendron://dendron.docs/pkg.dendron-engine.ref.engine#init]]
+- [[Engine Initialization|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#init]]
 - [[Note Props|dendron://dendron.docs/pkg.common-all.ref.note-props]]
