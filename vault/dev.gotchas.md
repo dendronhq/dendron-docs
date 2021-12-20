@@ -18,4 +18,4 @@ Common mistakes
 
 ### Documentation in the workspace
 
-![[dendron://dendron.docs/dev.process.dendron#gotchas,1]]
+![[dendron://dendron.docs/dev.process.docs#gotchas,1]]
