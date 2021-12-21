@@ -1,12 +1,13 @@
 ---
 id: d410c0d6-9ede-42ef-9c96-662902e4f488
 title: Lifecycle
-desc: ''
-updated: 1634592301994
+desc: ""
+updated: 1640042919574
 created: 1609714449234
 ---
 
-## Startup
+## Initialization
+
 ![[dendron://dendron.docs/pkg.plugin-core.arch.lifecycle.startup]]
 
 ## Workspace Creation
@@ -22,13 +23,14 @@ When a command is executed, it runs the following functions in order. Source cod
 - execute: runs the actual command
 - showResponse: show response to the user
 
-
 ## Activate
+
 - activating dendron involves the following steps
-    - dendron api server started
-    - dendron engine finish indexing notes
+
+  - dendron api server started
+  - dendron engine finish indexing notes
 
 - extension, initialized: engine is loaded
 
 - other
-    - extension, not_initialized: error with starting engine
+  - extension, not_initialized: error with starting engine
