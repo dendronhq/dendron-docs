@@ -45,8 +45,6 @@ schemas:
 - id: ops
   desc: |
     Diagnose issues
-  children:
-    - pattern: deploy
 - id: quickstart
 - id: architecture
   desc: > 
@@ -82,8 +80,17 @@ schemas:
     - pattern: cook
       title: "Cookbook"
     - pattern: build
+    - pattern: upgrade
     - pattern: run
-      desc: "how to run the program"
+      desc: "how to run module"
+    - pattern: deploy 
+      desc: "how to deploy module"
+      template: templates.module.dev.deploy
+      children:
+        - pattern: "*"
+          title: "deploy variants"
+          desc: "other ways of deploying"
+          template: templates.module.dev.deploy
     - pattern: errors
     - pattern: logs
 - id: build
