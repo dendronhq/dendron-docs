@@ -1,8 +1,8 @@
 ---
 id: 7MLCpIb0ITppTZ3qwMi1A
 title: Lifecycle
-desc: ''
-updated: 1637460182253
+desc: ""
+updated: 1640289949696
 created: 1636642644504
 ---
 
@@ -16,11 +16,13 @@ created: 1636642644504
 - building the site
 
 ### publish build
+
 This describes how notes are filtered for publishing
 
 - src/builtin/NextjsExportPod.ts
+
 ```ts
-SiteUtils.filterByConfig 
+SiteUtils.filterByConfig;
 ```
 
 ### filterByConfig
@@ -28,7 +30,7 @@ SiteUtils.filterByConfig
 ```ts
 siteHierarchies := sconfig
 
-hiearchiesToPublish = 
+hiearchiesToPublish =
 ```
 
 ### filterByHiearchy
@@ -55,7 +57,7 @@ filterByHiearchy(domain, notes) {
     ...
     children.filter(canPublish)!
 
-    children.forEach { 
+    children.forEach {
       processQ.push it
     }
 
@@ -65,16 +67,19 @@ filterByHiearchy(domain, notes) {
 ```
 
 ### home page
+
 The `index` page is generated from the [[noteIndex|pkg.nextjs-template.arch.nextjs-pod#noteindex]] of the nextjs pod.
 
 ## Page Load
-What happens when you visit a statically generated Dendron site. 
+
+What happens when you visit a statically generated Dendron site.
 
 ### Pseudocode
 
-- pages/_app.tsx
+- [[../packages/nextjs-template/pages/_app.tsx]]
 
 - see generated asset files in [[References|dendron://dendron.dendron-site/dendron.topic.pod.builtin.nextjs#references]]
+
 ```tsx
 DendronApp {
 
@@ -85,6 +90,10 @@ DendronApp {
   }
 }
 ```
+
+### Layout
+
+### Note
 
 - components/DendronNotePage.tsx
 
@@ -97,4 +106,5 @@ Note {
 ```
 
 ##
+
 [^metadata]: [[Nextjs|dendron://dendron.dendron-site/dendron.topic.pod.builtin.nextjs]]
