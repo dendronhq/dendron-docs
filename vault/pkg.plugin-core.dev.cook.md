@@ -1,14 +1,14 @@
 ---
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
-desc: ''
-updated: 1637876995480
+desc: ""
+updated: 1640165291538
 created: 1634590309804
 ---
 
 ## Workspace
 
-### Modifying contributes in package.json 
+### Modifying contributes in package.json
 
 The `contributes` in `package.json` is all generated. If you are planning on modifying it - don't add it directly in the json file but use `yarn gen:config` to do it instead
 
@@ -25,11 +25,11 @@ sequenceDiagram
     user ->> lookupCommand: user issues command
     Note left of user: 1. cmd.gatherInput()
     rect rgb(0, 50, 0)
-      lookupCommand ->> lookupController: creates controller 
+      lookupCommand ->> lookupController: creates controller
       lookupCommand ->> lookupProvider: creates provider
       lookupCommand ->> lookupController: call show(provider)
       lookupCommand ->> lookupProvider: subscribe to provider
-      lookupController ->> user: shows quickinput 
+      lookupController ->> user: shows quickinput
     end
     user ->> user: chooses a selection
     lookupProvider ->> lookupCommand: notify(selection)
@@ -62,7 +62,6 @@ const args = ....
 cmd.execute(args)
 ```
 
-
 ### Add new Workspace State
 
 Use the [[State Service|pkg.plugin-core.arch.state]] when working with VSCode workspace related state.
@@ -72,9 +71,11 @@ Use the [[State Service|pkg.plugin-core.arch.state]] when working with VSCode wo
 See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
 
 ## Lookup
+
 - ![[dendron://dendron.docs/pkg.plugin-core.t.lookup.cook]]
 
 ## Views
+
 ### Adding a Web UI Component
 
 1. see [[Create a new Command|pro.dendron-plugin.cook#create-a-new-command]] for creating a new command
@@ -105,7 +106,8 @@ Related:
 - See [[here|pkg.dendron-next-server.dev#development]] for how to preview and test your web ui.
 
 ### Listening for copy event in webview
-- See [Webview: Copy to clipboard within internal IFRAME does not work on macOS  · Issue #135017 · microsoft/vscode](https://github.com/microsoft/vscode/issues/135017)
+
+- See [Webview: Copy to clipboard within internal IFRAME does not work on macOS · Issue #135017 · microsoft/vscode](https://github.com/microsoft/vscode/issues/135017)
 
 ### Getting a view
 
@@ -116,6 +118,7 @@ const panel = getExtension().getWebView(DendronWebViewKey.{KEY});
 ```
 
 ### Executing logic when the current editor changes
+
 See [[Workspace Watcher|dendron://dendron.docs/pkg.plugin-core.ref.workspace-watcher]]
 
 ## Other
@@ -127,10 +130,9 @@ import { clipboard } from "../utils";
 clipboard.writeText(link);
 ```
 
-
 ### Add a new dependency
 
-When you are merging new changes, note that new dependencies and sometimes packages will be installed. 
+When you are merging new changes, note that new dependencies and sometimes packages will be installed.
 
 #### New Dependencies
 
@@ -159,12 +161,12 @@ lerna bootstrap
 - see src/views/DendronTreeViewV2.ts
 
 ```ts
-  const uri = editor.document.uri;
-  const basename = path.basename(uri.fsPath);
-  const ws = getWS();
-  if (!ws.workspaceService?.isPathInWorkspace(uri.fsPath)) {
-    return;
-  }
+const uri = editor.document.uri;
+const basename = path.basename(uri.fsPath);
+const ws = getWS();
+if (!ws.workspaceService?.isPathInWorkspace(uri.fsPath)) {
+  return;
+}
 ```
 
 ### Insert Text
@@ -172,12 +174,12 @@ lerna bootstrap
 - src/commands/InsertNoteCommand.ts
 
 ```ts
-  const editor = VSCodeUtils.getActiveTextEditor()!;
-  const pos = editor.selection.active;
-  await editor.edit((builder) => {
-    const selection = new Selection(pos, pos);
-    builder.replace(selection, txt);
-  });
+const editor = VSCodeUtils.getActiveTextEditor()!;
+const pos = editor.selection.active;
+await editor.edit((builder) => {
+  const selection = new Selection(pos, pos);
+  builder.replace(selection, txt);
+});
 ```
 
 ### Prompt User for Input using Selection
@@ -190,12 +192,14 @@ lerna bootstrap
 
 ```ts
 let out = await VSCodeUtils.showInputBox({
-    prompt: "Path to your new vault (relative to your workspace root)",
-    placeHolder: localVaultPathPlaceholder,
+  prompt: "Path to your new vault (relative to your workspace root)",
+  placeHolder: localVaultPathPlaceholder,
 });
 if (PickerUtilsV2.isStringInputEmpty(out)) return;
 ```
 
-### Get location of the frontmatter
+### Get the line offset of the frontmatter
 
-- example [here](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/services/NoteSyncService.ts)
+- A lot of the times you need to offset the line count of the file content of a markdown file so that it takes into account of the prepended frontmatter.
+- You can use the utility method `RemarkUtils.getNodePositionPastFrontmatter` to get the position where the first non-frontmatter text starts.
+- The return value of this can be converted to VSCode positions with `VSCodeUtils.point2VSCodePosition`
