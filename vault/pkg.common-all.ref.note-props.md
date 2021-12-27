@@ -2,9 +2,35 @@
 id: IZGHxY9fuIPdj2oN7dyd1
 title: Note Props
 desc: ""
-updated: 1639873372325
+updated: 1640583636418
 created: 1639170734281
 ---
+
+## Summary
+
+Common properties for notes
+
+## Reference
+
+This describes different note properties
+
+They can be found in [[../packages/common-all/src/types/foundation.ts]]
+
+### DNodeExplicitPropsEnum
+
+Node property keys that are written to the frontmatter
+
+### DNodeImplicitPropsEnum
+
+Node property keys that are not written to the frontmatter
+
+### NoteProps
+
+Interface for a Dendron Note
+
+### NoteLocalConfig
+
+Notes have a config property that can override a subset of {@link dendronConfig}
 
 ## Example
 
