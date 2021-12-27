@@ -1,19 +1,19 @@
 ---
 id: DD7TE2EgE6zC0OSD5yZEd
 title: Export Pod
-desc: ''
-updated: 1639614690723
+desc: ""
+updated: 1640375186409
 created: 1639614544838
 ---
-
 
 ## Architecture
 
 ### Initialization
 
 - create a new pod config
+
 ```ts
-class ExportPodV2Command extends BaseExportPodComman { 
+class ExportPodV2Command extends BaseExportPodComman {
 
     gatherInputs {
 
@@ -42,6 +42,7 @@ class ExportPodV2Command extends BaseExportPodComman {
 ```
 
 - pod lifecycel
+
 ```ts
 // src/commands/pods/BaseExportPodCommand.ts
 execute {
@@ -57,11 +58,8 @@ execute {
         }
 
         case notes {
-            
+
         }
     }
 }
 ```
-
-## Lookup
-- [[PR For Export Pod |dendron://private/scratch.2021.11.22.093432.pr-jonathan-export-pod-]]

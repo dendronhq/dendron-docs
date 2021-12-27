@@ -2,7 +2,7 @@
 id: gvhxZVZI25RfgARaI48DY
 title: Write
 desc: ""
-updated: 1639875647232
+updated: 1640294809249
 created: 1639872573323
 ---
 
@@ -63,10 +63,7 @@ writeNote(note) {
 
 _writeNewNote(note, existingNote?) {
 
-  if existingNote {
-    // logic to take care of existing note
-    ...
-  }
+  if existingNote @replacePrevNoteWithNewNote(note, existingNote)
 
   // we might need to add parents to this note
   changed = addParent(note)
