@@ -2,7 +2,7 @@
 id: XTcoQWTjIUzPWMvY32YvT
 title: Refresh
 desc: ""
-updated: 1639875642796
+updated: 1639901711480
 created: 1639875522970
 ---
 
@@ -42,7 +42,7 @@ refreshNotesV2(noteChangeEntries) {
 refreshNoteLinksAndAnchors(note) {
 	// get all links in note
 	links = findLinks(note)
-	...
+	linkCandidates := findLinkCandidates(note)
 	anchors = findAnchors
 
 	note.links = links

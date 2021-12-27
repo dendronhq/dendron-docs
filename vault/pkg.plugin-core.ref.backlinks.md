@@ -2,7 +2,7 @@
 id: RoXgGa3xzzF9rdYDPDDUY
 title: Backlinks
 desc: ""
-updated: 1639874239497
+updated: 1639901852474
 created: 1635581979547
 ---
 
@@ -45,8 +45,8 @@ findReferences(fname) {
 - [[../packages/common-all/src/dnode.ts#^getNotesWithLinkTo]]
 
 ```ts
-getNotesWithLinkTo(note, notes) {
-	return notes.filter n => {
+getNotesWithLinkTo(note, allNotes) {
+	return allNotes.filter n => {
 		find(n.links, l => l.to = note.fname
 	}
 }
