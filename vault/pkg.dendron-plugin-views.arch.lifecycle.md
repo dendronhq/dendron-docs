@@ -1,97 +1,100 @@
 ---
 id: lZSr7StwPU5ukltzLg4mL
-title: Lifecycle
-desc: ''
-updated: 1638842257511
+title: Plugin View Lifecycle
+desc: ""
+updated: 1640632065307
 created: 1636432981026
 ---
 
-
-
 ## Browser Mode - Startup
 
-1. User runs `yarn:start` 
-    This runs the following tasks:
-    ```json
-    "yarn build:index && node scripts/start.js"
-    ```
-    - NOTE: `build:index` generates the `index.html` file that is used to load the plugin. More details in [[Build Index|dendron://dendron.docs/pkg.dendron-plugin-views.ref.build-index]]
+1. User runs `yarn:start`
+   This runs the following tasks:
+   ```json
+   "yarn build:index && node scripts/start.js"
+   ```
+   - NOTE: `build:index` generates the `index.html` file that is used to load the plugin. More details in [[Build Index|dendron://dendron.docs/pkg.dendron-plugin-views.ref.build-index]]
 1. Remaining steps are described in [[view startup|#view-startup]]
-
 
 ## IDE Mode - Startup
 
 TODO
 
-
 ## View Startup
 
 1. Import a component and wrap it with its own DOM renderer
-    - src/views/DendronNotePageView.tsx
-    ```tsx
-    import DendronNotePage from "../components/DendronNotePage";
 
-    renderOnDOM(DendronNotePage)
-    ```
+   - src/views/DendronNotePageView.tsx
+
+   ```tsx
+   import DendronNotePage from "../components/DendronNotePage";
+
+   renderOnDOM(DendronNotePage);
+   ```
+
 1. renderOnDOM
-    - this is a helper: wraps the component with the parent `DendronApp` container and renders it using `ReactDOM`
-    ```tsx
-    renderOnDOM(Component) {
-        ReactDOM.render(
-            {renderWithDendronApp(Component)}
-        )
-    }
-    ```
+   - this is a helper: wraps the component with the parent `DendronApp` container and renders it using `ReactDOM`
+   ```tsx
+   renderOnDOM(Component) {
+       ReactDOM.render(
+           {renderWithDendronApp(Component)}
+       )
+   }
+   ```
 1. renderWithDendronApp
-    - wraps the component with `DendronVSCodeApp`
-    ```tsx
-    DendronApp {
-        <Provider>
-            <DendronVSCodeApp />
-        </Provider>
-    }
-    ```
+   - wraps the component with `DendronVSCodeApp`
+   ```tsx
+   DendronApp {
+       <Provider>
+           <DendronVSCodeApp />
+       </Provider>
+   }
+   ```
 
 - DendronVSCodeApp ^MXu9QPtvmOvr
-    ```tsx
-    DendronVSCodeApp {
-        ctx = "DendronVSCodeApp"
 
-        log "enter", workspace
-        // see [[useEngine|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#useengine]]
-        useEngine
-        useEffect {
-            // tell vscode that client has loaded
-            postVSCodeMessage {
-                type: INIT,
-                source: webClient
-            }
-        }
-        // listen to vscode messages
-        useVSCodeMessage {
-            ...
-        }
-    }
-    ```
+  ```tsx
+  DendronVSCodeApp {
+      ctx = "DendronVSCodeApp"
+
+      log "enter", workspace
+      // see [[useEngine|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#useengine]]
+      useEngine
+      useEffect {
+          // tell vscode that client has loaded
+          postVSCodeMessage {
+              type: INIT,
+              source: webClient
+          }
+      }
+      // listen to vscode messages
+      useVSCodeMessage {
+          ...
+      }
+  }
+  ```
 
 1. Component
-    - src/components/DendronNotePage.tsx
-    ```tsx
-    DendronNotePage {
 
-        useRenderedNoteBody(noteProps, noteId) {
-            renderedNoteContentHash = useRef
-            if noteProps.contentHash != renderedNoteContentHash {
-                engineSlice.renderNote noteId
-            }
-        }
-        ...
-    }
-    ```
+   - src/components/DendronNotePage.tsx
+
+   ```tsx
+   DendronNotePage {
+
+       useRenderedNoteBody(noteProps, noteId) {
+           renderedNoteContentHash = useRef
+           if noteProps.contentHash != renderedNoteContentHash {
+               engineSlice.renderNote noteId
+           }
+       }
+       ...
+   }
+   ```
 
 ## Change Active Editor
 
 - src/components/DendronApp.tsx
+
 ```tsx
 useVSCodeMessage(msg) {
     ctx = "useVSCodeMsg"
@@ -106,7 +109,7 @@ useVSCodeMessage(msg) {
                 dispatch(initNotes)
             }
             // update one note
-            if (syncChangedNote && note) 
+            if (syncChangedNote && note)
                 log "syncNote:pre"
                 ideDispatch(engineSlice.syncNote)
             ...
@@ -121,6 +124,7 @@ useVSCodeMessage(msg) {
 ## Common
 
 ### useEngine
+
 - loc: common-frontend/src/features/engine/hooks.ts
 - desc: initialize engine if its not initialized
 
@@ -136,6 +140,7 @@ useEngine(engineState) {
 ```
 
 ### initNotes
+
 - loc: common-frontend/src/features/engine/slice.ts
 - desc: initialize notes for redux engine
 
@@ -174,5 +179,5 @@ effect(state, requestId) {
     }
 
 }
-  
+
 ```

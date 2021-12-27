@@ -1,8 +1,8 @@
 ---
 id: bxF3WklJUyFBPmAqhNvlZ
 title: Views
-desc: ''
-updated: 1635548450278
+desc: ""
+updated: 1640629649935
 created: 1635542102371
 ---
 
@@ -12,19 +12,30 @@ Describes how views work in the plugin
 
 ## Details
 
-Dendron has two type of views, native VSCode views and WebViews.
+Dendron has two kinds of views, editor views and tree views.
+
+These views can be implemented using either a web view implementation or a native view implementation.
 
 ## Concepts
 
-### Tab View
+### Editor View
 
-A view that takes up a tab in VSCode.
+A view that occupies an editor pane in vscode
 
 ### Tree View
 
-A tree view is a panel in the VSCode UI. More details [here](https://code.visualstudio.com/api/extension-guides/tree-view)
+A view that occupies a side pane in VSCode. More details [here](https://code.visualstudio.com/api/extension-guides/tree-view)
 
-### Web Views
+### Web View Implementation
 
-Web views are built using HTML and javascript. A web view can be created for a tab view or a tree view.
-In Dendron, webviews are created using [[pkg.dendron-plugin-views]]
+A web vies is built using HTML and javascript. A web view can be created for an editor view or a tree view.
+
+More details in [[Editor|dendron://dendron.docs/pkg.plugin-core.ref.web-view.editor]]
+
+### Native View Implementation
+
+A native view is a view that is native to the VSCode.
+
+## Lookup
+
+- [[Editor View - Web View Implementation|dendron://dendron.docs/pkg.plugin-core.ref.web-view.editor]]
