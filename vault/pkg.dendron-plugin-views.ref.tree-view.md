@@ -1,36 +1,20 @@
 ---
 id: nFCLMoyruKxzh3E9AJsER
 title: Tree View
-desc: ''
+desc: ""
 updated: 1638584832809
 created: 1638584697880
 ---
 
+## Summary
 
-## Lifecycle
+Tree view initialization
 
-### Startup
-- src/workspace.ts
-```
-setupViews
-    provider = DendronTreeViewV2.new
-    window.registerWebviewViewProvider(provider)
-```
+## LifeCycle
 
-- src/views/DendronTreeViewV2.ts
-```ts
-constructor {
-    window.onDidChangeActiveTextEditor(@onOpenTextDocument)
-}
+- [[Tree Webview Lifecycle|dendron://dendron.docs/pkg.plugin-core.ref.web-view.tree#lifecycle]]
+- [[Webview Startup Lifecycle|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#view-startup]] ^mZpNPujcR2F0
 
-resolveWebviewView(webview) {
-    ctx = "DendronTreeViewV2"
-    log "enter"
-    webview.html = @_getHtmlForWebview
-    log "genHtml:post", duration
+After the webview has started up, we enter tree view specific logic
 
-    webview.onDidReceiveMessage {
-        
-    }
-}
-```
+Logic in [[../packages/dendron-plugin-views/src/components/DendronTreeExplorerPanel.tsx]]

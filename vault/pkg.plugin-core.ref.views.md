@@ -36,6 +36,18 @@ More details in [[Editor|dendron://dendron.docs/pkg.plugin-core.ref.web-view.edi
 
 A native view is a view that is native to the VSCode.
 
+## Lifecycle
+
+```mermaid
+stateDiagram-v2
+    state check <<choice>>
+    [*] --> PanelCreated?
+    PanelCreated? --> check
+    check --> ViewVisible : true
+    check --> ViewInitializing: false
+    ViewInitializing --> ViewVisible
+```
+
 ## Lookup
 
 - [[Editor View - Web View Implementation|dendron://dendron.docs/pkg.plugin-core.ref.web-view.editor]]

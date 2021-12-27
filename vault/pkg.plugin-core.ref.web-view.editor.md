@@ -12,17 +12,9 @@ This describes the [[Web View Implementation|dendron://dendron.docs/pkg.plugin-c
 
 ## Lifecycle
 
-```mermaid
-stateDiagram-v2
-    state check <<choice>>
-    [*] --> PanelCreated?
-    PanelCreated? --> check
-    check --> ViewVisible : true
-    check --> ViewInitializing: false
-    ViewInitializing --> ViewVisible
-```
+![[dendron://dendron.docs/pkg.plugin-core.ref.views#lifecycle,1:#*]]
 
-### Initialize a Vikew
+### Initialize a View
 
 ```ts
 // key of the view
@@ -32,6 +24,8 @@ const webViewAssets = WebViewUtils.getJsAndCss(name);
 ```
 
 ### Build HTML Content
+
+#todo
 
 ### Copying
 
@@ -60,17 +54,9 @@ For full details, see the [[PR|dendron://dendron.docs/pkg.plugin-core.ref.web-vi
 
 - [[Note Preview|dendron://dendron.docs/pkg.dendron-plugin-views.ref.note-preview]]
 
-## Reference
-
-<!-- Anything else that is useful to lookup -->
-
-## Cook
-
-<!-- How to do common operations with this code -->
-
 ## Lookup
 
-- [[Plugin View Lifecycle|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle]]
+- [[Plugin View Lifecycle|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle]]: Lifecycle of the view component of a web view
 
 ## Past Tasks
 

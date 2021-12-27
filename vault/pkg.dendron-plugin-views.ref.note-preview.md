@@ -20,4 +20,8 @@ How the Dendron Note Preview gets launched
 
 ![[dendron://dendron.docs/pkg.dendron-plugin-views.ref.note-preview.lifecycle]]
 
+## Lookup
+
+- [[Editor Webview Lifecycle|dendron://dendron.docs/pkg.plugin-core.ref.web-view.editor#lifecycle]]
+
 ##
