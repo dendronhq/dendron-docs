@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ""
-updated: 1640165291538
+updated: 1640655456731
 created: 1634590309804
 ---
 
@@ -11,6 +11,20 @@ created: 1634590309804
 ### Modifying contributes in package.json
 
 The `contributes` in `package.json` is all generated. If you are planning on modifying it - don't add it directly in the json file but use `yarn gen:config` to do it instead
+
+### Add new Workspace State
+
+Use the [[State Service|pkg.plugin-core.arch.state]] when working with VSCode workspace related state.
+
+### Add a new Config
+
+See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
+
+### Only show view or command while Developing
+
+Register the view or command with `when: DendronContext.DEV_MODE`
+
+## Commands
 
 ### Add a new Command
 
@@ -61,14 +75,6 @@ cmd = new {ExistingDendronCommand}()
 const args = ....
 cmd.execute(args)
 ```
-
-### Add new Workspace State
-
-Use the [[State Service|pkg.plugin-core.arch.state]] when working with VSCode workspace related state.
-
-### Add a new Config
-
-See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
 
 ## Lookup
 
