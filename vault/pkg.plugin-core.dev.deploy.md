@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ''
-updated: 1640281289673
+updated: 1640722737046
 created: 1635532194153
 ---
 
@@ -13,6 +13,7 @@ created: 1635532194153
 
 If you need to manually bump the current package version number for any reason
 
+- publish to npm
 ```sh
 # values are "patch|minor"
 UPGRADE_TYPE=
@@ -29,21 +30,31 @@ echo "install..."
 dendron dev prep_plugin && rm package.json
 dendron dev package_plugin 
 dendron dev install_plugin
+```
 
-echo "publish..."
-# go to [[Publish From Artifact|dendron://dendron.docs/pkg.plugin-core.ops.deploy#publish-from-artifact]]
+- publish to market place
+![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-from-artifact,1:#*]]
 
-echo "reset..."
+- reset
+```sh
 git reset --hard
+```
 
-# to update nextjs, see [[Steps|dendron://dendron.docs/pkg.nextjs-template.dev.deploy#steps]]
+- publish to nextjs
+![[Steps|dendron://dendron.docs/pkg.nextjs-template.dev.deploy#steps]]
 
+
+- sync back to master
+```
 echo "sync back with master"
 git checkout master
 git merge --squash release/$VERSION
 git commit -m "chore(release): publish $VERSION"
 git push
 ```
+
+- clean up repo
+![[dendron://dendron.docs/pkg.plugin-core.dev.build#fast-re-build,1:#*]]
 
 ### Publish From Artifact
 
