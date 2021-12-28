@@ -1,13 +1,17 @@
 ---
-id: yueBtcxggyCeqTFm15fyA
-title: Create New Note
+id: LTlrqRcec9J01ZVn1M5Go
+title: Create New
 desc: ''
-updated: 1632929060294
-created: 1630426372028
+updated: 1640709000393
+created: 1640708991286
 ---
 
 ## Summary
 
+Creating a new note
+
+
+## Lifecycle
 
 - src/commands/NoteLookupCommand.ts
 ```ts
@@ -40,3 +44,4 @@ getVaultForNewNote {
 
 }
 ```
+
