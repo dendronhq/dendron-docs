@@ -2,13 +2,20 @@
 id: dtMsF12SF2SUhLN10sYe2
 title: Test Workspace
 desc: ''
-updated: 1637194974228
+updated: 1640798034393
 created: 1631471672541
 ---
 
-If you want to use a workspace to test changes on the workspace at `$DENDRON_REPO_ROOT/test-workspace`
+## Summary
 
-Note that this workspace is currently configured to be used with launching a engine server from the command line. 
+The test workspace is included with the Dendron repo and is used for manual testing of new features
+
+## Quickstart
+
+1. Run the development version of Dendron by following the steps [[here|dendron://dendron.docs/pkg.plugin-core.dev.run#running-via-launch-task-from-source]]
+2. Run `> Change Workspace` and change to the path of the test workspace 
+  - this should be `$DENDRON_REPO_ROOT/test-workspace`
+  - NOTE: when you initially change to this workspace, you'll need to restart the debugger or VSCode will complain about multiple instances of Dendron. The next time you start the debugger, VSCode will remember the last workspace you've used so you can skip this step
 
 ## Pre-requisites
 - [[Symlink the dendron cli|dendron://dendron.docs/pkg.dendron-cli.dev#symlink]]

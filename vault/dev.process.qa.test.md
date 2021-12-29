@@ -2,11 +2,15 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1637807511243
+updated: 1640799373672
 created: 1632347495097
 ---
 
-## Details
+## Summary
+
+Writing and running tests in Dendron
+
+## Writing Tests
 
 Depending on the package you are working on, tests are handled differently
 
@@ -15,9 +19,25 @@ Depending on the package you are working on, tests are handled differently
 
 For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.style]] when writing test.
 
-## Automated Tests (via github actions)
+## Executing Tests
 
-Dendron has automated tests that run on every pull request and commit to master 
+- For [[pkg.plugin-core]], see [[run all plugin tests|dendron://dendron.docs/pkg.plugin-core.qa.test#run-all-tests]]
+- For any other package, see [[run other tests|dendron://dendron.docs/pkg.engine-test-utils.qa.test#run-all-tests]]
+
+- NOTE: Dendron has automated tests that run on every pull request - if you are unable to run tests locally, you can also wait for the pull request to finish running the test
+
+## Manual Testing
+
+See [[manual Testing|dendron://dendron.docs/pkg.plugin-core.qa.test#manual-testing]]
+
+## Checklist
+- [ ] [[Writing Tests|dendron://dendron.docs/dev.process.qa.test#writing-tests]] for the new feature
+- [ ] [[Executing existing Tests|dendron://dendron.docs/dev.process.qa.test#executing-tests]]
+--- #todo
+- [ ] Do a spot check by running your feature with our [test workspace](https://wiki.dendron.so/notes/cb22bd36-d45a-4ffd-a31e-96c4b39cb7fb.html#test-workspace)
+- [ ] If your tests involve running [[manual Testing|dendron://dendron.dendron-site/dendron.dev.qa.test#manual-testing]], make sure to update [[Test Workspace|dendron://dendron.dendron-site/dendron.dev.ref.test-workspace]] with any necessary notes/additions to perform manual test ^9jtWc6ov340p
+- [ ] After you submit your pull request, check the output of our [integration test](https://github.com/dendronhq/dendron/actions) and make sure all tests pass
+  - NOTE: If you running MacOS or Linux, pay special attention to the Windows output and vice versa if you are developing on Windows
 
 
 ## Troubleshooting

@@ -2,7 +2,7 @@
 id: 64f0e2d5-2c83-43df-9144-40f2c68935aa
 title: Dendron Plugin Quickstart
 desc: ""
-updated: 1639351094446
+updated: 1640797936669
 created: 1598651458825
 ---
 
@@ -49,13 +49,9 @@ Before you begin, you need to make sure to have the following SDKs and tools:
 
 4. Open the workspace by opening `dendron-main.code-workspace` with VSode. While its not required to use VSCode, most of the helper scripts in this repository are created with VSCode in mind so using it will make development significantly easier.
 
-5. Run the plugin. To start an instance of the Dendron with debugging capabilities, Run `Extension: Local (plugin-core)` from the debug panel in vscode
+5. Run the plugin
 
-![debugger](/assets/images/start_debugger.gif)
-
-_Note: Running via Run -> Start Debugging will not work unless you've previously targeted `Extension: Local (plugin-core)`_
-
-_Note: To have the changes reflected as you edit the code you need to run the `./bootstrap/scripts/watch.sh` and restart the `Extension: Local (plugin-core)`)_
+![[dendron://dendron.docs/pkg.plugin-core.dev.run#running-via-launch-task-from-source,1:#*]]
 
 ## Troubleshooting
 
