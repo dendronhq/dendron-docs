@@ -2,15 +2,22 @@
 id: ZB2Rkb66lLlw1adVKiSXj
 title: Run
 desc: ''
-updated: 1637876980097
+updated: 1640798361402
 created: 1637876951989
 ---
 
-## Steps
+## Running via Launch Task from source
+- Prerequisites: Clone and install dependencies for the plugin as described in [[pkg.plugin-core.quickstart]]
 
-Regular run process inside the monorepo is described in [[pkg.plugin-core.quickstart]]
+To start an instance of the Dendron with debugging capabilities, Run `Extension: Local (plugin-core)` from the debug panel in vscode
 
-## Running via Webpack
+![debugger](/assets/images/start_debugger.gif)
+
+_Note: Running via Run -> Start Debugging will not work unless you've previously targeted `Extension: Local (plugin-core)`_
+
+_Note: To have the changes reflected as you edit the code you need to run the `./bootstrap/scripts/watch.sh` and restart the `Extension: Local (plugin-core)`)_
+
+## Running via Launch Task from webpack
 1. Follow steps in [[Webpack|dendron://dendron.docs/pkg.plugin-core.dev.build#webpack]] to build the webpack version of the plugin
 2. Open VSCode and use the "Run extension - webpack" task
 
@@ -23,23 +30,3 @@ When developing in VSCode, you can use its [remote development](https://code.vis
 While installation intsructions are the same, there are some differences when running and testing code which are documented here.
 
 Use the `Run Extension:Remote` launch task to start the extension. 
-
-<!-- ## QA
-
-### Running All Plugin Tests
-
-This works the same as in local development
-
-### Running a single Plugin Test
-
-You'll need to update the following file `src/test/suite-integ/index.ts`. When running locally, we use an environmental variable that is set from the launch task to specify the current task - this doesn't seem to work when running remotely. You'll need to manually set the `fname` variable to run a single test
-
-```ts
-let fname = process.env.TEST_TO_RUN;
-// uncomment to run tests remotely
-// fname = 'LookupCommand.test'
-```
-
-### Running Non-Plugin Tests
-
-Non plugin tests behave the same, whether you're running all of them or a single test. -->

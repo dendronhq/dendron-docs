@@ -13,6 +13,7 @@ site:
         - dev
         - pkg
         - rfc
+        - topic
     siteRootDir: docs
     gh_edit_repository: 'https://github.com/dendronhq/dendron-docs'
     logo: vault/assets/images/logo.png

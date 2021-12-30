@@ -2,11 +2,15 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1637807511243
+updated: 1640801289898
 created: 1632347495097
 ---
 
-## Details
+## Summary
+
+Writing and running tests in Dendron
+
+## Writing Tests
 
 Depending on the package you are working on, tests are handled differently
 
@@ -15,10 +19,20 @@ Depending on the package you are working on, tests are handled differently
 
 For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.style]] when writing test.
 
-## Automated Tests (via github actions)
+## Executing Tests
 
-Dendron has automated tests that run on every pull request and commit to master 
+- For [[pkg.plugin-core]], see [[run all plugin tests|dendron://dendron.docs/pkg.plugin-core.qa.test#run-all-tests]]
+- For any other package, see [[run other tests|dendron://dendron.docs/pkg.engine-test-utils.qa.test#run-all-tests]]
 
+- NOTE: Dendron has automated tests that run on every pull request - if you are unable to run tests locally, you can also wait for the pull request to finish running the test
+- NOTE: If you running MacOS or Linux, pay special attention to the Windows output and vice versa if you are developing on Windows
+
+## Manual Testing
+
+See [[manual Testing|dendron://dendron.docs/pkg.plugin-core.qa.test#manual-testing]]
+
+## Checklist
+![[dendron://dendron.docs/dev.process.qa.test.checklist]]
 
 ## Troubleshooting
 

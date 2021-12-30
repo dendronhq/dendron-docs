@@ -1,0 +1,136 @@
+version: 1
+imports: [module]
+schemas:
+- id: lang
+  pattern: lang
+  title: lang
+  desc: programming language
+  parent: root
+  namespace: true
+  template: lang.temp.root
+  children:
+    - pattern: quickstart
+      desc: "get to hello world"
+    - pattern: op
+      title: operator
+      children:
+        - pattern: assign
+          title: assignment
+          desc: "how to assign variables"
+        - pattern: compare
+          title: compare
+          desc: "comparing variables"
+        - pattern: inspect
+          title: inspect
+          desc: "how to inspect variables"
+        - pattern: destruc
+          title: destructure
+          desc: "how to destructure variables"
+    - pattern: d
+      title: data structure
+      children:
+        - pattern: boolean
+          template: lang.temp.boolean
+        - pattern: string
+          children:
+            - pattern: regex
+            - pattern: format
+              desc: "how to format strings"
+        - pattern: set
+        - pattern: array
+        - pattern: dict
+          title: dictionary
+        - pattern: iterator
+    - pattern: flow
+      children:
+        - pattern: if
+        - pattern: for
+        - pattern: while
+    - pattern: lib
+      desc: "popular libraries"
+      namespace: true
+    - pattern: dev
+      children:
+        - pattern: upgrade
+          desc: "how to upgrade language"
+        - pattern: runtime
+          desc: "run language in different runtimes (eg. jvm, .net, etc)"
+        - pattern: lib
+          desc: "how to develop a library"
+          children:
+            - pattern: publish
+            - pattern: binary
+              desc: "how to create a static binary"
+            - pattern: import
+              desc: "how to import a library"
+            - pattern: export
+              desc: "how to export a library"
+            - pattern: dynamic
+              desc: "how to dynamically inspect and load a library"
+    - pattern: sdk
+      namespace: true
+    - pattern: t
+      title: topic
+      children:
+        - pattern: dist
+          title: distributed systems
+        - pattern: system
+          title: systems programming
+          children:
+            - pattern: uuid
+              desc: "generating unique identifiers"
+            - pattern: shell
+              desc: "working with the shell"
+              children:
+                - pattern: exec
+                  desc: "performing exec command"
+        - pattern: net
+          title: networking
+          children:
+            - pattern: email
+        - pattern: cache
+          title: caching
+        - pattern: cli
+          title: command line interface
+          desc: "creating command line interfaces"
+        - pattern: time
+        - pattern: math
+        - pattern: web
+          title: web development
+        - pattern: parser
+          title: parsing
+        - pattern: security
+    - pattern: files
+      desc: "working with file system"
+      children:
+        - pattern: io
+          title: "input/output"
+          desc: "how to do i/o operations"
+        - pattern: path
+          desc: "how to work with file paths"
+        - pattern: inspect
+          desc: "how to inspect file properties"
+        - pattern: image
+    - pattern: oo
+      title: object oriented
+      desc: "how to use oo paradigm"
+      children:
+        - pattern: scope
+        - pattern: inheritance
+    - pattern: func
+      title: functional
+      desc: "how to use functional paradigm"
+    - pattern: types
+      title: type system
+      children:
+        - pattern: generics
+        - pattern: modifiers
+        - pattern: union
+        - pattern: intersection
+        - pattern: interface
+    - pattern: qa
+      title: quality assurance
+      children: 
+        - pattern: tests
+        - pattern: profile
+        - pattern: debug
