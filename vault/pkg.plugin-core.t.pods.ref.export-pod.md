@@ -2,7 +2,7 @@
 id: DD7TE2EgE6zC0OSD5yZEd
 title: Export Pod
 desc: ""
-updated: 1640375186409
+updated: 1640900263985
 created: 1639614544838
 ---
 
@@ -43,8 +43,8 @@ class ExportPodV2Command extends BaseExportPodComman {
 
 - pod lifecycel
 
+- [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts]]
 ```ts
-// src/commands/pods/BaseExportPodCommand.ts
 execute {
     pod = createPod {
         // example
@@ -63,3 +63,7 @@ execute {
     }
 }
 ```
+
+### Past Tasks
+
+- [feat(pods): Export Pod V2 by jonathanyeung · Pull Request #1772 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1772/files)
