@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ""
-updated: 1640655456731
+updated: 1640944129089
 created: 1634590309804
 ---
 
@@ -209,3 +209,16 @@ if (PickerUtilsV2.isStringInputEmpty(out)) return;
 - A lot of the times you need to offset the line count of the file content of a markdown file so that it takes into account of the prepended frontmatter.
 - You can use the utility method `RemarkUtils.getNodePositionPastFrontmatter` to get the position where the first non-frontmatter text starts.
 - The return value of this can be converted to VSCode positions with `VSCodeUtils.point2VSCodePosition`
+
+### Create a pseudo-note for a non-note file
+
+In some cases, like when previewing a non-note markdown file, we sometimes need
+to reference a file that's not a note. Since a lot of Dendron APIs need note
+objects, you can create a pseudo-note for these files.
+
+Create one using
+[[DNode.createForFile|../packages/common-all/src/dnode.ts#L1287]]. This will
+create a fake note object and a fake vault object. Created objects are not added
+to the engine automatically, temporarily add and then remove them if needed.
+
+You can check if a note is a pseudo-note using [[DNode.isFileId|../packages/common-all/src/dnode.ts]] on a note's id.
