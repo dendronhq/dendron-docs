@@ -1,17 +1,19 @@
 ---
 id: AlzFH3ol9ubQhagjAUqq1
 title: Nextjs
-desc: ''
-updated: 1639187804427
+desc: ""
+updated: 1641064480937
 created: 1634255542869
 ---
 
 ## NextJsExport Pod
-- src/builtin/NextjsExportPod.ts 
+
+- src/builtin/NextjsExportPod.ts
 
 ## Pseudocode
 
 - loc: src/builtin/NextjsExportPod.ts
+
 ```ts
 
 plant(engine, config) {
@@ -23,12 +25,12 @@ plant(engine, config) {
     publishedNotes := filterByConfig(engine, config)
     publishedNotes += addSiteOnlyNotes
 
-    payload = { 
+    payload = {
         publishedNotes
         ...
     }
 
-    publishedNotes.forEach note { 
+    publishedNotes.forEach note {
         @renderBodyToHTML(note)
         @renderMetaToJSON
         @renderBodyAsMD
@@ -38,10 +40,10 @@ plant(engine, config) {
     // write json
     podDstPath = join(dst, "notes.json")
     write(
-        join(dst, "notes.json")), 
+        join(dst, "notes.json")),
         removeBodyFromNotesDict(payload)
     )
-    write( 
+    write(
         join(dst, "dendron.json"),
         config
     )
@@ -79,6 +81,6 @@ SiteUtils.copyAssets {
 
 ```
 
-
 ## Related
+
 - [[Nextjs|dendron://dendron.dendron-site/dendron.topic.pod.builtin.nextjs]]

@@ -2,7 +2,7 @@
 id: 7MLCpIb0ITppTZ3qwMi1A
 title: Lifecycle
 desc: ""
-updated: 1640289949696
+updated: 1641065132077
 created: 1636642644504
 ---
 
@@ -15,11 +15,13 @@ created: 1636642644504
   - [NextJsExportPod](https://github.com/dendronhq/dendron/blob/68fea3bbad13961b7754e61dd63dfb2d47d73c56/packages/pods-core/src/builtin/NextjsExportPod.ts#L30)
 - building the site
 
+This is explained in more detail inside [[Nextjs Export|dendron://dendron.docs/pkg.pods-core.ref.nextjs]]
+
 ### publish build
 
 This describes how notes are filtered for publishing
 
-- src/builtin/NextjsExportPod.ts
+- [[../packages/engine-server/src/topics/site.ts]]
 
 ```ts
 SiteUtils.filterByConfig;
@@ -27,10 +29,17 @@ SiteUtils.filterByConfig;
 
 ### filterByConfig
 
+- last updated: 2022-01-01
+
 ```ts
+// get hierarchies that will be published
 siteHierarchies := sconfig
 
-hiearchiesToPublish =
+domainsAndhiearchiesToPublish = siteHierarchies.map h => {
+  return filterByHiearchy(h)
+}
+
+...
 ```
 
 ### filterByHiearchy
