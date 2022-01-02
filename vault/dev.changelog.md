@@ -2,10 +2,31 @@
 id: H7CgvT7YUYAiV7mEmGnky
 title: Changelog
 desc: ""
-updated: 1639328943343
+updated: 1641167310253
 created: 1630796807707
 nav_order: 6.1
 ---
+
+## Deprecation of `getNotesByFname` and `getNoteByFnameV5` interfaces
+- start: 2022.01.02
+- status: WIP
+
+### Summary
+
+`getNotesByFname` and `getNoteByFnameV5` have been deprecated. They instead are now
+replaced by `getNotesByFnameFromEngine` and `getNoteByFnameFromEngine`.
+
+### Rationale
+
+This change was made for performance reasons: the old interface had to do a
+linear scan over all notes while the new interface only does 2 dict lookups,
+greatly increasing performance for workspaces with lots of notes. Please use the
+new interfaces in new code, and migrate the old code when possible. 
+
+### Caveats
+
+- Views don't have the full engine available, so we'll need to continue using the old interface until this is fixed.
+- If you are writing code that directly modifies engine.notes, please remember to keep `engine.noteFname` in sync. Existing functions like engine.updateNote are already updated so no additional work is needed if you use those. 
 
 ## Circular Dependency Refactor
 - start: 2021.12.02
