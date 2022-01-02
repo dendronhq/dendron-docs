@@ -20,3 +20,4 @@ schemas:
     - module.advanced
     - module.best
     - module.ref
+    - module.trouble
