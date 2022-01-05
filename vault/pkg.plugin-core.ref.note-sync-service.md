@@ -2,13 +2,15 @@
 id: 7pBXsVkEOmMxXd7VB97pq
 title: Note Sync Service
 desc: ""
-updated: 1639771278360
+updated: 1641378923748
 created: 1639770954932
 ---
 
 ## Summary
 
 Keep notes on disk in sync with engine
+
+NoteSyncService also exposes an event that fires when NoteProps has been updated on the engine. It fires AFTER the engine state has finished updating, unlike other events like on fileWatcher, which only reflect actions happening on client side.
 
 ## Entry
 
@@ -17,23 +19,14 @@ Keep notes on disk in sync with engine
 ## Lifecycle
 
 ```ts
-// also called by [[Workspace Watcher|dendron://dendron.docs/pkg.plugin-core.ref.workspace-watcher]]
-onDidChange {
-		...
-    @updateNoteContents
-}
+  /**
+   * Event that fires after a set of NoteProps has been changed AND those
+   * changes have been reflected on the engine side
+   */
+  get onNoteChange(): Event<NoteProps>;
 ```
 
-```ts
-// also called by `buttons.selection2link`
-updateNoteContents {
-    ctx = "NoteSyncService:updateNoteContents"
-    @updateNoteMeta
-    log "exit"
-
-}
-```
-
+This call below will be refactored once FileWatcher changes to an eventing model:
 ```ts
 // also called by fileWatcher.onDidCreate
 updateNoteMeta {
