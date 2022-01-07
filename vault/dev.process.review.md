@@ -2,14 +2,21 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Dendron Review Process
 desc: ''
-updated: 1640801067417
+updated: 1641511710015
 created: 1623430616135
 nav_order: 4.1
+config:
+  global:
+    enableChildLinks: false
 ---
 
 ## Summary
 
 This goes into how we do code review (via pull requests)
+
+## Prerequisites
+
+We recommend using the github cli to work on pull requests (not required but helpful). More details on the setup [[here|dendron://dendron.docs/dev.process.review.github-cli]]
 
 ## Process
 
@@ -44,15 +51,7 @@ Use cached version of notes to generate metadata instead of building from scratc
 
 * To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
 * To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
+* When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
 
 ### Pull Request
-When submitting a pull request, copy the commit message as a block in front of the PR template. It should look like the following
-
-```
-enhance(publish): speed up publishing by 500%
-
-Use cached version of notes to generate metadata instead of building from scratch
-
-# Pull Request Checklist
-...
-```
+![[dendron://dendron.docs/dev.process.review.checklist]]
