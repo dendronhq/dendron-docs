@@ -2,7 +2,7 @@
 id: DD7TE2EgE6zC0OSD5yZEd
 title: Export Pod
 desc: ""
-updated: 1640900263985
+updated: 1641522177745
 created: 1639614544838
 ---
 
@@ -13,16 +13,10 @@ created: 1639614544838
 - create a new pod config
 
 ```ts
-class ExportPodV2Command extends BaseExportPodComman {
+class ExportPodV2Command extends BaseExportPodCommand {
 
     gatherInputs {
-
         promptForPodTypeForCommand
-    }
-
-    promptForPodTypeForCommand {
-        resp = showQuickPick PodV2Types
-        PodCommandFactory.createPodCommandForPodType(resp)
     }
 
     // src/components/pods/PodCommandFactory.ts
@@ -41,7 +35,7 @@ class ExportPodV2Command extends BaseExportPodComman {
 }
 ```
 
-- pod lifecycel
+- pod lifecycle
 
 - [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts]]
 ```ts
