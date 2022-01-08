@@ -2,7 +2,7 @@
 id: 64f0e2d5-2c83-43df-9144-40f2c68935aa
 title: Dendron Plugin Quickstart
 desc: ""
-updated: 1640797936669
+updated: 1641683095044
 created: 1598651458825
 ---
 
@@ -16,8 +16,14 @@ Before you begin, you need to make sure to have the following SDKs and tools:
   - `npm install -g yarn`
 - lerna
   - `npm install -g lerna`
+- [vscode](https://code.visualstudio.com/) or [vscodium](https://vscodium.com/)
+  - while this is not required, it's highly recommended as the Dendron repo comes with documentation that is managed using Dendron
 
-## Steps
+## Setup Dendron (optional)
+- Download Dendron by following instructions [here](https://wiki.dendron.so/notes/678c77d9-ef2c-4537-97b5-64556d6337f1.html)
+- After you have gone through the tutorial, proceed, to next steps
+
+## Setup Repo
 
 1. Clone repo
    ```bash
@@ -36,7 +42,6 @@ Before you begin, you need to make sure to have the following SDKs and tools:
    yarn bootstrap:bootstrap # install package dependencise
    yarn bootstrap:build  # build package dependencies
    ```
-
 3. Watch all dependencies ^QWJj9cTIcwuX
 
 - NOTE: typescript is a compiled language which means that the executable won't be updated unless you compile. The watch script will auto-compile all code on change
@@ -65,7 +70,5 @@ Before you begin, you need to make sure to have the following SDKs and tools:
 
 ```
 
-## Related
-
-- [[List of other Dendron Packages|dendron://dendron.dendron-site/pkg]]
-- [[Detailed Developer Docs|dendron://dendron.docs/pkg.plugin-core.dev]]
+## Next Steps
+- [[Dendron Development Process|dendron://dendron.docs/dev.process]]
