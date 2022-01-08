@@ -2,17 +2,17 @@
 id: AlzFH3ol9ubQhagjAUqq1
 title: Nextjs
 desc: ""
-updated: 1641064480937
+updated: 1641681627130
 created: 1634255542869
 ---
 
-## NextJsExport Pod
+## Summary
 
-- src/builtin/NextjsExportPod.ts
+Responsible for creating payloads and metadata for Dendron Publishing
 
 ## Pseudocode
 
-- loc: src/builtin/NextjsExportPod.ts
+- [[../packages/pods-core/src/builtin/NextjsExportPod.ts]]
 
 ```ts
 
@@ -73,12 +73,6 @@ copyAssets(opts) {
     ...
 
 }
-
-// src/topics/site.ts
-SiteUtils.copyAssets {
-
-}
-
 ```
 
 ## Related
