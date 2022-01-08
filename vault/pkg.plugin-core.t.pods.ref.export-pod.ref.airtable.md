@@ -2,7 +2,7 @@
 id: dq8l4Wx9DgRsKyWNsPQlD
 title: Airtable
 desc: ""
-updated: 1640375281493
+updated: 1641002245131
 created: 1640375224141
 ---
 
@@ -22,6 +22,36 @@ gatherInputs {
 	...
 
 	if !isRunnableAirtableV2PodConfig ...
+}
+```
+
+- [[../packages/pods-core/src/v2/pods/export/AirtableExportPodV2.ts]]
+
+```ts
+exportNotes {
+	resp = getPayloadForNotes
+
+}
+
+getPayloadForNotes {
+	notesToSrcFieldMap
+}
+
+notesToSrcFieldMap {
+	notes.map n => {
+		...
+		resp = handleSrcField(note)
+
+	}
+
+}
+```
+
+- [[../packages/plugin-core/src/commands/pods/AirtableExportPodCommand.ts]]
+
+```
+onExportComplete {
+
 }
 ```
 

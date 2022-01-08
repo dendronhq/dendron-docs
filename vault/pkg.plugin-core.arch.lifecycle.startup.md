@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1640044835202
+updated: 1641336083082
 created: 1610160007286
 ---
 
@@ -40,6 +40,8 @@ the actual root.
 
 ### Check for workspace
 
+- [[../packages/plugin-core/src/_extension.ts]]
+
 ```ts
 _activate {
     ws := DendronWorkspace.getOrCreate
@@ -58,6 +60,9 @@ _activate {
         updateEngineAPI(port)
         ws.reloadWorkspace // 312
         ws.activateWatchers
+        ...
+        // register all commands with vscode
+        _setupCommands // 413
     }
 
 }

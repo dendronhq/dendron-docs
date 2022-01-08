@@ -2,7 +2,7 @@
 id: DD7TE2EgE6zC0OSD5yZEd
 title: Export Pod
 desc: ""
-updated: 1640900263985
+updated: 1641641125319
 created: 1639614544838
 ---
 
@@ -32,19 +32,30 @@ class ExportPodV2Command extends BaseExportPodComman {
 
     // src/commands/pods/MarkdownExportPodCommand.tso
     gatherInputs {
-
     }
 
-    execute {
-
-    }
 }
 ```
 
 - pod lifecycel
 
-- [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts]]
+- [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts#L185]]
+
 ```ts
+// [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts#L77]]
+enrichInputs(inputs) {
+    exportScope, config := inputs
+    let payload
+
+    switch(exportScope) {
+        case ... {
+            payload := ...
+        }
+    }
+    return {payload, config}
+}
+
+// [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts#L144]]
 execute {
     pod = createPod {
         // example
