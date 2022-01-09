@@ -174,7 +174,7 @@ You can disable this behavior by setting [[addAttribution|rfc.14-seed-bank.confi
 
 ## Discussion
 
-All discussions and feedback should be left in this [discussion thread](https://wiki.dendron.so/notes/4039fc46-06b2-4f83-b817-fc490bafbcb3.html)
+All discussions and feedback should be left in this [discussion thread](https://github.com/dendronhq/dendron/discussions/802)
 
 ## TradeOffs
 
