@@ -2,7 +2,7 @@
 id: F8cCg5iQH1KXmx4SGcEia
 title: Triage GitHub Issue
 desc: ''
-updated: 1641959388073
+updated: 1641963954833
 created: 1638139691294
 ---
 
@@ -35,6 +35,7 @@ How incoming github issues are triaged
         - make sure to fill out the [[issue|dendron://private/task.temp.ref#issue]] field with the link to the github issue
         - add the same #sprint and #kind tags to the task as you did to the github issue
     - export the task
+1. If the issue is a bug, make sure to recognize the user as a #role.bugcatcher by following the process in [[community highlights|dendron://private/dendron.sop.release.community-highlights#process]]
 1. For all cases, 
     - leave a comment in the ticket acknowledging that we have received it and communicate the next steps to the user 
     - remove the `status.triage-needed` label from the issue
