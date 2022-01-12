@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ''
-updated: 1640722737046
+updated: 1641932998732
 created: 1635532194153
 ---
 
@@ -12,6 +12,13 @@ created: 1635532194153
 ### Manual bump and publish package versions
 
 If you need to manually bump the current package version number for any reason
+
+- start verdaccio in separate shell
+```sh
+setRegLocal
+npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
+```
+
 
 - publish to npm
 ```sh
