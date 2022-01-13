@@ -2,7 +2,7 @@
 id: dq8l4Wx9DgRsKyWNsPQlD
 title: Airtable
 desc: ""
-updated: 1641002245131
+updated: 1641685528920
 created: 1640375224141
 ---
 
@@ -30,11 +30,16 @@ gatherInputs {
 ```ts
 exportNotes {
 	resp = getPayloadForNotes
+	create, update := resp
+
+	// api calls
+	chunkAndCall(create)
+	chunkAndCall(update)
 
 }
 
-getPayloadForNotes {
-	notesToSrcFieldMap
+getPayloadForNotes(notes) {
+	return notesToSrcFieldMap(notes)
 }
 
 notesToSrcFieldMap {
@@ -50,7 +55,12 @@ notesToSrcFieldMap {
 - [[../packages/plugin-core/src/commands/pods/AirtableExportPodCommand.ts]]
 
 ```
-onExportComplete {
+onExportComplete(opts) {
+	records := opts
+
+	if records.created {
+		updateAirtableIdForNewlySyncedNotes
+	}
 
 }
 ```
