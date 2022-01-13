@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ""
-updated: 1640944129089
+updated: 1642068662322
 created: 1634590309804
 ---
 
@@ -66,6 +66,10 @@ sequenceDiagram
 Conventions:
 
 - if your command involves opening a note, also return it in the `CommandOutput` signature. this makes it easy to compose the command as well as test it
+
+#### Gotchas
+
+If the command needs to accept input objects from VSCode, for example [[ShowPreview|../packages/plugin-core/src/commands/ShowPreview.ts]], then base your command on [[InputArgCommand|../packages/plugin-core/src/commands/base.ts#L168]] and avoid adding `gatherInputs` and `enrichInputs`. Otherwise Dendron can convert the input object into a plain javascript object.
 
 ### Executing a command programatically
 
