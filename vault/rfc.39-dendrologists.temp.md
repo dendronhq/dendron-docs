@@ -9,7 +9,7 @@ created: 1642094675241
 
 ## Summary
 
-## Lookkup
+## Lookup
 
 ## Initial Tasks
 
