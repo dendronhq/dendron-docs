@@ -2,8 +2,12 @@
 id: oKBcrjYOHSlSwxWb1fYTw
 title: Issues
 desc: ''
-updated: 1642094642917
+updated: 1642128036896
 created: 1642012911115
+category: RFCs/Ideas
+discussionID: D_kwDOEF_3Vs4AOfk4
+url: 'https://github.com/dendronhq/dendron/discussions/2166'
+author: 'https://github.com/dendron-bot'
 ---
 
 ## Summary

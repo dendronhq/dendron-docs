@@ -2,8 +2,12 @@
 id: QhuJpU1G53sIvHsR7cKvJ
 title: Community Guidelines
 desc: ''
-updated: 1642120246815
+updated: 1642128055936
 created: 1642120246815
+category: RFCs/Ideas
+discussionID: D_kwDOEF_3Vs4AOfk5
+url: 'https://github.com/dendronhq/dendron/discussions/2167'
+author: 'https://github.com/dendron-bot'
 ---
 
 ## Summary
