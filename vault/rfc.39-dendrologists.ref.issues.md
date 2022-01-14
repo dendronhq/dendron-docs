@@ -20,7 +20,7 @@ How we collect [[Issues|dendron://dendron.docs/rfc.39-dendrologists#issues]] wit
     - open questions: what do we do with crops that are highly voted for but don't make it this round? does it move to the bottom of the Q or do we always take the top 3? if so, should there be a degradation based on time?
 
 ## Recurring Tasks
-- send out crop every two weeks in the #feedback channel
+- send out crop every two weeks in the `#feedback` channel
     - after 1 week of voting, forward crop to the team
 
 ## Future Tasks
