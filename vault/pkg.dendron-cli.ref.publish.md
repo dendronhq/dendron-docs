@@ -1,31 +1,32 @@
 ---
-id: VofKrj50ZJcLjP8IL2MdF
+id: pZYzLe7dFiRNkfYa4xhdF
 title: Publish
-desc: ''
-updated: 1642271191877
-created: 1642271191877
+desc: ""
+updated: 1641075671100
+created: 1641075542639
 ---
-
-<!--
-See [[Ref|dendron://dendron.docs/ref.module-schema#ref]]
--->
 
 ## Summary
 
-<!-- 2-3 sentences describing what this module does-->
+Publishing via the CLI
 
 ## Lifecycle
 
-<!-- Startup process for this module -->
+### Build
 
-## Reference
+- [[../packages/dendron-cli/src/commands/publishCLICommand.ts]]
 
-<!-- Anything else that is useful to lookup -->
+```ts
+build {
+	_buildNextData
 
-## Cook
+}
+```
 
-<!-- How to do common operations with this code -->
-
-## Past Tasks
-
-<!-- Link to past pull requests and commits on this given module  -->
+```ts
+_buildNextData {
+	cli = ExportPodCLICommand
+	cli.enrichArgs {podId: NextjsExportPod.id}
+	cli.execute
+}
+```

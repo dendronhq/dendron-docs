@@ -2,7 +2,7 @@
 id: AlzFH3ol9ubQhagjAUqq1
 title: Nextjs
 desc: ""
-updated: 1641681627130
+updated: 1642356685964
 created: 1634255542869
 ---
 
@@ -16,9 +16,11 @@ Responsible for creating payloads and metadata for Dendron Publishing
 
 ```ts
 
-plant(engine, config) {
+plant(engine, config, dest) {
 
     dst :=
+    // this is .next/data
+    podDstDir := dest, "data"
 
     copyAssets
 
