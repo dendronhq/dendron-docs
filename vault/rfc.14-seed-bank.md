@@ -104,7 +104,7 @@ You are interestd in developing your own vscode plugin but don't know where to s
      # newly added seed
      dendron.vscode:
    ```
-   - dendorn.code-workspace
+   - dendron.code-workspace
    ```json
    folders: [
       {
