@@ -2,7 +2,7 @@
 id: F8cCg5iQH1KXmx4SGcEia
 title: Triage GitHub Issue
 desc: ''
-updated: 1641963954833
+updated: 1642394569530
 created: 1638139691294
 ---
 
@@ -14,7 +14,7 @@ How incoming github issues are triaged
 ## Process
 
 1. Go through issues with the label `status.triage-needed` ([query](https://github.com/dendronhq/dendron/labels/status.triage-needed)) 
-1. For issues, first check if it is valid:
+1. For issues, first check if it is valid: ^aukra6T9tyfr
     - Check if issue is a  **Duplicated to an existing bug/epic**. If so, add the [[duplicate|dev.process.issues.ref.labels#duplicate]] label and close the issue
     - Check if issue **"needs-info"** because we need more details to figure out what the issue is. If so, add what info is needed and add the label.
     - Check if the issue is a valid issue (eg. describes a bug or requests for new functionality) vs a support question
@@ -35,7 +35,7 @@ How incoming github issues are triaged
         - make sure to fill out the [[issue|dendron://private/task.temp.ref#issue]] field with the link to the github issue
         - add the same #sprint and #kind tags to the task as you did to the github issue
     - export the task
-1. If the issue is a bug, make sure to recognize the user as a #role.bugcatcher by following the process in [[community highlights|dendron://private/dendron.sop.release.community-highlights#process]]
+1. If the issue is a bug, add the following steps: [[Bug|dendron://dendron.docs/dev.process.issues.sop.triage-github-issue.ref.bug]]
 1. For all cases, 
     - leave a comment in the ticket acknowledging that we have received it and communicate the next steps to the user 
     - remove the `status.triage-needed` label from the issue

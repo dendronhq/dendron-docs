@@ -2,8 +2,12 @@
 id: HVKRbG6qarzcUgjPxen65
 title: Docs
 desc: ''
-updated: 1642120195565
+updated: 1642128103229
 created: 1642120195565
+category: RFCs/Ideas
+discussionID: D_kwDOEF_3Vs4AOfk8
+url: 'https://github.com/dendronhq/dendron/discussions/2169'
+author: 'https://github.com/dendron-bot'
 ---
 
 ## Summary

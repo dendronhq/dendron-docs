@@ -2,13 +2,13 @@
 id: zPqF5R05NcZWwPxuw1wLL
 title: Ops
 desc: ""
-updated: 1641952766414
+updated: 1642171429870
 created: 1641533421118
 ---
 
 ## Command Enablement / When Clause Gotchas
 
-### Boolean expressions don't support parenteses
+### Boolean expressions don't support parentheses
 
 - `when` clause boolean expressions currently do not support parentheses.
   - See [this issue](https://github.com/microsoft/vscode/issues/91473)

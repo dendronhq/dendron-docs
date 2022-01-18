@@ -2,7 +2,7 @@
 id: jU02nYSOp3VgANjM
 title: Dev
 desc: ''
-updated: 1627142693960
+updated: 1642167070086
 created: 1627142619514
 ---
 
@@ -16,3 +16,9 @@ created: 1627142619514
 
 ## Run
 <!-- How to run the program from the current source code -->
+
+## Topics
+<!-- Index of items under pkg.name.t.* -->
+
+## Components
+<!-- Index of items under pkg.{name}.ref.* -->
