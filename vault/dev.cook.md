@@ -2,7 +2,7 @@
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
 desc: ""
-updated: 1642522872366
+updated: 1642523183779
 created: 1599151918645
 nav_order: 4.1
 ---
@@ -48,20 +48,7 @@ cp -R /path/to/dendron-yeoman/node-ts packages/{new-package}
 npm publish --access public
 ```
 
-### Using eslint
-
-All packages in the repo use a standard base configuration found at [.eslintrc.js](.eslintrc.js). If you're using the VS Code and would like to see eslint violations on it, install the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
-
-### Using a local npm registry
-
-- pre-req:
-  - install verdaccio
-
-```sh
-source bootstrap/scripts/helpers.sh
-setRegLocal
-verdaccio
-```
+## Git
 
 ### Adding a new husky hook
 
@@ -95,6 +82,18 @@ The following is an example of adding a hook that checks whether any imports hav
  }
 ```
 
+### Git Ignore Blame
+
+In case of large refactorign changes, we want to not overwrite authorship and commit history.
+
+In the project root, run the following after you have commited your styling changes to preserve the history.
+
+```sh
+echo $HASH_OF_COMMIT >> .git-blame-ignore-revs
+```
+
+You can see an explanation of how it works [here](https://git-scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revs-fileltfilegt)
+
 ## Config
 
 ### Update JSON Config with comments
@@ -109,69 +108,15 @@ function assignJSONWithComment(jsonObj: any, dataToAdd: any) {
 function writeJSONWithComments(fpath: string, data: any)
 ```
 
-### Add a new site config option
-
-The following is an example of controlling formatting options to the DendronSiteConfig. You can see the [issue](https://github.com/dendronhq/dendron/issues/278) for more details.
-
-Dendron currently will auto-format notes during `Rename` and `Refactor` operations when links inside a note need to be replaced.
-
-The formatting options are defined [here](https://dendron.so/notes/849ee8ee-05a5-47bf-b44d-d7c257117bc4.html#renaming-a-note).
-
-These are [rough notes](https://dendron.so/notes/849ee8ee-05a5-47bf-b44d-d7c257117bc4.html#flow) of how formatting gets called during rename
-
-To make this customizable, the following changes need to be made:
-
-- [ ] update the [DendronConfig type definition](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/types/typesv2.ts)
-- [ ] update [config defaults](https://github.com/dendronhq/dendron/blob/master/packages/engine-server/src/config.ts#L42:L42)
-- [ ] pass in formatting options from the [plugin](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/commands/RenameNoteV2a.ts#L137:L137)
-- [ ] accept formatting args in the [server](https://github.com/dendronhq/dendron/blob/master/packages/api-server/src/routes/note.ts#L38:L38)
-- [ ] accept formatting args in the [engine](https://github.com/dendronhq/dendron/blob/master/packages/engine-server/src/enginev2.ts#L249:L249)
-- [ ] accept it when [replacing links](https://github.com/dendronhq/dendron/blob/master/packages/engine-server/src/markdown/utilsv5.ts)
-- [ ] accept it in [remark pipeline](https://github.com/dendronhq/dendron/blob/master/packages/engine-server/src/markdown/remark/utils.ts)
-
-When all this is done, we can add tests that the formatting behavior works
-
-- [ ] [engine tests](https://github.com/dendronhq/dendron/blob/master/packages/engine-test-utils/src/__tests__/engine-server/enginev2.spec.ts)
-
-The above changes are for `Rename`. `Refactor` calls rename in a loop so changing rename should update refactor as well.
-
 ### Adding a general configuration
 
-See [[Adding new configuration|pkg.plugin-core.dev#adding-new-configuration]]
+See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
 
 ## Utilities
-
-## Plugin
-
-- See [[Dev|pkg.plugin-core.dev]]
-
-## Markdown
-
-Markdown related changes are documented [[here|pkg.dendron-markdown.dev]]
-
-## Other
 
 ### Getting absolute path for a vault
 
 ![[dendron://dendron.docs/pkg.dendron-engine.dev.cook#getting-absolute-path-for-a-vault,1:#*]]
-
-## Styling and Version Control
-
-### Manually Formatting the code
-
-From the root workspace, you can run `yarn format` to run `prettier` on all packages. This should be unecessary since we auto format on every commit
-
-### Git Ignore Blame
-
-In case of large refactorign changes, we want to not overwrite authorship and commit history.
-
-In the project root, run the following after you have commited your styling changes to preserve the history.
-
-```sh
-echo $HASH_OF_COMMIT >> .git-blame-ignore-revs
-```
-
-You can see an explanation of how it works [here](https://git-scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revs-fileltfilegt)
 
 ### Synchronously loop through async results
 

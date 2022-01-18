@@ -2,7 +2,7 @@
 id: 64f0e2d5-2c83-43df-9144-40f2c68935aa
 title: Dendron Plugin Quickstart
 desc: ""
-updated: 1642444747551
+updated: 1642522945747
 created: 1598651458825
 ---
 
@@ -26,7 +26,11 @@ Before you begin, you need to make sure to have the following SDKs and tools:
 - When you clone the repo, developer docs will be available inside of your repo workspace
 
 ## Setup ESLint
-- if you are using vscode, download and enable the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+All packages in the repo use a standard base configuration found at [.eslintrc.js](.eslintrc.js).
+
+If you are using vscode, download and enable the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+If you are using another editor, make sure you have eslint enabled.
 
 ## Setup Repo
 
