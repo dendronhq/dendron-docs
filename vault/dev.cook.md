@@ -2,7 +2,7 @@
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
 desc: ""
-updated: 1642523183779
+updated: 1642523382419
 created: 1599151918645
 nav_order: 4.1
 ---
@@ -113,6 +113,17 @@ function writeJSONWithComments(fpath: string, data: any)
 See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
 
 ## Utilities
+
+### Adding a new utility
+
+When adding a new utility function, we want it to go in the most accessible location. In order of preference:
+
+- [[pkg.common-all]]
+- [[pkg.common-server]]
+- [[pkg.dendron-engine]]
+- user facing package (eg. dendron-cli, plugin-core, etc)
+
+- NOTE: when adding a utility that is configuration related, add it to `ConfigUtils` or create a `{Module}ConfigUtils` class to encapsulate that logic. see discussion [here](https://github.com/dendronhq/dendron/pull/1960/files/8882a2d33e58fcad2eb888a69dcb7c9969a6b647#r786228021)
 
 ### Getting absolute path for a vault
 
