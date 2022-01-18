@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Dendron Review Process
 desc: ''
-updated: 1642133066529
+updated: 1642475427063
 created: 1623430616135
 nav_order: 4.1
 config:
@@ -61,3 +61,7 @@ Use cached version of notes to generate metadata instead of building from scratc
 
 ### Pull Request
 ![[dendron://dendron.docs/dev.process.review.checklist]]
+
+#### Correspondence
+
+Conversations in pull request should be resolved by the person that made the pull request. 
