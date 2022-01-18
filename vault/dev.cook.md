@@ -1,17 +1,17 @@
 ---
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
-desc: ''
-updated: 1639011697410
+desc: ""
+updated: 1642522872366
 created: 1599151918645
 nav_order: 4.1
 ---
 
 ## Summary
 
-Various recipes on doing various things inside Dendron
+Common recipes on doing common operations inside the Dendron codebase
 
-## Packaging
+## Packages
 
 ### Install a new package
 
@@ -29,7 +29,7 @@ lerna add @types/{package-to-install} --scope @dendronhq/{package-to-install-int
 
 - NOTE: watch out that you are installing dependencies in the right package. Missing dependencies will appear to work in development if that dependency is present in any of the other packages. The reason things work is because of the way the nodejs module resolution works and that we're in a monorepo. Dependencies are installed at the root of the monorepo and will be found there when the package doesn't have them. When we publish them as npm packages, these dependencies will show up as missing in their respective packages if its not included in the dependencies
 
-### Add a new node package
+### Publish a new monorepo package
 
 - initialize repo
 
@@ -99,7 +99,7 @@ The following is an example of adding a hook that checks whether any imports hav
 
 ### Update JSON Config with comments
 
-Dendron works with JSON with comments when working the a vscode workspace file, snippets file or the keybindings file. When making a change here, take care to both read and write to the file while preserving comments. 
+Dendron works with JSON with comments when working the a vscode workspace file, snippets file or the keybindings file. When making a change here, take care to both read and write to the file while preserving comments.
 
 You'll want to make sure to use the following functions to read, assign and write json with comments
 
@@ -139,7 +139,10 @@ The above changes are for `Rename`. `Refactor` calls rename in a loop so changin
 
 See [[Adding new configuration|pkg.plugin-core.dev#adding-new-configuration]]
 
+## Utilities
+
 ## Plugin
+
 - See [[Dev|pkg.plugin-core.dev]]
 
 ## Markdown
@@ -151,6 +154,7 @@ Markdown related changes are documented [[here|pkg.dendron-markdown.dev]]
 ### Getting absolute path for a vault
 
 ![[dendron://dendron.docs/pkg.dendron-engine.dev.cook#getting-absolute-path-for-a-vault,1:#*]]
+
 ## Styling and Version Control
 
 ### Manually Formatting the code
@@ -159,7 +163,7 @@ From the root workspace, you can run `yarn format` to run `prettier` on all pack
 
 ### Git Ignore Blame
 
-In case of large refactorign changes, we want to not overwrite authorship and commit history. 
+In case of large refactorign changes, we want to not overwrite authorship and commit history.
 
 In the project root, run the following after you have commited your styling changes to preserve the history.
 
@@ -174,13 +178,13 @@ You can see an explanation of how it works [here](https://git-scm.com/docs/git-b
 - see <https://github.com/dendronhq/dendron/blob/integ-publish/packages/plugin-core/src/commands/VaultAddCommand.ts#L171:L179>
 
 ```ts
-  await _.reduce(
-    vaults,
-    async (resp: any, vault: DVault) => {
-      await resp;
-      await wsService.createVault({ vault });
-      return this.addVaultToWorkspace(vault);
-    },
-    Promise.resolve()
-  );
+await _.reduce(
+  vaults,
+  async (resp: any, vault: DVault) => {
+    await resp;
+    await wsService.createVault({ vault });
+    return this.addVaultToWorkspace(vault);
+  },
+  Promise.resolve()
+);
 ```

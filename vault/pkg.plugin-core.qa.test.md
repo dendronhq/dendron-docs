@@ -1,8 +1,8 @@
 ---
 id: veJtAvr1gSMu50Mp
 title: Test
-desc: ''
-updated: 1639696757630
+desc: ""
+updated: 1642293406908
 created: 1627140509315
 ---
 
@@ -24,7 +24,8 @@ import { getDWorkspace } from "../../workspace";
 import { describeMultiWS, setupBeforeAfter } from "../testUtilsV3";
 import { expect } from "../testUtilsv2";
 // Then create a test suite
-suite("GIVEN testing code setupLegacyWorkspaceMulti", function () { // has to be function(), not arrow
+suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
+  // has to be function(), not arrow
   const ctx = setupBeforeAfter(this);
 
   describeMultiWS(
@@ -52,7 +53,6 @@ suite("GIVEN testing code setupLegacyWorkspaceMulti", function () { // has to be
     }
   );
   // ...
-
 });
 ```
 
@@ -84,7 +84,6 @@ and may have small differences in behavior.
 
 You can use this callback to modify the `dendron.yml` configuration for the test workspace. See [here for an example](https://github.com/dendronhq/dendron/blob/1c734daa45cc1e655638d754267c6bdf5bdcab90/packages/plugin-core/src/test/suite-integ/CreateDailyJournalNote.test.ts#L115-L118).
 
-
 ### Test etiquette
 
 Your tests should follow a [[BDD-Light|rfc.25-bdd-light]] style. The example above shows how this can be accomplished. If you want to add some "AND" clauses, you can nest your tests inside `describe`s to achieve that.
@@ -99,37 +98,61 @@ If you need to do some action before all tests in `describe*WS` block and it nee
 
 ```ts
 describeMultiWS(
-    "WHEN ...",
-    { /* ... */ },
-    () => {
-        before((done) => {
-            // Action to do after workspace initialized, but before any tests are run
-        });
+  "WHEN ...",
+  {
+    /* ... */
+  },
+  () => {
+    before((done) => {
+      // Action to do after workspace initialized, but before any tests are run
+    });
 
-        test("THEN ...", () => { /* ... test code here */});
-    }
-)
+    test("THEN ...", () => {
+      /* ... test code here */
+    });
+  }
+);
 ```
 
 There's also a `beforeEach` mocha hook if this action needs to be repeated before each test.
 
 ## Details
 
-Note that VSCode uses [mocha](https://mochajs.org/) as its default test runner whereas Dendron uses  [jest](https://jestjs.io/).
+Note that VSCode uses [mocha](https://mochajs.org/) as its default test runner whereas Dendron uses [jest](https://jestjs.io/).
 
-We shim the [jest methods](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/test/testUtilsv2.ts#L418:L418) when testing the plugin though so that we can re-use the same logic between our non-vscode packages and the Dendron VSCode Plugin. 
+We shim the [jest methods](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/test/testUtilsv2.ts#L418:L418) when testing the plugin though so that we can re-use the same logic between our non-vscode packages and the Dendron VSCode Plugin.
 
 ## Executing Tests
 
 ### Run All Tests
+
 1. Open the debug view inside vscode
 2. Run `Extension Integ Tests` in the dropdown
 
 - TIP: consider enabling "Uncaught Exceptions" under "Breakpoints" when running tests. Otherwise, if you forget to `await` a function that returns a promise and that function throws an exception, the test will appear to pass even though an exception was thrown.
 
+#### Limited test cases
+
+See [[../packages/plugin-core/src/test/suite-integ/index.ts]]
+
+Modify the files variable
+
+```ts
+glob(pattern, { cwd: testsRoot }, (err, files) => {
+  if (err) {
+    return e(err);
+  }
+  // Make changes here
+  files = ["ChangeWorkspace.test.js", "CodeActionProvider.test.js"];
+  ...
+```
+
+#### Run from CLI
+
 ### Running a single test
+
 1. Open a test inside 'src/test/suite-integ/' from `plugin-core`
-2. Run the build task `Extension Integ Tests - File` 
+2. Run the build task `Extension Integ Tests - File`
 
 ## Manual Testing
 

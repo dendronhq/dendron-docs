@@ -20,6 +20,7 @@ Before you begin, you need to make sure to have the following SDKs and tools:
   - while this is not required, it's highly recommended as the Dendron repo comes with documentation that is managed using Dendron
 
 ## Setup Dendron (optional)
+
 - Download Dendron by following instructions [here](https://wiki.dendron.so/notes/678c77d9-ef2c-4537-97b5-64556d6337f1.html)
 - After you have gone through the tutorial, proceed, to next steps
 - When you clone the repo, developer docs will be available inside of your repo workspace
@@ -46,6 +47,7 @@ Before you begin, you need to make sure to have the following SDKs and tools:
    yarn bootstrap:bootstrap # install package dependencise
    yarn bootstrap:build  # build package dependencies
    ```
+
 3. Watch all dependencies ^QWJj9cTIcwuX
 
 - NOTE: typescript is a compiled language which means that the executable won't be updated unless you compile. The watch script will auto-compile all code on change
@@ -75,4 +77,5 @@ Before you begin, you need to make sure to have the following SDKs and tools:
 ```
 
 ## Next Steps
+
 - [[Dendron Development Process|dendron://dendron.docs/dev.process]]
