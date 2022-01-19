@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Dendron Review Process
 desc: ''
-updated: 1642475427063
+updated: 1642475469564
 created: 1623430616135
 nav_order: 4.1
 config:
@@ -64,4 +64,5 @@ Use cached version of notes to generate metadata instead of building from scratc
 
 #### Correspondence
 
-Conversations in pull request should be resolved by the person that made the pull request. 
+A conversation should only be resolved when the comment has been addressed and is reflected in the pull request. 
+At that point, the conversation should be resolved by the person that made the pull request. 
