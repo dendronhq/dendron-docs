@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1640801289898
+updated: 1642630140118
 created: 1632347495097
 ---
 
@@ -98,3 +98,23 @@ We make frequent use of jest [snapshots](https://jestjs.io/docs/snapshot-testing
 
 1. Use command prompt and run `> Tasks: Run tasks`
 2. Select `test:updateSnapshots`
+
+### Stubbing setTimeout
+
+Stubbing the global `setTimeout` (with `sinon.fakeTimer` or else) seems to break
+VSCode, causing it to just hang. If you are having trouble with that, instead
+use `Wrap.setTimeout` from `@dendronhq/common-all` in the code you want to test.
+Then you can stub the wrapped function and simulate the timer going off with
+`stub.callArg(0)`. For example:
+
+```ts
+const stubTimeout = sinon.stub(Wrap, "setTimeout");
+const editor = await WSUtils.openNote(note);
+WorkspaceWatcher.moveCursorPastFrontmatter(editor);
+stubTimeout.callArg(0);
+```
+
+### Stubbing global functions
+
+Follow the same procedure as [[#stubbing-settimeout]], but create your own wrapper if one doesn't exist.
+You can reuse the `Wrap` class in `common-all`. Try to wrap the function exactly with the same signature.
