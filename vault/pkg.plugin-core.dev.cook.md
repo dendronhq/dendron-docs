@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ""
-updated: 1642472553133
+updated: 1642615685679
 created: 1634590309804
 ---
 
@@ -85,6 +85,13 @@ cmd.execute(args)
 - ![[dendron://dendron.docs/pkg.plugin-core.t.lookup.cook]]
 
 ## Views
+
+### Using the Dendron Preview on arbitrary markdown
+
+You can use the Dendron Preview to show custom markdown. To do so:
+
+1. Use the `openNoteInPreview` from [[../packages/plugin-core/src/commands/ShowPreview.ts#L327]]
+1. See [[Create a pseudo-note for a non-note file|dendron://dendron.docs/pkg.plugin-core.dev.cook#create-a-pseudo-note-for-a-non-note-file]]
 
 ### Adding a Web UI Component
 
@@ -231,6 +238,6 @@ You can check if a note is a pseudo-note using [[DNode.isFileId|../packages/comm
 
 Any feature that causes dynamic code execution (code supplied or modifiable that is outside of the published Dendron extension) **must first check whether the user has enabled [workspace trust](https://code.visualstudio.com/docs/editor/workspace-trust)**. Some examples of this are [[Hooks|dendron://dendron.dendron-site/dendron.topic.hooks]] and [[Traits|dendron://dendron.dendron-site/dendron.topic.traits]].
 
-To check whether workspace trust has been enabled, you can use VSCode's API: `vscode.workspace.isTrusted`.  If working in the context of EngineAPIService, there is also a private member that contains the trust information (currently `_trustedWorkspace`).
+To check whether workspace trust has been enabled, you can use VSCode's API: `vscode.workspace.isTrusted`. If working in the context of EngineAPIService, there is also a private member that contains the trust information (currently `_trustedWorkspace`).
 
 If your scenario is blocked because the user hasn't enabled workspace trust, please add an notification prompt to the user explaining that the scenario didn't run because the workspace is not trusted.
