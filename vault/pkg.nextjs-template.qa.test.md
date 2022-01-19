@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1638489027843
+updated: 1642636388424
 created: 1638063942917
 ---
 
@@ -36,8 +36,4 @@ Same instructions as above. Change into your own workspace instead of `$DENDRON_
 ### Using amplify
 
 To test nextjs-template with the contents of dendron, push to the `dev` branch of nextjs-template. This is automatically consumed by the
-[[Dev Wiki Endpoint|dendron://dendron.docs/ref.dev-wiki-endpoint]]. To trigger a build, you can either push something to dev branch or by running the following command:
-
-```sh
-curl -X POST -d {} "https://webhooks.amplify.us-east-1.amazonaws.com/prod/webhooks?id=e30aff97-0336-46b8-983e-5262efea7098&token=KbS2zuBWI5CWeDmSttgpaR0zjn7RqHpdF7dP9yGqc&operation=startbuild" -H "Content-Type:application/json"
-```
+[[Dev Wiki Endpoint|dendron://dendron.docs/ref.dev-wiki-endpoint]]. 

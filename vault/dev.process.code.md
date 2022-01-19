@@ -1,8 +1,8 @@
 ---
 id: 773e0b5a-510f-4c21-acf4-2d1ab3ed741e
-title: Code
+title: Code Conventions
 desc: ''
-updated: 1638918115725
+updated: 1642617750935
 created: 1609550314371
 nav_order: 2.1
 ---
@@ -37,6 +37,16 @@ When introducing abstractions, beware of coupling. In general, we'd rather have 
 Unless you're relatively certain that something will be re-used, we default to implementing a thing two or three times. If at that point we notice that it does indeed share a lot in common, we will create a common abstraction for it.
 
 ## Conventiions
+
+### prefer capital snake case for constants
+
+```ts
+// good
+A_SNAKE = "PYTHON"
+
+// bad
+ANSAKE = "python
+```
 
 ### prefer using camelCase for variables
 
