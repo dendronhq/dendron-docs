@@ -2,8 +2,48 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Process
 desc: ''
-updated: 1637876733365
+updated: 1642720980083
 created: 1637876733365
 nav_order: 2.1
 ---
 
+## Issues
+
+Managing new tasks and issues 
+
+- [[Github Issues|dendron://dendron.docs/dev.process.issues]]
+- [[Internal Issues|dendron://private/area.team.sop#issues]]
+
+## Code
+
+Writing code
+
+- [[Code Conventions|dendron://dendron.docs/dev.process.code]]
+    - [[Monorepo|dendron://dendron.docs/dev.process.code.monorepo]] (NOTE: read this if its your first time working in a monorepo)
+- [[Errors|dendron://dendron.docs/dev.process.errors]]
+- [[Logs|dendron://dendron.docs/dev.process.logs]]
+- [[Testing|dendron://dendron.docs/dev.process.qa]]
+
+## Docs
+
+Writing docs
+
+- [[Dendron Developer Docs|dendron://dendron.docs/dev.process.docs]]
+
+## Review Process
+
+Reviewing Issue
+
+- [[Dendron Review Process|dendron://dendron.docs/dev.process.review]]
+- [[Additional Review Considerations|dendron://private/area.team.ref.reviewing-code]]
+
+## Release
+
+Releasing Code
+- [[Deployments|dendron://dendron.docs/dev.process.deploy]]
+
+## Close the Loop
+
+Things to do after issue is released
+
+- [[Close Loop|dendron://dendron.docs/dev.process.close-loop]]
