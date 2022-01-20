@@ -12,5 +12,5 @@ How to submit a pull request request through the GitHub CLI
 ## Prerequisites
 * Install the CLI through https://github.com/cli/cli#installation
 
-## Process
+## Steps
 When you are ready to submit a pull request, run `gh pr create` to create PR request with information from commit message. For other parameters, see https://cli.github.com/manual/gh_pr_create 

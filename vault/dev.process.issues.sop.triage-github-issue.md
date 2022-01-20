@@ -11,7 +11,7 @@ created: 1638139691294
 
 How incoming github issues are triaged
 
-## Process
+## Steps
 
 1. Go through issues with the label `status.triage-needed` ([query](https://github.com/dendronhq/dendron/labels/status.triage-needed)) 
 1. For issues, first check if it is valid: ^aukra6T9tyfr

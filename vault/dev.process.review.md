@@ -18,7 +18,7 @@ This goes into how we do code review (via pull requests)
 
 We recommend using the github cli to work on pull requests (not required but helpful). More details on the setup [[here|dendron://dendron.docs/dev.process.review.github-cli]]
 
-## Process
+## Steps
 
 ### Starting work
 

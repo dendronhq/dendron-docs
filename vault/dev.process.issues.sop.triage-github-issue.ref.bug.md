@@ -8,7 +8,7 @@ created: 1642359043547
 
 How we deal with bugs
 
-## Process
+## Steps
 
 1. If the issue is a bug, make sure to recognize the user who made the PR as a #role.bugcatcher by following the process in [[community highlights|dendron://private/dendron.sop.release.community-highlights#process]]
 1. If the bug is low priority, mark it as such and skip to the last step
