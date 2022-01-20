@@ -2,7 +2,7 @@
 id: 1EoNIXzgmhgagqcAo9nDn
 title: PR Checklist
 desc: ''
-updated: 1642699012372
+updated: 1642699643227
 created: 1632348050137
 ---
 
@@ -25,6 +25,7 @@ created: 1632348050137
 
 ## code
 - [ ] code should follow [[Code Conventions|dendron://dendron.docs/dev.process.code]]
+- [ ] circular dependency check: make sure your code is not introducing new circular dependencies in plugin-core.  See [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code#avoiding-circular-dependencies]].
 
 ## implementation
 - [ ] can this be simplified?
@@ -36,7 +37,12 @@ created: 1632348050137
 ## testing
 ![[dendron://dendron.docs/dev.process.qa.test.checklist]]
 
-## css
+## analytics
+- [ ] if you are adding analytics related changes, make sure the [Telemetry](https://wiki.dendron.so/notes/84df871b-9442-42fd-b4c3-0024e35b5f3c.html) docs are updated
+
+## area specific
+
+### css
 If you are introducing CSS changes, please confirm that
 
 - [ ] display is correct for following dimensions
@@ -47,10 +53,3 @@ If you are introducing CSS changes, please confirm that
     - [ ] safari
     - [ ] firefox
     - [ ] chrome
-
-## circular dependency check
-Check to make sure your code is not introducing new circular dependencies in plugin-core.  See [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code#avoiding-circular-dependencies]].
-
-## analytics
-- [ ] if you are adding analytics related changes, make sure the [Telemetry](https://wiki.dendron.so/notes/84df871b-9442-42fd-b4c3-0024e35b5f3c.html) docs are updated
-
