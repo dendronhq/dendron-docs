@@ -2,7 +2,7 @@
 id: 1EoNIXzgmhgagqcAo9nDn
 title: PR Checklist
 desc: ''
-updated: 1642672191588
+updated: 1642699012372
 created: 1632348050137
 ---
 
@@ -35,6 +35,18 @@ created: 1632348050137
 
 ## testing
 ![[dendron://dendron.docs/dev.process.qa.test.checklist]]
+
+## css
+If you are introducing CSS changes, please confirm that
+
+- [ ] display is correct for following dimensions
+    - [ ] sm: screen ≥ 576px, eg. iphonex, (375x812)
+    - [ ] lg: screen ≥ 992px
+    - [ ] xxl: screen ≥ 1600px eg. mac (1600x900)
+- [ ] display is correct for following browsers (across the various dimensions)
+    - [ ] safari
+    - [ ] firefox
+    - [ ] chrome
 
 ## circular dependency check
 Check to make sure your code is not introducing new circular dependencies in plugin-core.  See [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code#avoiding-circular-dependencies]].
