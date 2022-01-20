@@ -2,7 +2,7 @@
 id: 1EoNIXzgmhgagqcAo9nDn
 title: PR Checklist
 desc: ''
-updated: 1642631021974
+updated: 1642672191588
 created: 1632348050137
 ---
 
@@ -35,6 +35,9 @@ created: 1632348050137
 
 ## testing
 ![[dendron://dendron.docs/dev.process.qa.test.checklist]]
+
+## circular dependency check
+Check to make sure your code is not introducing new circular dependencies in plugin-core.  See [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code#avoiding-circular-dependencies]].
 
 ## analytics
 - [ ] if you are adding analytics related changes, make sure the [Telemetry](https://wiki.dendron.so/notes/84df871b-9442-42fd-b4c3-0024e35b5f3c.html) docs are updated
