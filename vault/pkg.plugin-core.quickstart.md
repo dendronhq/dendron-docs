@@ -2,7 +2,7 @@
 id: 64f0e2d5-2c83-43df-9144-40f2c68935aa
 title: Dendron Plugin Quickstart
 desc: ""
-updated: 1642522945747
+updated: 1642665887141
 created: 1598651458825
 ---
 
@@ -47,8 +47,8 @@ If you are using another editor, make sure you have eslint enabled.
 
    # this should install all dependencies
    yarn setup
-   # if the above script errors out, you can diagnose the issue and run the following scripts sequentially dependeing on where the error occured
-   yarn bootstrap:bootstrap # install package dependencise
+   # if the above script errors out, you can diagnose the issue and run the following scripts sequentially depending on where the error occurred
+   yarn bootstrap:bootstrap # install package dependencies
    yarn bootstrap:build  # build package dependencies
    ```
 

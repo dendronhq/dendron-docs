@@ -2,7 +2,7 @@
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
 desc: ""
-updated: 1642523917576
+updated: 1642669208566
 created: 1599151918645
 nav_order: 4.1
 ---
@@ -144,3 +144,16 @@ await _.reduce(
   Promise.resolve()
 );
 ```
+
+## Views
+
+_Webviews, including as Preview, TreeViewV2, Calendar View_
+
+### Preview Panel
+
+#### Getting Access to Preview Panel
+
+- Within plugin-core code, to access the preview panel (in order to show it, for example), you should inject an instance of `PreviewProxy` rather than using the `vscode.webviewPanel` directly.
+- As an entry point from vscode UI contribution points (such as command palette, or context menus), the `ShowPreview` vscode command should be used.
+    - If you want to open the preview with default preview behavior, such as having the preview show the contents of the in-focus Dendron note, call the command with no arguments
+    - If you want to open the preview with specific contents (for example, showing a non-Dendron markdown file via a context menu), then pass in the information via a `NoteProps` object to the `ShowPreview` command.
