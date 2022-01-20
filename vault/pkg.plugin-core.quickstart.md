@@ -62,7 +62,7 @@ If you are using another editor, make sure you have eslint enabled.
 
 ```
 
-4. Open the workspace by opening `dendron-main.code-workspace` with VSode. While its not required to use VSCode, most of the helper scripts in this repository are created with VSCode in mind so using it will make development significantly easier.
+4. Open the workspace by opening `dendron-main.code-workspace` with VScode. While its not required to use VSCode, most of the helper scripts in this repository are created with VSCode in mind so using it will make development significantly easier.
 
 5. Run the plugin
 
