@@ -1,10 +1,13 @@
 ---
 id: 7aFrHnTNespaRzhlTwftM
-title: Process
+title: Development Process
 desc: ''
-updated: 1642730819601
+updated: 1642738609625
 created: 1637876733365
 nav_order: 2.1
+config:
+  global:
+    enableChildLinks: false
 ---
 
 ## Issues
