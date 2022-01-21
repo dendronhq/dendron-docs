@@ -2,35 +2,15 @@
 id: 64f0e2d5-2c83-43df-9144-40f2c68935aa
 title: Dendron Plugin Quickstart
 desc: ""
-updated: 1642665887141
+updated: 1642730050231
 created: 1598651458825
 ---
 
 ## Prerequisites
 
-Before you begin, you need to make sure to have the following SDKs and tools:
+See [[setting up your development environment|dendron://dendron.docs/dev.process.code.dev-env#summary]] before proceeding
+![[dendron://dendron.docs/dev.process.code.dev-env#install-dependencies,1]]
 
-- Node.js >= 14
-  - We recommend using a version in [Active LTS](https://nodejs.org/en/about/releases/)
-- yarn
-  - `npm install -g yarn`
-- lerna
-  - `npm install -g lerna`
-- [vscode](https://code.visualstudio.com/) or [vscodium](https://vscodium.com/)
-  - while this is not required, it's highly recommended as the Dendron repo comes with documentation that is managed using Dendron
-
-## Setup Dendron (optional)
-
-- Download Dendron by following instructions [here](https://wiki.dendron.so/notes/678c77d9-ef2c-4537-97b5-64556d6337f1.html)
-- After you have gone through the tutorial, proceed, to next steps
-- When you clone the repo, developer docs will be available inside of your repo workspace
-
-## Setup ESLint
-
-All packages in the repo use a standard base configuration found at [.eslintrc.js](.eslintrc.js).
-
-If you are using vscode, download and enable the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
-If you are using another editor, make sure you have eslint enabled.
 
 ## Setup Repo
 

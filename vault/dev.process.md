@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Process
 desc: ''
-updated: 1642720980083
+updated: 1642729899886
 created: 1637876733365
 nav_order: 2.1
 ---
@@ -19,6 +19,7 @@ Managing new tasks and issues
 Writing code
 
 - [[Code Conventions|dendron://dendron.docs/dev.process.code]]
+    - [[Dev Env|dendron://dendron.docs/dev.process.code.dev-env]]: Setting up your dev environment
     - [[Monorepo|dendron://dendron.docs/dev.process.code.monorepo]] (NOTE: read this if its your first time working in a monorepo)
 - [[Errors|dendron://dendron.docs/dev.process.errors]]
 - [[Logs|dendron://dendron.docs/dev.process.logs]]
