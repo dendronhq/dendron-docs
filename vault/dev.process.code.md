@@ -2,7 +2,7 @@
 id: 773e0b5a-510f-4c21-acf4-2d1ab3ed741e
 title: Code Conventions
 desc: ''
-updated: 1642672311948
+updated: 1642733240536
 created: 1609550314371
 nav_order: 2.1
 ---
@@ -309,6 +309,7 @@ If these conditions are met, please run through the following steps below:
 1. check the circular dependency again with your changes.
     1. If the number is less than or equal, put a note in your review description saying so.
     2. If the number is greater, then change your code to eliminate the circular dependencies introduced (see exceptions)
+1. Include the before and after results in your PR description.
 
 Exceptions to the rule:
 - Emergency Fixes

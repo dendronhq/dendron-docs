@@ -2,7 +2,7 @@
 id: iZ8vpfY0n1E3Nq3IC1Y7X
 title: Close Loop
 desc: ''
-updated: 1642665928738
+updated: 1642732279488
 created: 1642665703104
 ---
 
@@ -12,7 +12,7 @@ This page covers procedures for closing the loop - in other words, additional th
 
 ## For Breaking Changes or Larger Structural Changes / Refactors
 
-1. Make any relevant changes in this Dendron Docs vault
+1. Make any relevant changes in the Dendron Docs vault
 1. Announce the changes in the Discord dev channel.
 
 Some examples may include
