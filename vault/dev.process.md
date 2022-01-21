@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Process
 desc: ''
-updated: 1642729899886
+updated: 1642730819601
 created: 1637876733365
 nav_order: 2.1
 ---
@@ -48,3 +48,6 @@ Releasing Code
 Things to do after issue is released
 
 - [[Close Loop|dendron://dendron.docs/dev.process.close-loop]]
+
+## Lookup
+- the layout is inspired by [GitLab Master Plan](https://about.gitlab.com/blog/2016/09/13/gitlab-master-plan/)
