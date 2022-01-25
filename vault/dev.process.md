@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Development Process
 desc: ""
-updated: 1643120317565
+updated: 1643226671534
 created: 1637876733365
 nav_order: 2.1
 config:
@@ -25,6 +25,7 @@ Writing code
   - [[Dev Env|dendron://dendron.docs/dev.process.code.dev-env]]: Setting up your dev environment
   - [[Monorepo|dendron://dendron.docs/dev.process.code.monorepo]] (NOTE: read this if its your first time working in a monorepo)
   - [[Utilities|dendron://dendron.docs/dev.process.code.utilities]]
+- [[Changelog|dendron://dendron.docs/dev.changelog]]: Breaking changes to the development process and current migrations
 - [[Errors|dendron://dendron.docs/dev.process.errors]]
 - [[Logs|dendron://dendron.docs/dev.process.logs]]
 - [[Testing|dendron://dendron.docs/dev.process.qa]]
