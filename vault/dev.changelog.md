@@ -2,10 +2,33 @@
 id: H7CgvT7YUYAiV7mEmGnky
 title: Changelog
 desc: ""
-updated: 1641167310253
+updated: 1643127662948
 created: 1630796807707
 nav_order: 6.1
 ---
+
+## Deprecation of `MDUtilsV4`
+
+- start: 2022.01.25
+- status: WIP
+
+### Summary
+
+`MDUtilsV4` has been deprecated, and replaced by `MDUtilsV5`.
+Some useful utility functions in `MDUtilsV4` have been instead moved
+to `MdastUtils`.
+
+### Rationale
+
+We have been slowly migrating to `MDUtilsV5` over the past few months without
+explicitly deprecating `MDUtilsV4`. Despite attempts to make things backwards
+compatible, this causes hard-to-debug issues where code mixes `V4` and `V5`.
+
+### Caveats
+
+`MDUtilsV5` does not yet implement the full functionality of `V4`. In particular
+some functionalities like overrides and some markdown plugin options are not
+supported. These will be slowly migrated over to `V5` and refactored.
 
 ## Deprecation of `getNotesByFname` and `getNoteByFnameV5` interfaces
 - start: 2022.01.02
