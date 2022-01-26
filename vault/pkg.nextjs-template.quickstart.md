@@ -3,24 +3,15 @@ id: PgwAXFfotfgpFVqHQRlBl
 title: Quickstart
 desc: |
   Development related
-updated: 1638482222549
+updated: 1643221803978
 created: 1628376960868
 ---
 
 ## Build
 
-See build instructions [[here|pkg.plugin-core.quickstart#build]] 
-  - NOTE: If you haven't done a clean install since 2021-11-19, note that we added an additional asset compilation step to the build process. You'll need to run the following manually to compile (this is now part of `yarn setup` so if you are building the monorepo for the first time, you do not need to do this step)
-    ```sh
-    cd packages/common-assets
-    yarn build
-
-    cd ../..
-    dendron dev sync_assets --fast
-    ```
+See build instructions in [[Setting up your Development Environment|dendron://dendron.docs/dev.process.code.dev-env]]
 
 ## Run
-<!-- How to run the program from the current source code -->
 1. Navigate to the nextjs-template
   ```
   cd {path-to-template}/nextjs-template
@@ -58,3 +49,8 @@ See build instructions [[here|pkg.plugin-core.quickstart#build]]
   dendron exportPod --podId dendron.nextjs --config "dest={path/to/nextjs-template}"
   ```
   Your notes/html files will be copied over to {path-to-template}/nextjs-template/data/notes/
+
+## Lookup
+Some other resources to get you familiar with this package
+
+- [[Architecture|dendron://dendron.docs/pkg.nextjs-template.arch]]

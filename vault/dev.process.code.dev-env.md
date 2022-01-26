@@ -1,8 +1,8 @@
 ---
 id: gI6BwB1PJOfe9nMQQAN7a
-title: Dev Env
+title: Setting up your Development Environment
 desc: ''
-updated: 1642730586688
+updated: 1643221734532
 created: 1642729891501
 ---
 
