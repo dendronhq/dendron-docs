@@ -1,10 +1,16 @@
 ---
 id: H7CgvT7YUYAiV7mEmGnky
-title: Changelog
-desc: ""
-updated: 1641167310253
+title: Impactful Change Notice
+desc: ''
+updated: 1643201808856
 created: 1630796807707
 nav_order: 6.1
+---
+
+## Summary
+
+This page contains a set of undergoing or completed changes that have a wide impact on the code base. Examples include significant refactoring projects and deprecation notices. Any larger pieces of work that you think other developers should be aware of should go here.
+
 ---
 
 ## Deprecation of `getNotesByFname` and `getNoteByFnameV5` interfaces
@@ -36,6 +42,7 @@ new interfaces in new code, and migrate the old code when possible.
 We have numerous circular dependencies in plugin-core that is leading to unpredictable build failures. We need to refactor our code to eliminate the existing circular dependencies, and then put in place guards to prevent new circular dependencies from being introduced.
 
 ### Changes
+- For developers, please see [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code.best-practices#avoiding-circular-dependencies]] for updated processes during check-in and review to avoid introducing new circular dependencies.
 - A new webpack step will be added that detects circular dependencies. It's currently set to warn only, as there are still existing circular dependencies that need to be fixed.  Once those are fixed, we will flip the check from warn to error to fail the build upon detection of circular dependencies.
 - To fix the remaining circular dependencies, we need to refactor workspace.ts.  The DendronExtension class contains various views, watchers, and services that end up calling static/singleton methods to re-access the other properties of DendronExtension, thus causing circular dependencies.
 

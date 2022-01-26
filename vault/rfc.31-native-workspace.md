@@ -35,7 +35,7 @@ On startup, Dendron will look at all workspace folders and look for the presence
 
 ## Implementation
 
-Part of this work has already been done and is described [[here|dev.changelog]].
+Part of this work has already been done and is described [[here|dev.impactful-change-notice]].
 
 Remaining work:
 - [x] currently an error on initialization with where `workspaceFile` is undefined 

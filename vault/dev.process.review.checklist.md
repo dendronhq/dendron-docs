@@ -25,7 +25,7 @@ created: 1632348050137
 
 ## code
 - [ ] code should follow [[Code Conventions|dendron://dendron.docs/dev.process.code]]
-- [ ] circular dependency check: make sure your code is not introducing new circular dependencies in plugin-core.  See [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code#avoiding-circular-dependencies]].
+- [ ] circular dependency check: make sure your code is not introducing new circular dependencies in plugin-core.  See [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code.best-practices#avoiding-circular-dependencies]].
 
 ## implementation
 - [ ] can this be simplified?
