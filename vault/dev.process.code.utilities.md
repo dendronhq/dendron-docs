@@ -2,7 +2,7 @@
 id: arVaaWSOTK0h6IsCl1FIi
 title: Utilities
 desc: ""
-updated: 1643086727680
+updated: 1643212915122
 created: 1635717727990
 ---
 
@@ -34,3 +34,106 @@ Some other packages that don't quite fix the above scheme:
 
 - [[pkg.common-frontend]]: accessible from all packages that run in a browser only environment
 - [[pkg.pods-core]]: accessible from all packages that require pods (currently this is [[pkg.plugin-core]] and [[pkg.dendron-cli]])
+
+## Conventions around Utilities
+
+### Utilities should be enclosed in a corresponding *Utils class
+
+- bad
+```ts
+export getMigrationName() {
+    ....
+}
+```
+
+- good
+```ts
+export class MigrationUtils {
+    static getMigrationName() {
+        ...
+    }
+}
+```
+
+### Aim for one utility class per file
+
+- bad
+    - file: migration.ts
+```ts
+export class MigrationUtils {
+    static getMigrationName() {
+        ...
+    }
+}
+
+export class FooUtils {
+    ...
+}
+```
+- good
+    - file: migration.ts
+```ts
+export class MigrationUtils {
+    static getMigrationName() {
+        ...
+    }
+}
+```
+    - file: foo.ts
+```ts
+export class FooUtils {
+    ...
+}
+```
+
+### Utilities should be nested inside a utils folder
+- NOTE: the only exception to this rule is [[pkg.common-all]] and [[pkg.common-server]] which are standalone utility libraries
+
+- bad
+```
+- src/
+    - utils.ts
+```
+
+- good
+```
+- src/
+    - utils/
+        - migration.ts
+```
+
+### Module specific utils can be standalone if they are put inside their module
+
+- bad
+```
+- src/
+    - utils/
+        - migration.ts
+    - migration/
+```
+
+- good
+```
+- src/
+    - utils/
+    - migration/
+        - utils.ts
+```
+
+### Utilities that are exported from a package should be exported under the package name at the top level index.ts
+
+- bad
+- index.ts
+```ts
+export *  from "migration/utils"
+```
+
+- good
+
+- index.ts
+```ts
+import * as MigrationUtils from "migration/utils"
+export const EngineUtils {
+    MigrationUtils,
+}
+```
