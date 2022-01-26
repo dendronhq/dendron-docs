@@ -6,4 +6,4 @@ updated: 1637971762998
 created: 1637971611741
 ---
 
-Task will be an upcoming [[Crop Community Issue|dendron://private/dendron.sop.crop-community-issue]]
+Task will be an upcoming [[Crop Community Issue|dendron://dendron.community/sop.crop-community-issue]]
