@@ -11,7 +11,7 @@ created: 1621630111186
 
 ### Pre-req
 - [[pkg.plugin-core.quickstart]]
-- [[Symlink the CLI|pkg.dendron-cli.dev#symlink]] `dendron-cli`
+- [[Symlink the CLI|pkg.dendron-cli.dev.cook.symlink-cli]] `dendron-cli`
 
 ### Steps
 
