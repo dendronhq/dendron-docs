@@ -1,16 +1,20 @@
 ---
 id: dHRMZ8Qy3t4UUe5AXoyG3
 title: Tree View
-desc: ''
-updated: 1636133600955
+desc: ""
+updated: 1643226815572
 created: 1629993468111
 ---
 
 ## Summary
+
 <!-- What is this module about -->
 
 ## Lifecycle
-<!-- Startup process for this module -->
+
+- entry point: rendered in [[Layout|dendron://dendron.docs/pkg.nextjs-template.t.layout]]
+
+- [[../packages/nextjs-template/components/DendronTreeMenu.tsx]]
 
 ```tsx
 DendronTreeMenu(props) {
@@ -26,11 +30,11 @@ DendronTreeMenu(props) {
   // top level hierarchies
   roots = domains.map note {
     // TODO: should be optimized
-    // recursively generate ALL children 
+    // recursively generate ALL children
     note2TreeDatanote(note)
   }
 
-  return <MenuView 
+  return <MenuView
     // these should always be visible in the navbar
     roots={roots}
     // the keys that are expanded: current note and all its parents
@@ -46,6 +50,7 @@ MenuView {
 ```
 
 ## Design
+
 - author: @sam
 - source: [Nextjs template style improvements by namjul · Pull Request #1193 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1193#issuecomment-906258835)
 
@@ -56,7 +61,9 @@ There was a study done https://www.nngroup.com/articles/accordion-icons/ to answ
 Based on this I would say we leave it the way it is currently implemented (caret).
 
 ## Lookup
+
 - [Code - components/DendronTreeMenu.tsx](https://github.com/dendronhq/dendron/blob/34872138131f030f460dc4cd8e81c65fe7654524/packages/nextjs-template/components/DendronTreeMenu.tsx#L14)
 
 ## Changelog
+
 <!-- All changes -->
