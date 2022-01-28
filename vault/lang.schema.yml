@@ -7,7 +7,6 @@ schemas:
   desc: programming language
   parent: root
   namespace: true
-  template: lang.temp.root
   children:
     - pattern: quickstart
       desc: "get to hello world"

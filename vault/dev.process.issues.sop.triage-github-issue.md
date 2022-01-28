@@ -2,7 +2,7 @@
 id: F8cCg5iQH1KXmx4SGcEia
 title: Triage GitHub Issue
 desc: ''
-updated: 1642394569530
+updated: 1643132700869
 created: 1638139691294
 ---
 
@@ -30,7 +30,7 @@ How incoming github issues are triaged
             - respond with the following [[template in the issue|dendron://private/dendron.sop.triage.temp.crop]]
         - add #kind.icebox to the task
             - if the item is not something we plan on working on for the current year
-    - create a task note inside the [[task from github|dendron://private/templates.oncall#tasks-from-github]] section of this week's oncall note
+    - create a task note inside the [[task from github|dendron://private/templates.oncall#tasks-from-github]] section of this week's oncall note if it is a #type.bug
         - follow process in [[Creating New Issues|dendron://private/area.team.sop.create-new-issue]]
         - make sure to fill out the [[issue|dendron://private/task.temp.ref#issue]] field with the link to the github issue
         - add the same #sprint and #kind tags to the task as you did to the github issue

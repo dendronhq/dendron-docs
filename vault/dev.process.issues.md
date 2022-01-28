@@ -2,7 +2,7 @@
 id: 06751374-7982-4df2-b30b-92b10aba733a
 title: Issues
 desc: ''
-updated: 1637878959978
+updated: 1643298093854
 created: 1619524509981
 nav_order: 1.1
 nav_exclude: true
@@ -40,7 +40,7 @@ We close issues for the following reasons:
 | Reason                                               | Label                |
 | ---------------------------------------------------- | -------------------- |
 | The issue is obsolete or already fixed.              |                      |
-| We didn't get the information we need within 7 days. | `status.info-needed` |
+| We didn't get the information we need within 3 days. | `status.info-needed` |
 | It's a duplicate of another issue.                   | `status.duplicate`   |
 | What is described is the designed behavior.          | `status.by-design`   |
 | The issue is tracked in a repository we rely on.     | `status.upstream`    |

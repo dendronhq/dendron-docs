@@ -2,11 +2,9 @@
 id: AlzFH3ol9ubQhagjAUqq1
 title: Nextjs
 desc: ""
-updated: 1642356685964
+updated: 1643305966707
 created: 1634255542869
 ---
-
-## Summary
 
 Responsible for creating payloads and metadata for Dendron Publishing
 

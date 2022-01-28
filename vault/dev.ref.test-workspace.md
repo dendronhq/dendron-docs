@@ -18,7 +18,7 @@ The test workspace is included with the Dendron repo and is used for manual test
   - NOTE: when you initially change to this workspace, you'll need to restart the debugger or VSCode will complain about multiple instances of Dendron. The next time you start the debugger, VSCode will remember the last workspace you've used so you can skip this step
 
 ## Pre-requisites
-- [[Symlink the dendron cli|dendron://dendron.docs/pkg.dendron-cli.dev#symlink]]
+- [[Symlink the dendron cli|dendron://dendron.docs/pkg.dendron-cli.dev.cook.symlink-cli]]
 
 ## Setup
 
