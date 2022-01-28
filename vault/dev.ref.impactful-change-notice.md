@@ -1,8 +1,8 @@
 ---
 id: H7CgvT7YUYAiV7mEmGnky
 title: Impactful Change Notice
-desc: ''
-updated: 1643201808856
+desc: ""
+updated: 1643364076224
 created: 1630796807707
 nav_order: 6.1
 ---
@@ -14,6 +14,7 @@ This page contains a set of undergoing or completed changes that have a wide imp
 ---
 
 ## Deprecation of `getNotesByFname` and `getNoteByFnameV5` interfaces
+
 - start: 2022.01.02
 - status: WIP
 
@@ -27,24 +28,42 @@ replaced by `getNotesByFnameFromEngine` and `getNoteByFnameFromEngine`.
 This change was made for performance reasons: the old interface had to do a
 linear scan over all notes while the new interface only does 2 dict lookups,
 greatly increasing performance for workspaces with lots of notes. Please use the
-new interfaces in new code, and migrate the old code when possible. 
+new interfaces in new code, and migrate the old code when possible.
 
 ### Caveats
 
 - Views don't have the full engine available, so we'll need to continue using the old interface until this is fixed.
-- If you are writing code that directly modifies engine.notes, please remember to keep `engine.noteFname` in sync. Existing functions like engine.updateNote are already updated so no additional work is needed if you use those. 
+- If you are writing code that directly modifies engine.notes, please remember to keep `engine.noteFname` in sync. Existing functions like engine.updateNote are already updated so no additional work is needed if you use those.
+
+## Migration of static `WSUtils` methods to a non-static `WSUtilsV2`
+
+- start: 2021.12.24
+- status: WIP
+
+### Summary
+
+This is part of [[Circular Dependency Refactor|dendron://dendron.docs/dev.ref.impactful-change-notice#circular-dependency-refactor]], that unwinds the circular dependencies that `WSUtils` introduces.
+
+### Changes
+
+- `WSUtilsV2` provides a non-static version of `WSUtils`.
+- When a static method in `WSUtils` is needed, retrieve `wsUtils` from `IDendronExtension` interface and use the non-static version that exists in `WSUtilsV2` instead.
+- If there is no corresponding non-static method in `WSUtilsV2`, add them to [[WSUtilsV2.ts|../packages/plugin-core/src/WSUtilsV2.ts]] and [[../packages/plugin-core/src/WSUtilsV2Interface.ts]] as needed.
 
 ## Circular Dependency Refactor
+
 - start: 2021.12.02
 - status: WIP
 
 ### Summary
+
 We have numerous circular dependencies in plugin-core that is leading to unpredictable build failures. We need to refactor our code to eliminate the existing circular dependencies, and then put in place guards to prevent new circular dependencies from being introduced.
 
 ### Changes
+
 - For developers, please see [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code.best-practices#avoiding-circular-dependencies]] for updated processes during check-in and review to avoid introducing new circular dependencies.
-- A new webpack step will be added that detects circular dependencies. It's currently set to warn only, as there are still existing circular dependencies that need to be fixed.  Once those are fixed, we will flip the check from warn to error to fail the build upon detection of circular dependencies.
-- To fix the remaining circular dependencies, we need to refactor workspace.ts.  The DendronExtension class contains various views, watchers, and services that end up calling static/singleton methods to re-access the other properties of DendronExtension, thus causing circular dependencies.
+- A new webpack step will be added that detects circular dependencies. It's currently set to warn only, as there are still existing circular dependencies that need to be fixed. Once those are fixed, we will flip the check from warn to error to fail the build upon detection of circular dependencies.
+- To fix the remaining circular dependencies, we need to refactor workspace.ts. The DendronExtension class contains various views, watchers, and services that end up calling static/singleton methods to re-access the other properties of DendronExtension, thus causing circular dependencies.
 
 ## DNoteAnchorBasic
 
