@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Development Process
 desc: ""
-updated: 1643226671534
+updated: 1643343710083
 created: 1637876733365
 nav_order: 2.1
 config:
@@ -29,6 +29,7 @@ Writing code
 - [[Errors|dendron://dendron.docs/dev.process.errors]]
 - [[Logs|dendron://dendron.docs/dev.process.logs]]
 - [[Testing|dendron://dendron.docs/dev.process.qa]]
+- [[Best Practices When Coding|dendron://dendron.docs/dev.process.code.best-practices]]
 
 ## Docs
 
