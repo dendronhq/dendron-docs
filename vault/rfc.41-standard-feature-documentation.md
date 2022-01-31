@@ -2,7 +2,7 @@
 id: ONVyX9yIBTHO5BjZwJ56I
 title: 41 Standard Feature Documentation
 desc: ''
-updated: 1643253705374
+updated: 1643651799790
 created: 1643251210715
 category: RFCs/Ideas
 discussionID: D_kwDOEF_3Vs4AOosB
@@ -21,15 +21,54 @@ This is a proposal to introduce a standard way to document features in Dendron w
 
 The past discussion about the dendron site is documented in [[Dendron Site Reorganization|dendron://dendron.community/discussion.2021.dendron-site-reorg]]
 
-This proposal talks specifically about [[Feature Anatomy|dendron://dendron.community/discussion.2021.dendron-site-reorg#feature-anatomy]]
+This proposal talks specifically about [[Feature Anatomy|dendron://dendron.community/discussion.2021.dendron-site-reorg#feature-anatomy]] and gives explicit guidance on how to structure new features.
+It also outlines how we relate the various [[sections|dendron://dendron.docs/rfc.41-standard-feature-documentation#section]] of a feature to its [[reference|dendron://dendron.community/discussion.2021.dendron-site-reorg#reference]] documentation.
 
-If you look at the sections of a feature, many of the sections (eg. [[CLI|dendron://dendron.dendron-site/templates.topic#cli]], [[Commands|dendron://dendron.dendron-site/templates.topic#commands]], etc) overlap with children of [[Reference|dendron://dendron.community/discussion.2021.dendron-site-reorg#reference]]
+## Concepts
+
+### Section
+
+A `section` is a portion of a note marked by a heading. It contains the header text and the contents after the header and stops either at the next section that is of a lower level or the end of the note
+
+```
+## This is a section
+
+This is text inside a section
+
+### This is also part of the previous section since its of a higher heading level
+
+## This is a new section
+```
 
 ## Proposal
 
-When adding details to reference documentation under `CLI`, `Configuration`, the main text should come from `dendron.topic.{feature}`. The corresponding entries should be added as a note ref to their respective reference section. The way the reference documentation can be layed out as follows
+### Documentation for Features
+
+#### Feature Layout
+
+When creating a new feature, the following [[Feature Template|dendron://dendron.dendron-site/templates.topic]] will be applied.
+The [[Feature Template Reference|dendron://dendron.dendron-site/templates.topic.ref]] explains details about the various sections. 
+
+```yml
+- id: topic
+  namespace: true
+  children:
+    - pattern: quickstart
+      desc: how to get started with this given feature
+    - pattern: upgrade
+      desc: If coming from a previous version, how to upgrade
+    - pattern: concepts
+      desc: concepts for this feature
+    - pattern: "*"
+      title: feature
+      desc: Sub feature of this given feature
+```
+
+#### Reference Anatomy
+The corresponding entries should be added as a note ref to their respective reference section. The way the reference documentation can be layed out as follows
 
 - proposed layout for [[Command|dendron://dendron.dendron-site/dendron.ref.commands]] reference
+
 ```md
 <!-- Primary grouping by area, in same order as introduced in [[User Guide|dendron://dendron.community/discussion.2021.dendron-site-reorg#user-guide]] -->
 ## Editing
@@ -61,6 +100,15 @@ This is a wiki link that shows the content of the section
 Essentially, this is proposing that `dendron.topic.{feature}` is the main source of truth for a feature and `reference.*` documentation is generated as note references from topic notes. 
 This will help keep our docs DRY (don't repeat yourself) and make sure content is up to date. 
 
+### Gradual Structure - Documentation for Bigger Features
+
+Sometimes a feature will have sub features and its contents will be too big for a single note. 
+At this point, the [[Amoeba Workflow|dendron://dendron.dendron-site/dendron.guides.workflows.amoeba]] needs to be invoked to split up the feature into smaller parts. 
+
+In this case, we recommend the following proecedure:
+- every section becomes a new child note (with the exception of [[Summary|dendron://dendron.dendron-site/templates.topic#summary]] and [[Details|dendron://dendron.dendron-site/templates.topic#details]])
+- every subfeature becomes its own topic note
+
 ## Future Work
 Currently, the process of generating references is quite manual. There are a few future features that should make this easier:
 
@@ -71,3 +119,9 @@ Currently, the process of generating references is quite manual. There are a few
     ?[[ and (to tags area.refactoring) (children dendron.topic) ]]#Commands
     ```
 - 
+
+## Lookup
+
+- Inspiration:
+    - AWS Docs, eg: [What is Amazon EC2? - Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+    - Django Docs: [Django documentation | Django documentation | Django](https://docs.djangoproject.com/en/4.0/)
