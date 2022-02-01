@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1642630140118
+updated: 1643692275736
 created: 1632347495097
 ---
 
@@ -43,6 +43,13 @@ See if its timeout related. We have a few tests that are unfortunately flaky. Ex
 - timeout with `DefinitionProvider`
 
 If a single test failed, its usually fine to ignore it. If you want to be certain, you can follow the instructions [here](https://www.loom.com/share/50f5c7c2ac2143b18ea45fea8f3c4cb9?from_recorder=1&focus_title=1).
+
+
+### Cannot register "..."
+
+This happens when you reload the *extension host* when working on the plugin. To fix, restart the *debug and build* task for the plugin. 
+
+See example in [here](https://www.loom.com/share/797f2e13cc9a46e4a0973b3ad26f6ed7)
 
 ## Cook
 
