@@ -2,7 +2,7 @@
 id: eMcjzkqYCRdxggs7o7nqm
 title: Common Assets
 desc: ''
-updated: 1637256893410
+updated: 1643673088642
 created: 1637163989716
 ---
 
@@ -36,7 +36,7 @@ This packages hold assets for Dendron Views. During the [[build step|dendron://d
     ```
     - this runs the following
     ```ts
-    // loc: dendron-cli/src/commands/devCLICommand.ts
+    // loc: [[../packages/dendron-cli/src/commands/devCLICommand.ts#L388]]
     // Takes assets from different monorepo packages and copies them over to the plugin
     syncAssets {
         // sync assets to plugin
