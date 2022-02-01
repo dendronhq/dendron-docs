@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploy
 desc: ''
-updated: 1642647087306
+updated: 1643743197080
 created: 1640280816708
 ---
 
@@ -35,3 +35,21 @@ git checkout -- package.json
 git add  "packages/nextjs-template/yarn.lock"
 git commit -m "chore: update nextjs lock file"
 ```
+
+## Verify
+
+```
+vim vault/root.md
+
+Last updated: 
+- version: {version}
+```
+
+- go to https://github.com/dendronhq/template.publish.github-action/actions
+    - make sure deployment succeeds
+    - click on "initialize or pull nextjs template"
+        - make sure the commit matches the last commit in nextjs-template
+- go to https://dendronhq.github.io/template.publish.github-action/ and make sure the text shows up
+
+## Pass it Forward Tass
+- [ ] automate the verification process
