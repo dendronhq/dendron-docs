@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Development Process
 desc: ""
-updated: 1643343710083
+updated: 1643756656135
 created: 1637876733365
 nav_order: 2.1
 config:
@@ -24,8 +24,8 @@ Writing code
 - [[Code Conventions|dendron://dendron.docs/dev.process.code]]
   - [[Dev Env|dendron://dendron.docs/dev.process.code.dev-env]]: Setting up your dev environment
   - [[Monorepo|dendron://dendron.docs/dev.process.code.monorepo]] (NOTE: read this if its your first time working in a monorepo)
-  - [[Utilities|dendron://dendron.docs/dev.process.code.utilities]]
-- [[Changelog|dendron://dendron.docs/dev.changelog]]: Breaking changes to the development process and current migrations
+  - [[Utilities|dendron://dendron.docs/dev.process.code.utilities]]: Where utilities are stored
+- [[Impactful Change Notice|dendron://dendron.docs/dev.ref.impactful-change-notice]]: Breaking changes to the development process and current migrations
 - [[Errors|dendron://dendron.docs/dev.process.errors]]
 - [[Logs|dendron://dendron.docs/dev.process.logs]]
 - [[Testing|dendron://dendron.docs/dev.process.qa]]
@@ -55,6 +55,11 @@ Releasing Code
 Things to do after issue is released
 
 - [[Close Loop|dendron://dendron.docs/dev.process.close-loop]]
+
+## Repot
+
+These are misc notes that need to be re-organized:
+- [[Cookbook|dendron://dendron.docs/dev.cook]]
 
 ## Lookup
 

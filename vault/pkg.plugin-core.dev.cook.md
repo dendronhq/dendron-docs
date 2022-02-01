@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ""
-updated: 1642615685679
+updated: 1643757026049
 created: 1634590309804
 ---
 
@@ -147,31 +147,6 @@ import { clipboard } from "../utils";
 clipboard.writeText(link);
 ```
 
-### Add a new dependency
-
-When you are merging new changes, note that new dependencies and sometimes packages will be installed.
-
-#### New Dependencies
-
-```sh
-# install all new dependencies
-lerna bootstrap
-```
-
-#### New Package in Dendron Mono Repo
-
-Adding new packages is a rarer event but might require a workspace rebuild
-
-```sh
-# clean up old files (this might take a few minutes)
-./bootstrap/scripts/cleanup.sh
-
-# install all dependencies
-lerna bootstrap
-
-# build all dependencies
-./bootstrap/scripts/build.sh
-```
 
 ### Check if file is in vault
 

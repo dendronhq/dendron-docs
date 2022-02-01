@@ -1,8 +1,8 @@
 ---
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
-desc: ""
-updated: 1642669208566
+desc: ''
+updated: 1643756565603
 created: 1599151918645
 nav_order: 4.1
 ---
@@ -11,42 +11,6 @@ nav_order: 4.1
 
 Common recipes on doing common operations inside the Dendron codebase
 
-## Packages
-
-### Install a new package
-
-Because Dendron is packaged as a mono repo managed using [lerna](https://github.com/lerna/lerna), you can't just do a regular `yarn add` to install new packages. This is because lerna symlinks mono-repo dependencies together and a `yarn add` would override that. Instead, use the following command:
-
-```
-lerna add {package-to-install} --scope @dendronhq/{package-to-install-into}
-```
-
-Because this is typescript, don't forget to also install the `@types` package if it exists
-
-```bash
-lerna add @types/{package-to-install} --scope @dendronhq/{package-to-install-into}
-```
-
-- NOTE: watch out that you are installing dependencies in the right package. Missing dependencies will appear to work in development if that dependency is present in any of the other packages. The reason things work is because of the way the nodejs module resolution works and that we're in a monorepo. Dependencies are installed at the root of the monorepo and will be found there when the package doesn't have them. When we publish them as npm packages, these dependencies will show up as missing in their respective packages if its not included in the dependencies
-
-### Publish a new monorepo package
-
-- initialize repo
-
-```bash
-cd {workspace_dir}
-cp -R /path/to/dendron-yeoman/node-ts packages/{new-package}
-```
-
-- update `package.json`
-
-  - change project name
-
-- publish the repo (needs to be done initially before running lerna publish)
-
-```
-npm publish --access public
-```
 
 ## Git
 
