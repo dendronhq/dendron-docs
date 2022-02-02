@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1641336083082
+updated: 1643349229406
 created: 1610160007286
 ---
 
@@ -44,7 +44,7 @@ the actual root.
 
 ```ts
 _activate {
-    ws := DendronWorkspace.getOrCreate
+    ws := DendronExtension.getOrCreate
 
     if ws.isActive {
 
@@ -67,9 +67,6 @@ _activate {
 
 }
 ```
-
-- related
-  - [[Internal|pkg.dendron-api-server.internal]]
 
 ### Reload Workspace
 

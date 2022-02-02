@@ -2,7 +2,7 @@
 id: OZhkg0FIyGyUf8XcwCY2g
 title: Test Utils
 desc: ''
-updated: 1642294343299
+updated: 1643348664182
 created: 1642293921514
 ---
 
@@ -36,6 +36,25 @@ setupBeforeAfter(beforeHook, afterHook)
     }
 
     return ctx
+```
+
+- runLegacyMultiWorkspaceTest
+```ts
+setupLegacyWorkspaceMulti { 
+    EngineTestUtilsV4.setupWS // #TODO
+    new StateService
+    stubWorkspace
+
+    preSetupHook
+
+    DendronExtension.updateWorkspaceFile
+
+    DConfig.getOrCreate
+
+    ConfigUtils.setVaults
+    DConfig.writeConfig
+
+}
 ```
 
 ## Reference
