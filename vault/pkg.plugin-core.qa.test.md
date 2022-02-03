@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1642293406908
+updated: 1643918997330
 created: 1627140509315
 ---
 
@@ -31,24 +31,25 @@ suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
   describeMultiWS(
     "WHEN configured for NATIVE workspace",
     {
-      preSetupHook: ENGINE_HOOKS.setupBasic,
+      preSetupHook: ENGINE_HOOKS.setupBasic, // optional, do something before the workspace initializes. You can use a preset like this, or write your own code.
       ctx,
       workspaceType: WorkspaceType.NATIVE, // optional
     },
-    () => {
-      test("THEN initializes correctly", (done) => {
+    () => { // this can NOT be async, must be a regular function
+    
+      // If you need something to be done after the workspace initializes, but before tests, you can add a `before` or `beforeEach` hook here
+
+      test("THEN initializes correctly", () => { // can be a regular function or async
         // You can access the workspace inside the test like this:
         const { engine, wsRoot, vaults } = getDWorkspace();
         // Then perform any actions and checks
         const testNote = engine.notes["foo"];
         expect(testNote).toBeTruthy();
-        done();
       });
 
-      test("THEN is of NATIVE type", (done) => {
+      test("THEN is of NATIVE type", () => { // can be a regular function or async
         const { type } = getDWorkspace();
         expect(type).toEqual(WorkspaceType.NATIVE);
-        done();
       });
     }
   );
@@ -101,13 +102,16 @@ describeMultiWS(
   "WHEN ...",
   {
     /* ... */
+    preSetupHook: async () => {
+      // Action to do before workspace initializes
+    }
   },
   () => {
-    before((done) => {
+    before(async (done) => { // can be async or regular
       // Action to do after workspace initialized, but before any tests are run
     });
 
-    test("THEN ...", () => {
+    test("THEN ...", async () => { // can be async or regular
       /* ... test code here */
     });
   }

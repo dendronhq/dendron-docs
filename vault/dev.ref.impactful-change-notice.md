@@ -2,7 +2,7 @@
 id: H7CgvT7YUYAiV7mEmGnky
 title: Impactful Change Notice
 desc: ""
-updated: 1643364076224
+updated: 1643918862410
 created: 1630796807707
 nav_order: 6.1
 ---
@@ -11,6 +11,36 @@ nav_order: 6.1
 
 This page contains a set of undergoing or completed changes that have a wide impact on the code base. Examples include significant refactoring projects and deprecation notices. Any larger pieces of work that you think other developers should be aware of should go here.
 
+## Deprecation of `runLegacySingleWorkspaceTest` and `runLegacyMultiWorkspaceTest`
+
+- start: 2022.02.03
+- status: WIP
+
+### Summary
+
+The plugin testing functions `runSingleWorkspaceTest` and
+`runMultiWorkspaceTest` have been deprecated. Please use `describeSingleWS` and `describeMultiWS` instead. Please see [[Writing Tests|dendron://dendron.docs/pkg.plugin-core.qa.test#writing-tests]] for and example of how to use these functions.
+
+### Rationale
+
+These functions are prone to errors, for example:
+```ts
+test("something", () => {
+  runLegacySingleWorkspaceTest({
+    ctx,
+    onInit: async () => {
+      expect(false).toBeTruthy();
+    },
+  });
+});
+```
+
+This test should fail, but it actually will appear to pass. That's because
+`runLegacySingleWorkspaceTest` immediately returns before the test in `onInit`
+is done. The failure will appear in the test logs as an error message, but jest
+will report the test as passing.
+
+### Caveats
 
 ## Deprecation of `MDUtilsV4`
 
