@@ -2,7 +2,7 @@
 id: f143ca38-dcc6-4cd3-b84b-997aec1160ef
 title: Rfc
 desc: ''
-updated: 1640338135173
+updated: 1643876704035
 created: 1605539111635
 has_collection: true
 sort_by: date
@@ -43,6 +43,8 @@ future state of the system and to discover projects for contribution.
 | 💡 proposed           | [[rfc.8-multi-publish]]             | [@kevin](https://github.com/kevinslin)           |
 | 💡 proposed           | [[rfc.20-integrated-space-repetition]]         | [@imalightbulb](https://github.com/imalightbulb) |
 | 💡 proposed           | [[rfc.28-notifications]]                           | [@SeriousBug](https://github.com/SeriousBug)     |
+| 💡 proposed           | [[rfc.40-dendron-plugins]]            | [@SeriousBug](https://github.com/SeriousBug)     |
+| 💡 proposed           | [[rfc.41-self-contained-vaults]]      | [@SeriousBug](https://github.com/SeriousBug)     |
 | draft                 | [[rfc.15-browser-based-dendron]]                                                                                | [@kpats](https://github.com/kpathakota)          |
 | 👷 implementing       | [[rfc.38-links-to-non-note-files]]                                 | [@SeriousBug](https://github.com/SeriousBug)     |
 ## What is an RFC?
