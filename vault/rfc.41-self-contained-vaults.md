@@ -10,7 +10,7 @@ created: 1643876703841
 
 ## Goals
 
-Dendron's seperation between vaults and workspaces have been a source of
+Dendron's separation between vaults and workspaces have been a source of
 confusion for users, and complexity during the development. Eliminating this
 complexity will make Dendron easier to use, and easier to develop and maintain.
 
