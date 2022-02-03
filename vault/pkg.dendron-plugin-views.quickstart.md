@@ -2,7 +2,7 @@
 id: SuyIgH44sJD5P3dRVBaVZ
 title: Quickstart
 desc: ""
-updated: 1640649902812
+updated: 1642023299709
 created: 1635701411866
 ---
 
@@ -42,6 +42,7 @@ When working on plugin views, there are two modes of development: browser and ID
    ![[dendron://dendron.docs/pkg.dendron-plugin-views.dev.cook#simulate-change-activate-editor-in-browser-mode,1]]
 
 - TIP: to set the theme in browser mode, you can run `env THEME={dark|light} yarn start`
+- GOTCHA: if you edit [[../packages/common-server/src/etc.ts]], you'll need to restart the watcher
 
 ### Developing in IDE Mode
 

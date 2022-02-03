@@ -166,7 +166,7 @@ Steps:
 
 1. add the plugin to engine-server
    - NOTE: we are still using remark12 so make sure to install the remark12 compatible version of the plugin
-   - instructions to add new packages [[here|dev.cook#install-a-new-package]]
+   - instructions to add new packages [[here|dev.process.code.monorepo#install-a-new-package]]
 2. update `src/markdown/utils.ts` in engine-server
    - import plugin and add it to the appropriate processor (most likely `procFull`)
 3. write a test for the plugin. plugin tests are located in `engine-test-utils/src/__tests__/engine-server/markdown/`

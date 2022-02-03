@@ -1,0 +1,23 @@
+version: 1
+imports: [module]
+schemas:
+- id: vpkg
+  desc: a vendor package
+  parent: root
+  namespace: true
+  children:
+    - module.qa
+    - module.quickstart
+    - module.concepts
+    - module.architecture
+    - module.tips
+    - module.faq
+    - module.topic
+    - module.ops
+    - module.dev
+    - module.changelog
+    - module.config
+    - module.advanced
+    - module.best
+    - module.ref
+    - module.trouble

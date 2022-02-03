@@ -19,6 +19,9 @@ schemas:
     - design
     - qa
     - ref
+    - trouble
+- id: trouble
+  title: troubleshooting
 - id: ref
   template: templates.module.ref
   namespace: true
@@ -75,8 +78,6 @@ schemas:
   desc: |
     Development related 
   children:
-    - pattern: trouble
-      title: "Troubleshooting"
     - pattern: cook
       title: "Cookbook"
     - pattern: build

@@ -2,11 +2,15 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1637807511243
+updated: 1643692275736
 created: 1632347495097
 ---
 
-## Details
+## Summary
+
+Writing and running tests in Dendron
+
+## Writing Tests
 
 Depending on the package you are working on, tests are handled differently
 
@@ -15,10 +19,20 @@ Depending on the package you are working on, tests are handled differently
 
 For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.style]] when writing test.
 
-## Automated Tests (via github actions)
+## Executing Tests
 
-Dendron has automated tests that run on every pull request and commit to master 
+- For [[pkg.plugin-core]], see [[run all plugin tests|dendron://dendron.docs/pkg.plugin-core.qa.test#run-all-tests]]
+- For any other package, see [[run other tests|dendron://dendron.docs/pkg.engine-test-utils.qa.test#run-all-tests]]
 
+- NOTE: Dendron has automated tests that run on every pull request - if you are unable to run tests locally, you can also wait for the pull request to finish running the test
+- NOTE: If you running MacOS or Linux, pay special attention to the Windows output and vice versa if you are developing on Windows
+
+## Manual Testing
+
+See [[manual Testing|dendron://dendron.docs/pkg.plugin-core.qa.test#manual-testing]]
+
+## Checklist
+![[dendron://dendron.docs/dev.process.qa.test.checklist]]
 
 ## Troubleshooting
 
@@ -29,6 +43,13 @@ See if its timeout related. We have a few tests that are unfortunately flaky. Ex
 - timeout with `DefinitionProvider`
 
 If a single test failed, its usually fine to ignore it. If you want to be certain, you can follow the instructions [here](https://www.loom.com/share/50f5c7c2ac2143b18ea45fea8f3c4cb9?from_recorder=1&focus_title=1).
+
+
+### Cannot register "..."
+
+This happens when you reload the *extension host* when working on the plugin. To fix, restart the *debug and build* task for the plugin. 
+
+See example in [here](https://www.loom.com/share/797f2e13cc9a46e4a0973b3ad26f6ed7)
 
 ## Cook
 
@@ -84,3 +105,23 @@ We make frequent use of jest [snapshots](https://jestjs.io/docs/snapshot-testing
 
 1. Use command prompt and run `> Tasks: Run tasks`
 2. Select `test:updateSnapshots`
+
+### Stubbing setTimeout
+
+Stubbing the global `setTimeout` (with `sinon.fakeTimer` or else) seems to break
+VSCode, causing it to just hang. If you are having trouble with that, instead
+use `Wrap.setTimeout` from `@dendronhq/common-all` in the code you want to test.
+Then you can stub the wrapped function and simulate the timer going off with
+`stub.callArg(0)`. For example:
+
+```ts
+const stubTimeout = sinon.stub(Wrap, "setTimeout");
+const editor = await WSUtils.openNote(note);
+WorkspaceWatcher.moveCursorPastFrontmatter(editor);
+stubTimeout.callArg(0);
+```
+
+### Stubbing global functions
+
+Follow the same procedure as [[#stubbing-settimeout]], but create your own wrapper if one doesn't exist.
+You can reuse the `Wrap` class in `common-all`. Try to wrap the function exactly with the same signature.

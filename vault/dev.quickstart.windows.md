@@ -2,7 +2,7 @@
 id: d0f34b08-0725-4ec5-a600-a4d6309bb2ae
 title: Windows
 desc: Windows gotchas
-updated: 1615168192996
+updated: 1642118504100
 created: 1615165852271
 ---
 
@@ -50,3 +50,29 @@ Open git BASH inside the Dendron repo and run the script:
 [^chmod]: [How do I make git ignore file mode (chmod) changed?](https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes)
 [^git]: [git for Windows](https://gitforwindows.org/)
 [^gitbash]: [How to run shell scripts on Window](https://www.thewindowsclub.com/how-to-run-sh-or-shell-script-file-in-windows-10) See last comment
+
+## OpenSSL issues
+
+You may see some errors like this during the build:
+
+```
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:67:19)
+    at Object.createHash (node:crypto:130:10)
+    at BulkUpdateDecorator.hashFactory (C:\Users\kaan\Projects\dendron\packages\dendron-next-server\node_modules\next\dist\compiled\webpack\bundle5.js:138971:18)
+    at BulkUpdateDecorator.update (C:\Users\kaan\Projects\dendron\packages\dendron-next-server\node_modules\next\dist\compiled\webpack\bundle5.js:138872:50)
+    at C:\Users\kaan\Projects\dendron\packages\dendron-next-server\node_modules\next\dist\compiled\webpack\bundle5.js:59321:9
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+    at runNextTicks (node:internal/process/task_queues:65:3)
+    at processImmediate (node:internal/timers:444:9) {
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+```
+
+This is caused by an old OpenSSL configuration (or version) that Git for Windows, or something else you installed, ships with.
+To work around this, we need to tell NodeJS to use a legacy OpenSSL.
+
+Before running the build, run: `export NODE_OPTIONS=--openssl-legacy-provider`

@@ -7,7 +7,6 @@ schemas:
   desc: programming language
   parent: root
   namespace: true
-  template: lang.temp.root
   children:
     - pattern: quickstart
       desc: "get to hello world"
@@ -120,6 +119,9 @@ schemas:
     - pattern: func
       title: functional
       desc: "how to use functional paradigm"
+      children:
+        - pattern: "*"
+          desc: builtin functions
     - pattern: types
       title: type system
       children:

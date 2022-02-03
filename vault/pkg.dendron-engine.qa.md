@@ -2,15 +2,12 @@
 id: 60fbcc05-df2a-44a2-aa0e-cdd62c2557b6
 title: Qa
 desc: ''
-updated: 1631817564476
+updated: 1640798273941
 created: 1614812225185
 ---
 
 # Local
 
-## Debug
-
-Use `Launch Task` and run `Debug One Test (engine-test-utils)` on a `spec` file that you want to test. This will run the test in `debug` mode which will enable breakpoints. 
 
 ## Test:Unit
 

@@ -1,8 +1,8 @@
 ---
 id: 773e0b5a-510f-4c21-acf4-2d1ab3ed741e
-title: Code
+title: Code Conventions
 desc: ''
-updated: 1638918115725
+updated: 1643200729534
 created: 1609550314371
 nav_order: 2.1
 ---
@@ -21,22 +21,17 @@ We use [eslint](https://eslint.org/) and [prettier](https://prettier.io/) to aut
 We use [`luxon`](https://moment.github.io/luxon/api-docs/index.html#datetime) for all time related tasks. This is the successor of [`moment.js`](https://sebastiandedeyne.com/moment-js-thank-you-for-your-service/)
 
 
-## General
+## Conventions
 
-## High Level
+### prefer capital snake case for constants
 
-1. Reduce State - code written with minimal state are easier to test and reason about then code with state
-1. Reduce coupling - code that is loosely coupled is better than the opposite
-1. Reduce complexity - code that is simpler is better
-1. Reduce code - code that is not duplicated 
+```ts
+// good
+A_SNAKE = "PYTHON"
 
-### Reduce coupling
-
-When introducing abstractions, beware of coupling. In general, we'd rather have two separate implementations of a thing than forcing two unrelated functions to use, for example, a common base class, to safe on lines of code. 
-
-Unless you're relatively certain that something will be re-used, we default to implementing a thing two or three times. If at that point we notice that it does indeed share a lot in common, we will create a common abstraction for it.
-
-## Conventiions
+// bad
+ANSAKE = "python
+```
 
 ### prefer using camelCase for variables
 
@@ -268,3 +263,4 @@ for (const vault of vaults) {
   await // async thing here
 }
 ```
+

@@ -2,7 +2,7 @@
 id: yizU3D4RFcnrxPhPgtiSF
 title: Lifecycle
 desc: ""
-updated: 1640044833217
+updated: 1640905806905
 created: 1640042538687
 ---
 
@@ -31,13 +31,19 @@ runMigrationsIfNecessary {
 
 ```ts
 applyMigrationRules {
+	// currently determined by matching current workspace version with version of migration
 	migrationsToRun :=
 
-	migratrionsToRun.forEach m => {
-		applyMigrationChanges(m)
+	changes = migratrionsToRun.forEach m => {
+		collectMigrationChanges(m)
 	}
+
+	if changes {
+		// apply changes
+	}
+
 }
 applyMigrationChanges {
-
+	// migration logic here
 }
 ```

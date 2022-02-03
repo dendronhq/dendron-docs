@@ -67,6 +67,10 @@ Conventions:
 
 - if your command involves opening a note, also return it in the `CommandOutput` signature. this makes it easy to compose the command as well as test it
 
+#### Gotchas
+
+If the command needs to accept input objects from VSCode, for example [[ShowPreview|../packages/plugin-core/src/commands/ShowPreview.ts]], then base your command on [[InputArgCommand|../packages/plugin-core/src/commands/base.ts#L168]] and avoid adding `gatherInputs` and `enrichInputs`. Otherwise Dendron can convert the input object into a plain javascript object.
+
 ### Executing a command programatically
 
 ```ts
@@ -81,6 +85,13 @@ cmd.execute(args)
 - ![[dendron://dendron.docs/pkg.plugin-core.t.lookup.cook]]
 
 ## Views
+
+### Using the Dendron Preview on arbitrary markdown
+
+You can use the Dendron Preview to show custom markdown. To do so:
+
+1. Use the `openNoteInPreview` from [[../packages/plugin-core/src/commands/ShowPreview.ts#L327]]
+1. See [[Create a pseudo-note for a non-note file|dendron://dendron.docs/pkg.plugin-core.dev.cook#create-a-pseudo-note-for-a-non-note-file]]
 
 ### Adding a Web UI Component
 
@@ -136,31 +147,6 @@ import { clipboard } from "../utils";
 clipboard.writeText(link);
 ```
 
-### Add a new dependency
-
-When you are merging new changes, note that new dependencies and sometimes packages will be installed.
-
-#### New Dependencies
-
-```sh
-# install all new dependencies
-lerna bootstrap
-```
-
-#### New Package in Dendron Mono Repo
-
-Adding new packages is a rarer event but might require a workspace rebuild
-
-```sh
-# clean up old files (this might take a few minutes)
-./bootstrap/scripts/cleanup.sh
-
-# install all dependencies
-lerna bootstrap
-
-# build all dependencies
-./bootstrap/scripts/build.sh
-```
 
 ### Check if file is in vault
 
@@ -216,3 +202,24 @@ if (PickerUtilsV2.isStringInputEmpty(out)) return;
 You can use this command for development purposes when need to trigger some arbitrary piece of code by placing it into `execute()` function and invoking the `Dendron:Dev: Dev Trigger`.
 
 Just make sure to remove your code from the `execute()` prior to putting up your pull request (unless your pull request is marked as draft to invoke some piece of code you put up in DevTrigger to get feedback on).
+
+### Create a pseudo-note for a non-note file
+
+In some cases, like when previewing a non-note markdown file, we sometimes need
+to reference a file that's not a note. Since a lot of Dendron APIs need note
+objects, you can create a pseudo-note for these files.
+
+Create one using
+[[DNode.createForFile|../packages/common-all/src/dnode.ts#L1287]]. This will
+create a fake note object and a fake vault object. Created objects are not added
+to the engine automatically, temporarily add and then remove them if needed.
+
+You can check if a note is a pseudo-note using [[DNode.isFileId|../packages/common-all/src/dnode.ts]] on a note's id.
+
+### Workspace Trust
+
+Any feature that causes dynamic code execution (code supplied or modifiable that is outside of the published Dendron extension) **must first check whether the user has enabled [workspace trust](https://code.visualstudio.com/docs/editor/workspace-trust)**. Some examples of this are [[Hooks|dendron://dendron.dendron-site/dendron.topic.hooks]] and [[Traits|dendron://dendron.dendron-site/dendron.topic.traits]].
+
+To check whether workspace trust has been enabled, you can use VSCode's API: `vscode.workspace.isTrusted`. If working in the context of EngineAPIService, there is also a private member that contains the trust information (currently `_trustedWorkspace`).
+
+If your scenario is blocked because the user hasn't enabled workspace trust, please add an notification prompt to the user explaining that the scenario didn't run because the workspace is not trusted.

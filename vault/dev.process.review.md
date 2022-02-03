@@ -1,29 +1,49 @@
 ---
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
-title: Review
+title: Dendron Review Process
 desc: ''
-updated: 1638909388915
+updated: 1643745095593
 created: 1623430616135
 nav_order: 4.1
+config:
+  global:
+    enableChildLinks: false
 ---
 
 ## Summary
 
 This goes into how we do code review (via pull requests)
 
-## Process
+## Prerequisites
+
+We recommend using the github cli to work on pull requests (not required but helpful). More details on the setup [[here|dendron://dendron.docs/dev.process.review.github-cli]]
+
+## Steps
+
+### Starting work
+
+To start work on a new feature, clone the dendron repo and checkout a new branch. This should be in the format of `{category}/{feature-description}`
+
+See [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]] for picking out the category
 
 ### Work in Progress
 - if your still iterating on your pull request or if your working on feedback but its not ready yet, put your PR into `draft` mode until it is ready
+
+### Branch Style
+
+All prs should start with `[feat|fix|enhance|chore]/[{description-of-pr-in-kebab-case}]`
+    - `eg. feat/add-thisthing`
 
 ### Commit Style
 
 We follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-This means commits follow the following format
+This means commits have the following format:
 
 ```
 {category}({scope}): {description}
+
+{additional details}
 ```
 
 An example commit:
@@ -31,26 +51,18 @@ An example commit:
 ^pjL1YxpWRgtT
 ``` 
 enhance(publish): speed up publishing by 500%
+
+Use cached version of notes to generate metadata instead of building from scratch
 ```
 
 * To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
 * To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
+* When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
 
-## Checklist
+### Pull Request
+![[dendron://dendron.docs/dev.process.review.checklist]]
 
-### first time pull request
-- [ ] if its your first pull request to Dendron, watch out for the [CLA](https://en.wikipedia.org/wiki/Contributor_License_Agreement) bot that will ask you to agree to Dendron's CLA
-- [ ] if its your first pull request and you're on our Discord, make sure that Kevin gives you the [[horticulturalist|community.roles#horticulturalist]] role  👨‍🌾👩‍🌾
+#### Correspondence
 
-### general
-- [ ] add a [[test|dev.process.qa#writing-tests]] for the new feature
-- [ ] make sure all the existing [[tests|dev.process.qa#running-all-tests]] pass
-- [ ] do a spot check by running your feature with our [[test Workspace|dev.process.qa#test-workspace]]
-- [ ] if your change reflects documentation changes, also [[submit a PR|dendron://dendron.docs/dev.process.review.github-cli#process]] to [dendron-site](https://github.com/dendronhq/dendron-site) and mention the doc PR link in your current PR
-- [ ] after you submit your pull request, check the output of our [integration test](https://github.com/dendronhq/dendron/actions) and make sure all tests pass
-  - NOTE: if you running mac/linux, check the windows output and vice versa if you are developing on windows
-- [ ] (optional) ping `@Dendron Team` in the `#dev` channel of our [discord](https://discord.gg/AE3NRw9) - we usually respond to PRs within 24h
-
-### QA Checklist
-![[dendron.dev.qa.sop#checklist,1]]
-
+A conversation should only be resolved when the comment has been addressed and is reflected in the pull request. 
+At that point, the conversation should be resolved by the person that made the pull request. 

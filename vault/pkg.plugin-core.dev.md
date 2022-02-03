@@ -2,11 +2,25 @@
 id: 04dd9ad8-3d81-4098-a661-21b6acc6f443
 title: Dev
 desc: ''
-updated: 1636430533967
+updated: 1641682683163
 created: 1621721485330
 ---
 
+
+
 ## Gotchas
+
+### Dependency Management of IDendronExtension
+As you will likely notice currently we have plenty of usage of static reach out to get an instance of `DendronExtension` through call out to `getExtension()` this is causing a myriad of circular dependencies. 
+
+You will also notice that `getExtension()` call is now marked `@deprecated`. Going forward we should be using [IDendronExtension](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/dendronExtensionInterface.ts) and preferably use constructor injection of `IDendronExtension`. Currently the interface is injected into command constructors [upon initialization](https://github.com/dendronhq/dendron/blob/3a42ab78416019b716b842c08de247e7df22376c/packages/plugin-core/src/_extension.ts#L984). 
+
+If you are unable to constructor inject `IDendronExtension` to the required dependency (there really shouldn't be a reason long term but in the medium term it could be cost prohibitive to do mass refactors), in that case use [ExtensionProvider](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/ExtensionProvider.ts) to get a hold of `IDendronExtension`. 
+
+Also at the time of this writing `IDendronExtension` does not have everything that `DendronExtension` has. The plan is to refactor piece by piece: if you need a concrete implementation that is within `DendronExtension` that is not yet within `IDendronExtension` the plan is to add the interface at that time. 
+
+Highly highly avoid adding concrete imports into `IDendronExtension` since that will likely just re-introduce circular dependencies. Follow the [Dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) "Depend upon abstractions not concretions".
+
 
 ### Cleaning up artifacts
 

@@ -2,14 +2,14 @@
 id: ENeBSPWAtTlQclXYWNm6c
 title: Architecture
 desc: ''
-updated: 1637878699671
+updated: 1642670836532
 created: 1629988601634
 nav_order: 3.1
 ---
 
 ## Summary
 
-Dendron has many oving parts but at the core, it consists of a traditional client/server model. 
+Dendron has many moving parts but at the core, it consists of a traditional client/server model. 
 
 Currently, the clients are: 
 - [[pkg.plugin-core]]: vscode extension

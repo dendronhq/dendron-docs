@@ -2,14 +2,13 @@
 id: ebf58a4a-18f8-498d-95eb-04d856c0a000
 title: Architecture
 desc: ""
-updated: 1637875662463
+updated: 1642272282049
 created: 1619535999168
 ---
 
 ## Components
 
 ![[dendron://dendron.docs/pkg.dendron-engine.t.engine#summary,1:#*]]
-![[dendron://dendron.docs/pkg.dendron-engine.t.engine.arch-connector#summary,1:#*]]
 
 ## Layout
 

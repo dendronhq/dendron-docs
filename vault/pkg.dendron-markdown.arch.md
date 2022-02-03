@@ -20,7 +20,7 @@ Unified gives a few ways of working with processors:
 
 ## Components
 
-### Processor
+### Stepsor
 Dendron has different processors depending on the desired output (eg. markdown vs HTML). Below is the interface for markdown
 
 - source: [procRemarkFull](https://github.com/dendronhq/dendron/blob/51633edcd0817c9b4aa18ff25f492f7a00e6e088/packages/engine-server/src/markdown/utilsv5.ts#L344-L344)

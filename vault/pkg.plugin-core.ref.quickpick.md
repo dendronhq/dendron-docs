@@ -1,8 +1,8 @@
 ---
 id: VGX2YNqD7fpmCjpgfrZ0Y
 title: Quickpick
-desc: ''
-updated: 1635435898768
+desc: ""
+updated: 1642527818842
 created: 1635435581048
 ---
 
@@ -18,6 +18,3 @@ The quickpick component is the widget used by VSCode. It's what you see when you
 
 - Source: https://github.com/dendronhq/dendron/blob/c07c6724419ba506198a316e5b8aa4ab06b74ab7/packages/plugin-core/src/components/lookup/buttons.ts#L451
 - Interface: [IDendronQuickInputButton](https://github.com/dendronhq/dendron/blob/c07c6724419ba506198a316e5b8aa4ab06b74ab7/packages/plugin-core/src/components/lookup/buttons.ts#L165) ^P3hobXesBvpc
-
-## Tasks
-- [[Lookup Context Hover|dendron://private/scratch.2021.10.28.083336.context-hover]]

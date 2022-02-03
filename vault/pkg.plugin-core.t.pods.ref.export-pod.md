@@ -2,7 +2,7 @@
 id: DD7TE2EgE6zC0OSD5yZEd
 title: Export Pod
 desc: ""
-updated: 1640375186409
+updated: 1641644068333
 created: 1639614544838
 ---
 
@@ -13,16 +13,10 @@ created: 1639614544838
 - create a new pod config
 
 ```ts
-class ExportPodV2Command extends BaseExportPodComman {
+class ExportPodV2Command extends BaseExportPodCommand {
 
     gatherInputs {
-
         promptForPodTypeForCommand
-    }
-
-    promptForPodTypeForCommand {
-        resp = showQuickPick PodV2Types
-        PodCommandFactory.createPodCommandForPodType(resp)
     }
 
     // src/components/pods/PodCommandFactory.ts
@@ -32,19 +26,30 @@ class ExportPodV2Command extends BaseExportPodComman {
 
     // src/commands/pods/MarkdownExportPodCommand.tso
     gatherInputs {
-
     }
 
-    execute {
-
-    }
 }
 ```
 
-- pod lifecycel
+- pod lifecycle
+
+- [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts#L185]]
 
 ```ts
-// src/commands/pods/BaseExportPodCommand.ts
+// [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts#L77]]
+enrichInputs(inputs) {
+    exportScope, config := inputs
+    let payload
+
+    switch(exportScope) {
+        case ... {
+            payload := ...
+        }
+    }
+    return {payload, config}
+}
+
+// [[../packages/plugin-core/src/commands/pods/BaseExportPodCommand.ts#L144]]
 execute {
     pod = createPod {
         // example
@@ -63,3 +68,7 @@ execute {
     }
 }
 ```
+
+### Past Tasks
+
+- [feat(pods): Export Pod V2 by jonathanyeung · Pull Request #1772 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1772/files)

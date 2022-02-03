@@ -2,7 +2,7 @@
 id: 2b87ceb3-2a90-4dee-ab8e-980172ecaef1
 title: Errors
 desc: ''
-updated: 1637876217578
+updated: 1642723784716
 created: 1620879891784
 ---
 
@@ -18,12 +18,12 @@ Any error that is throw by Dendron should extend from [`DendronError`](https://g
 - When logging errors, use `stringifyError` (regular `stringify` will [omit fields](https://stackoverflow.com/questions/18391212/is-it-not-possible-to-stringify-an-error-using-json-stringify))
 - If applicable, use 
 
-## ResponseOrError
+## RespV3
 
 Use this when working with functions that return data or an error
 
 ```ts
-type RespOrError = {
+type RespV3 = {
       error: IDendronError;
       data?: never;
     }
