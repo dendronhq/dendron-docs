@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Dendron Review Process
 desc: ''
-updated: 1643745095593
+updated: 1643995868965
 created: 1623430616135
 nav_order: 4.1
 config:
@@ -58,6 +58,18 @@ Use cached version of notes to generate metadata instead of building from scratc
 * To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
 * To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
 * When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
+
+### Addressing open issues
+
+Github has automation that will automatically close issues if you mention certain keywords like `fix {issueUrl}` in the commit message. 
+
+We want to avoid this so use the **related** keyword when talking about issues
+
+```
+Related to {issueUrl}
+```
+
+Closing the issue is handled in [[After a release has shipped|dendron://dendron.docs/dev.process.close-loop#after-a-release-has-shipped]]
 
 ### Pull Request
 ![[dendron://dendron.docs/dev.process.review.checklist]]

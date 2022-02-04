@@ -19,7 +19,7 @@ How we deal with bugs
     - NOTE: as of today, high priority means it impacts a lot of users - use your best judgement for this and ping in `#team-chat` if you're not sure, we're working on coming up with better metrics around this
     - some heuristics around high priority:
         - anything to do with common publishing operations
-        - anything that pertains to [[Core Features Maturity|dendron://private/milestone.2021.01.core-feature-maturity]]
+        - anything that pertains to [[Core Features Maturity|dendron://private/milestone.2022.01-core-feature-maturity]]
 1. Export the task note
 
 ## Notes
