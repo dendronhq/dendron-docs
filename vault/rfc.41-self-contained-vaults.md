@@ -2,7 +2,7 @@
 id: aOOBYTowLEKJDEtLWFiHb
 title: 41 Self Contained Vaults
 desc: ''
-updated: 1643967234347
+updated: 1643998251414
 created: 1643876703841
 ---
 
@@ -73,15 +73,18 @@ The `dependencies` folder and it's layout is described below.
 
 ### Vault Dependencies
 
-Each vault can include one or more vaults in the `vaults` section of their configuration file.
-If included, these vaults are the dependencies of the current vault.
-The depended vaults can also have their own dependencies.
+Each vault can include one or more vaults in the `vaults` section of their
+configuration file. If included, these vaults are the dependencies of the
+current vault. The current vault is called the *dependent* vault, and the vaults
+listed are called *depended* vaults. Depended vaults may have their own
+dependencies.
 
 Dendron, during initialization, will pull in any vaults that this vault depends
 on, whether directly or transitively. These vaults should be stored in a
 `dependencies` folder inside this vault. All direct and transitive dependencies
 are flattened into the dependencies vault.
-The dependencies folder will be entirely kept out of git repositories.
+If more than one vault depends on the same vault (has the same remote and same target) then the vault will be pulled in only once.
+The dependencies folder will not be included in git repositories.
 The dependencies folder is structured like this:
 
 ```
@@ -106,6 +109,19 @@ from the remote. This may be a branch, a tag, or a commit.
 Depended vaults don't have to be remote vaults: they can be local vaults as
 well. The local vaults will **not** be included in the repository for the
 dependent vault: each repository can only contain one vault.
+
+### Read-only vaults
+
+Some vaults may be read-only vaults. The notes and schemas inside read-only
+vaults will be included in the lookup bar, but when creating a new note these
+vaults will be listed last and will be marked as "recommended as read-only".
+A user may choose to ignore the warning and create a note in these vaults.
+
+A vault can be marked as read-only when listing the vault in the `vaults:...`
+section of the configuration file. Vaults can also mark in their own
+configuration that they should be added as a read-only vault by default. This
+can be used to mark public vaults that don't accept contributions: for example
+an XKCD vault that automatically updates itself won't accept new notes.
 
 ## Details
 
