@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Dendron Review Process
 desc: ''
-updated: 1643995868965
+updated: 1644009846462
 created: 1623430616135
 nav_order: 4.1
 config:
@@ -58,6 +58,18 @@ Use cached version of notes to generate metadata instead of building from scratc
 * To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
 * To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
 * When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
+
+#### git hooks
+
+We have pre-commit and pre-push hooks, which we use to keep the codebase
+consistent. The pre-commit hook will make sure that your code is correctly
+formatted, and the pre-push hook will make sure you don't accidentally push in
+leftover debugging code.
+
+The pre-commit hook has to **stash and pop** any unstaged changes you have in
+the workspace. If something breaks during this process and your changes are
+lost, check the stash using `git stash list` to find your changes (should be marked `pre-linting-stash`),
+then use `git stash pop stash@{x}` to recover the correct one.
 
 ### Addressing open issues
 
