@@ -1,6 +1,6 @@
 ---
 id: aOOBYTowLEKJDEtLWFiHb
-title: 41 Self Contained Vaults
+title: 42 Self Contained Vaults
 desc: ''
 updated: 1644051827989
 created: 1643876703841
