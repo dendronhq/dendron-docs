@@ -2,7 +2,7 @@
 id: f143ca38-dcc6-4cd3-b84b-997aec1160ef
 title: Rfc
 desc: ''
-updated: 1643876704035
+updated: 1644013231423
 created: 1605539111635
 has_collection: true
 sort_by: date
@@ -110,7 +110,7 @@ point the RFC is 'in review' and may be implemented.
    already exists, make sure to update it and assign it to let others know
    you're working on a proposal. tracking issue number and `<my-feature>` is the
    rfc title.
-2. Fill in an RFC under the rfc.\* hierarchy on dendron-site.  Use the [[Rfc template|templates.rfc]] when creating a RFC. We recommend that you add this repository to your workspace by following the instructions [[here|dendron.topic.seed-bank.quickstart#adding-a-seed-to-an-existing-workspace]].
+2. Fill in an RFC under the rfc.\* hierarchy on dendron-site.  Use the [[Rfc template|dendron://dendron.docs/templates.rfc]] when creating a RFC. We recommend that you add this repository to your workspace by following the instructions [[here|dendron.topic.seed-bank.quickstart#adding-a-seed-to-an-existing-workspace]].
 3. Submit a **pull request** with the title `RFC: ### <title>` where ### is the
    tracking issue number and title is the name of the proposal. As a pull
    request the RFC will receive design feedback from the core team and the

@@ -1,0 +1,8 @@
+    version: 1
+    schemas:
+      - id: rfc
+        title: RFC
+        parent: root
+        children:
+          - pattern: "+([0-9])-+([!])" # starts with 1 or more digits, a dash, then one or more characters
+            template: dendron://dendron.docs/templates.rfc
