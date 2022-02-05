@@ -2,9 +2,11 @@
 id: fFzEJUESpwis1U70AIGhs
 title: RFC 40 - Dendron Plugins
 desc: ''
-updated: 1643876641590
+updated: 1644050472919
 created: 1643873998533
 ---
+
+> This proposal is currently a draft and is not yet finalized.
 
 ## Goals
 

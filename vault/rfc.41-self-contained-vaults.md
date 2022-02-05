@@ -2,11 +2,9 @@
 id: aOOBYTowLEKJDEtLWFiHb
 title: 41 Self Contained Vaults
 desc: ''
-updated: 1644049907585
+updated: 1644051827989
 created: 1643876703841
 ---
-
-> This proposal is currently a draft and is not yet finalized.
 
 ## Goals
 
@@ -45,17 +43,7 @@ Each vault should have the following structure:
 ├── dendron.code-workspace          # optional, but should be added by default
 ├── dendron.yml                     # required
 ├── dependencies                    # created automatically, contains all vaults that have been pulled in
-│  ├── github.com
-│  │  ├── dendronhq
-│  │  │  ├── dendron-docs@main      # depends on github.com/dendronhq/dendron-docs, on main branch
-│  │  │  └── dendron-site@master    # depends on github.com/dendronhq/dendron-site, on master branch
-│  │  └── SeriousBug
-│  │     └── recipes@3e497db338f0f  # depends on github.com/SeriousBug/recipes, targeting a specific commit
-│  ├── gitlab.com
-│  │  └── example
-│  │     └── vault@main             # depends on gitlab.com/example/vault, on main branch
-│  └── localhost                    # a local only vault
-│     └── secret-diary
+│  ... see next heading
 └── notes                           # optional
    ├── root.md
    └── root.schema.yml
@@ -129,8 +117,25 @@ an XKCD vault that automatically updates itself won't accept new notes.
 
 ## Details
 
+### Local vaults contained within remote vaults
+
 Dendron should warn the user if the top level vault is a remote vault, but it
-contains local vaults inside it. This is important since in previous Dendron versions, placing the workspace in a repository would add all local vaults to the repository as well.
+contains local vaults inside it. This is important since in previous Dendron
+versions, placing the workspace in a repository would add all local vaults to
+the repository as well.
+
+### Migration
+
+Since workspaces and vaults are a very fundamental part of Dendron, a slow/soft
+migration would be the best course of action.
+1. Dendron adds support for self contained vaults, but largely hides the feature
+   from users. Self contained vaults will maintain backwards compatibility with
+   existing vaults (e.g. a self contained vault can list an old vault as a
+   dependency).
+2. We wait until a large majority of users have updated to a version that
+   supports self contained vaults (hopefully 1 or 2 weeks)
+3. Dendron will start creating new vaults as self contained vaults, and offer a
+   command to convert existing vaults into self contained vaults.
 
 ## Example
 
@@ -174,10 +179,7 @@ Github/Gitlab can display it on the repository page.
 
 > I want to use standalone vaults with the same functionality I have today so that my existing use cases can be supported.
 
-Self contained vaults support all the same functionalities we have today, and expand
-upon them.
-
-<!-- Anything we're missing? How do we handle migration, just backwards compatibility and allow users to migrate at their own pace? -->
+Self contained vaults support all the same functionalities we have today, and provide backward compatibility with existing vault and workspace features.
 
 > I want to keep my vault configuration separate from my
 > editor/presentation/publishing configuration so that I can use the same vault
