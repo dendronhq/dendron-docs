@@ -42,7 +42,7 @@ Next Steps:
 - read the [[architecture|pkg.dendron-next-server.arch]] documents to understand how the next server fits in with other Dendron plugins and how to build on top of it
 
 ### PR Checklist
-- see [[Review|dev.process.review]]
+- see [[Review|dev.process.commit]]
 - [ ] make sure your UI is compatible with light/dark theme 
 
 

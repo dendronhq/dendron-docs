@@ -42,7 +42,7 @@ yarn compile
 
 1. Checkout a feature branch for your task
 2. Work on code
-3. Submit a [[Review|dev.process.review]] 
+3. Submit a [[Review|dev.process.commit]] 
 
 ### Getting Help
 
