@@ -2,7 +2,7 @@
 id: fFzEJUESpwis1U70AIGhs
 title: RFC 40 - Dendron Plugins
 desc: ''
-updated: 1644050472919
+updated: 1644271190207
 created: 1643873998533
 ---
 
@@ -40,14 +40,17 @@ The `dendron-plugin.json` contains the information about the plugin (plugin meta
 
 ```json
 {
-    name: "Example Plugin", // name of the plugin
-    description: "Does many useful things", // describes what the plugin does
-    version: "1.2.3", // version of the plugin itself
-    supportedDendronVersion: "^0.80", // supports Dendron 0.80 or newer
-    developers: ["Jane Doe <jane.doe@example.com>"], // one or more developers of this plugin
-    license: "MIT", // the license that the plugin is released under
+    id: "@jane.doe/example-plugin", // required
+    name: "Example Plugin", // required
+    description: "Does many useful things", // required, short description of what the plugin does
+    version: "1.2.3", // required, version of the plugin itself
+    supportedDendronVersion: "^0.80", // required, supports Dendron 0.80 or newer
+    developers: ["Jane Doe <jane.doe@example.com>"], // required, one or more developers of this plugin. email is optional.
+    license: "MIT", // required, the license that the plugin is released under or PROPRIETARY if it's not free open source software
+    repository: "github.com/jane.doe/example-plugin", // required, the repository where the plugin can be downloaded
+    branch: "main", // required, the branch of the repository to use when getting the latest version
     website: "https://example.com", // optional, a page for the plugin
-    source: "https://git.example.com", // optional, the repository for the plugin source code
+    conflicts: [], // optional, list of plugin IDs this one can't be installed along with at the same time
     provides: {
         hooks: "hook.js", // optional, the name of the file inside the zip that provides hooks
         traits: { // optional, one or more traits provided by this plugin
@@ -64,6 +67,11 @@ The `readme.md` is a simple markdown file, which should describe the plugin and 
 
 `.js` files referenced in the plugin metadata should be included with the same name. These javascript files may be run in the plugin, or the CLI.
 
+#### repository
+
+The repository this extension is hosted at. Only supported repositories may be
+used (Github, Gitlab).
+
 ### Plugin Templates
 
 Dendron should provide templates for these plugins using
@@ -79,12 +87,50 @@ Dendron should provide a template for at least JavaScript and TypeScript.
 
 ### Plugin Registry
 
-Dendron should have a registry for plugins. This registry should provide an API
-to upload and download plugins, and a user interface to navigate and search
-plugins.
+Dendron should have a registry for plugins. This registry will be a Github
+repository containing a `registry.json` file, which will contain a map that maps
+plugin ids to plugin metadata. The file will look like this:
 
-For safety, the registry will only read the `dendron-plugin.json` file in each
-plugin.
+```json
+{
+    "@jane.doe/example-plugin": { // id of the plugin
+        name: "Example Plugin",
+        description: "Does many useful things",
+        repository: "github.com/jane.doe/example-plugin", // required, the repository where the plugin can be downloaded
+        branch: "main",
+        developers: ["Jane Doe <jane.doe@example.com>"], // required, one or more developers of this plugin. email is optional.
+        license: "MIT", // required, the license that the plugin is released under or PROPRIETARY if it's not free open source software
+        website: "https://example.com", // optional, a page for the plugin
+        conflicts: [], // optional, list of plugin IDs this one can't be installed along with at the same time
+        provides: { // optional, should match the file
+            hooks: "hook.js", // optional, the name of the file inside the zip that provides hooks
+            traits: { // optional, one or more traits provided by this plugin
+                "trait-name": "traits.js", // optional, the name of the file inside the zip that provides trait actions
+            },
+            pods: { // optional, one or more pods provided by this plugin
+                "pod-name": "pod.js" // optional, the name of the file inside the zip that provides the pod
+            }
+        },
+    },
+    // ... more extensions
+}
+```
+
+#### Contributions
+Contributions to the registry will be accepted through pull requests to the
+registry repository. The namespace in the id must match the username or the
+organization name that's hosting the plugin.
+
+#### Registry user interface
+Dendron should provide user interfaces for this registry through the Dendron
+plugin, the Dendron CLI, and a web page.
+
+The plugin and CLI will download the `registry.json` file from Github, then
+display an interface listing all plugins and allowing search.
+
+The web page should be statically built from the registry with a Github action.
+It should display the available plugins.
+
 
 ## Details
 
