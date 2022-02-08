@@ -2,7 +2,7 @@
 id: faMqZ89hDHol2ctptbJFH
 title: Monorepo
 desc: ''
-updated: 1643757002628
+updated: 1644341538213
 created: 1642720956727
 ---
 
@@ -36,7 +36,6 @@ yarn setup
 
 ### Watching all dependencies
 - NOTE: typescript is a compiled language which means that the executable won't be updated unless you compile. The watch script will auto-compile all code on change
-
 
 ```sh
 # watch all dependencies
@@ -102,4 +101,30 @@ cp -R /path/to/dendron-yeoman/node-ts packages/{new-package}
 
 ```
 npm publish --access public
+```
+
+## Troubleshooting
+
+### Build is failing
+
+For 99% of cases, running the two steps below will help fix all build issues
+- [[Remove all build artifacts|dendron://dendron.docs/dev.process.code.monorepo#remove-all-build-artifacts]]
+- [[Install All dependencies|dendron://dendron.docs/dev.process.code.monorepo#install-all-dependencies]]
+
+### Investigating a build step
+- source: [[../bootstrap/scripts/buildAll.js]]
+
+`yarn setup` runs the following commands. If you want to dive into a specific build step that is failing, run the steps serially in your shell
+
+```sh
+npx lerna run build --scope @dendronhq/common-all
+npx lerna run build --scope @dendronhq/common-server 
+npx lerna run build --scope @dendronhq/engine-server 
+npx lerna run build --scope @dendronhq/pods-core 
+npx lerna run build --parallel --scope "@dendronhq/{common-test-utils,api-server,common-assets}"
+npx lerna run build --parallel --scope "@dendronhq/{common-frontend,dendron-cli}"
+npx lerna run build --scope "@dendronhq/{engine-test-utils,dendron-next-server}" 
+npx lerna run build --scope "@dendronhq/dendron-plugin-views"
+npx lerna run build --scope "@dendronhq/plugin-core"
+npx yarn dendron dev sync_assets --fast
 ```
