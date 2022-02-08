@@ -2,21 +2,43 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1642636388424
+updated: 1644345025504
 created: 1638063942917
 ---
 
 ## Details
 <!-- Any additional details to give about tests-->
-Tests are run using [cypress](https://www.cypress.io/), an e2e testing framework for the browser. 
+Tests are run using [playwright](https://playwright.dev/docs/intro), an e2e testing framework for the browser. Note that we have chosen to move away from cypress (https://alisterbscott.com/2021/10/27/five-reasons-why-playwright-is-better-than-cypress/)
+
+On Github actions, these tests will run on Chrome/Firefox/Safari for `ubuntu-latest`
 
 ## Writing
 <!-- Writing tests -->
+Tests should be written under the `$DENDRON_REPO_ROOT/packages/nextjs-template/tests` directory. 
+
+See `$DENDRON_REPO_ROOT/packages/nextjs-template/tests/example.spec.ts` for an example
 
 ## Executing
-<!-- Running tests -->
+<!-- Running all tests -->
+1. Running all tests
+```sh
+cd $DENDRON_REPO_ROOT/packages/nextjs-template
+yarn test
+```
+2. To skip building the application (useful if only working with spec files and don't need to rebuild every time)
+```sh
+yarn test:skipbuild
+```
 
-## Manual Testing
+## Running a single test
+```sh
+cd $DENDRON_REPO_ROOT/packages/nextjs-template
+npx playwright test tests/example.spec.ts
+```
+To skip build
+```
+SKIP_BUILD=1 npx playwright test tests/example.spec.ts
+```
 
 ### Using the Test Workspace
 
