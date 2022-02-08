@@ -2,7 +2,7 @@
 id: FfyL5dSzFwX1iseI56oYy
 title: Test
 desc: ''
-updated: 1644300814094
+updated: 1644302035056
 created: 1636128639000
 ---
 
@@ -39,7 +39,7 @@ If you're trying to validate that a callback was invoked as part of your test, b
 
 Incorrect:
 ```typescript
-test("Testing that onMyCallbackInvoked was invoked (WRONG)", async (done) => {
+test("Testing that onMyCallbackInvoked was invoked (WRONG)", (done) => {
   foo.onMyCallbackInvoked((bar) => {
     expect(bar).toBeTruthy();
     done();
@@ -49,7 +49,7 @@ test("Testing that onMyCallbackInvoked was invoked (WRONG)", async (done) => {
 
 Correct:
 ```typescript
-test("Testing that onMyCallbackInvoked was invoked (CORRECT)", async (done) => {
+test("Testing that onMyCallbackInvoked was invoked (CORRECT)", (done) => {
   foo.onMyCallbackInvoked((bar) => {
     try {
       expect(bar).toBeTruthy();
@@ -69,7 +69,7 @@ There's a utility function that wraps the try / catch logic, which is the prefer
 ```typescript
 import {testAssertsInsideCallback} from "@dendronhq/common-test-utils";
 ...
-test("Testing that onMyCallbackInvoked was invoked (CORRECT & PREFERRED WAY)", async (done) => {
+test("Testing that onMyCallbackInvoked was invoked (CORRECT & PREFERRED WAY)", (done) => {
   foo.onMyCallbackInvoked((bar) => {
     testAssertsInsideCallback(() => {
       expect(bar).toBeTruthy();
