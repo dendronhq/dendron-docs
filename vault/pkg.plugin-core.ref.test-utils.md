@@ -2,7 +2,7 @@
 id: OZhkg0FIyGyUf8XcwCY2g
 title: Test Utils
 desc: ''
-updated: 1643348664182
+updated: 1643846328320
 created: 1642293921514
 ---
 
@@ -40,6 +40,14 @@ setupBeforeAfter(beforeHook, afterHook)
 
 - runLegacyMultiWorkspaceTest
 ```ts
+runLegacyMultiWorkspaceTest { 
+    log "enter"
+    setupLegacyWorkspaceMulti
+    _activate
+    onInit
+    cleanupVSCodeContextSubscriptions
+}
+
 setupLegacyWorkspaceMulti { 
     EngineTestUtilsV4.setupWS // #TODO
     new StateService

@@ -2,7 +2,7 @@
 id: lZSr7StwPU5ukltzLg4mL
 title: Plugin View Lifecycle
 desc: ""
-updated: 1640632065307
+updated: 1644371795185
 created: 1636432981026
 ---
 
@@ -21,6 +21,8 @@ created: 1636432981026
 TODO
 
 ## View Startup
+
+- NOTE: this uses [[Dendron Pseudocode|dendron://dendron.docs/ref.pseudocode]] to describe operations
 
 1. Import a component and wrap it with its own DOM renderer
 
@@ -68,6 +70,7 @@ TODO
           }
       }
       // listen to vscode messages
+      // on INIT, vscode will send over all current notes and schemas
       useVSCodeMessage {
           ...
       }
@@ -81,6 +84,8 @@ TODO
    ```tsx
    DendronNotePage {
 
+        // this renders the note page
+        // noteProps is obtained from vscode and passed in via redux
        useRenderedNoteBody(noteProps, noteId) {
            renderedNoteContentHash = useRef
            if noteProps.contentHash != renderedNoteContentHash {
