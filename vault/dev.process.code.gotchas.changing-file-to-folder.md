@@ -2,11 +2,13 @@
 id: SPdMQojDqHq8251nsLXzx
 title: Changing File to Folder
 desc: ''
-updated: 1644372967718
+updated: 1644373018297
 created: 1644372945357
 ---
 
+## Summary
 When you convert a file to a folder in typescript, a few extra steps needs to be taken to appease the compiler.
+An example is converting `utils.ts` to `utils/index.ts`
 
 ## Steps
 1. run `yarn clean` in the package where this conversion is taing place
