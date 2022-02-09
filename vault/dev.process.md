@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Development Process
 desc: ''
-updated: 1644338710930
+updated: 1644372918676
 created: 1637876733365
 config:
   global:
@@ -36,6 +36,7 @@ Writing code
   - [[Dev Env|dendron://dendron.docs/dev.process.code.dev-env]]: Setting up your dev environment
   - [[Monorepo|dendron://dendron.docs/dev.process.code.monorepo]] (NOTE: read this if its your first time working in a monorepo)
   - [[Utilities|dendron://dendron.docs/dev.process.code.utilities]]: Where utilities are stored
+  - [[dendron://dendron.docs/dev.process.code.gotchas]]: Gremlins that can be hard to debug 
 - [[Impactful Change Notice|dendron://dendron.docs/dev.ref.impactful-change-notice]]: Breaking changes to the development process and current migrations
 - [[Best Practices When Coding|dendron://dendron.docs/dev.process.code.best-practices]]
 

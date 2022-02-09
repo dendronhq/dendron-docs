@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploy
 desc: ''
-updated: 1643743197080
+updated: 1644372690060
 created: 1640280816708
 ---
 
@@ -34,6 +34,7 @@ popd
 git checkout -- package.json
 git add  "packages/nextjs-template/yarn.lock"
 git commit -m "chore: update nextjs lock file"
+git push
 ```
 
 ## Verify
