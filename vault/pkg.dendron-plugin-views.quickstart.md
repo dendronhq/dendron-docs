@@ -1,8 +1,8 @@
 ---
 id: SuyIgH44sJD5P3dRVBaVZ
-title: Quickstart
+title: Dendron Plugin Views Quickstart
 desc: ""
-updated: 1642023299709
+updated: 1644370508650
 created: 1635701411866
 ---
 
