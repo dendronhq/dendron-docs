@@ -19,6 +19,8 @@ Tests should be written under the `$DENDRON_REPO_ROOT/packages/nextjs-template/t
 See `$DENDRON_REPO_ROOT/packages/nextjs-template/tests/example.spec.ts` for an example
 
 ## Executing
+>>IMPORTANT: If running for the first time, run `npx playwright install --with-deps`. This will install necessary playwright browsers
+
 <!-- Running all tests -->
 1. Running all tests
 ```sh
