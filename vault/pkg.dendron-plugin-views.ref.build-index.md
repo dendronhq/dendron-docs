@@ -2,7 +2,7 @@
 id: HMjObaeOxyplmMm4ubrb0
 title: Build Index
 desc: ""
-updated: 1642023965461
+updated: 1644518756138
 created: 1636430801305
 ---
 
@@ -54,3 +54,16 @@ applyTheme(theme) {
 
 }
 ```
+
+### Copy and Paste
+
+When copy and pasting content, Dendron has a listener that intercepts all copy events to apply additional formatting. This happens in [[../packages/common-server/src/etc.ts]].
+
+When a copy event is detected, Dendron creates two clipboard items:
+
+- plaintext
+- html
+
+The plaintext clipboard item takes the raw plaintext.
+
+The HTML clipboard item will strip out background color and other properties when copying HTML content (otherwise, pasting into Gmail will also paste in the extension background).
