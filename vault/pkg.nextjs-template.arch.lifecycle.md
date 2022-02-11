@@ -2,7 +2,7 @@
 id: 7MLCpIb0ITppTZ3qwMi1A
 title: Lifecycle
 desc: ""
-updated: 1641682386167
+updated: 1644533207007
 created: 1636642644504
 ---
 
@@ -112,7 +112,9 @@ State and UI is handled by React and Redux.
 DendronApp {
 
   useEffect {
+    log "fetchNotes:pre"
     data = fetchNotes { fetch("/data/notes.json") }
+    log "fetchNotes:got-data"
     setNoteData data
     fetchConfig { fetch("/data/dendron.json") }
   }
