@@ -2,7 +2,7 @@
 id: ENeBSPWAtTlQclXYWNm6c
 title: Architecture
 desc: ''
-updated: 1642670836532
+updated: 1644513259219
 created: 1629988601634
 nav_order: 3.1
 ---
@@ -22,7 +22,10 @@ You can find an index of all Dendron packages [[here|dendron://dendron.docs/pkg#
 
 ## Components
 
-### Engine
-- component: [[Dendron Engine|dendron.dev.design#dendron-engine]]
+### Plugin
 
-Responsible for indexing notes and lookup methods. 
+### Engine
+
+- package: [[Dendron Engine|dendron://dendron.docs/pkg.dendron-engine]]
+
+Responsible for indexing notes and lookup methods 

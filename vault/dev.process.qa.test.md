@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1644439662765
+updated: 1644614427098
 created: 1632347495097
 ---
 
@@ -31,6 +31,10 @@ For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.
 ## Manual Testing
 
 See [[manual Testing|dendron://dendron.docs/pkg.plugin-core.qa.test#manual-testing]]
+
+## Test Utilities
+
+Dendron provides many utilities to more easily setup tests. See provided utilities in [[Test Utils|dendron://dendron.docs/pkg.common-test-utils.ref.test-utils]]
 
 ## Checklist
 ![[dendron://dendron.docs/dev.process.qa.test.checklist]]
