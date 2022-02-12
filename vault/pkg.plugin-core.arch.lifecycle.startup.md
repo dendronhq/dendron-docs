@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1643349229406
+updated: 1644696583359
 created: 1610160007286
 ---
 
@@ -59,7 +59,7 @@ _activate {
         port = startServer
         updateEngineAPI(port)
         ws.reloadWorkspace // 312
-        ws.activateWatchers
+        ws.activateWatchers // [[Lifecycle|dendron://dendron.docs/pkg.plugin-core.ref.watchers.arch.lifecycle]]
         ...
         // register all commands with vscode
         _setupCommands // 413

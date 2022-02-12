@@ -2,7 +2,7 @@
 id: KYzqosd80Xg8C0kNUblOp
 title: Workspace Watcher
 desc: ""
-updated: 1639771248281
+updated: 1644697438280
 created: 1635517498318
 ---
 
@@ -17,33 +17,22 @@ Some functionality that it enables:
 - update schema graph view
 - update note preview
 
-## Entry
+## LifeCycle
 
 - [[../packages/plugin-core/src/WorkspaceWatcher.ts]]
 
-## LifeCycle
+```ts
+activate {
+    workspace.onWillSaveTextDocument @onWillSaveTextDocument
+    workspace.onDidChangeActiveTextEditor(doc) {
+        if doc.isNew @onFirstOpen
+    }
+}
+```
 
 ```ts
-WorkspaceWatcher.activate {
-		...
-    workspace.onDidChangeTextDocument
-        - debounce(@onDidChangeTextDocument)
-        - debounce(@quickOnDidChangeTextDocument)
+onFirstOpen {
 
-}
-
-// only updates decorators
-quickOnDidChangeTextDocument {
-    ctx = "WorkspaceWatcher:quickOnDidChangeTextDocument"
-    log "enter"
-
-    windowWatcher?.triggerUpdateDecorations
-
-    log "exit"
-}
-
-onDidChangeTextDocument {
-	NoteSyncService.onDidChange
 }
 ```
 
