@@ -143,7 +143,7 @@ path.join(wsRoot, VaultUtils.getRelPath(vault))
 
 
 ## Markdown
-#scope.markdown
+#scope.common.markdown
 
 ### Adding a new unified plugin
 
