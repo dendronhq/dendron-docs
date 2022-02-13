@@ -72,7 +72,7 @@ When you add a new API to the engine, it needs to be added in both the types and
    ```
 
 ## Engine
-#scope.lookup
+#scope.common.lookup
 
 ### Connecting to the engine
 
