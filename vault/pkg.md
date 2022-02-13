@@ -2,7 +2,7 @@
 id: 32cdd4aa-d9f6-4582-8d0c-07f64a00299b
 title: Packages
 desc: ""
-updated: 1639595699097
+updated: 1644783815770
 created: 1596684856906
 nav_order: 10
 ---
@@ -78,6 +78,10 @@ These packages are shared dependencies
 ### Common Assets
 
 ![[dendron://dendron.docs/pkg.common-assets#summary,1:#*]]
+
+## Templates
+- [[pkg.template-publish-github-action]]
+
 
 <!-- ## Thematic
 Some Logic is split across multiple packages. The following splits out logic by theme instead of physical package
