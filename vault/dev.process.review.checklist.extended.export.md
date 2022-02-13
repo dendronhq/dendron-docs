@@ -1,8 +1,8 @@
 ---
 id: fHKEH1X6xdkq87swyYMHF
-title: Export
+title: Dendron Extended PR Checklist - Markdown 
 desc: ''
-updated: 1644788266505
+updated: 1644788896262
 created: 1644176768259
 ---
 # Dendron Extended PR Checklist
@@ -13,7 +13,8 @@ created: 1644176768259
 
 - [ ] code should follow [Code Conventions](dev.process.code)
 - [ ] circular dependency check: make sure your code is not introducing new circular dependencies in plugin-core.  See [Avoiding Circular Dependencies](dev.process.code.best-practices).
-- [ ] sticking to existing conventions instead of creating new ones [^eg-existing-convention]
+- [ ] sticking to existing conventions instead of creating new ones 
+  - eg: [if configuration for utilities are already in one module or package, add future utilities there as well](https://github.com/dendronhq/dendron/pull/1960#discussion_r786228021)
 
 ### Extended
 
@@ -24,15 +25,8 @@ created: 1644176768259
 - Operations
   - [ ] when shipping this change, will it just work or will it introduce additional operational overhead due to complicated interface or known bugs?
 - Architecture
-  - [ ] check if code is introducing changes on a foundational class or interface. if so, call for design review if needed [^eg-check-for-design-review]
-
-[^eg-existing-convention]: [if configuration for utilities are already in one module or package, add future utilities there as well](https://github.com/dendronhq/dendron/pull/1960#discussion_r786228021)
-
-[^eg-check-for-design-review]: [making changes to DNode](https://github.com/dendronhq/dendron/pull/2158#pullrequestreview-854689586)
-
-[^eg-existing-convention]: [if configuration for utilities are already in one module or package, add future utilities there as well](https://github.com/dendronhq/dendron/pull/1960#discussion_r786228021)
-
-[^eg-check-for-design-review]: [making changes to DNode](https://github.com/dendronhq/dendron/pull/2158#pullrequestreview-854689586)
+  - [ ] check if code is introducing changes on a foundational class or interface. if so, call for design review if needed 
+    - eg: [making changes to DNode](https://github.com/dendronhq/dendron/pull/2158#pullrequestreview-854689586)
 
 
 
@@ -44,13 +38,10 @@ created: 1644176768259
 
 ### Extended
 
-- [ ] can we track the performance of this change to know if it is _successful_? [^eg-track-perf]
+- [ ] can we track the performance of this change to know if it is _successful_? 
+  - eg: [see usage for export pod](https://github.com/dendronhq/dendron/pull/2190#pullrequestreview-855715612)
 
 ## 
-
-[^eg-track-perf]: [see usage for export pod](https://github.com/dendronhq/dendron/pull/2190#pullrequestreview-855715612)
-
-[^eg-track-perf]: [see usage for export pod](https://github.com/dendronhq/dendron/pull/2190#pullrequestreview-855715612)
 
 
 
@@ -105,7 +96,4 @@ created: 1644176768259
 ### Extended
 
 - [ ]  is this a developer BREAKING change? if another person cloning from this branch will need to adjust their dependencies or mental model of the architecture, then it is. if this is the case, make sure this is communicated according to [Close Loop](dev.process.close-loop)
-
-[^eg-breaking-dev-change]: [breaking dev change due to new dependency](https://github.com/dendronhq/dendron/pull/2188#pullrequestreview-855696330)
-
-[^eg-breaking-dev-change]: [breaking dev change due to new dependency](https://github.com/dendronhq/dendron/pull/2188#pullrequestreview-855696330)
+  - eg. [breaking dev change due to new dependency](https://github.com/dendronhq/dendron/pull/2188#pullrequestreview-855696330)
