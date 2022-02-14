@@ -1,8 +1,8 @@
 ---
 id: aOOBYTowLEKJDEtLWFiHb
 title: 42 Self Contained Vaults
-desc: ''
-updated: 1644051827989
+desc: ""
+updated: 1644829914453
 created: 1643876703841
 ---
 
@@ -31,11 +31,23 @@ remote is a workspace and imports the vaults inside of that workspace.
 
 ## Proposal
 
+### Concepts
+
+- Dependency: One vault listing another vault in the `vaults` section of its `dendron.yml` file.
+- Depend**ent** vault: The vault that lists the other vault as a dependency. If vault A depends on vault B, then A is the dependent vault.
+- Depend**ed** vault: The vault that was listed as a dependency. If vault A depends on vault B, then B is the depended vault.
+- Transitive dependency: If vault "A" depends on vault "B", and vault "B"
+  depends on vault "C", then "A" has a transitive dependency on "C".
+- Read-only vault: A vault that the user either can't or doesn't want to modify.
+- Local vault: A vault that is **not** in a git repository.
+- Remote vault: A vault that is in a git repository.
+
 ### Self Contained Vaults
 
 Dendron should remove the concept of workspaces and only use vaults.
 
 Each vault should have the following structure:
+
 ```
 .
 ├── assets                          # optional
@@ -63,8 +75,8 @@ The `dependencies` folder and it's layout is described below.
 
 Each vault can include one or more vaults in the `vaults` section of their
 configuration file. If included, these vaults are the dependencies of the
-current vault. The current vault is called the *dependent* vault, and the vaults
-listed are called *depended* vaults. Depended vaults may have their own
+current vault. The current vault is called the _dependent_ vault, and the vaults
+listed are called _depended_ vaults. Depended vaults may have their own
 dependencies.
 
 Dendron, during initialization, will pull in any vaults that this vault depends
@@ -82,11 +94,11 @@ dependencies
 │  │  ├── dendron-docs@main      # depends on github.com/dendronhq/dendron-docs, on main branch
 │  │  └── dendron-site@master    # depends on github.com/dendronhq/dendron-site, on master branch
 │  └── SeriousBug
-│     └── recipes@3e497db338f0f  # depends on github.com/SeriousBug/recipes, targeting a specific commit
+│     └── recipes@main  # depends on github.com/SeriousBug/recipes, on main branch
 ├── gitlab.com
 │  └── example
 │     └── vault@main             # depends on gitlab.com/example/vault, on main branch
-└── localhost                    # a local only vault
+└── localhost                    # a local vault
    └── secret-diary
 ```
 
@@ -100,9 +112,12 @@ dependent vault: each repository can only contain one vault.
 
 ### Read-only vaults
 
-Some vaults may be read-only vaults. The notes and schemas inside read-only
-vaults will be included in the lookup bar, however creating new notes will
-behave differently:
+A user may not want to, or be able to modify a vault. This is a common pattern
+for public knowledge bases such as seeds. These vaults can be marked as read
+only in the dependent vault's configuration. The notes and schemas inside
+read-only vaults will be included in the lookup bar, however creating new notes
+will behave differently:
+
 - If the vault for the new note is picked automatically, a read-only vault will
   only be selected if there's a hierarchy match.
 - If the vault for the new note is being prompted, then read-only vaults will be
@@ -110,10 +125,12 @@ behave differently:
   ignore the warning and create a note in read-only vaults anyway.
 
 A vault can be marked as read-only when listing the vault in the `vaults:...`
-section of the configuration file. Vaults can also mark in their own
-configuration that they should be added as a read-only vault by default. This
-can be used to mark public vaults that don't accept contributions: for example
-an XKCD vault that automatically updates itself won't accept new notes.
+section of the configuration file.
+
+Vaults can also mark in their own configuration that they should be added as a
+read-only vault by default. This can be used to mark public vaults that don't
+accept contributions: for example an XKCD vault that automatically updates
+itself won't accept new notes.
 
 ## Details
 
@@ -124,18 +141,78 @@ contains local vaults inside it. This is important since in previous Dendron
 versions, placing the workspace in a repository would add all local vaults to
 the repository as well.
 
+### Sync command
+
+The sync command will synchronize all vaults in the workspace. Vaults that are
+marked only will be synchronized with the "pullOnly" configuration by default,
+and other vaults will be synchronized with "sync" configuration by default.
+These configurations can be overridden per vault in the configuration file of
+the dependent vault. Vaults that are transitive dependencies will inherit the
+sync configuration from their dependents, if vault "A" is configured as "skip"
+and "A" depends on "B", then "B" will also use the "skip" configuration.
+
 ### Migration
 
 Since workspaces and vaults are a very fundamental part of Dendron, a slow/soft
 migration would be the best course of action.
-1. Dendron adds support for self contained vaults, but largely hides the feature
-   from users. Self contained vaults will maintain backwards compatibility with
-   existing vaults (e.g. a self contained vault can list an old vault as a
-   dependency).
-2. We wait until a large majority of users have updated to a version that
-   supports self contained vaults (hopefully 1 or 2 weeks)
-3. Dendron will start creating new vaults as self contained vaults, and offer a
-   command to convert existing vaults into self contained vaults.
+
+1. Dendron adds support for self contained vaults, but hides certain parts of the feature
+   behind a `dev` configuration flag:
+
+   - New vaults will be created as stand-alone vaults
+   - Existing vaults can be converted to stand-alone vaults with a command
+
+   The flag and new feature will be announced for users if they would like to help us debug it.
+
+2. We iterate on this feature, and keep the `dev` configuration until:
+   - the feature has matured
+   - and a majority of users have a Dendron version that can read stand-alone vaults
+3. The `dev` flag is removed, and the hidden features become the default.
+4. Once the feature is stable and fully mature, a deprecation notice with a
+   full removal deadline is announced.
+5. Support for old style vaults is completely removed. The migration command is
+   moved into an import pod to recover old style vaults for any remaining
+   unmigrated vaults.
+
+### Overriding Transitive Dependencies
+
+A user may wish to override the transitive dependencies that are pulled into
+their vault. This should be possible by adding the dependency to a higher level
+vault, then changing the dependency settings in that vault. In other words,
+direct dependencies take precedence over transitive dependencies if the same
+vault is imported twice.
+
+For example, if "A" depends on "B" and "B" depends on "C", the settings for "C"
+such as the vault name can be overridden by adding "C" as a direct dependency to
+"A" and changing the settings.
+
+### No clone
+
+A vault dependency can be marked as "no clone". If marked as such, Dendron will
+read the vault if it already exists but will not clone the vault if it doesn't
+exist.
+
+This can be used along with [[#overriding-transitive-dependencies]] to block
+certain vaults from being cloned in.
+
+### Dependency configuration
+
+Depended vaults are listed in the `vaults` section of the configuration for each
+vault. This is the existing location for vaults configuration, but the settings
+for vaults will be expanded as follows.
+
+```yaml
+name: vault-name # Name displayed to users, and used in cross-vault links
+visibility: private # optional, the vault and all it's transitive dependencies will not be published
+fsPath: github.com/dendronhq/example-vault # the path to the vault folder, automatically set up by Dendron
+remote: # optional, added automatically for remote vaults
+  type: git
+  url: "git@github.com:dendronhq/example-vault.git"
+  checkout: main # the branch to check out after cloning the vault. Dendron will not change branches after the initial clone.
+sync: noCommit # optional, overrides the global synchronization setting. Applies to all transitive dependencies.
+publishedAt: "https://example.com" # optional, used for URLs generated during publishing and Copy Note Link. Applies to all transitive dependencies.
+readOnly: false # optional, see read-only vaults section above. Applies to all transitive dependencies.
+```
 
 ## Example
 
@@ -196,7 +273,7 @@ nested.
 With self contained vaults, the configuration for a vault that is being
 published can be changed without changing the configuration for the workspace.
 Changing the editor settings can also be done by creating a new vault, and
-adding the other vault as a dependency.
+adding the other vault as a dependency. This can be improved later by allowing local overrides, but that is outside the scope of this RFC.
 
 > I want to use multi-vault for personal and work vaults without having my personal vault configuration leak into my work vault details
 
@@ -210,7 +287,7 @@ sync works.
 
 Stand alone vaults enforce one vault per repository, which makes access control
 easier. The access controlls can be configured on the version control services
-in a fine-grained manner.
+in a fine-grained manner. This can be improved later by allowing local overrides, but that is outside the scope of this RFC.
 
 > I want to use the same vaults across multiple published sites so that I can more easily re-use my knowledge
 
@@ -256,6 +333,12 @@ One solution to this could be generating a random ID for each vault, and using
 that ID in the wikilink path instead. This would resolve conflicts in x-vault
 wikilinks, but it would hurt wikilink readability since the vault name will not
 be included.
+
+Another solution is allowing notes to be linked by ID, but this is reduces
+readability even further and makes hand writing links effectively impossible.
+
+Another solution is using [import maps](https://deno.land/manual/linking_to_external_code/import_maps) to allow users to rename depended vaults. This can be used to resolve name conflicts. Renaming can be prompted automatically when adding vaults.
+Renames also allow users to change the name that appears for the depended vaults in the user interface, which is desirable even without the name conflicts issue.
 
 ## Discussion
 
