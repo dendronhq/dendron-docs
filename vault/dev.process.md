@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Development Process
 desc: ''
-updated: 1644372918676
+updated: 1644791265896
 created: 1637876733365
 config:
   global:
@@ -45,7 +45,7 @@ Writing code
 - [[Logs|dendron://dendron.docs/dev.process.logs]]
 
 ### Tests
-- [[![[Test Workspace|dendron://dendron.docs/test-workspace]]ing|dendron://dendron.docs/dev.process.qa]]
+- [[Testing|dendron://dendron.docs/dev.process.qa.test]]
 
 ### Docs
 - [[Dendron Developer Docs|dendron://dendron.docs/dev.process.docs]]
