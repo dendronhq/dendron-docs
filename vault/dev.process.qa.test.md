@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1643692275736
+updated: 1644919708510
 created: 1632347495097
 ---
 
@@ -22,7 +22,9 @@ For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.
 ## Executing Tests
 
 - For [[pkg.plugin-core]], see [[run all plugin tests|dendron://dendron.docs/pkg.plugin-core.qa.test#run-all-tests]]
+- For [[pkg.dendron-cli]], see [[Run Task|dendron://dendron.docs/pkg.dendron-cli.qa#run-task]]
 - For any other package, see [[run other tests|dendron://dendron.docs/pkg.engine-test-utils.qa.test#run-all-tests]]
+
 
 - NOTE: Dendron has automated tests that run on every pull request - if you are unable to run tests locally, you can also wait for the pull request to finish running the test
 - NOTE: If you running MacOS or Linux, pay special attention to the Windows output and vice versa if you are developing on Windows
