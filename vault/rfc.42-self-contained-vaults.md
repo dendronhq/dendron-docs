@@ -2,7 +2,7 @@
 id: aOOBYTowLEKJDEtLWFiHb
 title: 42 Self Contained Vaults
 desc: ""
-updated: 1644829914453
+updated: 1644906865715
 created: 1643876703841
 ---
 
@@ -212,6 +212,7 @@ remote: # optional, added automatically for remote vaults
 sync: noCommit # optional, overrides the global synchronization setting. Applies to all transitive dependencies.
 publishedAt: "https://example.com" # optional, used for URLs generated during publishing and Copy Note Link. Applies to all transitive dependencies.
 readOnly: false # optional, see read-only vaults section above. Applies to all transitive dependencies.
+noClone: false # optional, see no clone section above. Applies to all transitive dependencies.
 ```
 
 ## Example
@@ -343,3 +344,23 @@ Renames also allow users to change the name that appears for the depended vaults
 ## Discussion
 
 Please see the [discussion page](https://github.com/dendronhq/dendron/discussions/2349) if you have any ideas or concerns.
+
+### Summary
+
+Here are some points brought up during the discussions. These points should be already reflected in this RFC, but are included here for reference.
+
+- Dendron should include the `dendron.code-workspace` file in all workspaces,
+  even though it's optional since this will make it easier to share vaults since
+  the `code-workspace' file can recommend the Dendron extension.
+- Some users may want vaults that have no notes themselves that act as
+  containers. The `notes` folder should be optional to make this possible, but
+  the UX of this feature needs to be iterated on.
+- The migration to new vaults should be available to users behind a flag, so
+  users can help us test the feature while it's in development.
+- Users should be able to rename transitive vaults by overriding the
+  dependencies.
+- Users can disable cloning dependencies (and transitive dependencies) if they
+  wish to not clone a vault.
+- There was some discussion of how to propagate refactors to dependent vaults. This discussion has been moved to [[RFC 43|rfc.43-refactor-logs]].
+- There was some discussion about being able to add local overrides to the configuration files, but this was decided to be out-of-scope for this RFC.
+- There was some discussion about splitting workspace and vault configuration, but this was decided to be out-of-scope for this RFC.
