@@ -1,6 +1,6 @@
 ---
 id: N0G4s23hFDGVnsjHhh6dt
-title: 44-standard-src-field-Mapping-for-all-pods
+title: 44 Standard srcfieldMapping for all pods
 desc: ''
 updated: 1644993578136
 created: 1644819902372
@@ -10,6 +10,7 @@ created: 1644819902372
 ## Goals
 
 This is a proposal to standarized on a common source-field mapping that all pods can adopt as well as a common API that pods can use to access the mapping. 
+> ⚠️ This RFC is a draft, and is not finalized. ⚠️
 
 
 ## Context
@@ -40,14 +41,18 @@ sourceFieldMapping:  {
       Name: {to: title, type: string},
       Notes: {to: body, type: string}, 
       Status: {to: status, type: string},
-      Size: {to: "tags", type: "singleSelect", filter: "tags.size.*"},
+      Size: {to: tags, type: singleSelect, filter: "tags.size.*"},
     }
 ```
-- Additionally, for mapping **tags**, we can have the *scope* property to limit the scope.
-  This should be valid for only `multiSelect` type.
+Additionally, for mapping **tags**, we can have the *scope* property to limit the scope.
+  - This should be valid for only `multiSelect` type.
+  - scope can have the following values:
+    - fm: tags present in the frontmatter of Note
+    - body: tags present in the Note body
+    - all: scan all note for tags
   
 ```yml
-    Scope: {to: "tags", type: "multiSelect", filter: "tags.size.*", scope: fm},
+    Scope: {to: tags, type: multiSelect, filter: "tags.size.*", scope: fm},
 ```
 
 - For Github Issue Publish Pod, the mapping should look like
