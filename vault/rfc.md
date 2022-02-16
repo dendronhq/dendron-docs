@@ -2,7 +2,7 @@
 id: f143ca38-dcc6-4cd3-b84b-997aec1160ef
 title: Rfc
 desc: ""
-updated: 1644823954636
+updated: 1644994195737
 created: 1605539111635
 has_collection: true
 sort_by: date
@@ -45,7 +45,8 @@ future state of the system and to discover projects for contribution.
 | 💡 proposed        | [[rfc.28-notifications]]               | [@SeriousBug](https://github.com/SeriousBug)     |
 | 💡 proposed        | [[rfc.40-dendron-plugins]]             | [@SeriousBug](https://github.com/SeriousBug)     |
 | 💡 proposed        | [[rfc.42-self-contained-vaults]]       | [@SeriousBug](https://github.com/SeriousBug)     |
-| 💡 proposed        | [[rfc.43-refactor-logs]]               |                                                  |
+| 💡 proposed        | [[rfc.43-refactor-logs]]     
+| 💡 proposed        | [[rfc.44-standard-src-field-Mapping-for-all-pods]] | [@Harshita-mindfire](https://github.com/Harshita-mindfire)        |                                                  |
 | draft              | [[rfc.15-browser-based-dendron]]       | [@kpats](https://github.com/kpathakota)          |
 | 👷 implementing    | [[rfc.38-links-to-non-note-files]]     | [@SeriousBug](https://github.com/SeriousBug)     |
 
