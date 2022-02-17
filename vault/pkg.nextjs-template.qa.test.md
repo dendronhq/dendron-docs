@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1645065867962
+updated: 1645066206820
 created: 1638063942917
 ---
 
@@ -66,12 +66,14 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
 ### Testing in github actions pipeline
 
 1. Commit changes to the dev branch in `nextjs-template`
-  ```sh
-  cd packages/nextjs-template
-  git checkout --track origin/dev
-  git add .
-  git commit -m "dev changes for testing"
-  ```
+    ```sh
+    cd packages/nextjs-template
+    git checkout --track origin/dev
+    git add .
+    git commit -m "dev changes for testing"
+    git push 
+    ```
+    - NOTE: if git push fails, you can `git push -f`. the `dev` branch is only used for testing
 1. Checkout https://github.com/dendronhq/template.publish.github-action-dev
     ```
     git clone https://github.com/dendronhq/template.publish.github-action-dev.git
@@ -87,3 +89,8 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
     ```
 1. Verify [action](https://github.com/dendronhq/template.publish.github-action-dev/actions) is successful
 1. Verify page is live -> https://dendronhq.github.io/template.publish.github-action-dev/
+1. Cleanup
+    - run the following in `nextjs-template`
+    ```
+    git checkout master
+    ```
