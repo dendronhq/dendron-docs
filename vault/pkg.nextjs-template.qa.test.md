@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1644345025504
+updated: 1645065867962
 created: 1638063942917
 ---
 
@@ -61,3 +61,29 @@ Same instructions as above. Change into your own workspace instead of `$DENDRON_
 
 To test nextjs-template with the contents of dendron, push to the `dev` branch of nextjs-template. This is automatically consumed by the
 [[Dev Wiki Endpoint|dendron://dendron.docs/ref.dev-wiki-endpoint]]. 
+
+
+### Testing in github actions pipeline
+
+1. Commit changes to the dev branch in `nextjs-template`
+  ```sh
+  cd packages/nextjs-template
+  git checkout --track origin/dev
+  git add .
+  git commit -m "dev changes for testing"
+  ```
+1. Checkout https://github.com/dendronhq/template.publish.github-action-dev
+    ```
+    git clone https://github.com/dendronhq/template.publish.github-action-dev.git
+    ```
+1. Make an update to `vault/root.md`
+    ```
+    Last updated:
+        version: {current version or commit hash}
+    ```
+1. Push
+    ```
+    git push
+    ```
+1. Verify [action](https://github.com/dendronhq/template.publish.github-action-dev/actions) is successful
+1. Verify page is live -> https://dendronhq.github.io/template.publish.github-action-dev/
