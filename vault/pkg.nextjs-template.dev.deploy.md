@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1645066219186
+updated: 1645066331733
 created: 1640280816708
 ---
 
@@ -19,7 +19,7 @@ mv nextjs-template/.git {WORKSPACE_ROOT}/packages/nextjs-template
 
 ## Steps
 
-These steps should be run **after** the weekly release has gone out
+These steps should be run **after** the weekly release has gone out. It is only needed to run these steps if we have changes to the `nextjs-template`
 
 1. Make sure your current workspace is clean and stash changes otherwise
 1. Get the release version
