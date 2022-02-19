@@ -1,24 +1,24 @@
 ---
 id: faMqZ89hDHol2ctptbJFH
 title: Monorepo
-desc: ''
-updated: 1644341538213
+desc: ""
+updated: 1645229606831
 created: 1642720956727
 ---
 
 ## Summary
 
-Dendron is setup as a monorepo utilizing `lerna` and `yarn workspace`. 
+Dendron is setup as a monorepo utilizing `lerna` and `yarn workspace`.
 This means ALL dependencies are pulled to the top of the repo in a global `node_modules` folder.
 This helps dedup dependencies but can lead to bugs because imports that might work in development will NOT work in production if that dependency isn't in the `package.json` of the respective package.
 
 Some common pitfalls:
 
 - `vscode` cannot be imported in any package besides [[pkg.plugin-core]]
-- you cannot do relative imports of other packages in the monorepo 
-    - eg 
-        - bad: `import {foo} from "../lib/@dendronhq/common-all"` 
-        - good: `import {foo} from "@dendronhq/common-all"` 
+- you cannot do relative imports of other packages in the monorepo
+  - eg
+    - bad: `import {foo} from "../lib/@dendronhq/common-all"`
+    - good: `import {foo} from "@dendronhq/common-all"`
 
 ## Development
 
@@ -35,6 +35,7 @@ yarn setup
 ```
 
 ### Watching all dependencies
+
 - NOTE: typescript is a compiled language which means that the executable won't be updated unless you compile. The watch script will auto-compile all code on change
 
 ```sh
@@ -44,7 +45,7 @@ yarn setup
 
 ### Pulling from master when there is a new dependency
 
-Sometimes when you pull from master, there will be a new dependency added and running [[Watching all dependencies|dendron://dendron.docs/dev.process.code.monorepo#watching-all-dependencies]] might fail. 
+Sometimes when you pull from master, there will be a new dependency added and running [[Watching all dependencies|dendron://dendron.docs/dev.process.code.monorepo#watching-all-dependencies]] might fail.
 In these cases, you want to run the following to install all dependencies before running watch
 
 ```sh
@@ -81,6 +82,22 @@ lerna add @types/{package-to-install} --scope @dendronhq/{package-to-install-int
 
 - NOTE: watch out that you are installing dependencies in the right package. Missing dependencies will appear to work in development if that dependency is present in any of the other packages. The reason things work is because of the way the nodejs module resolution works and that we're in a monorepo. Dependencies are installed at the root of the monorepo and will be found there when the package doesn't have them. When we publish them as npm packages, these dependencies will show up as missing in their respective packages if its not included in the dependencies
 
+### Removing a package
+
+When removing a package, make sure to do the following:
+
+1. Remove the package from the corresponding `package.json`
+1. [[Remove all build artifacts|dendron://dendron.docs/dev.process.code.monorepo#remove-all-build-artifacts]]
+1. Remove `yarn.lock` at the top of the monorepo
+
+```sh
+rm yarn.lock
+```
+
+1. Run `yarn setup`
+1. Commit the new yarn.lock file
+
+- NOTE: when you do this, you might end up updating other dependencies because of [[Semver|dendron://dendron.docs/dev.concepts#semver]]. having a `yarn.lock` means that don't update dependencies even if a new dependency is available. in these cases, be sure to conduct [[Manual Testing|dendron://dendron.docs/dev.process.qa.test#manual-testing]] when submitting the PR
 
 ### Publish a new monorepo package
 
@@ -108,22 +125,24 @@ npm publish --access public
 ### Build is failing
 
 For 99% of cases, running the two steps below will help fix all build issues
+
 - [[Remove all build artifacts|dendron://dendron.docs/dev.process.code.monorepo#remove-all-build-artifacts]]
 - [[Install All dependencies|dendron://dendron.docs/dev.process.code.monorepo#install-all-dependencies]]
 
 ### Investigating a build step
+
 - source: [[../bootstrap/scripts/buildAll.js]]
 
 `yarn setup` runs the following commands. If you want to dive into a specific build step that is failing, run the steps serially in your shell
 
 ```sh
 npx lerna run build --scope @dendronhq/common-all
-npx lerna run build --scope @dendronhq/common-server 
-npx lerna run build --scope @dendronhq/engine-server 
-npx lerna run build --scope @dendronhq/pods-core 
+npx lerna run build --scope @dendronhq/common-server
+npx lerna run build --scope @dendronhq/engine-server
+npx lerna run build --scope @dendronhq/pods-core
 npx lerna run build --parallel --scope "@dendronhq/{common-test-utils,api-server,common-assets}"
 npx lerna run build --parallel --scope "@dendronhq/{common-frontend,dendron-cli}"
-npx lerna run build --scope "@dendronhq/{engine-test-utils,dendron-next-server}" 
+npx lerna run build --scope "@dendronhq/{engine-test-utils,dendron-next-server}"
 npx lerna run build --scope "@dendronhq/dendron-plugin-views"
 npx lerna run build --scope "@dendronhq/plugin-core"
 npx yarn dendron dev sync_assets --fast
