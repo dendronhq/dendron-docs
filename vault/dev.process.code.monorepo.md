@@ -2,7 +2,7 @@
 id: faMqZ89hDHol2ctptbJFH
 title: Monorepo
 desc: ""
-updated: 1645229606831
+updated: 1645230057133
 created: 1642720956727
 ---
 
@@ -98,6 +98,12 @@ rm yarn.lock
 1. Commit the new yarn.lock file
 
 - NOTE: when you do this, you might end up updating other dependencies because of [[Semver|dendron://dendron.docs/dev.concepts#semver]]. having a `yarn.lock` means that don't update dependencies even if a new dependency is available. in these cases, be sure to conduct [[Manual Testing|dendron://dendron.docs/dev.process.qa.test#manual-testing]] when submitting the PR
+
+### Pinning a dependency
+
+Sometimes, its necessary to pin dependencies to prevent accidental updates (usually because the next version forces an incompatible node version). This usually comes to light when upgrading dependencies or when we follow the [[Removing a package|dendron://dendron.docs/dev.process.code.monorepo#removing-a-package]] cookbook. When you find a dependency is incompatible, you can pin it by removing the `^` sign infront of the dependency in the respective `package.json`.
+
+When you do so, be sure to also add that dependency in [[Pinned Dependencies|dendron://dendron.docs/dev.ref.pinned-dependencies]]
 
 ### Publish a new monorepo package
 
