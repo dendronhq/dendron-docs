@@ -1,8 +1,8 @@
 ---
 id: d1usLHSTfJc-3_JKuYLBr
-title: Architecture
+title: Dendron Plugin Architecture
 desc: ""
-updated: 1639595763090
+updated: 1645402159098
 created: 1624552964184
 ---
 
@@ -20,3 +20,5 @@ The reason we went with this design:
 - flexibility: this allows us to extend Dendron functionality with other clients (eg. different IDE's, vim, web extensions, native applications, etc)
   - currently, the [[pkg.dendron-cli]] is the only official client for the server at this time
 - performance: we outsource computationaly expensive operations to the server running on a separate process which means that we don't block the main thread of the client during activation and regular usage
+
+![[dendron://dendron.docs/pkg.plugin-core.arch.lifecycle]]
