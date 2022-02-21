@@ -1,18 +1,14 @@
 ---
-id: adc39825-77a6-46cf-9c49-2642fcb4248e
-title: Dendron Review Process
+id: QN46JTSWpEkDkr94TJ85w
+title: Review
 desc: ''
-updated: 1644009846462
-created: 1623430616135
-nav_order: 4.1
-config:
-  global:
-    enableChildLinks: false
+updated: 1644789064172
+created: 1644173493342
 ---
 
 ## Summary
 
-This goes into how we do code review (via pull requests)
+The Dendron code review process
 
 ## Prerequisites
 
@@ -20,73 +16,19 @@ We recommend using the github cli to work on pull requests (not required but hel
 
 ## Steps
 
-### Starting work
+### Submitting
+1. Open up a pull request 
+1. Make sure the title of the pull request mirrors the [[Commit Style|dendron://dendron.docs/dev.process.commit#commit-style]]
+1. If you are a team member, you can copy the full checklist from [[Dendron Extended PR Checklist - Markdown|dendron://dendron.docs/dev.process.review.checklist.extended.export]], otherwise, follow the instructions in the pull request template
 
-To start work on a new feature, clone the dendron repo and checkout a new branch. This should be in the format of `{category}/{feature-description}`
+### For Team members
+1. When an area of the checklist (eg. Instrumentation), does not apply to your PR, you can remove the checkboxes and just add `NA` for not applicable
+1. Similarly, if a specific check does not apply, you can use the `[~]` to mark it as such
 
-See [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]] for picking out the category
-
-### Work in Progress
-- if your still iterating on your pull request or if your working on feedback but its not ready yet, put your PR into `draft` mode until it is ready
-
-### Branch Style
-
-All prs should start with `[feat|fix|enhance|chore]/[{description-of-pr-in-kebab-case}]`
-    - `eg. feat/add-thisthing`
-
-### Commit Style
-
-We follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
-
-This means commits have the following format:
-
-```
-{category}({scope}): {description}
-
-{additional details}
-```
-
-An example commit:
-
-^pjL1YxpWRgtT
-``` 
-enhance(publish): speed up publishing by 500%
-
-Use cached version of notes to generate metadata instead of building from scratch
-```
-
-* To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
-* To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
-* When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
-
-#### git hooks
-
-We have pre-commit and pre-push hooks, which we use to keep the codebase
-consistent. The pre-commit hook will make sure that your code is correctly
-formatted, and the pre-push hook will make sure you don't accidentally push in
-leftover debugging code.
-
-The pre-commit hook has to **stash and pop** any unstaged changes you have in
-the workspace. If something breaks during this process and your changes are
-lost, check the stash using `git stash list` to find your changes (should be marked `pre-linting-stash`),
-then use `git stash pop stash@{x}` to recover the correct one.
-
-### Addressing open issues
-
-Github has automation that will automatically close issues if you mention certain keywords like `fix {issueUrl}` in the commit message. 
-
-We want to avoid this so use the **related** keyword when talking about issues
-
-```
-Related to {issueUrl}
-```
-
-Closing the issue is handled in [[After a release has shipped|dendron://dendron.docs/dev.process.close-loop#after-a-release-has-shipped]]
-
-### Pull Request
-![[dendron://dendron.docs/dev.process.review.checklist]]
-
-#### Correspondence
+### Correspondence
 
 A conversation should only be resolved when the comment has been addressed and is reflected in the pull request. 
 At that point, the conversation should be resolved by the person that made the pull request. 
+
+## Checklist
+![[dendron://dendron.docs/dev.process.review.checklist]]

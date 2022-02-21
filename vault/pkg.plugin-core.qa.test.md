@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1643918997330
+updated: 1644485521134
 created: 1627140509315
 ---
 
@@ -57,10 +57,9 @@ suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
 });
 ```
 
-Note here that your tests can be regular functions with a `done` parameter like
-this example, or they can be `async` functions without the `done`. Either will
-work correctly, you can choose based on what you need for the function you are
-testing.
+**Note**: the top level test function passed to `describeMultiWS` or `describeSingleWS` **cannot be async**. (In the example above, this is the `() => { // this can NOT be async ...}` block) Otherwise, the framework may report the tests as passing even if there are asserts or exceptions failing.  A run-time guard has been added that should fail the test if an async test function is provided.
+
+However, the `test()` functions within the callback themselves can be async with a `done` parameter like this example, or they can be `async` functions without the `done`. Either will work correctly, you can choose based on what you need for the function you are testing.
 
 The first object allows you to configure the workspace that's being created. It
 has a lot of configuration options, see

@@ -2,13 +2,13 @@
 id: S8zJJGHbNH4bmMP2KGieU
 title: Dendron Plugin Views
 desc: ''
-updated: 1639025001394
+updated: 1644370526479
 created: 1635701386491
 ---
 
 ## Summary
 
-Webviews for Dendron Plugin
+This is responsible for the webviews inside [[pkg.dendron-plugin]]
 
 ## Getting Started
 

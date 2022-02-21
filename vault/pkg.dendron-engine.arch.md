@@ -1,8 +1,8 @@
 ---
 id: ebf58a4a-18f8-498d-95eb-04d856c0a000
-title: Architecture
+title: Dendron Engine Architecture
 desc: ""
-updated: 1642272282049
+updated: 1645402214907
 created: 1619535999168
 ---
 
@@ -25,3 +25,7 @@ The Dendron Engine is organized into modules that are a top level folder
         - index.ts
         - ...
 ```
+
+
+## Lifecycle
+![[dendron://dendron.docs/pkg.dendron-engine.arch.lifecycle]]

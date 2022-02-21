@@ -2,7 +2,7 @@
 id: tYCf6nhm7joy1chpSCtXj
 title: Editor View - Web View Implementation
 desc: ""
-updated: 1640632071276
+updated: 1644519311111
 created: 1638232297416
 ---
 
@@ -61,3 +61,4 @@ For full details, see the [[PR|dendron://dendron.docs/pkg.plugin-core.ref.web-vi
 ## Past Tasks
 
 - [enhance: strip out theming on copy and paste from preview by nickolay-kondratyev · Pull Request #1807 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/1807) ^wOEBfg2aXhwp
+- [enhance/fix clipboard by kevinslin · Pull Request #2152 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/2152)

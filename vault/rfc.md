@@ -1,8 +1,8 @@
 ---
 id: f143ca38-dcc6-4cd3-b84b-997aec1160ef
 title: Rfc
-desc: ''
-updated: 1644013231423
+desc: ""
+updated: 1644994195737
 created: 1605539111635
 has_collection: true
 sort_by: date
@@ -21,32 +21,35 @@ future state of the system and to discover projects for contribution.
 
 <!--BEGIN_TABLE-->
 
-| Status                | Title                                                                                                    | Owner                                            |
-| --------------------- | ----------------------- ----------------------------- | ------------------------------------------------ |
-| ✅ done               | [[rfc.7-graph-rework]]               | [@HFellerhoff](https://github.com/hfellerhoff)   |
-| ✅ done               | [[rfc.10-blocks]]          | [@SeriousBug](https://github.com/SeriousBug)          |
-| ✅ done               | [[rfc.1-dendron-nextjs]] | [@kevin](https://github.com/kevinslin)           |
-| ✅ done               | [[rfc.16-better-tags]]                             | [@SeriousBug](https://github.com/SeriousBug)     |
-| 1️⃣ phase one done     | [[rfc.11-better-tree-view]]         | [@kevin](https://github.com/kevinslin)           |
-| 1️⃣ phase one done     | [[rfc.14-seed-bank]]            | [@kevin](https://github.com/kevinslin)           |
-| 1️⃣ phase one done     | [[rfc.18-add-note-indexes]]                               | [@hikchoi](https://github.com/cerebrarium)       |
-| 1️⃣ phase one done     | [[rfc.9-note-lifecycle-hooks]]    | [@kevin](https://github.com/kevinslin)           |
-| 1️⃣ phase one done     | [[rfc.2-managed-publishing]]        | [@kevin](https://github.com/kevinslin)           |
-| 👷 implementing       | [[rfc.22-queries]]                                 | [@SeriousBug](https://github.com/SeriousBug)     |
-| 👷 implementing       | [[rfc.13.todo-notes]]               | [@kevin](https://github.com/kevinslin)           |
-| 👩‍🌾 community issue    | [[rfc.20-integrated-space-repetition]]             | [@kevin](https://github.com/kevinslin)           |
-| 💡 proposed           | [[rfc.12-schema-improvements]]      | [@kevin](https://github.com/kevinslin)           |
-| 💡 proposed           | [[rfc.3-standalone-vaults]]         | [@kevin](https://github.com/kevinslin)           |
-| 💡 proposed           | [[rfc.4-link-templates]]         | [@kevin](https://github.com/kevinslin)           |
-| 💡 proposed           | [[rfc.5-publishing-registry]]       | [@kevin](https://github.com/kevinslin)           |
-| 💡 proposed           | [[rfc.6-dendron-design-system]]             | [@kevin](https://github.com/kevinslin)           |
-| 💡 proposed           | [[rfc.8-multi-publish]]             | [@kevin](https://github.com/kevinslin)           |
-| 💡 proposed           | [[rfc.20-integrated-space-repetition]]         | [@imalightbulb](https://github.com/imalightbulb) |
-| 💡 proposed           | [[rfc.28-notifications]]                           | [@SeriousBug](https://github.com/SeriousBug)     |
-| 💡 proposed           | [[rfc.40-dendron-plugins]]            | [@SeriousBug](https://github.com/SeriousBug)     |
-| 💡 proposed           | [[rfc.42-self-contained-vaults]]      | [@SeriousBug](https://github.com/SeriousBug)     |
-| draft                 | [[rfc.15-browser-based-dendron]]                                                                                | [@kpats](https://github.com/kpathakota)          |
-| 👷 implementing       | [[rfc.38-links-to-non-note-files]]                                 | [@SeriousBug](https://github.com/SeriousBug)     |
+| Status             | Title                                  | Owner                                            |
+| ------------------ | -------------------------------------- | ------------------------------------------------ |
+| ✅ done            | [[rfc.7-graph-rework]]                 | [@HFellerhoff](https://github.com/hfellerhoff)   |
+| ✅ done            | [[rfc.10-blocks]]                      | [@SeriousBug](https://github.com/SeriousBug)     |
+| ✅ done            | [[rfc.1-dendron-nextjs]]               | [@kevin](https://github.com/kevinslin)           |
+| ✅ done            | [[rfc.16-better-tags]]                 | [@SeriousBug](https://github.com/SeriousBug)     |
+| 1️⃣ phase one done  | [[rfc.11-better-tree-view]]            | [@kevin](https://github.com/kevinslin)           |
+| 1️⃣ phase one done  | [[rfc.14-seed-bank]]                   | [@kevin](https://github.com/kevinslin)           |
+| 1️⃣ phase one done  | [[rfc.18-add-note-indexes]]            | [@hikchoi](https://github.com/cerebrarium)       |
+| 1️⃣ phase one done  | [[rfc.9-note-lifecycle-hooks]]         | [@kevin](https://github.com/kevinslin)           |
+| 1️⃣ phase one done  | [[rfc.2-managed-publishing]]           | [@kevin](https://github.com/kevinslin)           |
+| 👷 implementing    | [[rfc.22-queries]]                     | [@SeriousBug](https://github.com/SeriousBug)     |
+| 👷 implementing    | [[rfc.13.todo-notes]]                  | [@kevin](https://github.com/kevinslin)           |
+| 👩‍🌾 community issue | [[rfc.20-integrated-space-repetition]] | [@kevin](https://github.com/kevinslin)           |
+| 💡 proposed        | [[rfc.12-schema-improvements]]         | [@kevin](https://github.com/kevinslin)           |
+| 💡 proposed        | [[rfc.3-standalone-vaults]]            | [@kevin](https://github.com/kevinslin)           |
+| 💡 proposed        | [[rfc.4-link-templates]]               | [@kevin](https://github.com/kevinslin)           |
+| 💡 proposed        | [[rfc.5-publishing-registry]]          | [@kevin](https://github.com/kevinslin)           |
+| 💡 proposed        | [[rfc.6-dendron-design-system]]        | [@kevin](https://github.com/kevinslin)           |
+| 💡 proposed        | [[rfc.8-multi-publish]]                | [@kevin](https://github.com/kevinslin)           |
+| 💡 proposed        | [[rfc.20-integrated-space-repetition]] | [@imalightbulb](https://github.com/imalightbulb) |
+| 💡 proposed        | [[rfc.28-notifications]]               | [@SeriousBug](https://github.com/SeriousBug)     |
+| 💡 proposed        | [[rfc.40-dendron-plugins]]             | [@SeriousBug](https://github.com/SeriousBug)     |
+| 💡 proposed        | [[rfc.42-self-contained-vaults]]       | [@SeriousBug](https://github.com/SeriousBug)     |
+| 💡 proposed        | [[rfc.43-refactor-logs]]     
+| 💡 proposed        | [[rfc.44-standard-src-field-Mapping-for-all-pods]] | [@Harshita-mindfire](https://github.com/Harshita-mindfire)        |                                                  |
+| draft              | [[rfc.15-browser-based-dendron]]       | [@kpats](https://github.com/kpathakota)          |
+| 👷 implementing    | [[rfc.38-links-to-non-note-files]]     | [@SeriousBug](https://github.com/SeriousBug)     |
+
 ## What is an RFC?
 
 An RFC is a document that proposes and details a change or addition to Dendron

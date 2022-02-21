@@ -2,7 +2,7 @@
 id: F8cCg5iQH1KXmx4SGcEia
 title: Triage GitHub Issue
 desc: ''
-updated: 1643132700869
+updated: 1644369367045
 created: 1638139691294
 ---
 
@@ -18,8 +18,12 @@ How incoming github issues are triaged
     - Check if issue is a  **Duplicated to an existing bug/epic**. If so, add the [[duplicate|dev.process.issues.ref.labels#duplicate]] label and close the issue
     - Check if issue **"needs-info"** because we need more details to figure out what the issue is. If so, add what info is needed and add the label.
     - Check if the issue is a valid issue (eg. describes a bug or requests for new functionality) vs a support question
-1. If the issue is valid
-    - make sure the issue has correct [[area|dev.process.issues.ref.labels#area]] and [[type|dev.process.issues.ref.labels#type]]
+1. If the issue is valid ^bsmp43kiM22J
+    - make sure the issue has the following labels:
+        - #scope
+        - [[type|dev.process.issues.ref.labels#type]]
+        - [[size|dendron://dendron.docs/dev.process.issues.ref.labels#size]]
+            - NOTE: if unsure about size, ping `@Dendron Team`
     - depending on priority, the issue can go into one of the following buckets
         - add #sprint.active label to the task
             - if item is **high priority**, repro immediately and assign an engineer and tag to current milestone for immediate investigation

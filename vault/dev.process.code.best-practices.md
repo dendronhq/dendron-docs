@@ -2,7 +2,7 @@
 id: pMS27sHxbWeKMoPRrWEzs
 title: Best Practices
 desc: ''
-updated: 1643201141382
+updated: 1644893635055
 created: 1643200441685
 ---
 
@@ -80,3 +80,9 @@ Some examples:
     return WorkspaceUtils.isPathInWorkspace({ fpath, vaults, wsRoot });
   }
 ```
+
+## Going outside of the typescript compiler
+
+We are moving to do strict typechecking on the entire codebase. Sometimes, especially during testing, we might need to do typecasts of the form `foo!.bar` or use `@ts-ignore`. 
+In order to do this, we use the following convention `UNSAFE_{your-method-name}` for type casts. 
+This groups all unsafe casting in a common place and will allow us to turn on strict type checking on the rest of the code base

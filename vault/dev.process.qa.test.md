@@ -15,6 +15,7 @@ Writing and running tests in Dendron
 Depending on the package you are working on, tests are handled differently
 
 - If you are writing tests for [[pkg.plugin-core]], see [[here|dendron://dendron.docs/pkg.plugin-core.qa.test]].
+- If you are writing tests for [[pkg.nextjs-template]], see [[here|dendron://dendron.docs/pkg.nextjs-template.qa.test]]
 - If you are writing tests for any other package, see [[here|dendron://dendron.docs/pkg.engine-test-utils.qa.test#writing]]
 
 For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.style]] when writing test.
@@ -32,6 +33,10 @@ For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.
 ## Manual Testing
 
 See [[manual Testing|dendron://dendron.docs/pkg.plugin-core.qa.test#manual-testing]]
+
+## Test Utilities
+
+Dendron provides many utilities to more easily setup tests. See provided utilities in [[Test Utils|dendron://dendron.docs/pkg.common-test-utils.ref.test-utils]]
 
 ## Checklist
 ![[dendron://dendron.docs/dev.process.qa.test.checklist]]
@@ -127,3 +132,23 @@ stubTimeout.callArg(0);
 
 Follow the same procedure as [[#stubbing-settimeout]], but create your own wrapper if one doesn't exist.
 You can reuse the `Wrap` class in `common-all`. Try to wrap the function exactly with the same signature.
+
+### Exposing private methods to tests
+
+To expose private class methods for testing (shouldn't be done in 99% of cases), you can add the method `__DO_NOT_USE_IN_PROD_exposePropsForTesting` to the class. 
+This method should export only the private methods and properties that are necessary for the test
+
+
+```ts
+  // eslint-disable-next-line camelcase
+  __DO_NOT_USE_IN_PROD_exposePropsForTesting() {
+    return {
+      onFirstOpen: _.bind(this.onFirstOpen, this),
+    };
+  }
+
+```
+
+- NOTE: you'll need to add the eslint disablement as well as the `_.bind` for this to work cleanly. 
+
+You can see an example of this [here](https://github.com/dendronhq/dendron/pull/2405/files#diff-3796fd1bad70e2aa646a02f09ac82f4a50fce4fa3fcd15844bec53a851905c5f)

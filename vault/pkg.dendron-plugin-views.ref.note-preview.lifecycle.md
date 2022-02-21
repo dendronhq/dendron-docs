@@ -2,7 +2,7 @@
 id: zYn03NQuLgwmvK8Dfoe0L
 title: Lifecycle
 desc: ""
-updated: 1640632299966
+updated: 1644429388848
 created: 1640632235031
 ---
 
@@ -22,10 +22,21 @@ vscode.registerCommand(
 
 Panel is created. Handles messages from the webview and will update the editor on certain preview events
 
+- [[../packages/plugin-core/src/components/views/PreviewViewFactory.ts]]
+
 ```ts
 create {
+    new PreviewPanel
+}
+
+show {
     @_panel = createWebviewPanel
 
+    ...
+    setupCallbacks
+}
+
+setupCallbacks {
     // handle messages from the webview
     _panel.webview.onDidReceiveMessag(msg => {
         switch(msg.type)
