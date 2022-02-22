@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1644696583359
+updated: 1645212076457
 created: 1610160007286
 ---
 
@@ -44,11 +44,20 @@ the actual root.
 
 ```ts
 _activate {
+    stateService := new StateService
+    initializeSentry
     ws := DendronExtension.getOrCreate
+    _setupCommands
+    _setupLanguageFeatures
 
-    if ws.isActive {
+    extensionInstallStatus :=
+    if extensionInstallStatus = INITIAL_INSTALL
+        MetadataService.setInitialInstall
 
-        setupSegmentClient
+    // do this if we're in a dendron workspace
+    if isDendronWorkspace {
+
+
         // see [[Run Migration|dendron://dendron.docs/pkg.dendron-engine.t.upgrade.arch.lifecycle#run-migration]]
         changes = runMigrationsIfNecessary
 

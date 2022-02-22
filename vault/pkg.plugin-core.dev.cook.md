@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ""
-updated: 1643903143445
+updated: 1645230357756
 created: 1634590309804
 ---
 
@@ -61,7 +61,16 @@ sequenceDiagram
 5. Write command logic
 6. If it makes sense, add a keyboard shortcut for the command. Make sure it doesn't conflict with an generic VSCode command or existing Dendron commands. You can detect existing keybindings by using the guide [here](https://code.visualstudio.com/docs/getstarted/keybindings#_detecting-keybinding-conflicts)
 7. Add command to `src/commands/index.ts`
-8. Submit pull request
+8. If your command requires an active workspace to function, make sure that `requireActiveWorkspace = true`
+   - eg: see [[../packages/plugin-core/src/commands/CreateDailyJournal.ts]]
+   ```ts
+   export class CreateDailyJournalCommand extends CreateNoteWithTraitCommand {
+    // THIS needs to be set to tell Dendron to NOT activate this command unless dendron is active
+    static requireActiveWorkspace: boolean = true;
+    ...
+   }
+   ```
+9. Submit pull request
 
 Conventions:
 
@@ -80,19 +89,20 @@ const args = ....
 cmd.execute(args)
 ```
 
-### Add a command in dev/preview 
+### Add a command in dev/preview
 
 This section goes over adding a command in dev/preview. For an example, see this [command](https://github.com/dendronhq/dendron/pull/2190). It adds Export Pod V2 commands in dev.
 
-
 1. Add a new config option to dev namespace in `DendronDevConfig` under `packages/common-all/src/types/workspace.ts`, `packages/common-all/src/types/configs/dev/dev.ts` and `packages/common-all/src/constants/configs/dev.ts`.
 1. Add your own context to `DendronContext` in `packages/plugin-core/src/constants.ts` for enablement of the command. Set the Context with the config created in the first step in `packages/plugin-core/src/_extension.ts` In the example PR, see:
+
 ```ts
-  VSCodeUtils.setContext(
-        DendronContext.ENABLE_EXPORT_PODV2,
-        dendronConfig.dev?.enableExportPodV2 ?? false
-      );
+VSCodeUtils.setContext(
+  DendronContext.ENABLE_EXPORT_PODV2,
+  dendronConfig.dev?.enableExportPodV2 ?? false
+);
 ```
+
 1. In `DENDRON_COMMANDS` under `plugin-core/src/constants.ts`, update the when/enablement clause of the desired command with the context created in above step.
 1. Open the command prompt, enter `Run Task`, and run `gen:config`
    - this will update the command in `package.json`
@@ -165,7 +175,6 @@ import { clipboard } from "../utils";
 clipboard.writeText(link);
 ```
 
-
 ### Check if file is in vault
 
 - see src/views/DendronTreeViewV2.ts
@@ -215,6 +224,7 @@ if (PickerUtilsV2.isStringInputEmpty(out)) return;
 - The return value of this can be converted to VSCode positions with `VSCodeUtils.point2VSCodePosition`
 
 ### Use DevTrigger Command for development
+
 [DevTriggerCommand](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/commands/DevTriggerCommand.ts) is available to be invoked from Command Palette while in Development Mode.
 
 You can use this command for development purposes when need to trigger some arbitrary piece of code by placing it into `execute()` function and invoking the `Dendron:Dev: Dev Trigger`.

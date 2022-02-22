@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1644853586706
+updated: 1645066331733
 created: 1640280816708
 ---
 
@@ -19,7 +19,7 @@ mv nextjs-template/.git {WORKSPACE_ROOT}/packages/nextjs-template
 
 ## Steps
 
-These steps should be run **after** the weekly release has gone out
+These steps should be run **after** the weekly release has gone out. It is only needed to run these steps if we have changes to the `nextjs-template`
 
 1. Make sure your current workspace is clean and stash changes otherwise
 1. Get the release version
@@ -29,7 +29,7 @@ These steps should be run **after** the weekly release has gone out
     git checkout --track release/$RELEASION_VERSION
     ```
     - eg: `RELEASE_VERSION=release/0.81.0`
-1. Push nextjs 
+1. Update nextjs package
     - NOTE: we need to remove the workspace `package.json` to generate the lockfile correctly
     - #todo: the following instructions are unix specific. we need to wrap this in a script that works also for windows
     ```sh
@@ -48,6 +48,11 @@ These steps should be run **after** the weekly release has gone out
     echo "commit and push..."
     git add .
     git commit -m "chore(release): sync nextjs-template with dendron $VERSION"
+    ```
+1. Verify nextjs works in dev branch
+    - Follow steps in [[Testing in github actions pipeline|dendron://dendron.docs/pkg.nextjs-template.qa.test#testing-in-github-actions-pipeline]]
+1. Push nextjs-template
+    ```sh
     git push
 
     echo "restore node_modules..."
