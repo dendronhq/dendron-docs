@@ -1,38 +1,6 @@
-useFMTitle: true
-useNoteTitleForLink: true
-noLegacyNoteRef: true
-mermaid: true
-useKatex: true
-usePrettyRefs: true
 dev:
     enablePreviewV2: true
-site:
-    copyAssets: true
-    siteHierarchies:
-        - home
-        - dev
-        - pkg
-        - rfc
-        - topic
-    siteRootDir: docs
-    gh_edit_repository: 'https://github.com/dendronhq/dendron-docs'
-    logo: vault/assets/images/logo.png
-    siteUrl: 'https://docs.dendron.so'
-    usePrettyRefs: true
-    title: Dendron
-    author: dendronhq
-    twitter: dendronhq
-    description: >-
-        Dendron is a local-first, markdown based, hierarchical note taking tool.
-        It is meant to help you create, organize, and collaborate on knowledge
-        bases of any size.
-    siteLastModified: true
-    gh_edit_branch: main
-    duplicateNoteBehavior:
-        action: useVault
-        payload:
-            - vault
-version: 4
+version: 5
 useTitleForLink: true
 commands:
     lookup:
@@ -41,6 +9,8 @@ commands:
             confirmVaultOnCreate: false
             leaveTrace: false
             bubbleUpCreateNew: true
+            vaultSelectionModeOnCreate: smart
+            fuzzThreshold: 0.2
     randomNote: {}
     insertNote:
         initialValue: templates
@@ -49,8 +19,9 @@ commands:
         enableMultiSelect: false
     insertNoteIndex:
         enableMarker: false
+    copyNoteLink: {}
 workspace:
-    dendronVersion: 0.69.3-alpha.1
+    dendronVersion: 0.83.0
     vaults:
         -
             fsPath: vault
@@ -95,9 +66,51 @@ workspace:
         createTaskSelectionType: selection2link
     enableUserTags: true
     enableHashTags: true
+    enableEditorDecorations: true
 preview:
     enableFMTitle: true
     enableNoteTitleForLink: true
     enableMermaid: true
     enablePrettyRefs: true
     enableKatex: true
+    automaticallyShowPreview: false
+publishing:
+    enableFMTitle: true
+    enableNoteTitleForLink: true
+    enableMermaid: true
+    enablePrettyRefs: true
+    enableKatex: true
+    copyAssets: true
+    logoPath: vault/assets/images/logo.png
+    siteHierarchies:
+        - home
+        - dev
+        - pkg
+        - rfc
+        - topic
+    enableSiteLastModified: true
+    siteRootDir: docs
+    siteUrl: 'https://docs.dendron.so'
+    enableFrontmatterTags: true
+    enableHashesForFMTags: false
+    enableRandomlyColoredTags: true
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - vault
+    writeStubs: false
+    seo:
+        title: Dendron
+        description: >-
+            Dendron is a local-first, markdown based, hierarchical note taking
+            tool. It is meant to help you create, organize, and collaborate on
+            knowledge bases of any size.
+        author: dendronhq
+        twitter: dendronhq
+    github:
+        enableEditLink: true
+        editLinkText: Edit this page on GitHub
+        editBranch: main
+        editViewMode: tree
+        editRepository: 'https://github.com/dendronhq/dendron-docs'
+    enablePrettyLinks: true
