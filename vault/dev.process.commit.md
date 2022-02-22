@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Committing Code
 desc: ''
-updated: 1644173717992
+updated: 1645558791282
 created: 1623430616135
 config:
   global:
@@ -67,6 +67,9 @@ the workspace. If something breaks during this process and your changes are
 lost, check the stash using `git stash list` to find your changes (should be marked `pre-linting-stash`),
 then use `git stash pop stash@{x}` to recover the correct one.
 
+
+## Cook
+
 ### Addressing open issues
 
 Github has automation that will automatically close issues if you mention certain keywords like `fix {issueUrl}` in the commit message. 
@@ -78,3 +81,14 @@ Related to {issueUrl}
 ```
 
 Closing the issue is handled in [[After a release has shipped|dendron://dendron.docs/dev.process.close-loop#after-a-release-has-shipped]]
+
+### Adding new dependencies
+
+If you add a new dependency inside a PR, please call it out using teh following format: `- DEPENDENCY_UPDATE: {dep_name} [added|removed|updated] {pkg}`
+```md
+{category}({scope}): {description}
+
+- DEPENDENCY_UPDATE: @dendronhq/plugin-core add foo@^1.1.1
+
+{additional details}
+```
