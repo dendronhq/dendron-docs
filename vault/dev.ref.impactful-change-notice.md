@@ -1,7 +1,7 @@
 ---
 id: H7CgvT7YUYAiV7mEmGnky
 title: Impactful Change Notice
-desc: ""
+desc: ''
 updated: 1643918862410
 created: 1630796807707
 nav_order: 6.1

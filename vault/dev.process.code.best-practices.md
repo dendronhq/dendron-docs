@@ -2,7 +2,7 @@
 id: pMS27sHxbWeKMoPRrWEzs
 title: Best Practices
 desc: ''
-updated: 1644893635055
+updated: 1645726754809
 created: 1643200441685
 ---
 
@@ -60,6 +60,9 @@ Exceptions to the rule:
 - You're working on a change to actually try to unwind circular dependencies - sometimes, madge may under report how many circular dependencies actually exist. That is, it won't report circular dependencies in `bar` until dependencies in `foo` were fixed. Double check to make sure your code is not the one introducing the dependencies newly reported in `bar`; if not, it's ok to proceed.
 
 _Note: Once we get down to 0 circular dependencies, we can add an automated CI/CD guard that absolves the need to run these steps manually._
+
+### Identifying circular dependencies introduced by a PR
+See [[Check for Circular Dependencies|dendron://dendron.docs/dev.process.code.sop.check-for-circular-dependencies]]
 
 ## Deprecate old versions of APIs and functions
 
