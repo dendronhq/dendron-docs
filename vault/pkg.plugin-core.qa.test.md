@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1644485521134
+updated: 1645726013405
 created: 1627140509315
 ---
 
@@ -15,6 +15,8 @@ functions. These work in the same way as mocha's `describe`, except that they
 will set up a multi-vault or a single-vault workspace before running any tests.
 You can then place `test`s inside to write your test cases, or even add
 `describe`s to further organize your tests. Here's a [simple example](https://github.com/dendronhq/dendron/blob/707ab9a5d8ed2e23ef96e6f813f7f6e11532db50/packages/plugin-core/src/test/suite-integ/WorkspaceInit.test.ts#L11:L33) of its usage:
+
+## Example
 
 ```ts
 // Need these imports
@@ -35,11 +37,13 @@ suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
       ctx,
       workspaceType: WorkspaceType.NATIVE, // optional
     },
-    () => { // this can NOT be async, must be a regular function
-    
+    () => {
+      // this can NOT be async, must be a regular function
+
       // If you need something to be done after the workspace initializes, but before tests, you can add a `before` or `beforeEach` hook here
 
-      test("THEN initializes correctly", () => { // can be a regular function or async
+      test("THEN initializes correctly", () => {
+        // can be a regular function or async
         // You can access the workspace inside the test like this:
         const { engine, wsRoot, vaults } = getDWorkspace();
         // Then perform any actions and checks
@@ -47,7 +51,8 @@ suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
         expect(testNote).toBeTruthy();
       });
 
-      test("THEN is of NATIVE type", () => { // can be a regular function or async
+      test("THEN is of NATIVE type", () => {
+        // can be a regular function or async
         const { type } = getDWorkspace();
         expect(type).toEqual(WorkspaceType.NATIVE);
       });
@@ -57,7 +62,7 @@ suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
 });
 ```
 
-**Note**: the top level test function passed to `describeMultiWS` or `describeSingleWS` **cannot be async**. (In the example above, this is the `() => { // this can NOT be async ...}` block) Otherwise, the framework may report the tests as passing even if there are asserts or exceptions failing.  A run-time guard has been added that should fail the test if an async test function is provided.
+**Note**: the top level test function passed to `describeMultiWS` or `describeSingleWS` **cannot be async**. (In the example above, this is the `() => { // this can NOT be async ...}` block) Otherwise, the framework may report the tests as passing even if there are asserts or exceptions failing. A run-time guard has been added that should fail the test if an async test function is provided.
 
 However, the `test()` functions within the callback themselves can be async with a `done` parameter like this example, or they can be `async` functions without the `done`. Either will work correctly, you can choose based on what you need for the function you are testing.
 
@@ -67,6 +72,22 @@ has a lot of configuration options, see
 and
 [here](https://github.com/dendronhq/dendron/blob/c87a049185eb9712b4b26f04922315ae1d102d02/packages/engine-test-utils/src/engine.ts#L44-L63).
 The most common ones used are the following ones:
+
+## Arguments
+
+- NOTE: up to date docs are in [[../packages/plugin-core/src/test/testUtilsV3.ts#^eq30h1lt0zat]]
+
+### afterHook
+
+Run after all the tests have run
+
+### beforeHook
+
+Run before we stub vscode mock workspace
+
+### preActivateHook
+
+Run before dendron is activated
 
 ### preSetupHook
 
@@ -83,6 +104,13 @@ and may have small differences in behavior.
 ### modConfigCb
 
 You can use this callback to modify the `dendron.yml` configuration for the test workspace. See [here for an example](https://github.com/dendronhq/dendron/blob/1c734daa45cc1e655638d754267c6bdf5bdcab90/packages/plugin-core/src/test/suite-integ/CreateDailyJournalNote.test.ts#L115-L118).
+
+### timeout
+
+Custom timeout for test in milleseconds
+You will need to set this when stepping through mocha tests using a debugger,
+otherwise the test will timeout during debugging
+See [[Breakpoints|dendron://dendron.docs/pkg.plugin-core.qa.debug#breakpoints]] for more details
 
 ### Test etiquette
 
@@ -103,14 +131,16 @@ describeMultiWS(
     /* ... */
     preSetupHook: async () => {
       // Action to do before workspace initializes
-    }
+    },
   },
   () => {
-    before(async (done) => { // can be async or regular
+    before(async (done) => {
+      // can be async or regular
       // Action to do after workspace initialized, but before any tests are run
     });
 
-    test("THEN ...", async () => { // can be async or regular
+    test("THEN ...", async () => {
+      // can be async or regular
       /* ... test code here */
     });
   }
