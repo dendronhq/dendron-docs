@@ -2,7 +2,7 @@
 id: faMqZ89hDHol2ctptbJFH
 title: Monorepo
 desc: ""
-updated: 1645230057133
+updated: 1645741682908
 created: 1642720956727
 ---
 
@@ -84,20 +84,17 @@ lerna add @types/{package-to-install} --scope @dendronhq/{package-to-install-int
 
 ### Removing a package
 
-When removing a package, make sure to do the following:
+When removing a package, execute the following steps
 
-1. Remove the package from the corresponding `package.json`
-1. [[Remove all build artifacts|dendron://dendron.docs/dev.process.code.monorepo#remove-all-build-artifacts]]
-1. Remove `yarn.lock` at the top of the monorepo
-
-```sh
-rm yarn.lock
+```
+cd packages/{PROJECT_NAME}
+yarn remove {DEPENDENCY_NAME}
 ```
 
-1. Run `yarn setup`
-1. Commit the new yarn.lock file
-
-- NOTE: when you do this, you might end up updating other dependencies because of [[Semver|dendron://dendron.docs/dev.concepts#semver]]. having a `yarn.lock` means that don't update dependencies even if a new dependency is available. in these cases, be sure to conduct [[Manual Testing|dendron://dendron.docs/dev.process.qa.test#manual-testing]] when submitting the PR
+- TIP: to remove the same dependency from **all** packages, use lerna
+```
+ lerna exec -- yarn remove {DEPENDENCY_NAME}
+```
 
 ### Pinning a dependency
 
