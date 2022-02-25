@@ -2,7 +2,7 @@
 id: aOOBYTowLEKJDEtLWFiHb
 title: 42 Self Contained Vaults
 desc: ""
-updated: 1644906865715
+updated: 1645779302692
 created: 1643876703841
 ---
 
@@ -50,13 +50,13 @@ Each vault should have the following structure:
 
 ```
 .
-├── assets                          # optional
-│  └── image.jpg
 ├── dendron.code-workspace          # optional, but should be added by default
 ├── dendron.yml                     # required
 ├── dependencies                    # created automatically, contains all vaults that have been pulled in
 │  ... see next heading
 └── notes                           # optional
+   ├── assets                          # optional, stores images and PDFs and such
+   │  └── image.jpg
    ├── root.md
    └── root.schema.yml
 ```
