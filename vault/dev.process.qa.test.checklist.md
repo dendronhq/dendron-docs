@@ -2,7 +2,7 @@
 id: oxuqSKl1R2nzElml6esj3
 title: Checklist
 desc: ''
-updated: 1644176903570
+updated: 1645800113732
 created: 1640801276723
 ---
 
@@ -12,7 +12,10 @@ created: 1640801276723
 - [ ] [[Confirm manual testing|dendron://dendron.docs/dev.process.qa.test#manual-testing]] 
 - [ ] Common cases tested
 - [ ] 1-2 Edge cases tested
-- [ ] If your tests changes an existing snapshot, snapshots have been [[updated|dendron://dendron.docs/dev.process.qa.test#updating-test-snapshots]]
+- [ ] If your tests changes an existing snapshot,
+  - [ ] snapshots have been [[updated|dendron://dendron.docs/dev.process.qa.test#updating-test-snapshots]]
+  - [ ] check that updated snapshots are updated as intended
+- [ ] If you write new snapshot tests, double check that snapshot testing make sense as per [[Snapshot Testing|dendron://dendron.docs/dev.process.qa.test.snapshot-testing]]
 
 
 ### Extended

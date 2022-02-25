@@ -2,7 +2,7 @@
 id: 57Izc4Q4UBogfL48Z9ECj
 title: Snapshot Testing
 desc: ''
-updated: 1645212882651
+updated: 1645799840055
 created: 1645212882651
 ---
 
@@ -10,7 +10,7 @@ Snapshot testing lets us assert that certain outputs of a piece of code is stayi
 
 That being said, snapshot tests should not be considered part of unit testing, or testing for a certain functional aspect of code. It also shouldn't replace end-to-end testing, since snapshot tests are only verifying the output, and not the behavior. The output can look the same at the end but could have gotten there in a way that you did not intend to. 
 
-While snapshot tests provides us with some great power, it has drawbacks when we don't be mindful about using them.
+While snapshot tests provides us with some great power, it has drawbacks when we aren't mindful about using them.
 
 This note will go over when to write snapshot tests, some common pitfalls, and how to avoid them.
 
