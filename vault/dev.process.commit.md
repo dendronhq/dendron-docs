@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Committing Code
 desc: ''
-updated: 1645558791282
+updated: 1645766520241
 created: 1623430616135
 config:
   global:
@@ -85,10 +85,10 @@ Closing the issue is handled in [[After a release has shipped|dendron://dendron.
 ### Adding new dependencies
 
 If you add a new dependency inside a PR, please call it out using teh following format: `- DEPENDENCY_UPDATE: {dep_name} [added|removed|updated] {pkg}`
-```md
-{category}({scope}): {description}
 
+Add the following text after the PR title, at the start of the PR description:
+```md
 - DEPENDENCY_UPDATE: @dendronhq/plugin-core add foo@^1.1.1
 
-{additional details}
+{additional details: if adding or removing something, why?}
 ```
