@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1644919708510
+updated: 1645617379115
 created: 1632347495097
 ---
 
@@ -152,3 +152,18 @@ This method should export only the private methods and properties that are neces
 - NOTE: you'll need to add the eslint disablement as well as the `_.bind` for this to work cleanly. 
 
 You can see an example of this [here](https://github.com/dendronhq/dendron/pull/2405/files#diff-3796fd1bad70e2aa646a02f09ac82f4a50fce4fa3fcd15844bec53a851905c5f)
+
+In case you are only exposing the private methods to stub / spy on with SinonJS, you can keep the method private and do the following:
+
+```ts
+export class SomeClassYouWantToTest {
+  ...
+  private someMethod(...) { ... }
+}
+
+// in test
+  ...
+  const foo = new SomeClassYouWantToTest();
+  const someMethodSpy = sinon.spy(foo, "someMethod" as keyof SomeClassYouWantToTest);
+  ...
+```
