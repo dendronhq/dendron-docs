@@ -2,7 +2,7 @@
 id: 9t1MYmijXp0K8Be9zJRiz
 title: Add an Editor View
 desc: ""
-updated: 1645859865890
+updated: 1645861024205
 created: 1644371901175
 ---
 
@@ -26,7 +26,7 @@ This goes over how to add an [[Editor View|dendron://dendron.docs/pkg.dendron-pl
    };
    export default HelloPage;
    ```
-1. Create a new view
+2. Create a new view
 
    - eg. src/views/HelloPageView.tsx
 
@@ -38,6 +38,14 @@ This goes over how to add an [[Editor View|dendron://dendron.docs/pkg.dendron-pl
 
    // dummy export to avoid compiler issues
    export default HelloPage;
+   ```
+
+3. Add view to the `VALID_NAMES` array in `index.tsx`
+   ```tsx
+   const VALID_NAMES = [
+     ...,
+     "HelloPageView"
+   ];
    ```
 
 ### Add view to path
