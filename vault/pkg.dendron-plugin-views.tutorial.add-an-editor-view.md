@@ -2,7 +2,7 @@
 id: 9t1MYmijXp0K8Be9zJRiz
 title: Add an Editor View
 desc: ""
-updated: 1644372347926
+updated: 1645859153764
 created: 1644371901175
 ---
 
@@ -53,9 +53,9 @@ This goes over how to add an [[Editor View|dendron://dendron.docs/pkg.dendron-pl
 
 ## Integrate the view with the plugin
 
-1. Add new enum to `DendronHelloViewKey`
+1. Add new enum to `DendronEditorViewKey`
    ```ts
-   export enum DendronWebViewKey {
+   export enum DendronEditorViewKey {
        ...,
        HELLO_VIEW = "dendron.hello-view",
    }
