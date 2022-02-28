@@ -2,7 +2,7 @@
 id: N0G4s23hFDGVnsjHhh6dt
 title: 44 Standard srcfieldMapping for all pods
 desc: ''
-updated: 1645536043404
+updated: 1646053789898
 created: 1644819902372
 ---
 
@@ -10,8 +10,6 @@ created: 1644819902372
 ## Goals
 
 This is a proposal to standarized on a common source-field mapping that all pods can adopt as well as a common API that pods can use to access the mapping. 
-> ⚠️ This RFC is a draft, and is not finalized. ⚠️
-
 
 ## Context
 
@@ -22,13 +20,17 @@ The mapping of fields from Dendron to fields in a pod destination is currenly ad
 ### Mappings
 
 The SrcFieldMapping in the pod config must have:
+
+- required: array of fields that are required. Absense of `required` array in srcFieldMapping would consider all the fields as optional.
+- skipOnEmpty: if set to true, skips exporting the field if value provided is empty('' | [] | {} | undefined)
 - Key to be the name of field in destination.
 - Value to be an object with the following properties:
     - to: Dendron field to map (body, title etc)
     - type: type of this field in destination. See [[Type enumeration|dendron://dendron.docs/rfc.44-standard-src-field-Mapping-for-all-pods#type-enumeration]]
-    - filters: pattern to filter values of `to` field.
+    - filters: pattern to filter values of `to` field. Accepts multiple values.
     - scope: limit the scope for *tags* and *links* property.
-    - clean: array of actions to perform on the value
+    - clean: array of actions to perform on the value.
+    - default: default value for the field if either `skipOnEmpty` is false or field is missing in the frontmatter(null value).
 
 #### Type enumeration
 
@@ -66,21 +68,20 @@ For the below mapping, all the tags present in section `Header 1` will be export
 Scope: {to: tags, type: multiSelect, filter: "tags.size.*", scope: section#header-1},
 ```
 
-
-
 ## Example
 
 - For Airtable custom pod config, the mapping should look like
 ```yml
 sourceFieldMapping:  {
+      required: [DendronId, Name],
+      skipOnEmpty: true,
       DendronId: {to: id, type: string}, 
       Name: {to: title, type: string},
       Notes: {to: body, type: string}, 
       Size: {to: tags, type: singleSelect, filters: "tags.size.*"},
+      Owner: {to: owner, type: singleSelect}
     }
 ``` 
-  
-
 
 - For Github Issue Publish Pod, the mapping should look like
 
@@ -92,13 +93,25 @@ sourceFieldMapping:  {
 }
 ```
 
-- to add `owner` as an alias of `assignees` we can update the `to` field and it should be good.
+- to add `owner` as an alias of `assignees` we can update the `to` field.
+- to remap dendron user tags with Github usernames we can update the `clean` field.
 ```yml
-      Assignees: {to: owner, type: string },
+      Assignees: {to: owner, type: string, clean: [{action: remap, data: {joshi : 'Harshita-mindfire', kaan: 'SeriousBug' }}] },
 
 ```
 
-## Tradeoffs
+
+## FAQ
+
+Here are some points brought up during the discussions. These points should be already reflected in this RFC, but are included here for reference.
+- A new constraint `required` is added to define optional and required fields. All the fields are by default optional unless stated otherwise. 
+- A new assert `skipOnEmpty` with default value true. If set to true, and no default value is provided for fallback, the field remains unchanged in Airtable. It covers both empty `('' | {} | [] )` and explicitly stated `undefined` value.
+- Addition of new fields for the mapping object.
+    1. field `scope` is introduced for limiting export scope of tags and links. See [[Scope Limiting|dendron://dendron.docs/rfc.44-standard-src-field-Mapping-for-all-pods#scope-limiting]] for enum.
+    2. field `clean` to describe an array of actions to perform on the value. These actions are used to hydrate the values before export.
+    3. field `default` to provide a default value for fallback when the field is either null, empty or undefined.   
+- The `filter` field is renamed to `filters` to apply multiple filters.
+
 
 ## Discussion
 <!-- Click the link and create new discussion -->
