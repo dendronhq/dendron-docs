@@ -2,7 +2,7 @@
 id: N0G4s23hFDGVnsjHhh6dt
 title: 44 Standard srcfieldMapping for all pods
 desc: ''
-updated: 1646053789898
+updated: 1646117880926
 created: 1644819902372
 ---
 
@@ -30,7 +30,7 @@ The SrcFieldMapping in the pod config must have:
     - filters: pattern to filter values of `to` field. Accepts multiple values.
     - scope: limit the scope for *tags* and *links* property.
     - clean: array of actions to perform on the value.
-    - default: default value for the field if either `skipOnEmpty` is false or field is missing in the frontmatter(null value).
+    - default: default value for the field.
 
 #### Type enumeration
 
