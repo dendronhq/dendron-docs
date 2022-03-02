@@ -2,7 +2,7 @@
 id: 42iCXsVuFhAGs3IS83KFp
 title: Style
 desc: ''
-updated: 1632725493627
+updated: 1646189912930
 created: 1632724441671
 ---
 
@@ -46,4 +46,22 @@ When this pattern is followed we can see much more clearly what has been tested 
             ✓ THEN elements 3-6 are in the cache (1ms)
 ```
 
+## Test descriptions
 
+Please prefer natural language for test descriptions, so that the test
+description can be read as a sentence from `GIVEN` to `THEN`.
+
+### good
+
+
+```ts
+describe("GIVEN some text is selected in editor", () => {
+  test("THEN code action for create note is displayed", (done) => {
+```
+
+### bad
+
+```ts
+describe("GIVEN VSCode.selection range > 0", () => {
+  test("THEN isbrokenlink false", (done) => {
+```

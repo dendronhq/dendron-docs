@@ -2,7 +2,7 @@
 id: a80f36d9-01d0-4c5a-a228-867b093a4913
 title: Cookbook
 desc: ''
-updated: 1643756565603
+updated: 1646189605134
 created: 1599151918645
 nav_order: 4.1
 ---
@@ -95,19 +95,7 @@ When adding a new utility function, we want it to go in the most accessible loca
 
 ### Synchronously loop through async results
 
-- see <https://github.com/dendronhq/dendron/blob/integ-publish/packages/plugin-core/src/commands/VaultAddCommand.ts#L171:L179>
-
-```ts
-await _.reduce(
-  vaults,
-  async (resp: any, vault: DVault) => {
-    await resp;
-    await wsService.createVault({ vault });
-    return this.addVaultToWorkspace(vault);
-  },
-  Promise.resolve()
-);
-```
+![[Async operations in series|dendron://dendron.docs/dev.process.code#in-series,1]]
 
 ## Views
 

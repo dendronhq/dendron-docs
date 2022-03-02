@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1645617379115
+updated: 1646190524565
 created: 1632347495097
 ---
 
@@ -133,27 +133,40 @@ stubTimeout.callArg(0);
 Follow the same procedure as [[#stubbing-settimeout]], but create your own wrapper if one doesn't exist.
 You can reuse the `Wrap` class in `common-all`. Try to wrap the function exactly with the same signature.
 
+
+
+```ts
+const cmd = new DoctorCommand(extension);
+const reloadSpy = sinon.stub(cmd, "reload" as keyof DoctorCommand);
+```
+
 ### Exposing private methods to tests
 
-To expose private class methods for testing (shouldn't be done in 99% of cases), you can add the method `__DO_NOT_USE_IN_PROD_exposePropsForTesting` to the class. 
-This method should export only the private methods and properties that are necessary for the test
+In most cases, you shouldn't expose or test private methods. If you have to stub
+private methods, see [[Stubbing private functions or properties|#stubbing-private-functions-or-properties]].
+But in rare cases, you may have to expose private methods for testing. To do so,
+you can add the method `__DO_NOT_USE_IN_PROD_exposePropsForTesting` to the
+class. This method should export only the private methods and properties that
+are necessary for the test
 
 
 ```ts
   // eslint-disable-next-line camelcase
   __DO_NOT_USE_IN_PROD_exposePropsForTesting() {
     return {
-      onFirstOpen: _.bind(this.onFirstOpen, this),
+      onFirstOpen: this.onFirstOpen.bind(this),
     };
   }
 
 ```
 
-- NOTE: you'll need to add the eslint disablement as well as the `_.bind` for this to work cleanly. 
+- NOTE: you'll need to add the eslint disablement as well as the `.bind(this)` for this to work.
 
 You can see an example of this [here](https://github.com/dendronhq/dendron/pull/2405/files#diff-3796fd1bad70e2aa646a02f09ac82f4a50fce4fa3fcd15844bec53a851905c5f)
 
-In case you are only exposing the private methods to stub / spy on with SinonJS, you can keep the method private and do the following:
+### Stubbing private functions or properties
+
+In case you are only exposing the private methods to stub / spy on with SinonJS, you can keep the method private and do the following instead:
 
 ```ts
 export class SomeClassYouWantToTest {
@@ -167,3 +180,7 @@ export class SomeClassYouWantToTest {
   const someMethodSpy = sinon.spy(foo, "someMethod" as keyof SomeClassYouWantToTest);
   ...
 ```
+
+In TypeScript, private functions and properties are just a suggestion for the
+type checker. The underlying functions and properties are still actually
+accessible, so we use a cast to bypass the typechecker.
