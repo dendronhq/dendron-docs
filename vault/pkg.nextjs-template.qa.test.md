@@ -2,18 +2,16 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1645066206820
+updated: 1646076800355
 created: 1638063942917
 ---
 
 ## Details
-<!-- Any additional details to give about tests-->
 Tests are run using [playwright](https://playwright.dev/docs/intro), an e2e testing framework for the browser. Note that we have chosen to move away from cypress (https://alisterbscott.com/2021/10/27/five-reasons-why-playwright-is-better-than-cypress/)
 
 On Github actions, these tests will run on Chrome/Firefox/Safari for `ubuntu-latest`
 
 ## Writing
-<!-- Writing tests -->
 Tests should be written under the `$DENDRON_REPO_ROOT/packages/nextjs-template/tests` directory. 
 
 See `$DENDRON_REPO_ROOT/packages/nextjs-template/tests/example.spec.ts` for an example
@@ -21,7 +19,6 @@ See `$DENDRON_REPO_ROOT/packages/nextjs-template/tests/example.spec.ts` for an e
 ## Executing
 >>IMPORTANT: If running for the first time, run `npx playwright install --with-deps`. This will install necessary playwright browsers
 
-<!-- Running all tests -->
 1. Running all tests
 ```sh
 cd $DENDRON_REPO_ROOT/packages/nextjs-template
@@ -94,3 +91,9 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
     ```
     git checkout master
     ```
+
+## Cook
+
+### Upading dendron-site.zip
+
+When testing in the github actions pipeline, we use the contents of `dendron-site.zip` to run tests
