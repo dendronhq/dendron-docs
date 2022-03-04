@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Committing Code
 desc: ''
-updated: 1645766520241
+updated: 1646416600606
 created: 1623430616135
 config:
   global:
@@ -37,7 +37,7 @@ We follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 This means commits have the following format:
 
 ```
-{category}({scope}): {description}
+{category}({scope}): {title}
 
 {additional details}
 ```
@@ -54,6 +54,20 @@ Use cached version of notes to generate metadata instead of building from scratc
 * To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
 * To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
 * When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
+
+### Commit Title
+
+When writing the commit title, write it from the users point of view. What tangible benefit will the user have after this commit is shipped?
+
+- bad: talks about work done vs result achieved
+```
+Update engine to cache notes on read
+```
+
+- good: directly talks about benefit to end users
+```
+Improved performance when using lookup to read notes
+```
 
 #### git hooks
 
