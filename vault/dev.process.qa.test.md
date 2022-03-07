@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ''
-updated: 1646190524565
+updated: 1646637633638
 created: 1632347495097
 ---
 
@@ -67,21 +67,35 @@ If you use sinon, don't forget to call `sinon.restore` so that stubs don't leak 
 
 When stubbing tests in the plugin, we following the following pattern
 ```ts
-suite("some test", function() {
-  let ctx: vscode.ExtensionContext;
-  ctx = setupBeforeAfter(this);
-
-  it("test", (done) => {
-    sinon.stub(...);
-    done();
+suite("GIVEN some test", function() {
+  // before can also go inside `describeMultiWS`, or some other describe block.
+  // The block you put it in will be the block where it is applied.
+  before(async () => { // async is optional, you can use a regular function too
+    const stubbedProperty = sinon.stub(Thing, "property");
+    // If you are stubbing a function, you can pick what it returns
+    stubbedProperty.returns(42);
+    stubbedProperty.resolves("will be returned as a promise");
   });
 
-})
+  describeMultiWS("WHEN using something", {}, () => {
+    test("THEN thing happens", async () => {
+      // Test the thing here
+    });
+  });
+  // describeMultiWS and describeSingleWS automatically restore all stubs after all the tests are done.
+});
 ```
 
-When stubbing test in any other code, add an `afterEach` block.
+If you need something to be re-stubbed for each test (rather than the whole
+block), you can use the `beforeEach` hook to do so. You will need to restore the
+stub yourself in that case.
 ```ts
+beforeEach(() => {
+  sinon.stub(Thing, "property");
+});
+
 afterEach(()=> {
+  // Required, `describe*WS` doesn't restore things until all tests are over so `beforeEach` hook will be missed
   sinon.restore()
 });
 ```

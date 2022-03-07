@@ -2,7 +2,7 @@
 id: H7CgvT7YUYAiV7mEmGnky
 title: Impactful Change Notice
 desc: ''
-updated: 1643918862410
+updated: 1646637777213
 created: 1630796807707
 nav_order: 6.1
 ---
@@ -10,6 +10,31 @@ nav_order: 6.1
 ## Summary
 
 This page contains a set of undergoing or completed changes that have a wide impact on the code base. Examples include significant refactoring projects and deprecation notices. Any larger pieces of work that you think other developers should be aware of should go here.
+
+## Deprecation of `setupBeforeAfter`
+-start: 2022.03.07
+- status: WIP
+
+### Summary
+
+The plugin testing harness `setupBeforeAfter` has been deprecated. Instead, you
+can use `describeSingleWS` and `describeMultiWS` without a `ctx` variable.
+
+For details, please see
+[[Example|dendron://dendron.docs/pkg.plugin-core.qa.test#example]] for an
+example, and [[Stubs|dendron://dendron.docs/dev.process.qa.test#stubs]] for how
+to set up stubs with the new harnesses.
+
+### Rationale
+
+With the switch to the new `describe*WS` harness, we can now use mocha hooks
+`before` and `after` instead. However, mixing these hooks with
+`setupBeforeAfter` can cause weird effects due to how the hooks are ordered.
+This is because `setupBeforeAfter` assumes you'll be setting up and tearing down
+a workspace in each test, when the new harnesses set up the test for the whole
+describe block and allow you to share the block across tests.
+
+### Caveats
 
 ## Deprecation of `runLegacySingleWorkspaceTest` and `runLegacyMultiWorkspaceTest`
 

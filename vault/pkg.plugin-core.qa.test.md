@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1645726013405
+updated: 1646637703169
 created: 1627140509315
 ---
 
@@ -28,13 +28,10 @@ import { expect } from "../testUtilsv2";
 // Then create a test suite
 suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
   // has to be function(), not arrow
-  const ctx = setupBeforeAfter(this);
-
   describeMultiWS(
     "WHEN configured for NATIVE workspace",
     {
       preSetupHook: ENGINE_HOOKS.setupBasic, // optional, do something before the workspace initializes. You can use a preset like this, or write your own code.
-      ctx,
       workspaceType: WorkspaceType.NATIVE, // optional
     },
     () => {

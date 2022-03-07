@@ -2,7 +2,7 @@
 id: tT87jLMqkDJYjSwfDVdbG
 title: Dendron Extension Testing Internals
 desc: ""
-updated: 1645719944163
+updated: 1646637692796
 created: 1645146115173
 ---
 
@@ -31,7 +31,6 @@ describeMultiWS(opts, fn) {
 		fn();
 
 		after {
-			opts?.afterHook()
 			cleanup
 		}
 	}
@@ -67,8 +66,6 @@ setupLegacyWorkspaceMulti(ctx, workspaceType, preSetupHook, modConfigCb, postSet
 ```ts
 setupBeforeAfter(beforeHook) {
 	// see [[../packages/plugin-core/src/vsCodeUtils.ts#^7a83pznb91c8]]
-	ctx = getOrCreateMockContext
-
 	beforeEach {
 		opts?.beforeHook()
 	}
