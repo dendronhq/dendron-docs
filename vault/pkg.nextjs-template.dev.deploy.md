@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1645066331733
+updated: 1646757964554
 created: 1640280816708
 ---
 
@@ -22,7 +22,7 @@ mv nextjs-template/.git {WORKSPACE_ROOT}/packages/nextjs-template
 These steps should be run **after** the weekly release has gone out. It is only needed to run these steps if we have changes to the `nextjs-template`
 
 1. Make sure your current workspace is clean and stash changes otherwise
-1. Get the release version
+1. Get the release version (NOTE: this should be the release AFTER publishing the release. the `lerna.json` should be updated to the latest minor version at this point)
     ```sh
     RELEASE_VERSION=
     git pull

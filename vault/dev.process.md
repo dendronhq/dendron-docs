@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Development Process
 desc: ''
-updated: 1645229328281
+updated: 1646420205455
 created: 1637876733365
 config:
   global:
@@ -31,13 +31,18 @@ Managing new tasks and issues
 
 Writing code
 
-- [[Dev Env|dendron://dendron.docs/dev.process.code.dev-env]]: Setting up your dev environment
-- [[Code Conventions|dendron://dendron.docs/dev.process.code]]
+- Foundational: read this before you start working
+  - [[Dev Env|dendron://dendron.docs/dev.process.code.dev-env]]: Setting up your dev environment
   - [[Monorepo|dendron://dendron.docs/dev.process.code.monorepo]] (NOTE: read this if its your first time working in a monorepo)
+- Process
+  - [[Code Conventions|dendron://dendron.docs/dev.process.code]]
+  - [[Best Practices When Coding|dendron://dendron.docs/dev.process.code.best-practices]]
+  - [[Impactful Change Notice|dendron://dendron.docs/dev.ref.impactful-change-notice]]: Breaking changes to the development process and current migrations
+- Helpful
   - [[Utilities|dendron://dendron.docs/dev.process.code.utilities]]: Where utilities are stored
   - [[dendron://dendron.docs/dev.process.code.gotchas]]: Gremlins that can be hard to debug
-- [[Impactful Change Notice|dendron://dendron.docs/dev.ref.impactful-change-notice]]: Breaking changes to the development process and current migrations
-- [[Best Practices When Coding|dendron://dendron.docs/dev.process.code.best-practices]]
+- Cookbook: commonly done operations
+  - [[Updates to dendron.yml|dendron://dendron.docs/pkg.common-all.dev.cook.add-new-config]]
 
 ### Instrumentation
 
