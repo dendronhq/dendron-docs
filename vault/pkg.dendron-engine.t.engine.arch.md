@@ -2,7 +2,7 @@
 id: tYxnZg8ZPnS5ZhCg2V3c0
 title: Arch
 desc: ""
-updated: 1639874977073
+updated: 1645903423362
 created: 1639873227613
 ---
 
@@ -64,31 +64,22 @@ _initNotes(vault) {
 }
 ```
 
-- [[../packages/engine-server/src/drivers/file/noteParser.ts]]
+- loc: [[../packages/engine-server/src/drivers/file/noteParser.ts#^vc6wy8vsw58p]]
 
 ```ts
 parseFiles(allPaths) {
   fileMetaDict := allPaths
 
+  root = fileMetaDict[1].find(n => n.fpath === "root.md") as FileMeta;
   ...
-  notesByFname = {}
-  notesById = {}
+  lvl = 2
+  prevNotes = fileMetaDict[1]
+  prevNotes.flatMap(ent) {
+    // see [[Arch|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#^45PEWoYX9mr8]]
+    out = parseNoteProps(ent)
 
-  %nodesOrderedByDistanceFromRoot :=
-  %nodesOrderedByDistanceFromRoot notePath => {
-    // see [[Engine|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#^45PEWoYX9mr8]]
-    resp = @parseNoteProps(notePath)
-
-    // update cache
-    // see [[../packages/engine-server/src/drivers/file/noteParser.ts#^cache-update]]
-
-    notes := resp
-    notes.forEach n => {
-      notesByFname[n.fname] = n
-      notesById[n.id] = n
-    }
   }
-  return {notesByFname, notesById}
+
 }
 ```
 
@@ -96,7 +87,7 @@ parseFiles(allPaths) {
 
 The following are referenced by other blocks in this note
 
-- [[../packages/engine-server/src/drivers/file/noteParser.ts#L215]] ^45PEWoYX9mr8
+- [[../packages/engine-server/src/drivers/file/noteParser.ts#^2ozzw6feh53f]]^45PEWoYX9mr8
 
 ```ts
 parseNoteProps(notePath) {
@@ -119,7 +110,21 @@ file2NoteWithCache(notePath, cache) {
       body,
       vault
     }
+    return note
   }
+
+  string2Note
+}
+```
+
+- [[../packages/common-server/src/filesv2.ts#^piwaz833oxrq]]
+
+```ts
+string2Note(content) {
+  data, body = matter(contents)
+  note :=
+  return note
+
 }
 ```
 
