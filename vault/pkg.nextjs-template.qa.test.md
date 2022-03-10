@@ -62,13 +62,21 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
 
 ### Testing in github actions pipeline
 
+#### Prerequisites
+1. Have `origin/dev` checked out
+
+    ```sh
+    git checkout --track origin/dev
+    git checkout main
+    ```
+
+#### Steps
 1. Commit changes to the dev branch in `nextjs-template`
     ```sh
     cd packages/nextjs-template
-    git checkout --track origin/dev
-    git add .
-    git commit -m "dev changes for testing"
-    git push 
+    git checkout dev
+    git merge main
+    git push
     ```
     - NOTE: if git push fails, you can `git push -f`. the `dev` branch is only used for testing
 1. Checkout https://github.com/dendronhq/template.publish.github-action-dev

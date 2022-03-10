@@ -38,7 +38,7 @@ These steps should be run **after** the weekly release has gone out. It is only 
     echo "sync nextjs-template..."
     VERSION=$(cat lerna.json | jq -r ".version")
     pushd packages/nextjs-template/
-
+    
     echo "backup node_modules..."
     mv node_modules /tmp
 
