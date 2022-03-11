@@ -67,7 +67,40 @@ function main() {
 
 ```
 
-## API 
+
+## Sentry
+We use Sentry to monitor the code for exceptions. You can use Sentry by wrapping
+a function using `sentryReportingCallback`. For example:
+
+```ts
+export const provideCompletionItems = sentryReportingCallback(
+  (document: TextDocument, position: Position) => {
+    // ...
+  }
+);
+```
+
+One issue here: the sentry wrapper cause the callback function to lose its `this` value.
+If you are passing a method to this function, you must bind the `this` value:
+
+```ts
+class Foo {
+  private callback() { /* ... */ }
+
+  public setupCallback() {
+    const wrappedCallback = sentryReportingCallback(
+      this.callback.bind(this)
+    );
+    // ...
+  }
+}
+```
+
+Otherwise, when the callback function is called the `this` value will be undefined.
+
+- NOTE: if you're interested about sentry initialization setttings, see [[../packages/common-server/src/errorReporting.ts#^4wcl13fw6gub]]
+
+## API
 
 ### ERROR_STATUS
 

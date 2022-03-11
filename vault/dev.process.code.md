@@ -209,39 +209,6 @@ As a result, describing the set of characters that should match is practically i
 [ 'öö', index: 0, input: 'öö', groups: undefined ]
 ```
 
-## Logging
-
-### Sentry
-
-We use Sentry to monitor the code for exceptions. You can use Sentry by wrapping
-a function using `sentryReportingCallback`. For example:
-
-```ts
-export const provideCompletionItems = sentryReportingCallback(
-  (document: TextDocument, position: Position) => {
-    // ...
-  }
-);
-```
-
-One issue here: the sentry wrapper cause the callback function to lose its `this` value.
-If you are passing a method to this function, you must bind the `this` value:
-
-```ts
-class Foo {
-  private callback() { /* ... */ }
-
-  public setupCallback() {
-    const wrappedCallback = sentryReportingCallback(
-      this.callback.bind(this)
-    );
-    // ...
-  }
-}
-```
-
-Otherwise, when the callback function is called the `this` value will be undefined.
-
 ## Async operations
 
 If you have many async operations to perform, decide if they need to be done in parallel or in serial.

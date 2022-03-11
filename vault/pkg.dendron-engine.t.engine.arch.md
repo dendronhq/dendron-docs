@@ -1,6 +1,6 @@
 ---
 id: tYxnZg8ZPnS5ZhCg2V3c0
-title: Arch
+title: Dendron Engine Architecture
 desc: ""
 updated: 1645903423362
 created: 1639873227613
@@ -23,7 +23,9 @@ init {
 
 ```
 
+### Init Notes in Store
 - [[../packages/engine-server/src/drivers/file/storev2.ts]]
+
 
 ```ts
 init {
@@ -33,15 +35,26 @@ init {
 initNotes {
   notesWithLinks = []
 
+  // loop through all vaults
   @vaults.forEach vault => {
+    // read all notes from disk
     notes = @_initNotes(vault)
+    // if notes have links, add it to notesWithLinks array
     notesWithLinks.push filterLinks(notes)
   }
 
+  // calculate backlinks based on all notes with links
   @_addBacklinks(notesWithLink)
-
 }
+```
+- next:
+  - [[Details of _initNotes|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#details-of-_initnotes]]
+  - [[Add backlinks|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch#add-backlinks]]
 
+
+#### Details of _initNotes
+- [[../packages/engine-server/src/drivers/file/storev2.ts]]
+```ts
 _initNotes(vault) {
 
   noteFiles := getAllFiles(vault)
@@ -61,6 +74,7 @@ _initNotes(vault) {
     }
 
   }
+  return { notes, cacheUpdates, cache, errors }
 }
 ```
 
@@ -87,6 +101,7 @@ parseFiles(allPaths) {
 
 The following are referenced by other blocks in this note
 
+#### parseNoteProps
 - [[../packages/engine-server/src/drivers/file/noteParser.ts#^2ozzw6feh53f]]^45PEWoYX9mr8
 
 ```ts
@@ -128,6 +143,8 @@ string2Note(content) {
 }
 ```
 
+
+#### Add backlinks
 - [[../packages/engine-server/src/drivers/file/storev2.ts]]
 - add backlinks ^wuW4SbA5hVwf
 
@@ -139,11 +156,14 @@ _addBacklinks {
 _addBacklinksImpl(allNotes, notesWithLinks) {
 
   notesWithLinks.forEach noteFrom => {
+    // noteFrom is where the link is originating from
     noteFrom.links.forEach link => {
+      // get note that link is pointing to
       fnameTo = link.to.fname
-      // all notes that this points to
+      // all notes that this points to (if the note doesn't have xvault link, the same note name might exist in multiple vaults)
       notes := fnameTo
 
+      // for all notes that this link is a backlink to, add it as a backlink for that note
       notes.forEach noteTo => {
         addBacklink(noteFrom, noteTo, link)
       }
@@ -153,7 +173,6 @@ _addBacklinksImpl(allNotes, notesWithLinks) {
 ```
 
 - [[../packages/common-all/src/dnode.ts]]
-
 ```ts
 addBacklink(from: Note, to: Note) {
   to.links.push(...)
