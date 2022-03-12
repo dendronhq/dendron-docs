@@ -2,7 +2,7 @@
 id: 74UyCLyLvCxFTQNgGgSRW
 title: Decorations
 desc: ""
-updated: 1639771601310
+updated: 1647104203399
 created: 1630915066783
 ---
 
@@ -16,19 +16,7 @@ for the engine side.
 
 ## Overview
 
-```mermaid
-sequenceDiagram
-    participant VSCode
-    participant plugin
-    participant engine
-    VSCode->>plugin: user opens new note, scrolls, or types
-    plugin->>engine: ask for decorations
-    VSCode->>plugin: user types again
-    engine->>plugin: plain decoration objects
-    plugin->>engine: ask for decorations
-    engine->>plugin: plain decoration objects
-    plugin->>VSCode: VSCode decorations
-```
+![[dendron://dendron.docs/pkg.plugin-core.ref.decorations.diagram]]
 
 This shows a brief example of how VSCode, plugin, and engine interact with each
 other to display the decorations. A few points of importance:
@@ -43,20 +31,26 @@ other to display the decorations. A few points of importance:
 
 ## LifeCycle
 
+- called by: [[Window Watcher|dendron://dendron.docs/pkg.plugin-core.ref.window-watcher]]
+- calls: [[Decorations|dendron://dendron.docs/pkg.dendron-engine.ref.decorations]]
+
 ```ts
 updateDecorations(editor) {
-    ctx = "updateDecorations"
-    note = getNoteFromDocument
-    inputRanges = mergeOverlappingRanges(editor.visibleRanges)
-    resp = engine.getDecorations(inputRanges)
+  ctx = "updateDecorations"
 
-    ...
-    log {"error":null,"decorationsLength":110,"diagnosticsLength":0}
-    activeDecorations = resp.data | mapDecoration
-    editor.setDecorations activeDecorations
+  // try to get the note, if no note, return
+  note = getNoteFromDocument else return
 
-    allWarnings = data?.diagnostics
-    delayedFrontmatterWarning allWarnings
+  inputRanges = mergeOverlappingRanges(editor.visibleRanges)
+  resp = engine.getDecorations(inputRanges)
+
+  ...
+  log {"error":null,"decorationsLength":110,"diagnosticsLength":0}
+  activeDecorations = resp.data | mapDecoration
+  editor.setDecorations activeDecorations
+
+  allWarnings = data?.diagnostics
+  delayedFrontmatterWarning allWarnings
 }
 
 mapDecoration(decorator) {

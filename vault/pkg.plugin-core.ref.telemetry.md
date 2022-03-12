@@ -2,7 +2,7 @@
 id: 1mbn8xsxs5z7ye51zsjjx5x
 title: Telemetry
 desc: ""
-updated: 1645661703398
+updated: 1646961085400
 created: 1645635181221
 schema: "[[dendron://dendron.docs/ref.module-schema]]"
 ---
@@ -11,7 +11,7 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
 
 ## Lifecycle
 
-- [[../packages/plugin-core/src/_extension.ts]]
+- [[../packages/plugin-core/src/_extension.ts#^imxu2xz6jv25]]
 
 ```ts
 if isDendronWorkspace {

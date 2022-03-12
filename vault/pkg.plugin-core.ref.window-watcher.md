@@ -2,7 +2,7 @@
 id: 5oM2CLbCmglg1napALx6R
 title: Window Watcher
 desc: ""
-updated: 1639770791554
+updated: 1647104034644
 created: 1639770147490
 ---
 
@@ -45,3 +45,7 @@ onDidChangeTextEditorVisibleRanges {
     @triggerUpdateDecorations
 }
 ```
+
+## Calls
+
+- [[Decorations|dendron://dendron.docs/pkg.plugin-core.ref.decorations]]

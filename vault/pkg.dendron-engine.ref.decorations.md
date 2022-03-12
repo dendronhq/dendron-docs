@@ -1,8 +1,8 @@
 ---
 id: tYYZ6hpBMJcPv9qcwqZAh
 title: Decorations
-desc: ''
-updated: 1638522638483
+desc: ""
+updated: 1647104243170
 created: 1638522039855
 ---
 
@@ -16,8 +16,9 @@ for the plugin side.
 
 ## Overview
 
-The main part of the decorations starts in `src/markdown/decorations/decorations.ts`.
+The main part of the decorations starts in [[../packages/engine-server/src/markdown/decorations/decorations.ts]]
 A few points of interest here:
+
 - All decoration code is organized under this folder.
 - The `getDecorations` function gets both the note id and ranges to be
   decorated, but also the actual text for those ranges. This is needed because
@@ -25,13 +26,15 @@ A few points of interest here:
   the generate stale decorations. It's better to get the text from the plugin
   which has access to the most up-to-date version of the note text.
 
-## Updating an existing decoration
+## Cook
+
+### Updating an existing decoration
 
 First, look at the `runDecorator` function in `decorations.ts` to find the
 decoration you are looking for, then navigate to the function for that
 decoration.
 
-## Adding a new decoration
+### Adding a new decoration
 
 First, add a new case in `runDecorator` in `decorations.ts` if the existing
 cases don't cover what you are trying to decorate. There can only be one

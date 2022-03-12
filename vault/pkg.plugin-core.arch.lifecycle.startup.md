@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1645212076457
+updated: 1647103033521
 created: 1610160007286
 ---
 
@@ -210,4 +210,20 @@ get vaults {
 
 ```ts
 executeCommand(RELOAD_INDEX);
+```
+
+### setupLanguageFeatures
+
+```ts
+_setupLanguageFeatures {
+
+    registerReferenceProvider;
+
+    registerDefinitionProvider;
+
+    registerHoverProvider;
+
+    registerFoldingRangeProvider
+
+}
 ```
