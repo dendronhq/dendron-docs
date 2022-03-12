@@ -2,7 +2,7 @@
 id: RoXgGa3xzzF9rdYDPDDUY
 title: Backlinks
 desc: ""
-updated: 1639901852474
+updated: 1646985398384
 created: 1635581979547
 ---
 
@@ -62,7 +62,7 @@ getNotesWithLinkTo(note, allNotes) {
 ### Backlinks aren't updating!
 
 First thing to check is that the links themselves are being updated.
-`NoteSyncService.updateNoteMeta` is responsible for finding the links after
+`NoteUtils.updateNoteMetadata` is responsible for finding the links after
 initialization, make sure it's finding the right links.
 
 For files added outside of Dendron (git sync, file copied etc.), [`FileWatcher`](https://github.com/dendronhq/dendron/blob/a833aa16f7bf8d8c69e07caf5dd1e376de93a974/packages/plugin-core/src/fileWatcher.ts#L23) is responsible for updating notes. It also refreshes the tree and backlink views. Make sure these are functioning correctly.
