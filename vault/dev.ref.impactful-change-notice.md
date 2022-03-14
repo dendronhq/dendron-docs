@@ -2,7 +2,7 @@
 id: H7CgvT7YUYAiV7mEmGnky
 title: Impactful Change Notice
 desc: ''
-updated: 1646637777213
+updated: 1647232800124
 created: 1630796807707
 nav_order: 6.1
 ---
@@ -10,6 +10,18 @@ nav_order: 6.1
 ## Summary
 
 This page contains a set of undergoing or completed changes that have a wide impact on the code base. Examples include significant refactoring projects and deprecation notices. Any larger pieces of work that you think other developers should be aware of should go here.
+
+## Deprecation of `StateService`
+- start: 2022.03.14
+- status: WIP
+
+### Summary
+
+StateService has been marked deprecated, and will be consolidated to use [[Metadata Service|dendron://dendron.docs/pkg.dendron-engine.ref.metadata-service]] instead.
+
+### Rationale
+
+Global and workspace state mementos can be hard to manage. There is a possibility that these could be wiped out by something that is not in Dendron's control. To make the logic that relies on these states to be much more stable, we are moving towards saving Dendron specific metadata on disk that would be shared across sessions and workspaces throughout.
 
 ## Deprecation of `setupBeforeAfter`
 -start: 2022.03.07
