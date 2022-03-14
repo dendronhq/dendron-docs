@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Committing Code
 desc: ''
-updated: 1646416600606
+updated: 1647219197116
 created: 1623430616135
 config:
   global:
@@ -30,46 +30,9 @@ See [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.as
 All prs should start with `[feat|fix|enhance|chore]/[{description-of-pr-in-kebab-case}]`
     - `eg. feat/add-thisthing`
 
-### Commit Style
+## Reference
 
-We follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
-
-This means commits have the following format:
-
-```
-{category}({scope}): {title}
-
-{additional details}
-```
-
-An example commit:
-
-^pjL1YxpWRgtT
-``` 
-enhance(publish): speed up publishing by 500%
-
-Use cached version of notes to generate metadata instead of building from scratch
-```
-
-* To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
-* To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
-* When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
-
-### Commit Title
-
-When writing the commit title, write it from the users point of view. What tangible benefit will the user have after this commit is shipped?
-
-- bad: talks about work done vs result achieved
-```
-Update engine to cache notes on read
-```
-
-- good: directly talks about benefit to end users
-```
-Improved performance when using lookup to read notes
-```
-
-#### git hooks
+### git hooks
 
 We have pre-commit and pre-push hooks, which we use to keep the codebase
 consistent. The pre-commit hook will make sure that your code is correctly
@@ -80,7 +43,6 @@ The pre-commit hook has to **stash and pop** any unstaged changes you have in
 the workspace. If something breaks during this process and your changes are
 lost, check the stash using `git stash list` to find your changes (should be marked `pre-linting-stash`),
 then use `git stash pop stash@{x}` to recover the correct one.
-
 
 ## Cook
 

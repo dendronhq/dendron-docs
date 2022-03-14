@@ -16,7 +16,7 @@ config:
 
 ## Commit
 - [ ] make sure your branch names adhere to our [[branch style|dendron://dendron.docs/dev.process.commit#branch-style]]
-- [ ] make sure the commit message follows Dendron's [[commit style|dendron://dendron.docs/dev.process.commit#commit-style]]
+- [ ] make sure the commit message follows Dendron's [[commit style|dendron://dendron.docs/dev.process.review#commit-style]]
 - [ ] if this pull request is addressing an existing issue, make sure to link this PR to the issue that it is resolving.
     - NOTE: make sure to read [[Addressing open issues|dendron://dendron.docs/dev.process.commit#addressing-open-issues]]
 

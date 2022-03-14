@@ -64,6 +64,7 @@ Writing code
 
 ### Review
 
+- [[Submitting Code for Review|dendron://dendron.docs/dev.process.review]]
 - [[Additional Review Considerations|dendron://private/area.team.ref.reviewing-code]]
 
 ### Release
