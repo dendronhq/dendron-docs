@@ -2,7 +2,7 @@
 id: 446723ba-c310-4302-a651-df14ce6e002b
 title: Lifecycle
 desc: ""
-updated: 1645903391880
+updated: 1647384810643
 created: 1620614023632
 ---
 
@@ -10,20 +10,31 @@ created: 1620614023632
 
 ```mermaid
 sequenceDiagram
-    participant client
+    participant vscodePlugin
+    participant EngineAPIService
+    participant apiServer
     participant engine
     participant store
     participant fileSystem
     participant noteParser
-    client->>engine: initialize
+    vscodePlugin->>EngineAPIService: creates
+    EngineAPIService->>apiServer: initialize
+    apiServer->>engine: initialize
     engine->>store: initialize
     store->>fileSystem: fetchAllnotes
     fileSystem->>store: sendNotes;
     store->>noteParser: parseAllNotes
     noteParser->>store: parsedNotes
-    store->>engine: return status
-    engine->>client: return status
+    store->>engine: return resp
+    engine->>apiServer: return resp
+    apiServer->>EngineAPIService: return resp
+    EngineAPIService->>vscodePlugin: return resp
 ```
+
+- EngineAPIService: created in [[../packages/plugin-core/src/_extension.ts#^9dr6chh7ah9v]]
+
+  - implements DEngineClient interface for engine -> [[../packages/common-all/src/types/typesv2.ts#^sdxp5tjokad9]]
+  - in production, we launch `apiServer` in a separate process, but if not, we run everything in same process. see [[../packages/plugin-core/src/_extension.ts#^pyiildtq4tdx]]
 
 - [Video walkthrough](https://youtu.be/nWJCP1DR5Io)
 - Entry Point: [[../packages/engine-server/src/enginev2.ts]]
