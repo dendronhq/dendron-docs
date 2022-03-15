@@ -1,57 +1,46 @@
 ---
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
-desc: ''
-updated: 1641932998732
+desc: ""
+updated: 1647377918935
 created: 1635532194153
 ---
 
 ## Cook
 
+### Manual bump and publish plugin only
 
-### Manual bump and publish package versions
+If you need to manually bump the current package version number for any reason without updating NPM
 
-If you need to manually bump the current package version number for any reason
+- setup local npm registry
+  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#setup-local-npm-registry,1:#*]]
 
-- start verdaccio in separate shell
-```sh
-setRegLocal
-npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
-```
+- bump plugin version
+  ![[Bump Plugin Version|dendron://dendron.docs/pkg.plugin-core.dev.deploy#bump-plugin-version]]
 
+- publish dependencies to npm
+  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-node-dependencies-to-npm,1:#*]]
 
-- publish to npm
-```sh
-# values are "patch|minor"
-UPGRADE_TYPE=
-# eg. 0.69.0
-RELEASE_BRANCH= 
+- prepare package.json
+  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#prep-packagejson,1:#*]]
 
-echo "bumping..."
-dendron dev bump_version --upgradeType $UPGRADE_TYPE
-
-echo "publishing packages..."
-lerna publish from-package --ignore-scripts
-
-echo "install..."
-dendron dev prep_plugin && rm package.json
-dendron dev package_plugin 
-dendron dev install_plugin
-```
+- package plugin
+  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#package-plugin,1:#*]]
 
 - publish to market place
-![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-from-artifact,1:#*]]
+  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-from-artifact,1:#*]]
 
 - reset
+
 ```sh
 git reset --hard
 ```
 
 - publish to nextjs
-![[Steps|dendron://dendron.docs/pkg.nextjs-template.dev.deploy#steps]]
-
+  ![[Steps|dendron://dendron.docs/pkg.nextjs-template.dev.deploy#steps]]
 
 - sync back to master
+
 ```
 echo "sync back with master"
 git checkout master
@@ -61,7 +50,70 @@ git push
 ```
 
 - clean up repo
-![[dendron://dendron.docs/pkg.plugin-core.dev.build#fast-re-build,1:#*]]
+  ![[dendron://dendron.docs/pkg.plugin-core.dev.build#fast-re-build,1:#*]]
+
+## Common Cook Steps
+
+### Setup Local NPM Registry
+
+This is necessary for actions that require pulling latest packages from NPM during development
+
+- start verdaccio in separate shell
+
+```sh
+setRegLocal
+npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
+```
+
+### Setup Environment Variables
+
+The following need to be set
+
+```sh
+export GOOGLE_OAUTH_CLIENT_ID=
+export GOOGLE_OAUTH_CLIENT_SECRET=
+export SENTRY_AUTH_TOKEN=
+export DENDRON_RELEASE_VERSION=
+```
+
+### Bump Plugin Version
+
+```sh
+# values are "patch|minor"
+UPGRADE_TYPE=
+
+echo "bumping..."
+dendron dev bump_version --upgradeType $UPGRADE_TYPE
+```
+
+### Publish Node Dependencies to NPM
+
+```sh
+echo "publishing packages..."
+lerna publish from-package --ignore-scripts
+```
+
+### Prep package.json
+
+- `prep_plugin` formats the `package.json` file for the dendron plugin
+
+- prereq: [[Setup Environment Variables|dendron://dendron.docs/pkg.plugin-core.dev.deploy#setup-environment-variables]]
+
+```sh
+dendron dev prep_plugin && rm package.json
+```
+
+### Package Plugin
+
+- `package_plugin` creates the vsix
+
+```sh
+dendron dev package_plugin
+```
+
+### Install Plugin Locally
+
+Drag and drop vsix to vscode
 
 ### Publish From Artifact
 
@@ -78,23 +130,6 @@ yarn deploy:vscode:vsix $PLUGIN_PKG
 yarn deploy:ovsx:vsix $PLUGIN_PKG
 ```
 
-### Recover from failed local publish
+##
 
-- start verdaccio in separate shell
-```sh
-setRegLocal
-npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
-```
-
-- publish 
-```sh
-git stash
-lerna publish from-package --ignore-scripts
-git stash pop
-```
-
-- package and install
-```
-dendron dev package_plugin && rm package.json
-dendron dev install_plugin
-```
+[^build]: [[Build|dendron://dendron.docs/pkg.dendron-cli.ref.dev.build]]

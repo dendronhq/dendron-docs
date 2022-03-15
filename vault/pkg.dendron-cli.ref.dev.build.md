@@ -2,7 +2,7 @@
 id: Z1rOzDCvQyN7yaibtatks
 title: Build
 desc: ""
-updated: 1642274535054
+updated: 1647377346113
 created: 1642274303182
 ---
 
@@ -28,10 +28,13 @@ build {
 - update `package.json` metadata for `plugin-core`
 
 ```ts
+// change name to target name (eg. nightly vs regular release)
+// update display name
+// set a common repository, version and icon
+// remove test dependencies
 prepPluginPkg {
 	updatePkgMeta
 	removeDevDepsFromPkgJson
-
 }
 
 ```
@@ -45,11 +48,13 @@ installPluginDependencies {
 }
 ```
 
-## Reference
+## Common
 
-<!-- Anything else that is useful to lookup -->
+### packagePluginDependencies
 
-## Cook
+```
+vsce package --yarn
+```
 
 <!-- How to do common operations with this code -->
 
