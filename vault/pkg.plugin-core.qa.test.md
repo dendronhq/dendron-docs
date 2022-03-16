@@ -190,6 +190,8 @@ To manually test new changes, launch an instance of the test workspace.
 ![[dev.ref.test-workspace]]
 
 ## Cook
+### subscribeToEngineStateChange
+Use this method to subscribe to engine state event changes when working with tests in `plugin-core`. This can be used in situations where the engine state changes asynchorously from test logic (such as from vscode event callbacks)
 
 ### Upating the cursor position
 
