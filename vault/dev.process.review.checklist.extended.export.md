@@ -2,7 +2,7 @@
 id: fHKEH1X6xdkq87swyYMHF
 title: Dendron Extended PR Checklist - Markdown 
 desc: ''
-updated: 1644788896262
+updated: 1647487519698
 created: 1644176768259
 ---
 # Dendron Extended PR Checklist
@@ -11,8 +11,8 @@ created: 1644176768259
 
 ### Basics
 
-- [ ] code should follow [Code Conventions](dev.process.code)
-- [ ] circular dependency check: make sure your code is not introducing new circular dependencies in plugin-core.  See [Avoiding Circular Dependencies](dev.process.code.best-practices).
+- [ ] code should follow [Code Conventions](https://wiki.dendron.so/notes/773e0b5a-510f-4c21-acf4-2d1ab3ed741e.html)
+- [ ] circular dependency check: make sure your code is not introducing new circular dependencies in plugin-core.  See [Avoiding Circular Dependencies](https://wiki.dendron.so/notes/pMS27sHxbWeKMoPRrWEzs.html).
 - [ ] sticking to existing conventions instead of creating new ones 
   - eg: [if configuration for utilities are already in one module or package, add future utilities there as well](https://github.com/dendronhq/dendron/pull/1960#discussion_r786228021)
 
@@ -34,7 +34,7 @@ created: 1644176768259
 
 ### Basics
 
-- [ ] if you are adding analytics related changes, make sure the [Telemetry](https://wiki.dendron.so/notes/84df871b-9442-42fd-b4c3-0024e35b5f3c.html) docs are updated
+- [ ] if you are adding analytics related changes, make sure you [Document](https://wiki.dendron.so/notes/8ThPaB9iXXm2Szk3C9kFt.html) changes in airtable
 
 ### Extended
 
@@ -49,16 +49,16 @@ created: 1644176768259
 
 ### Basics
 
-- [ ] [Write Tests](dev.process.qa.test) 
-- [ ] [Confirm existing tests pass](dev.process.qa.test)
-- [ ] [Confirm manual testing](dev.process.qa.test) 
+- [ ] [Write Tests](https://wiki.dendron.so/notes/99q7A73uGmCwu2KvSHZro.html) 
+- [ ] [Confirm existing tests pass](https://wiki.dendron.so/notes/99q7A73uGmCwu2KvSHZro.html)
+- [ ] [Confirm manual testing](https://wiki.dendron.so/notes/99q7A73uGmCwu2KvSHZro.html) 
 - [ ] Common cases tested
 - [ ] 1-2 Edge cases tested
-- [ ] If your tests changes an existing snapshot, snapshots have been [updated](dev.process.qa.test)
+- [ ] If your tests changes an existing snapshot, snapshots have been [updated](https://wiki.dendron.so/notes/99q7A73uGmCwu2KvSHZro.html)
 
 ### Extended
 
-- [ ] If you are adding a new language feature (graphically visible in VS Code/preview/publishing), an example is included in the [test workspace](dev.ref.test-workspace)
+- [ ] If you are adding a new language feature (graphically visible in VS Code/preview/publishing), an example is included in the [test workspace](https://wiki.dendron.so/notes/dtMsF12SF2SUhLN10sYe2.html)
 
 - CSS
   - [ ] display is correct for following dimensions
@@ -83,7 +83,7 @@ created: 1644176768259
 
 ### Basics
 
-- [ ] does this change introduce a new or better way of doing things that others need to be aware of? if so, an async should be created and a process added in [Development](dev) or [Packages](pkg)
+- [ ] does this change introduce a new or better way of doing things that others need to be aware of? if so, an async should be created and a process added in [Development](https://wiki.dendron.so/notes/3489b652-cd0e-4ac8-a734-08094dc043eb.html) or [Packages](https://wiki.dendron.so/notes/32cdd4aa-d9f6-4582-8d0c-07f64a00299b.html)
 
 ## 
 
@@ -95,5 +95,5 @@ created: 1644176768259
 
 ### Extended
 
-- [ ]  is this a developer BREAKING change? if another person cloning from this branch will need to adjust their dependencies or mental model of the architecture, then it is. if this is the case, make sure this is communicated according to [Close Loop](dev.process.close-loop)
+- [ ]  is this a developer BREAKING change? if another person cloning from this branch will need to adjust their dependencies or mental model of the architecture, then it is. if this is the case, make sure this is communicated according to [Close Loop](https://wiki.dendron.so/notes/iZ8vpfY0n1E3Nq3IC1Y7X.html)
   - eg. [breaking dev change due to new dependency](https://github.com/dendronhq/dendron/pull/2188#pullrequestreview-855696330)
