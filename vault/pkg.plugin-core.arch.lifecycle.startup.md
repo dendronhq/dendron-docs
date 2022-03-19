@@ -57,6 +57,11 @@ _activate {
     // do this if we're in a dendron workspace
     if isDendronWorkspace {
 
+        // do logic depending on if its native workspace vs code workspace
+        ...
+
+        setupTraits
+        setupSegmentWithCacheFlush
 
         // see [[Run Migration|dendron://dendron.docs/pkg.dendron-engine.t.upgrade.arch.lifecycle#run-migration]]
         changes = runMigrationsIfNecessary
@@ -64,14 +69,47 @@ _activate {
         if !changes {
             runConfigMigrationIfNecessary
         }
+
+        Sentry.setUser
+        wsService.initialize
+        wsService.writeMeta
+
         // ---
-        port = startServer
-        updateEngineAPI(port)
-        ws.reloadWorkspace // 312
-        ws.activateWatchers // [[Lifecycle|dendron://dendron.docs/pkg.plugin-core.ref.watchers.arch.lifecycle]]
+        showInitProgress { 
+            port = startServer
+            updateEngineAPI(port)
+
+            if !webUI { 
+                treeView = new NativeTreeView
+                context.subscriptions.push treeView
+            }
+            ws.reloadWorkspace // 312
+            // custom set context logic
+            ...
+
+            MetadataService.setDendronWorkspaceActivated
+            _setupCommands
+            AnalyticsUtils.identify
+
+            if InstallStatus.INITIAL_INSTALL warnIncompatibleExtensions
+            ws.activateWatchers // [[Lifecycle|dendron://dendron.docs/pkg.plugin-core.ref.watchers.arch.lifecycle]]
+            togglePluginActiveContext
+
+        }
+    } else { 
+        autoInit = new FileAddWatcher
+    }
+
+    // initial install logic
+    if InstallStatus.INITIAL_INSTALL {
         ...
-        // register all commands with vscode
-        _setupCommands // 413
+    }
+
+    showWelcomeOrWhatsNew
+
+    if DendronExtension.isActive { 
+        HistoryService.instance().add(extension, activate)
+        // If automaticallyShowPreview = true, display preview panel on start up
     }
 
 }
@@ -143,7 +181,7 @@ showWelcome {
 }
 ```
 
-## SetupWorkspaceCommand
+- [[Setup Workspace|dendron://dendron.docs/pkg.plugin-core.ref.setup-workspace]]
 
 ## Reference
 
