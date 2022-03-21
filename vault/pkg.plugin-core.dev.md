@@ -22,6 +22,19 @@ Also at the time of this writing `IDendronExtension` does not have everything th
 Highly highly avoid adding concrete imports into `IDendronExtension` since that will likely just re-introduce circular dependencies. Follow the [Dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) "Depend upon abstractions not concretions".
 
 
+### Is the extension registered for ExtensionProvider?
+
+The extension is registered with the `ExtensionProvider` during the
+initialization. For code that may run during initialization, they may be running
+before the extension has been registered.
+
+If you are writing code that has to be able to run before the extension has
+initialized, you can check `ExtensionProvider.isRegistered()` to check if the
+extension has been registered yet or not. This is not required for most code, in
+most cases you can just assume that the extension has been initialized (for
+example, most commands are registered so that they can't be used before the
+extension is initialized).
+
 ### Cleaning up artifacts
 
 Compiled javascript doesn't get deleted from `plugin-core/out` which means that deleting a typescript file won't remove it from the compiled javascript. If you are seeing an error that you can't explain, try deleting the `out` folder by running the following command
