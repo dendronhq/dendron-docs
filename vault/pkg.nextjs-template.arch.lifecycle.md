@@ -2,7 +2,7 @@
 id: 7MLCpIb0ITppTZ3qwMi1A
 title: Lifecycle
 desc: ""
-updated: 1644533207007
+updated: 1647562700288
 created: 1636642644504
 ---
 
@@ -86,6 +86,23 @@ filterByHiearchy(domain, notes) {
     }
   }
 }
+```
+
+### canPublish
+
+- see [[../packages/engine-server/src/topics/site.ts#^c15ybpjd4y5z]]
+
+```ts
+canPublish(note) [
+  // does note have frontmatter?
+  note.custom.published = false ? return false
+
+  // is vault private?
+  noteVault := note
+  noteVault.visibility = PRIVATE ? return false
+
+  hconfig := note
+]
 ```
 
 ## Compile

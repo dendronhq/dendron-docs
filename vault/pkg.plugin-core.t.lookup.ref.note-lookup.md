@@ -1,7 +1,7 @@
 ---
 id: PZ3IzgdeZBbFRvalzI9fp
 title: Note Lookup
-desc: ''
+desc: ""
 updated: 1637203158354
 created: 1630426129273
 ---
@@ -65,9 +65,8 @@ stateDiagram-v2
     HistoryListener --> lookupExecute
 ```
 
-
-
 ## Steps
+
 - [[Gather Input|pkg.dendron-plugin.t.lookup.internal#gather-input]]
   - [[Prepare Quickpick|pkg.dendron-plugin.t.lookup.internal#prepare-quickpick]]
     - initialize all buttons
@@ -84,18 +83,19 @@ stateDiagram-v2
   - open `picks`
   - [[OnAccept|pkg.dendron-plugin.t.lookup.internal#onaccept]]
 
-
 ## Code
 
 ### Gather Input
 
 - this method is responsible for configuring and instantiating the lookup controller and provider
+
   - controller controls presentation of the quickinput
-  - provider controls the data retrieval behavior 
+  - provider controls the data retrieval behavior
   - on success, will return the following [response type](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/components/lookup/LookupProviderV3.ts)
   - NOTE: because we can't simply block on `showQuickInput`, we return a promise that listens to a `lookupProvider` event with the corresponding `id` of the particular command
 
 - src/commands/NoteLookupCommand.ts
+
 ```ts
 gatherInputs {
 
@@ -111,6 +111,7 @@ gatherInputs {
 #### NoteLookup Provider
 
 - src/components/lookup/LookupProviderV3.ts
+
 ```tsx
 
 create {
@@ -138,6 +139,7 @@ onDidAccept {
 ```
 
 ### Prepare Quickpick
+
 - src/components/lookup/LookupControllerV3.ts
 
 ```ts
@@ -147,12 +149,13 @@ prepareQuickPick {
 }
 
 showQuickPick {
-    provider.onUpdatePickerItems 
+    provider.onUpdatePickerItems
 
 }
 ```
 
 #### OnDidTriggerButton
+
 ```ts
 onDidTriggerButton(btn) {
     find(btn, @state.buttons).pressed = btn.pressed
@@ -161,6 +164,7 @@ onDidTriggerButton(btn) {
 ```
 
 #### RefreshPickerBehavior
+
 ```ts
 refreshPickerBehavior {
     buttonsEnabled :=
@@ -173,6 +177,8 @@ refreshPickerBehavior {
 
 ### OnUpdatePickerItems
 
+- [[../packages/plugin-core/src/components/lookup/LookupProviderV3.ts#^hlj1vvw48s2v]]
+
 ```ts
 onUpdatePickerItems {
 
@@ -180,6 +186,12 @@ onUpdatePickerItems {
     if picker.justActivated && !picker.nonInteractive  {
         pickerValue = getQsForCurrentLevel
     }
+
+    // normalize query
+    transformQueryString
+    queryOrig :=
+    ...
+
     querystring := pickerValue
     ...
     items = [...picker.items]
@@ -209,6 +221,7 @@ onUpdatePickerItems {
 This gets triggered when the user selects a result form the quickpick.
 
 Type Signature
+
 ```ts
 quickpick: DendronQuickPick
 selectedItems: NoteItemSelection[]
@@ -217,12 +230,13 @@ selectedItems: NoteItemSelection[]
 #### Pseudocode
 
 - src/components/lookup/LookupProviderV3.ts
+
 ```ts
 onDidAccept {
     selectedItems := picker
 
     selectedItems ??= fetchPickerResultsNoInput
-    
+
     if hasNextPicker(picker)
 
     resp = @_onAcceptHooks.map { hooks
@@ -241,7 +255,6 @@ onDidAccept {
 
 }
 ```
-
 
 ```ts
 execute {
@@ -270,6 +283,7 @@ acceptNewItem(item, picker) {
         note = notes[item.stub]
         delete note.stub
     } else {
+        vault := getVaultForNewNote
         note = Note.create item
 
         if picker.hasSelectionProcessFunc {
@@ -290,5 +304,18 @@ acceptNewItem(item, picker) {
 
 ```
 
+### getVaultForNewNote
+
+- [[../packages/plugin-core/src/commands/NoteLookupCommand.ts#^8jd6vr4qcsol]]
+
+```ts
+getVaultForNewNote {
+
+    vault := picker.vault || getVaultForOpenEditor
+
+}
+```
+
 ## Related
+
 - [[Lookup|dendron://dendron.docs/pkg.dendron-engine.t.lookup]]
