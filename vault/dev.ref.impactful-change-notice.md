@@ -11,6 +11,19 @@ nav_order: 6.1
 
 This page contains a set of undergoing or completed changes that have a wide impact on the code base. Examples include significant refactoring projects and deprecation notices. Any larger pieces of work that you think other developers should be aware of should go here.
 
+## Deprecation of `ExtensionProvider.getWorkspaceConfig` and `IDendronExtension.getWorkspaceConfig`
+- start: 2022.03.24
+- status: WIP
+
+### Summary
+
+`getWorkspaceConfig` functions that depend on the extension have been deprecated. Please use `VSCodeUtils.getWorkspaceConfig` instead.
+
+### Rationale
+
+Workspace configuration actually has nothing to do with the extension. It is
+handled by VSCode itself, and is ready before the extension even initializes.
+
 ## Deprecation of `StateService`
 - start: 2022.03.14
 - status: WIP
