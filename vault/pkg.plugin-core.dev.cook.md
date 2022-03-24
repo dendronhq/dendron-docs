@@ -108,6 +108,12 @@ VSCodeUtils.setContext(
    - this will update the command in `package.json`
 1. Manually test with test-workspace, the command should only be visible in command palette if config option is set to true.
 
+### Adding a new doctor command
+
+When adding a doctor command - unless the command needs to reload the entire workspace, be sure to add it to `NO_RELOAD_ACTIONS` in [[../packages/plugin-core/src/commands/Doctor.ts#^2z4m76v2e2xo]]
+
+See [this pr](https://github.com/dendronhq/dendron/pull/2620/files) for an example
+
 ## Lookup
 
 - ![[dendron://dendron.docs/pkg.plugin-core.t.lookup.cook]]
