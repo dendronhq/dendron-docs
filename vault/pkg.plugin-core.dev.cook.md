@@ -110,7 +110,9 @@ VSCodeUtils.setContext(
 
 ### Adding a new doctor command
 
-When adding a doctor command - unless the command needs to reload the entire workspace, be sure to add it to `NO_RELOAD_ACTIONS` in [[../packages/plugin-core/src/commands/Doctor.ts#^2z4m76v2e2xo]]
+When adding a doctor command, do the following if the workspace needs to be reloaded:
+- add action to `RELOAD_BEFORE_ACTIONS` if workspace needs to be reloaded before running the action
+- add action to `RELOAD_AFTER_ACTIONS` if workspace needs to be reloaded after the action has run
 
 See [this pr](https://github.com/dendronhq/dendron/pull/2620/files) for an example
 
