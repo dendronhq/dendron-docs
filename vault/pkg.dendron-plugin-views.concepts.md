@@ -11,9 +11,10 @@ created: 1636430062905
 In browser mode, we start a [webpack dev server](https://webpack.js.org/configuration/dev-server/) to see changes to plugin views in real time. ^FIQf5ZoJXIBP
 
 ## Editor View
+![[dendron://dendron.docs/pkg.dendron-plugin-views.concepts.editor-view]]
 
-The editor view is a view that shows up inside of an editor pane in vscode.
-The Dendron Preview is an example of an `Editor View`.
+## Tree View
+![[dendron://dendron.docs/pkg.dendron-plugin-views.concepts.tree-view]]
 
 ## IDE Mode
 
