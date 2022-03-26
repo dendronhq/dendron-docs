@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1646637703169
+updated: 1648267279270
 created: 1627140509315
 ---
 
@@ -25,6 +25,7 @@ import { ENGINE_HOOKS } from "@dendronhq/engine-test-utils";
 import { getDWorkspace } from "../../workspace";
 import { describeMultiWS, setupBeforeAfter } from "../testUtilsV3";
 import { expect } from "../testUtilsv2";
+import { ExtensionProvider } from "../../ExtensionProvider";
 // Then create a test suite
 suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
   // has to be function(), not arrow
@@ -42,15 +43,14 @@ suite("GIVEN testing code setupLegacyWorkspaceMulti", function () {
       test("THEN initializes correctly", () => {
         // can be a regular function or async
         // You can access the workspace inside the test like this:
-        const { engine, wsRoot, vaults } = getDWorkspace();
+        const { engine, wsRoot, vaults } = ExtensionProvider.getDWorkspace();
         // Then perform any actions and checks
         const testNote = engine.notes["foo"];
         expect(testNote).toBeTruthy();
       });
 
-      test("THEN is of NATIVE type", () => {
-        // can be a regular function or async
-        const { type } = getDWorkspace();
+      test("THEN is of NATIVE type", (done) => {
+        const { type } = ExtensionProvider.getDWorkspace();
         expect(type).toEqual(WorkspaceType.NATIVE);
       });
     }
@@ -190,7 +190,9 @@ To manually test new changes, launch an instance of the test workspace.
 ![[dev.ref.test-workspace]]
 
 ## Cook
+
 ### subscribeToEngineStateChange
+
 Use this method to subscribe to engine state event changes when working with tests in `plugin-core`. This can be used in situations where the engine state changes asynchorously from test logic (such as from vscode event callbacks)
 
 ### Upating the cursor position
@@ -198,5 +200,7 @@ Use this method to subscribe to engine state event changes when working with tes
 - see [this](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/test/suite-integ/NoteLookupCommand.test.ts)
 
 ### Creating notes after engine is started
+
 If your test cases involve creating notes that cannot be done in the hooks of `describeSingleWS`, use `NoteTestUtilsV4.createNoteWithEngine` or `CreateNoteFactory.createWithEngine` in the test methods themselves
+
 - see [this](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/test/suite-integ/CopyNoteLink.test.ts)
