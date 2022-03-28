@@ -11,6 +11,18 @@ nav_order: 6.1
 
 This page contains a set of undergoing or completed changes that have a wide impact on the code base. Examples include significant refactoring projects and deprecation notices. Any larger pieces of work that you think other developers should be aware of should go here.
 
+## Deprecation of tree view v2
+- start: 2022.03.25
+- status: WIP
+
+### Summary
+All code related to tree view v2 are marked deprecated. We will be enhancing tree view v1 moving forward.
+
+### Rationale
+tree view v2 was introduced to have a shared component that could be used in both the plugin and published site. Since then a separate component for the published site has been introduced, and it became hard to maintain v1 and v2 at the same time.
+
+To keep the look and feel of the tree view consistent with VSCode, and to make maintenance simpler, we are reverting back to keeping v1 as default.
+
 ## Deprecation of `ExtensionProvider.getWorkspaceConfig` and `IDendronExtension.getWorkspaceConfig`
 - start: 2022.03.24
 - status: WIP
