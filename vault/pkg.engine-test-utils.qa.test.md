@@ -84,6 +84,9 @@ test("Testing that onMyCallbackInvoked was invoked (CORRECT & PREFERRED WAY)", (
 });
 ```
 
+#### Creating notes after engine is started
+If your test cases involve creating notes that cannot be done in the hooks, use `NoteTestUtilsV4.createNoteWithEngine` or `CreateNoteFactory.createWithEngine` in the test methods themselves
+
 ### Testing a new Engine Method
 
 ![[dendron://dendron.docs/pkg.dendron-engine.qa.test.engine]]
