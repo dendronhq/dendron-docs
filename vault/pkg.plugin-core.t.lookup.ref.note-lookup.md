@@ -100,7 +100,7 @@ stateDiagram-v2
 gatherInputs {
 
     lc = this._controller = LookupControllerV3.create(buttons:[...], ...)
-    @provider = new NoteLookupProvider("lookup", {
+    provider = new NoteLookupProvider("lookup", {
         allowNewNote: true,
         ...
     })
