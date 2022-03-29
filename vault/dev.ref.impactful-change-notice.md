@@ -19,9 +19,13 @@ This page contains a set of undergoing or completed changes that have a wide imp
 All code related to tree view v2 are marked deprecated. We will be enhancing tree view v1 moving forward.
 
 ### Rationale
-tree view v2 was introduced to have a shared component that could be used in both the plugin and published site. Since then a separate component for the published site has been introduced, and it became hard to maintain v1 and v2 at the same time.
-
-To keep the look and feel of the tree view consistent with VSCode, and to make maintenance simpler, we are reverting back to keeping v1 as default.
+- Originally, we wanted to use a single tree view for published dendron and dendron in vscode, thus introducing the webview
+- The antd tree view does not lend itself well to collapsing on mobile and small screen sizes. 
+  - After a few iterations, we ended up implementing a custom menu component to manage the "tree view" for published sites
+- At this point, tree view v2 is only used in vscode. 
+  - It is not native to vscode and is using the deprecated `dendron-next-server` method of rendering a web ui (by loading a page within an iframe instead of directly)
+- we have an action item to remove `dendron-next-server` and consolidate all views within `dendron-plugin-views`.
+  - Since treeview V2 no longer unifies publishing and the code UI, does not have native look and feel, and has some outstanding issues, we decided its best to just remove it completely.
 
 ## Deprecation of `ExtensionProvider.getWorkspaceConfig` and `IDendronExtension.getWorkspaceConfig`
 - start: 2022.03.24
