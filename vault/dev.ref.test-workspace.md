@@ -27,16 +27,6 @@ The test workspace is included with the Dendron repo and is used for manual test
 1. Launch engine server
    ```sh
    cd $DENDRON_REPO_ROOT/test-workspace && ./scripts/dev.sh
-   ```
-1. In a separate terminal, start the Next Server
-
-```sh
-cd $DENDRON_REPO_ROOT/packages/dendron-next-server && yarn dev
-```
-
-1. Connect to workspace
-   ![[pkg.plugin-core.qa.debug#launch,1:#*]]
-
 1. Run [[Change Workspace|dendron.ref.commands#change-workspace]] and change into `$DENDRON_REPO_ROOT/test-workspace`
 
 ## Cook
