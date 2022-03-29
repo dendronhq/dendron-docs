@@ -26,7 +26,7 @@ These steps should be run **after** the weekly release has gone out. It is only 
     ```sh
     RELEASE_VERSION=
     git pull
-    git checkout --track release/$RELEASION_VERSION
+    git checkout --track origin/$RELEASE_VERSION
     ```
     - eg: `RELEASE_VERSION=release/0.81.0`
 1. Update nextjs package
