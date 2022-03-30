@@ -2,7 +2,7 @@
 id: wIQ79gTbKS54BQ9O0yByD
 title: Gotchas
 desc: ''
-updated: 1647463024477
+updated: 1647483587712
 created: 1644372921976
 ---
 
@@ -26,3 +26,5 @@ await asyncLoopOneAtATime<string>(["one", "two"], (ent) => {
     return fs.ensureDir(ent);
 });
 ```
+
+For the reason why this is necessary, please see https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop.
