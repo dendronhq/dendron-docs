@@ -70,7 +70,8 @@ sequenceDiagram
     ...
    }
    ```
-9. Submit pull request
+9. If your command needs to manually clean up resources, make sure that any places where your command is constructed that it gets properly cleaned up when out of scope.  An example of this is with the `NoteLookupCommand`. The preferred way to do this is by implementing the vscode `Disposable` interface (although `NoteLookupCommand` doesn't do this yet).
+10. Submit pull request
 
 Conventions:
 
