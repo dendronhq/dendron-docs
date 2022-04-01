@@ -2,7 +2,7 @@
 id: evk47kctzy5hyer068o3gyv
 title: On First Install
 desc: ""
-updated: 1645664931708
+updated: 1647523849714
 created: 1645661814246
 ---
 
@@ -20,7 +20,7 @@ On `InstallStatus.INITIAL_INSTALL`, the following happens:
 
 - set initial install, [[../packages/plugin-core/src/_extension.ts#^194e5bw7so9g]]
 - warn on incompatible extensions, [[../packages/plugin-core/src/_extension.ts#^dlx35gstwsun]]
-- check vim keybindings, [[../packages/plugin-core/src/_extension.ts#^j7zygfkbxjnq]]
+- notify user about keybinding conflicts [[../packages/plugin-core/src/_extension.ts#^rikhd9cc0rwb]]
 - track install duration, [[../packages/plugin-core/src/_extension.ts#^e8itkyfj2rn3]]
 - set global dendron version, [[../packages/plugin-core/src/_extension.ts#^oncxlt645b5r]]
 - notify user about telemetry, [[../packages/plugin-core/src/_extension.ts#^njhii5plxmxr]]
