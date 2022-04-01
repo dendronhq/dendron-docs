@@ -2,7 +2,7 @@
 id: pMS27sHxbWeKMoPRrWEzs
 title: Best Practices
 desc: ''
-updated: 1645726754809
+updated: 1648808047202
 created: 1643200441685
 ---
 
@@ -33,33 +33,7 @@ Before submitting a pull request, ensure that you are not adding new circular de
 1. You have code changes in the [[pkg.plugin-core]] package.
 1. You add new imports to an existing file.
 
-If these conditions are met, please run through the following steps below:
-
-### Checking for Circular Dependencies in Plugin-Core
-
-1. If madge is not installed, first run `npm -g install madge`
-1. Check how many circular dependencies exist in plugin-core at the last commit from master prior to your change. To check, run
-    ```bash
-        > cd ./packages/plugin-core
-        > madge --circular --extensions ts .
-    ```
-    Make a note of how many circular dependencies exist.
-1. Checkout the git hash of your last commit that's part of your change list. Rerun the madge command.
-    1. If the number is less than or equal, put a note in your review description saying so.
-    1. If the number is greater, then change your code to eliminate the circular dependencies introduced
-
-*Action Required* - As part of the code review process, perform the following steps
-1. first check how many circular dependencies exist at the last commit from master (prior to your change).
-1. check the circular dependency again with your changes.
-    1. If the number is less than or equal, put a note in your review description saying so.
-    2. If the number is greater, then change your code to eliminate the circular dependencies introduced (see exceptions)
-1. Include the before and after results in your PR description.
-
-Exceptions to the rule:
-- Emergency Fixes
-- You're working on a change to actually try to unwind circular dependencies - sometimes, madge may under report how many circular dependencies actually exist. That is, it won't report circular dependencies in `bar` until dependencies in `foo` were fixed. Double check to make sure your code is not the one introducing the dependencies newly reported in `bar`; if not, it's ok to proceed.
-
-_Note: Once we get down to 0 circular dependencies, we can add an automated CI/CD guard that absolves the need to run these steps manually._
+A push hook has been added that checks if any new circular dependencies are being added to plugin-core. It will automatically fail the push if you've introduced any new circular dependencies. If this check fails, see the link below on identifying the new circular dependencies that have been added.
 
 ### Identifying circular dependencies introduced by a PR
 See [[Check for Circular Dependencies|dendron://dendron.docs/dev.process.code.sop.check-for-circular-dependencies]]
