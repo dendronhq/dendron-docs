@@ -15,7 +15,7 @@ sequenceDiagram
     participant historyService
     user ->> lookupCommand: user issues command
     Note left of user: 1. cmd.gatherInput()
-    rect rgb(0, 50, 0)
+    rect rgb(150, 170, 150)
       lookupCommand ->> lookupController: creates controller
       lookupCommand ->> lookupProvider: creates provider
 
