@@ -13,6 +13,24 @@ schema: '[[dendron://dendron.docs/ref.module-schema]]'
 
 - NOTE: code here is written in [[Dendron Pseudocode|dendron://dendron.docs/ref.pseudocode]]
 
+### Registering a trait
+- [[../packages/plugin-core/src/workspace.ts]]
+
+```ts
+setupTraits {
+    files := 
+    files.forEach file => {
+        newNoteTrait = new UserDefinedTraitV1
+        _traitRegistrar.registerTrait(newNoteTrait)
+    }
+}
+```
+
+- [[../packages/plugin-core/src/traits/UserDefinedTraitV1.ts]]
+```ts
+UserDefinedTraitV1
+```
+
 ### Creating a note
 - init: [[../packages/plugin-core/src/workspace.ts#^6fjseznl6au4]]
 

@@ -2,7 +2,7 @@
 id: SuyIgH44sJD5P3dRVBaVZ
 title: Dendron Plugin Views Quickstart
 desc: ""
-updated: 1644370508650
+updated: 1649002081737
 created: 1635701411866
 ---
 
@@ -12,6 +12,9 @@ To see a video walkthrough of everything, go [here](https://www.loom.com/share/f
 
 1. Finish steps from [[Dendron Plugin Quickstart|dendron://dendron.docs/pkg.plugin-core.quickstart]]
 1. Launch [[Test Workspace|dendron://dendron.docs/dev.ref.test-workspace]]
+
+## Video Walkthroughs
+- [Creating new component in Dendron Plugin Views](https://youtu.be/2opH8stcHhw)
 
 ## Steps
 
