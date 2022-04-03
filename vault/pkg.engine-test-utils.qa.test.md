@@ -23,6 +23,8 @@ All packages have tests written in `jest`. The are located under `src/__test__/{
         - __snapshots__
 ```
 
+- NOTE: as of 2022-04-02, we use `jest@26.6.0` to run tests
+
 ### Writing
 
 <!-- Writing unit test -->

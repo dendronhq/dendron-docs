@@ -8,6 +8,9 @@ schemas:
   parent: root
   namespace: true
   children:
+    - pattern: "meta"
+      children: 
+        - pattern: "changelog"
     - pattern: quickstart
       desc: "get to hello world"
     - pattern: op
