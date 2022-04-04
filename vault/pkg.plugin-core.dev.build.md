@@ -2,7 +2,7 @@
 id: mwDT040wz5nBKtctjvNrQ
 title: Build
 desc: ""
-updated: 1645202532956
+updated: 1649092611506
 created: 1635705939396
 ---
 
@@ -35,26 +35,9 @@ This is if you've already build the plugin locally and need to re-built it (you 
 The regular [[cleanup script|#cleanup]] will remove all `node_modules` across all packges.
 The fast rebuild will only remove `node_modules` from packages where it needs to be removed.
 
-1. Remove generated assets
-   ```sh
-   npx lerna run clean --parallel --scope "@dendronhq/{dendron-plugin-views,dendron-next-server,plugin-core}"
-   ```
-1. Restore package.json
-   ```sh
-   git reset --hard
-   ```
-1. Re-build assets
-   ```
-   echo "link packages..."
-   lerna bootstrap
-   echo "re-building packages..."
-   # NOTE: order matters, must run serially
-   npx lerna run build --scope @dendronhq/dendron-next-server
-   npx lerna run build --scope @dendronhq/dendron-plugin-views
-   npx lerna run build --scope @dendronhq/plugin-core
-   ```
-1. Make your changes
-1. Build again
+```sh
+$DENDRON_WORKSPACE/bootstrap/scripts/fastRebuild.sh
+```
 
 ## Cleanup
 
