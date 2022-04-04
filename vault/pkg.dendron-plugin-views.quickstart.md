@@ -37,7 +37,7 @@ When working on plugin views, there are two modes of development: browser and ID
    yarn setup
    env REACT_APP_VIEW_NAME=$VIEW_NAME yarn start
    ```
-   - NOTE: $VIEW_NAME is anything in `dendron-plugin-views/src/views/*` minus the `.tsx` extension
+   - NOTE: $VIEW_NAME is anything in `dendron-plugin-views/src/views/*` minus the `.tsx` extension. it is the name of the **Component**, not the file name
      - Dendron will dynamically `require` the module when `yarn start` is called
    - This will open up the browser at localhost:3000. When developing on the browser, Dendron will have some defaults loaded depending on what view you are using.
 1. When developing against the browser, you don't have direct access to the workspace. Instead, you'll need to use `window.postMessage` api to simulate vscode actions.

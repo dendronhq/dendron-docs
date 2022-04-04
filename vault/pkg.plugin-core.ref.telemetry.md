@@ -17,22 +17,44 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
 if isDendronWorkspace {
 	setupSegmentWithCacheFlush
 		setupSegmentClient
+	...
+	identify
+	track(InitializeWorkspace)
+}
+showWelcome
+```
+
+```ts
+showWelcome { 
+	track(Install)
 }
 ```
 
+## Common
 - [[../packages/plugin-core/src/telemetry.ts]]
 
 ```ts
 setupSegmentClient {
-	instantiateSegmentClient
-}
-
-instantiateSegmentClient {
-	status := getStatus
+	segment = SegmentClient.instance
 }
 ```
 
 [[../packages/common-server/src/analytics.ts]]
+
+```ts
+instance { 
+	new SegmentClient
+}
+```
+
+```ts
+constructor {
+	status = getStatus
+	return if @_hasOptedOut
+
+	uuidPath := readOrCreate
+}
+```
 
 ```ts
 getStatus {
@@ -43,18 +65,6 @@ getStatus {
 
 	if !config return "enabled"
 	return config.status
-}
-```
-
-```ts
-constructor {
-	status = getStatus
-	if isDisabled return;
-
-	uuidPath := readOrCreate
-
-
-
 }
 ```
 
