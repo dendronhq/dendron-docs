@@ -2,7 +2,7 @@
 id: q2xr0dnbwqgs1j7wqcsckx6
 title: Advanced Cookbook
 desc: ''
-updated: 1645741640851
+updated: 1649188112663
 created: 1645741586641
 ---
 
@@ -17,11 +17,26 @@ The recipes here shouldn't need to be used except in very rare circumstances (if
 1. [[Remove all build artifacts|dendron://dendron.docs/dev.process.code.monorepo#remove-all-build-artifacts]]
 1. Remove `yarn.lock` at the top of the monorepo
 
-```sh
-rm yarn.lock
-```
-
+   ```sh
+   rm yarn.lock
+   ```
 1. Run `yarn setup`
+1. Run tests to make sure everything is working correctly
 1. Commit the new yarn.lock file
 
 - NOTE: when you do this, you might end up updating other dependencies because of [[Semver|dendron://dendron.docs/dev.concepts#semver]]. having a `yarn.lock` means that don't update dependencies even if a new dependency is available. in these cases, be sure to conduct [[Manual Testing|dendron://dendron.docs/dev.process.qa.test#manual-testing]] when submitting the PR
+
+### Upgrading a single dependency
+
+1. [[Remove all build artifacts|dendron://dendron.docs/dev.process.code.monorepo#remove-all-build-artifacts]]
+1. Run the following command at the top of the monorepo:
+   
+   ```
+   yarn upgrade <name-of-package-to-upgrade>
+   ```
+1. Run `yarn setup`
+1. Run tests to make sure everything is working correctly
+1. Commit the updated `package.json` and lockfile
+
+- This may make minor (`*.*.X`) upgrades to other packages as well, but that
+  should be harmless.
