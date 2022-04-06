@@ -2,7 +2,7 @@
 id: O4f9yfDoO7E7gRRDeBeCh
 title: 22 Queries
 desc: ''
-updated: 1631684295665
+updated: 1649215009074
 created: 1629395624110
 ---
 
@@ -158,9 +158,11 @@ Cons:
 
 ## Notes
 
-The implementation will be internally based on
-[DataScript](https://github.com/tonsky/datascript), which will allow us to
-support very powerful queries while also simplifying the implementation.
+There are 2 options for how to build the internals of the query engine:
+- [Tau Prolog](http://tau-prolog.org/)
+- [DataScript](https://github.com/tonsky/datascript)
+
+Basing this on a powerful query engine will allow us to support very powerful queries while also simplifying the implementation.
 
 ## Discussion
 
