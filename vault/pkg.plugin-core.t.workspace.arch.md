@@ -42,6 +42,7 @@ sequenceDiagram
 * Updates only happen if note content has changed
 
 ### Editing a TextDocument
+Note: Edits without saving do not propogate to the engine. The engine reflects the state of the notes on disk so it will not change until the user explicitly saves
 ```mermaid
 sequenceDiagram
     participant Editor
