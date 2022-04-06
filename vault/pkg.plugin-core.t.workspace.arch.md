@@ -20,3 +20,39 @@ activateWatchers {
 
 }
 ```
+
+## User actions
+The following diagrams will showcase how actions in the workspace propagate to the engine
+
+### Saving a TextDocument
+```mermaid
+sequenceDiagram
+    participant Editor
+    participant vscode
+    participant WorkspaceWatcher
+    participant TextDocumentService
+    participant engine
+
+    Editor ->> vscode: User saves document
+    vscode ->>WorkspaceWatcher: TextDocumentWillSaveEvent
+    WorkspaceWatcher ->>Editor: Update `updated` timestamp*
+    vscode ->>TextDocumentService: TextDocument with updated timestamp
+    TextDocumentService ->>engine: updateNote*
+```
+* Updates only happen if note content has changed
+
+### Editing a TextDocument
+```mermaid
+sequenceDiagram
+    participant Editor
+    participant vscode
+    participant PreviewPanel*
+    participant TextDocumentService
+
+    Editor ->> vscode: User edits document
+    vscode ->>PreviewPanel*: TextDocumentChangeEvent
+    PreviewPanel* ->> TextDocumentService: Process TextDocumentChangeEvent
+    TextDocumentService ->>PreviewPanel*: NoteProp
+    PreviewPanel* ->> vscode: refresh
+```
+* If PreviewPanel is hidden, this entire sequence is a no-op
