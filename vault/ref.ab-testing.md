@@ -2,7 +2,7 @@
 id: 45ioezkq7pcyyv1bej3tcxu
 title: A/B Testing
 desc: ""
-updated: 1649315918078
+updated: 1649359733313
 created: 1649314488410
 ---
 
@@ -12,7 +12,8 @@ The A/B test name **must be unique** across all tests, and **must not change** b
 Do not change the name of any existing test.
 
 Please follow `UpperCamelCase` for test names, and `lowerCamelCase` for group
-names.
+names. Tests should be named as `ExampleTest`, and group enums should be named
+as `ExampleTestGroups`.
 
 Each test can have 2 or more groups. The group weights are arbitrary positive
 numbers, they show the relative weight compared to other groups in the group.
@@ -23,6 +24,7 @@ groups.
 
 First, add an enum and test in [[abTests.ts|../packages/plugin-core/src/abTests.ts#^xi5t1r2j51ot]].
 Then, add your A/B test to the [[CURRENT_AB_TESTS|../packages/plugin-core/src/abTests.ts#^tkqhy45hflfd]] list.
+Make sure to add a short docstring `/** */` to explain what the test is, and what each group does.
 
 To use the test and check which group this user belongs to, call the
 `getUserGroup` function of the test with the user ID. For example, see [[../packages/plugin-core/src/_extension.ts#^t6dxodie048o]].
