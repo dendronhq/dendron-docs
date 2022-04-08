@@ -31,6 +31,7 @@ schemas:
     - pattern: d
       title: data structure
       children:
+        - pattern: date
         - pattern: boolean
           template: lang.temp.boolean
         - pattern: string
