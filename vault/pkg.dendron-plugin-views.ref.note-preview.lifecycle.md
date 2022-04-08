@@ -1,7 +1,7 @@
 ---
 id: zYn03NQuLgwmvK8Dfoe0L
 title: Lifecycle
-desc: ""
+desc: ''
 updated: 1644429388848
 created: 1640632235031
 ---
@@ -51,7 +51,7 @@ setupCallbacks {
 }
 ```
 
-- [[View Startup|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#view-startup]]
+- [[render|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#render]]
 
   - goes into detail about initialization actions in the webview
   - this sends a MESSAGE_DISPATCHER_READY signal

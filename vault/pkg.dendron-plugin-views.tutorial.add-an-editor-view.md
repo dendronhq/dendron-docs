@@ -1,7 +1,7 @@
 ---
 id: 9t1MYmijXp0K8Be9zJRiz
 title: Add an Editor View
-desc: ""
+desc: ''
 updated: 1644372347926
 created: 1644371901175
 ---
@@ -13,7 +13,7 @@ This goes over how to add an [[Editor View|dendron://dendron.docs/pkg.dendron-pl
 ## Adding a new Editor View
 
 - NOTE: in the following, we show the example of adding a `HELLO_VIEW` editor view
-- details: see [[View Startup|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#view-startup]] to see explanation on how these components interact
+- details: see [[render|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#render]] to see explanation on how these components interact
 
 ### Creating the view
 

@@ -1,39 +1,99 @@
 ---
 id: lZSr7StwPU5ukltzLg4mL
 title: Plugin View Lifecycle
-desc: ""
-updated: 1644371795185
+desc: ''
+updated: 1649439078292
 created: 1636432981026
 ---
 
 ## Browser Mode - Startup
 
+The following diagram summarizes the startup of Dendron in [[Browser Mode|dendron://dendron.docs/pkg.dendron-plugin-views.concepts#browser-mode]]. It's divided into three phases:
+- compile: starting webpack dev server, creating the index.html page based on `REACT_APP_VIEW_NAME`
+- renderIndex: dynamically loading `REACT_APP_VIEW_NAME` component
+- renderDendronVsCodeApp: rendering of `REACT_APP_VIEW_NAME` component
+
+```mermaid
+stateDiagram-v2
+    [*] --> yarnStart
+    yarnStart --> compile
+    state compile {
+        [*] --> buildIndex
+        buildIndex--> start.js
+        start.js-->startWebpackWithDevServer
+        startWebpackWithDevServer-->compileSaasStyles
+        compileSaasStyles-->openBrowserToIndexPage
+        openBrowserToIndexPage --> [*]
+    }
+    compile --> render
+    state render {
+        state renderIndex {
+            [*] --> loadIndex.js
+            loadIndex.js --> requireView
+            requireView --> renderOnDOM
+            renderOnDOM --> renderWithDendronApp
+            renderWithDendronApp --> createDendronVsCodeApp
+            createDendronVsCodeApp --> [*]
+        }
+        renderIndex --> renderDendronVsCodeApp
+        state renderDendronVsCodeApp {
+            [*] --> postVSCodeMessage
+            [*] --> useVSCodeMessage
+            [*] --> renderCustomComponent
+            useVSCodeMessage --> renderCustomComponent
+        }
+
+    }
+```
+
+The following discusses each phase in more detail with pseudocode
+
+### compile
 1. User runs `yarn:start`
    This runs the following tasks:
    ```json
    "yarn build:index && node scripts/start.js"
    ```
    - NOTE: `build:index` generates the `index.html` file that is used to load the plugin. More details in [[Build Index|dendron://dendron.docs/pkg.dendron-plugin-views.ref.build-index]]
-1. Remaining steps are described in [[view startup|#view-startup]]
+1. Webpack loads
+    - [[../packages/dendron-plugin-views/scripts/start.js]]
+    ```ts
+    config = configFactory
+    createCompiler(config)
+    createDevServerConfig
 
-## IDE Mode - Startup
+    prepareProxy
 
-TODO
+    openBrowser
+    ```
+    - config: [[../packages/dendron-plugin-views/config/webpack.config.js]]
+    ```ts
+    mode: isEnvProduction ? "production" : "development"
+    entry: { 
+        
+    }
+    
+    ```
 
-## View Startup
+### render
 
-- NOTE: this uses [[Dendron Pseudocode|dendron://dendron.docs/ref.pseudocode]] to describe operations
+#### renderIndex
+1. Import index
+- src:  [[../packages/dendron-plugin-views/src/index.tsx]]
+```ts
+VIEW_NAME = process.env["REACT_APP_VIEW_NAME"] || "";
+...
+View = require(VIEW_NAME)
+```
 
+#### renderDendronVsCodeApp
 1. Import a component and wrap it with its own DOM renderer
-
-   - src/views/DendronNotePageView.tsx
-
+    - NOTE: the following uses `src/views/DendronNotePageView.tsx` as an example
    ```tsx
    import DendronNotePage from "../components/DendronNotePage";
 
    renderOnDOM(DendronNotePage);
    ```
-
 1. renderOnDOM
    - this is a helper: wraps the component with the parent `DendronApp` container and renders it using `ReactDOM`
    ```tsx
@@ -52,9 +112,8 @@ TODO
        </Provider>
    }
    ```
-
 - DendronVSCodeApp ^MXu9QPtvmOvr
-
+    - source: [[../packages/dendron-plugin-views/src/components/DendronApp.tsx]]
   ```tsx
   DendronVSCodeApp {
       ctx = "DendronVSCodeApp"
@@ -77,9 +136,8 @@ TODO
   }
   ```
 
-1. Component
-
-   - src/components/DendronNotePage.tsx
+#### renderCustomComponent
+- src/components/DendronNotePage.tsx
 
    ```tsx
    DendronNotePage {
@@ -98,7 +156,7 @@ TODO
 
 ## Change Active Editor
 
-- src/components/DendronApp.tsx
+When the active editor changes, the `useVSCodeMessage` hook in [[DendronVSCodeApp|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#^MXu9QPtvmOvr]] will update the state with note(s) that have changed
 
 ```tsx
 useVSCodeMessage(msg) {
@@ -127,6 +185,8 @@ useVSCodeMessage(msg) {
 ```
 
 ## Common
+
+Some utilities that are commonly used 
 
 ### useEngine
 
@@ -184,5 +244,4 @@ effect(state, requestId) {
     }
 
 }
-
 ```
