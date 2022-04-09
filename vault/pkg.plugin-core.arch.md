@@ -2,7 +2,7 @@
 id: d1usLHSTfJc-3_JKuYLBr
 title: Dendron Plugin Architecture
 desc: ""
-updated: 1645402159098
+updated: 1649522098625
 created: 1624552964184
 ---
 
@@ -15,10 +15,20 @@ Describes Dendron Plugin Architecture
 The Dendron Plugin is designed with a client server architecture. The client in this case is the Code Plugin.  
 The server is a local express.js server that starts in a separate process when the extension first activates.
 
+```mermaid
+sequenceDiagram
+    participant vscodePlugin
+    participant localServer
+    vscodePlugin->>localServer: methodCall: eg.lookup
+    localServer->>vscodePlugin: response: eg. Notes
+
+```
+
 The reason we went with this design:
 
 - flexibility: this allows us to extend Dendron functionality with other clients (eg. different IDE's, vim, web extensions, native applications, etc)
-  - currently, the [[pkg.dendron-cli]] is the only official client for the server at this time
+  - NOTE: the [[pkg.dendron-cli]] is the only official client for the server at this time
 - performance: we outsource computationaly expensive operations to the server running on a separate process which means that we don't block the main thread of the client during activation and regular usage
 
-![[dendron://dendron.docs/pkg.plugin-core.arch.lifecycle]]
+## Startup
+![[dendron://dendron.docs/pkg.dendron-engine.arch.lifecycle#initialization,1:#*]]
