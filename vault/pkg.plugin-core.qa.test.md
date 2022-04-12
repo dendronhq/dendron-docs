@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1648267279270
+updated: 1649865556081
 created: 1627140509315
 ---
 
@@ -75,6 +75,8 @@ The most common ones used are the following ones:
 - NOTE: up to date docs are in [[../packages/plugin-core/src/test/testUtilsV3.ts#^eq30h1lt0zat]]
 
 ### afterHook
+
+- NOTE: this is deprecated. please use an `after` block inside your test instead
 
 Run after all the tests have run
 

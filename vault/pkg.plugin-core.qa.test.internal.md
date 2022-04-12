@@ -2,7 +2,7 @@
 id: tT87jLMqkDJYjSwfDVdbG
 title: Dendron Extension Testing Internals
 desc: ""
-updated: 1646637692796
+updated: 1649378305448
 created: 1645146115173
 ---
 
@@ -15,6 +15,12 @@ Writing tests is described [[here|dendron://dendron.docs/pkg.plugin-core.qa.test
 This isn't perfect as there are still certain features we cannot test (eg. `workspace.onDid*` events - these rely watching a current workspace which is not actually constructed for testing). In these cases, we currently implement workarounds like [[Exposing private methods to tests|dendron://dendron.docs/dev.process.qa.test#exposing-private-methods-to-tests]].
 
 ## Logic
+
+### Execution
+
+describeMultiWs
+
+### Code
 
 - [[../packages/plugin-core/src/test/testUtilsV3.ts#^eq30h1lt0zat]]
 
