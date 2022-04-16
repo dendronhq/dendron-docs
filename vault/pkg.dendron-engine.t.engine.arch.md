@@ -2,7 +2,7 @@
 id: tYxnZg8ZPnS5ZhCg2V3c0
 title: Dendron Engine Architecture
 desc: ""
-updated: 1645903423362
+updated: 1649971920907
 created: 1639873227613
 ---
 
@@ -67,10 +67,19 @@ _initNotes(vault) {
   {notes, cacheUpdates} = new NoteParser(cache).parseFiles(noteFiles)
 
   notes.map n => {
+    return if n.stub 
+    return if n.body.length > DENDRON_DEFAULT_MAX_NOTE_LENGTH
+
     if has(cacheUpdates, n) {
       // update all links and anchors if cache is different [[../packages/engine-server/src/drivers/file/storev2.ts#^link-anchor]]
+
+      links = findLinks
+      cacheUpdates[n].data.links = links
+      n.links = links
+
     } else {
       // update links from cache
+      n.lnks = cacheUpdates[n].data.links
     }
 
   }
