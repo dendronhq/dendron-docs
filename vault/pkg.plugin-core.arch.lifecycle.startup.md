@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1647103033521
+updated: 1650468068262
 created: 1610160007286
 ---
 
@@ -56,6 +56,8 @@ _activate {
 
     // do this if we're in a dendron workspace
     if isDendronWorkspace {
+        activator = new WorkspaceActivator
+        activator.activate
 
         // do logic depending on if its native workspace vs code workspace
         ...
@@ -76,7 +78,7 @@ _activate {
 
         // ---
         showInitProgress { 
-            port = startServer
+            port = startServerProcess
             updateEngineAPI(port)
 
             if !webUI { 
@@ -199,7 +201,32 @@ constructor {
 }
 ```
 
-### startServer
+### activator.activate
+- [[../packages/plugin-core/src/workspace/workspaceActivater.ts]]
+
+```ts
+if (NATIVE) {
+    activateNativeWorkspace
+} else { 
+    activateCodeWorkspace
+}
+```
+
+```ts
+activateCodeWorkspace { 
+    new DendronCodeWorkspace
+}
+```
+
+- [[../packages/plugin-core/src/workspace/baseWorkspace.ts]]
+```ts
+class DendronCodeWorkspace extends DendronBaseWorkspace { 
+    constructor { 
+    }
+}
+```
+
+### startServerProcess
 
 - file: src/\_extension.ts:
 - related: [[launch|pkg.dendron-api-server.internal#launch]]
@@ -213,15 +240,18 @@ startServer {
 }
 ```
 
-### updateEngine
+### updateEngineAPI
 
 - [[workspace.vaults|pkg.plugin-core.internal#workspacevaults]]
 
 - src/utils.ts
 
-```
+```ts
 WSUtils.updateEngineAPI {
-    EngineAPIService.create
+    EngineAPIService.updateEngineAPI(
+        vaults,
+        wsRoot
+    )
 }
 ```
 

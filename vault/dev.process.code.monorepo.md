@@ -2,7 +2,7 @@
 id: faMqZ89hDHol2ctptbJFH
 title: Monorepo
 desc: ""
-updated: 1645741682908
+updated: 1650329091749
 created: 1642720956727
 ---
 
@@ -27,11 +27,11 @@ These are common operations that you might need to do during development
 ### Install All dependencies
 
 ```bash
-# install package root dependencies
+echo "install workspace dependencies..."
 yarn
-
-# this should install all dependencies
+echo "install package dependencies..."
 yarn setup
+echo "done"
 ```
 
 ### Watching all dependencies

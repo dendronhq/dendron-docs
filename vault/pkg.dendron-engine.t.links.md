@@ -2,7 +2,7 @@
 id: xtXm6eaBdda8vc6C1k49u
 title: Links
 desc: ""
-updated: 1649018534588
+updated: 1650072092463
 created: 1639874274258
 ---
 
@@ -31,7 +31,7 @@ created: 1639874274258
 
 ## Wikilinks
 
-#todo
+[[Wikilinks|dendron://dendron.docs/pkg.dendron-engine.t.links.wikilinks]]
 
 
 ## Utilities
