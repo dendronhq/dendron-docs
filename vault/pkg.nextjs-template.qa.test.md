@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1646076800355
+updated: 1650126472577
 created: 1638063942917
 ---
 
@@ -67,15 +67,13 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
 
     ```sh
     git checkout --track origin/dev
-    git checkout main
     ```
 
 #### Steps
 1. Commit changes to the dev branch in `nextjs-template`
     ```sh
-    cd packages/nextjs-template
     git checkout dev
-    git merge main
+    git merge main -X theirs
     git push
     ```
     - NOTE: if git push fails, you can `git push -f`. the `dev` branch is only used for testing

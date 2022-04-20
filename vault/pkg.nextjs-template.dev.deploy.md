@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1646757964554
+updated: 1650125294937
 created: 1640280816708
 ---
 
@@ -14,7 +14,8 @@ Make sure you have `nextjs-template` cloned locally
 ```sh
 cd /tmp
 git clone git@github.com:dendronhq/nextjs-template.git
-mv nextjs-template/.git {WORKSPACE_ROOT}/packages/nextjs-template
+cd {WORKSPACE_ROOT}/packages/nextjs-template
+mv /tmp/nextjs-template/.git .
 ```
 
 ## Steps
