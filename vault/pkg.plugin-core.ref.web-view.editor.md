@@ -2,7 +2,7 @@
 id: tYCf6nhm7joy1chpSCtXj
 title: Editor View - Web View Implementation
 desc: ""
-updated: 1644519311111
+updated: 1650561913658
 created: 1638232297416
 ---
 
@@ -16,16 +16,24 @@ This describes the [[Web View Implementation|dendron://dendron.docs/pkg.plugin-c
 
 ### Initialize a View
 
+- example: [[../packages/plugin-core/src/components/views/PreviewPanel.ts]]
+
 ```ts
-// key of the view
-VIEW_KEY :=
-const { bundleName: name } = getWebEditorViewEntry(DendronEditorViewKey[KEY]);
-const webViewAssets = WebViewUtils.getJsAndCss(name);
+class PreviewPanel {
+
+    show {
+        VIEW_KEY := "Preview"
+        const { bundleName: name } = getWebEditorViewEntry(DendronEditorViewKey[KEY]);
+        const webViewAssets = WebViewUtils.getJsAndCss(name);
+        createWebviewPanel(
+            localResourceRoots: WebViewUtils.getLocalResourceRoots
+        )
+    }
+}
 ```
 
-### Build HTML Content
-
-#todo
+- related:
+  - [[getLocalResourceRoots|dendron://dendron.docs/pkg.plugin-core.ref.web-view#getlocalresourceroots]]
 
 ### Copying
 

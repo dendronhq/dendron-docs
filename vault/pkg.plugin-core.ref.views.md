@@ -2,7 +2,7 @@
 id: bxF3WklJUyFBPmAqhNvlZ
 title: Views
 desc: ""
-updated: 1640629649935
+updated: 1650560363386
 created: 1635542102371
 ---
 
@@ -37,6 +37,8 @@ More details in [[Editor|dendron://dendron.docs/pkg.plugin-core.ref.web-view.edi
 A native view is a view that is native to the VSCode.
 
 ## Lifecycle
+
+A panel is a webview in the below diagram
 
 ```mermaid
 stateDiagram-v2
