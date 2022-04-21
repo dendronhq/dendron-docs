@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ""
-updated: 1646637633638
+updated: 1650494603063
 created: 1632347495097
 ---
 
@@ -44,6 +44,10 @@ When setting up a mock workspace, Dendron provides multiple pre-configured notes
 Low level presets (single note) can be found in [[Note Presets|dendron://dendron.docs/pkg.common-test-utils.ref.note-presets]]
 
 Higher level presets (multiple notes can be found in [[Note Collection Presets|dendron://dendron.docs/pkg.engine-test-utils.ref.note-collection-presets]]
+
+## Custom Notes
+
+If you need to create ad hoc notes, you can use [[createNote|dendron://dendron.docs/pkg.common-test-utils.ref.note-test-utils#createnote]] function.
 
 ## Checklist
 

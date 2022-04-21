@@ -1,15 +1,36 @@
 ---
 id: spk4qv16x830d08cb2p63yr
 title: Note Presets
-desc: ''
-updated: 1648918457309
+desc: ""
+updated: 1650494150470
 created: 1648918457309
-schema: '[[dendron://dendron.docs/ref.module-schema]]'
+schema: "[[dendron://dendron.docs/ref.module-schema]]"
 ---
 
 ## Summary
 
-- [[../packages/common-test-utils/src/presets/notes.ts]]c
+- [[../packages/common-test-utils/src/presets/notes.ts]]
+
+### NOTE_SIMPLE
+
+```ts
+CreateNoteFactory({ fname: "foo", body: "foo body" });
+```
+
+### NOTE_SIMPLE_CHILD
+
+```ts
+NOTE_SIMPLE_CHILD: CreateNoteFactory({
+	fname: "foo.ch1",
+	body: "foo.ch1 body",
+}),
+```
+
+### NOTE_SIMPLE_OTHER
+
+```
+CreateNoteFactory({ fname: "bar", body: "bar body" })
+```
 
 ### NOTE_WITH_TARGET
 
