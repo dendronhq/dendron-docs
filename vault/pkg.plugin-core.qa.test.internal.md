@@ -2,7 +2,7 @@
 id: tT87jLMqkDJYjSwfDVdbG
 title: Dendron Extension Testing Internals
 desc: ""
-updated: 1649378305448
+updated: 1651697489269
 created: 1645146115173
 ---
 
@@ -42,8 +42,11 @@ describeMultiWS(opts, fn) {
 	}
 
 }
+```
 
-// [[../packages/plugin-core/src/test/testUtilsV3.ts#^bq7n7azzkpj2]]
+- [[../packages/plugin-core/src/test/testUtilsV3.ts#^bq7n7azzkpj2]]
+
+```ts
 setupLegacyWorkspaceMulti(ctx, workspaceType, preSetupHook, modConfigCb, postSetupHook) {
 	setupWS
 	new StateService(ctx)

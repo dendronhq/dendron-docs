@@ -77,3 +77,15 @@ NOTE_WITH_NOTE_REF_SIMPLE_TARGET: CreateNoteFactory({
 	body: ["# Header ", "body text"].join("\n"),
 }),
 ```
+
+### NOTE_WITH_FM_TAG
+
+```ts
+NOTE_WITH_FM_TAG: CreateNoteFactory({
+	fname: "fm-tag",
+	props: {
+		tags: "foo",
+	},
+	body: "",
+}),
+```
