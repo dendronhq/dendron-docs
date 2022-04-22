@@ -2,7 +2,7 @@
 id: iq62hX68VeUU0z0FyYmWf
 title: Dendron Docs in Workspace
 desc: ''
-updated: 1640026015188
+updated: 1650659651242
 created: 1639513795145
 ---
 
@@ -15,6 +15,12 @@ You can install Dendron in the same VSCode as the one you are developing the
 extension in, you will have access to the documentation as you code.
 If you see any links to the documentation inside the code like `// See more [[here]]`,
 you can use "Dendron: Goto Note" to navigate to that note and see the documentation.
+
+## Looking up docs
+
+You can use `Lookup` when inside of the main dendron workspace to browse anything in [[Dendron Developer Docs|dendron://dendron.docs/home]] or the [[Dendron User Docs|dendron://dendron.dendron-site/dendron]]
+
+- TIP: if you use the command palette, you can navigate to [[../docs.code-search]] (or use ctrl+enter) to search through the docs using a search editor. See video [here](https://www.loom.com/share/f53a26462f514cc29a89961a1584cc99?from_recorder=1&focus_title=1). NOTE: if you do this, do not save the changes as the search editor writes all changes to disk. Simply discard the changes when done
 
 ## Where to document what?
 
