@@ -2,59 +2,17 @@
 id: zYn03NQuLgwmvK8Dfoe0L
 title: Lifecycle
 desc: ''
-updated: 1644429388848
+updated: 1650647889116
 created: 1640632235031
 ---
 
 ## Initialization
+- See [[Init View|dendron://dendron.docs/pkg.plugin-core.ref.web-view.editor.init-view]]
 
-- [[extension|../packages/plugin-core/src/_extension.ts#L1051]]
 
-We register the ShowPreview command and pass in a preview panel factory to hold the vscode panel
-
-```ts
-vscode.registerCommand(
-    ShowPreviewCommand.new(PreviewPanelFactory.create(workspace));
-)
-```
-
-- [[PreviewFactory|../packages/plugin-core/src/components/views/PreviewViewFactory.ts]]
-
-Panel is created. Handles messages from the webview and will update the editor on certain preview events
-
-- [[../packages/plugin-core/src/components/views/PreviewViewFactory.ts]]
-
-```ts
-create {
-    new PreviewPanel
-}
-
-show {
-    @_panel = createWebviewPanel
-
-    ...
-    setupCallbacks
-}
-
-setupCallbacks {
-    // handle messages from the webview
-    _panel.webview.onDidReceiveMessag(msg => {
-        switch(msg.type)
-            case MESSAGE_DISPATCHER_READY {
-                ...
-            }
-            case ON_CLICK {
-                ...
-            }
-            ...
-    })
-}
-```
-
-- [[render|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#render]]
-
-  - goes into detail about initialization actions in the webview
-  - this sends a MESSAGE_DISPATCHER_READY signal
+## Receiving Messages
+- goes into detail about initialization actions in the webview
+- this sends a MESSAGE_DISPATCHER_READY signal
 
 - [[PreviewFactory|../packages/plugin-core/src/components/views/PreviewViewFactory.ts]]
   - this tells the panel to send refresh message to the webview

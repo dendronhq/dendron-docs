@@ -1,8 +1,8 @@
 ---
 id: 3mlatcS5gb9FCyKGHyBzR
-title: Home
+title: Dendron Developer Docs
 desc: ''
-updated: 1637603141588
+updated: 1650659288709
 created: 1637603013749
 ---
 

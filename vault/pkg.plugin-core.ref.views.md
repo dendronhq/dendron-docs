@@ -2,7 +2,7 @@
 id: bxF3WklJUyFBPmAqhNvlZ
 title: Views
 desc: ""
-updated: 1650560363386
+updated: 1650647418674
 created: 1635542102371
 ---
 
@@ -38,6 +38,7 @@ A native view is a view that is native to the VSCode.
 
 ## Lifecycle
 
+### Revealing a webview
 A panel is a webview in the below diagram
 
 ```mermaid
