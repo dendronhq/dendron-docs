@@ -23,7 +23,7 @@ This goes over the end to end lifecycle of handling issues in Dendron - from the
 Managing new tasks and issues
 
 - [[Github Issues|dendron://dendron.docs/dev.process.issues]]
-- [[Internal Issues|dendron://private/area.team.sop#issues]]
+- [[Internal Issues|dendron://dendron.handbook/area.team.sop#issues]]
 
 ## Execution
 

@@ -2,9 +2,13 @@
 id: lZSr7StwPU5ukltzLg4mL
 title: Plugin View Lifecycle
 desc: ''
-updated: 1649439078292
+updated: 1650647098140
 created: 1636432981026
 ---
+
+## IDE Mode 
+
+![[Ide Mode|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle.ide-mode]]
 
 ## Browser Mode - Startup
 
