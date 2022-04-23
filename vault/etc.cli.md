@@ -2,7 +2,7 @@
 id: Y0cZsmfUdytwajRGeylMZ
 title: CLI
 desc: ''
-updated: 1637524450987
+updated: 1650643094887
 created: 1631473249667
 ---
 
@@ -50,11 +50,13 @@ Update json schema for `dendron.yml`
 ### build
 
 Build vsix for a given upgradeType [^upgrade]
+Runs the build from end to run
 
 Options:
 - --fast: when building fast mode, the following is skipped:
   - initial type checking
   - restoring `package.json` and `plugin-core` to original state
+  - do not rebuild assets when running [[sync_assets|dendron://dendron.docs/etc.cli#sync_assets]]
   - do not upload source map to sentry
 
 ### bump_version
@@ -72,7 +74,7 @@ dendron dev publish  --publishEndpoint remote
 
 ### sync_assets
 
-Re-built static HTML used in plugin
+Re-built static HTML used in plugin and sync them to plugin
 
 ### prep_plugin
 

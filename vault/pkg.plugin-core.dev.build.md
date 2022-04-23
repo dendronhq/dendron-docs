@@ -2,7 +2,7 @@
 id: mwDT040wz5nBKtctjvNrQ
 title: Build
 desc: ""
-updated: 1649092611506
+updated: 1650642925992
 created: 1635705939396
 ---
 
@@ -21,6 +21,8 @@ You can pass environmental variables to set the following options while building
 - SKIP_SENTRY: don't upload source maps to sentry
 - USE_IN_MEMORY_REGISTRY: this uses local in memory npm registry to do builds
 - FAST: instead of building everything from scratch, assumes that all sub packages are already built
+    - skip type check 
+    - don't restore package.json
 - LOG_LEVEL: set to `debug|info|error`, controls verbosity of log output
 
 ### Steps
