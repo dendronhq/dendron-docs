@@ -2,7 +2,7 @@
 id: 3489b652-cd0e-4ac8-a734-08094dc043eb
 title: Development
 desc: ''
-updated: 1639595902837
+updated: 1650934108796
 created: 1598645869692
 ---
 
@@ -13,6 +13,8 @@ This is a guide of how to develop code for Dendron.
 You can follow the setup instructions [[here|dendron://dendron.docs/dev.quickstart]] to get started.
 
 To understand how to navigate this hiearchy, see the [[schema|dendron://dendron.docs/dev.schema]]
+
+To understand Dendron's architecture, see [[dev.arch]]
 
 ## Lookup
 

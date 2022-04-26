@@ -1,8 +1,8 @@
 ---
 id: ENeBSPWAtTlQclXYWNm6c
-title: Architecture
+title: Dendron Architecture
 desc: ''
-updated: 1645402222627
+updated: 1650934113404
 created: 1629988601634
 nav_order: 3.1
 ---
