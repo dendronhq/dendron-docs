@@ -2,7 +2,7 @@
 id: 446723ba-c310-4302-a651-df14ce6e002b
 title: Lifecycle
 desc: ""
-updated: 1649522047303
+updated: 1651140415559
 created: 1620614023632
 ---
 
@@ -20,7 +20,7 @@ sequenceDiagram
     participant fileSystem
     participant noteParser
 
-    rect 
+    rect rgb(150, 170, 150)
     vscodePlugin->>EngineAPIService: creates
     EngineAPIService->>apiServer: initialize
     note right of vscodePlugin: plugin 
@@ -28,7 +28,7 @@ sequenceDiagram
 
     apiServer->>engine: initialize
 
-    rect 
+    rect rgb(150, 170, 150)
     note right of engine: local server
     engine->>store: initialize
     store->>fileSystem: fetchAllnotes
@@ -40,7 +40,7 @@ sequenceDiagram
 
     engine->>apiServer: return resp
 
-    rect 
+    rect rgb(150, 170, 150)
     note right of vscodePlugin: plugin 
     apiServer->>EngineAPIService: return resp
     EngineAPIService->>vscodePlugin: return resp
