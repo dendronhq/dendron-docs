@@ -77,7 +77,7 @@ This goes over how to add an [[Editor View|dendron://dendron.docs/pkg.dendron-pl
 ## Create a command to bring up the view
 
 1. Create a new command to bring up the editor view
-   - see [[pkg.plugin-core.dev.cook#add-a-new-command]]
+   - see [[pkg.plugin-core.dev.cook|pkg.plugin-core.dev.cook.add-new-command#add-a-new-command]]
 1. Update command with webview logic
 
    - the following should go into `execute`

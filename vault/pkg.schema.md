@@ -91,7 +91,7 @@ A reference is a minor component that should hang as a leaf and should be self c
 
 ### How do I create a new {X} in {Y}?
 - schema: `{module}.dev.cook`
-- eg: [[Add a new Command|dendron://dendron.docs/pkg.plugin-core.dev.cook#add-a-new-command]]
+- eg: [[Add a new Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command#add-a-new-command]]
 
 ### Architecture
 
