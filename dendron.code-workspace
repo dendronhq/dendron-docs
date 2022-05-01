@@ -1,7 +1,8 @@
 {
     "folders": [
         {
-            "path": "vault"
+            "path": "notes",
+            "names": "dendron.dendron-docs"
         },
         {
             "path": "."
