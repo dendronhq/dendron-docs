@@ -2,7 +2,7 @@
 id: 2b87ceb3-2a90-4dee-ab8e-980172ecaef1
 title: Errors
 desc: ''
-updated: 1642723784716
+updated: 1651775566223
 created: 1620879891784
 ---
 
@@ -12,11 +12,14 @@ This page describes how we handle errors in Dendron.
 
 Any error that is throw by Dendron should extend from [`DendronError`](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/error.ts). 
 
-## Details
-- If a function can return multiple errors, use `DendronCompositeError` to wrap up multiple errors
+### Details
+- If a function can return multiple errors, use `DendronCompositeError` to wrap up multiple errors. If you need to look into the errors inside a `DendronCompositeError`, use [errorsList()](https://github.com/dendronhq/dendron/blob/26b3a00b1339cdbb58da0e5d063b87d66a4d06e3/packages/common-all/src/error.ts#L217) to grab the errors inside the composite error.
 - When returning errors from a server, use `error2PlainObject` to extract the common properties
 - When logging errors, use `stringifyError` (regular `stringify` will [omit fields](https://stackoverflow.com/questions/18391212/is-it-not-possible-to-stringify-an-error-using-json-stringify))
-- If applicable, use 
+- If an error is non-fatal, meaning the function was able to complete despite the error (or that the error is a warning), then set the error severity to `ERROR_SEVERITY.MINOR`. Not all but some code like engine initialization will recognize this and consider the operation successful.
+
+If you need additional well-typed information with an error, or you're trying to handle a specific type of error, you can do so by using extending the `DendronError` class.
+For an example see [errorTypes.ts](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/types/errorTypes.ts) and [ReloadIndex](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/commands/ReloadIndex.ts#L242).
 
 ## RespV3
 
