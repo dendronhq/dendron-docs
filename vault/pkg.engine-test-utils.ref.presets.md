@@ -2,7 +2,7 @@
 id: ro5e6rzg20xskmlfzq92zb7
 title: Presets
 desc: ""
-updated: 1650494345901
+updated: 1651855190958
 created: 1648918531529
 schema: "[[dendron://dendron.docs/ref.module-schema]]"
 ---
@@ -12,6 +12,11 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
 Higher level presets, derived from [[Note Presets|dendron://dendron.docs/pkg.common-test-utils.ref.note-presets]]
 
 - location: [[../packages/engine-test-utils/src/presets/engine-server/utils.ts]]
+
+There are several different types of presets:
+- note presets: these are presets that create a single note
+- notes presets: these are presets that initialize notes across multiple vaults
+- vault presets: these are presets that configure notes
 
 ## Quickstart
 
@@ -32,7 +37,11 @@ const fooNote = engine.notes["foo"];
 
 It can be hard to navigate to the correct file using vscode. The preset functions are located in [[../packages/engine-test-utils/src/presets/engine-server/utils.ts]] and the low level presets are in [[../packages/common-test-utils/src/presets/notes.ts]]
 
-## Reference
+## Note Preset
+
+#todo
+
+## Notes Preset
 
 ### setupBasic
 
@@ -44,3 +53,17 @@ It can be hard to navigate to the correct file using vscode. The preset function
 
 - [[NOTE_WITH_TARGET|dendron://dendron.docs/pkg.common-test-utils.ref.note-presets#note_with_target]]
 - [[NOTE_WITH_ANCHOR_LINK|dendron://dendron.docs/pkg.common-test-utils.ref.note-presets#note_with_anchor_link]]
+
+## Vault Preset
+
+- location: [[../packages/engine-test-utils/src/presets/vaults.ts]]
+
+```ts
+  MULTI_VAULT_WITH_THREE_VAULTS: () => {
+    return [
+      { fsPath: "vault1" },
+      { fsPath: "vault2" },
+      { fsPath: "vault3", name: "vaultThree" },
+    ] as DVault[];
+  },
+```
