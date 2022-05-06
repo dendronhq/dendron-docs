@@ -2,7 +2,7 @@
 id: 7MLCpIb0ITppTZ3qwMi1A
 title: Lifecycle
 desc: ""
-updated: 1647562700288
+updated: 1651777504847
 created: 1636642644504
 ---
 
@@ -112,45 +112,4 @@ The compile phase generates the static HTML that is deployed to the server. This
 The bulk of the work is done by inside [the `[id]` page](https://github.com/dendronhq/nextjs-template/blob/main/pages/notes/%5Bid%5D.tsx#L1:L1) by making use of the [data fetching](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation) capabilities of NextJS that lets us compile all pages ahead of time during export.
 
 ## Load
-
-The load phase is what happens inside the webapp when you first load the page.
-
-State and UI is handled by React and Redux.
-
-### Pseudocode
-
-- [[../packages/nextjs-template/pages/_app.tsx]]
-
-- the app uses metadata files generated in the build step. You can see whats in these files [[here|dendron://dendron.dendron-site/dendron.topic.pod.builtin.nextjs#references]]
-
-- NOTE: this is **VERY UNOPTIMIZED** at the present (we load up all notes and put them into redux - the only saving grace is that this is not blocking - the initial payload for each individual site is compiled and will load when te site does)
-
-```tsx
-DendronApp {
-
-  useEffect {
-    log "fetchNotes:pre"
-    data = fetchNotes { fetch("/data/notes.json") }
-    log "fetchNotes:got-data"
-    setNoteData data
-    fetchConfig { fetch("/data/dendron.json") }
-  }
-
-  // render note
-  ...
-}
-```
-
-### Note
-
-- components/DendronNotePage.tsx
-
-```tsx
-Note {
-  id = getActiveNoteId
-
-  // render note based on id
-}
-```
-
-##
+![[Load Page|dendron://dendron.docs/pkg.nextjs-template.arch.lifecycle.load-page]]
