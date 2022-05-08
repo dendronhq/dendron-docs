@@ -2,7 +2,7 @@
 id: 2b87ceb3-2a90-4dee-ab8e-980172ecaef1
 title: Errors
 desc: ''
-updated: 1651775566223
+updated: 1652029666533
 created: 1620879891784
 ---
 
@@ -129,3 +129,6 @@ export enum ERROR_SEVERITY {
 
 ## Changelog
 - https://github.com/dendronhq/dendron/pull/1708/files
+
+## Past Discussions
+- [[Error Handling|dendron://private/user.kevin.journal.2022.04.26.m.error-handling]]
