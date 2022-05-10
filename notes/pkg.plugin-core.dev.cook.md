@@ -1,8 +1,13 @@
 ---
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
+<<<<<<< HEAD:notes/pkg.plugin-core.dev.cook.md
 desc: ''
 updated: 1652286680519
+=======
+desc: ""
+updated: 1651425993960
+>>>>>>> 1ca159d (updates):vault/pkg.plugin-core.dev.cook.md
 created: 1634590309804
 ---
 
@@ -25,6 +30,7 @@ See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-conf
 Register the view or command with `when: DendronContext.DEV_MODE`
 
 ## Commands
+
 - [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
 
 ### Triggering commands in webview
@@ -48,8 +54,6 @@ When adding these kinds of commands, make sure to set the proper enablement clau
 To illustrate, `CopyToClipboardCommand` is only used for simulating a button click within a rendered markdown preview, and the `when` clause is set to `false`.
 
 Note that setting `when` clauses do not stop you from executing this command through `vscode.commands.executeCommand` or through a command URI. It just hides them from user facing UIs.
-
-
 
 ### Executing a command programatically
 
@@ -82,6 +86,7 @@ VSCodeUtils.setContext(
 ### Adding a new doctor command
 
 When adding a doctor command, do the following if the workspace needs to be reloaded:
+
 - add action to `RELOAD_BEFORE_ACTIONS` if workspace needs to be reloaded before running the action
 - add action to `RELOAD_AFTER_ACTIONS` if workspace needs to be reloaded after the action has run
 
