@@ -11,6 +11,7 @@ schemas:
     - pattern: "meta"
       children: 
         - pattern: "changelog"
+        - pattern: "config"
     - pattern: quickstart
       desc: "get to hello world"
     - pattern: op
