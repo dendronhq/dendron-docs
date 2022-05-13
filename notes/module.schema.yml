@@ -4,6 +4,7 @@ schemas:
   parent: root
   namespace: true
   children:
+    - extend
     - quickstart
     - concepts
     - architecture
@@ -22,6 +23,9 @@ schemas:
     - trouble
 - id: trouble
   title: troubleshooting
+- id: extend
+  desc: |
+    Extending the module
 - id: ref
   template: templates.module.ref
   namespace: true
