@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1650126472577
+updated: 1652805002037
 created: 1638063942917
 ---
 
@@ -59,8 +59,25 @@ Same instructions as above. Change into your own workspace instead of `$DENDRON_
 To test nextjs-template with the contents of dendron, push to the `dev` branch of nextjs-template. This is automatically consumed by the
 [[Dev Wiki Endpoint|dendron://dendron.docs/ref.dev-wiki-endpoint]]. 
 
+### Testing locally using dev template
+1. Checkout [[Publish Gh Action|dendron://dendron.handbook/ext.github.repo.publish-gh-action]]
+1. Do the following
 
-### Testing in github actions pipeline
+```sh
+# upgrade cli
+npm install @dendronhq/dendron-cli@latest
+
+# change to dev branch
+npx dendron publish init
+git reset --hard
+git checkout --track origin/dev
+yarn
+
+# do edit
+dendron publish dev
+```
+
+### Testing in github actions using dev template
 
 #### Prerequisites
 1. Have `origin/dev` checked out
@@ -77,21 +94,26 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
     git push
     ```
     - NOTE: if git push fails, you can `git push -f`. the `dev` branch is only used for testing
-1. Checkout https://github.com/dendronhq/template.publish.github-action-dev
+1. Checkout [[Publish Gh Action|dendron://dendron.handbook/ext.github.repo.publish-gh-action]]
     ```
     git clone https://github.com/dendronhq/template.publish.github-action-dev.git
     ```
-1. Make an update to `vault/root.md`
+1. Make an update to `vault/root.md`, updating `version`, `date` and `hash` (git commit) values 
+    ```md
+    Last updated: 
+    - version: v0.95
+    - date: 2022-05-17
+    - hash: f2411b5
     ```
-    Last updated:
-        version: {current version or commit hash}
-    ```
+1. If there is new functionality, add it to the vault so that we can test the functionality on the published page
 1. Push
     ```
     git push
     ```
-1. Verify [action](https://github.com/dendronhq/template.publish.github-action-dev/actions) is successful
-1. Verify page is live -> https://dendronhq.github.io/template.publish.github-action-dev/
+1. Manually run the following actions:
+    - [update packages](https://github.com/dendronhq/template.publish.github-action-dev/actions/workflows/update-deps.yml)
+    - [build dendron site](https://github.com/dendronhq/template.publish.github-action-dev/actions/workflows/publish.yml)
+1. Verify page is live and that the changes show up -> https://dendronhq.github.io/template.publish.github-action-dev/
 1. Cleanup
     - run the following in `nextjs-template`
     ```
