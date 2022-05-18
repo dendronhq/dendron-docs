@@ -1,13 +1,8 @@
 ---
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
-<<<<<<< HEAD:notes/pkg.plugin-core.dev.cook.md
 desc: ''
-updated: 1652286680519
-=======
-desc: ""
-updated: 1651425993960
->>>>>>> 1ca159d (updates):vault/pkg.plugin-core.dev.cook.md
+updated: 1652893368592
 created: 1634590309804
 ---
 
