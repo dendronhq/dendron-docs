@@ -2,11 +2,11 @@
 id: 33ejvcmggvd5qhk9gxazqfn
 title: Changelog
 desc: ''
-updated: 1652841409245
+updated: 1652841743855
 created: 1649454903326
 ---
 
-### 2022-05-17 - upgrade jest and 
+### 2022-05-17 - upgrade jest 
 - pr: https://github.com/dendronhq/dendron/pull/2918
 - author: @kevin
 
