@@ -2,7 +2,7 @@
 id: FfyL5dSzFwX1iseI56oYy
 title: Test
 desc: ""
-updated: 1644617906841
+updated: 1652835193841
 created: 1636128639000
 ---
 
@@ -95,26 +95,17 @@ If your test cases involve creating notes that cannot be done in the hooks, use 
 
 ### Executing
 
-<!-- Running unit test -->
-
 #### Run All Tests
-
-- Inside VSCode
-
-  > Run Task: Test (bootstrap)
 
 - Using CLI
 
 ```bash
-dendron/bootstrap/scripts/testAll.sh
+cd $MONOREPO_ROOT
+yarn ci:test:cli
 ```
 
 #### Run a Single Test
 
 1. Open the `.spec.ts` file you want to test in VSCode
 2. Use command prompt and run `> Tasks: Run tasks`
-3. Run the following task `> npm:test:watch engine-test-utils`
-
-#### Run a Single Test using CLI
-
-`./node_modules/.bin/jest $REPO_ROOT/packages/engine-test-utils/src/__tests__/common-all/dnode.spec.ts`
+3. Run the following task `> test:watch root`
