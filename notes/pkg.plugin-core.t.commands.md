@@ -2,7 +2,7 @@
 id: iplO7IwCeT6qN6DxgTmP5
 title: Commands
 desc: ""
-updated: 1639595505832
+updated: 1653517594067
 created: 1630020205246
 ---
 
@@ -14,7 +14,32 @@ Dendron Plugin Command Execution
 
 ### Initialization
 
-#todo
+```ts
+run(args) {
+	sanityCheckResp = @sanityCheck
+	if sanityCheckResp {
+		// throw error
+	}
+
+	inputs = gatherInputs(args)
+	if !inputs return
+
+	opts = @enrichInputs(inputs)
+	if !opts return
+
+	@execute(merge(opts, args))
+	@showResponse(resp)
+}
+```
+
+### On Error
+
+```ts
+catch(error) {
+	// this prints to stdout
+	Logger.error(error)
+}
+```
 
 ## Exceptions
 
