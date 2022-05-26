@@ -2,7 +2,7 @@
 id: 1jIkH5R6W3pM8IYR2gOji
 title: Cookbook
 desc: ""
-updated: 1651082957059
+updated: 1653529037117
 created: 1634737110155
 ---
 
@@ -87,7 +87,6 @@ In VSCode, you can use the "Goto symbol in workspace" command and type the funct
 <!-- This should be run whenever the config is updated -->
 
 1. Update the test
-   - Update the failing test in `Extension.test.ts`
-   - Update the snapshot by running `yarn run test:updateSnapshot`
+   - Update the snapshot by running `yarn run test:updateSnapshot` (we have snapshots of given default configuration )
 1. Update the json schema
    - Run `yarn gen:data` at the root of the monorepo before submitting a PR
