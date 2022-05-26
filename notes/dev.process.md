@@ -41,8 +41,7 @@ Writing code
 - Helpful
   - [[Utilities|dendron://dendron.docs/dev.process.code.utilities]]: Where utilities are stored
   - [[dendron://dendron.docs/dev.process.code.gotchas]]: Gremlins that can be hard to debug
-- Cookbook: commonly done operations
-  - [[Updates to dendron.yml|dendron://dendron.docs/pkg.common-all.dev.cook.add-new-config]]
+  - [[Cookbook|dendron://dendron.docs/dev.process.code.cook]]: Howto perform common operations
 
 ### Instrumentation
 
