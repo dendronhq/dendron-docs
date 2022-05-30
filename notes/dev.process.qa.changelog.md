@@ -2,9 +2,13 @@
 id: 33ejvcmggvd5qhk9gxazqfn
 title: Changelog
 desc: ''
-updated: 1652841743855
+updated: 1653950049333
 created: 1649454903326
 ---
+
+### 2022-05-30 - snapshot tests update
+
+To update snapshot, run `yarn test:cli:update-snapshots` from the WORKSPACE_ROOT
 
 ### 2022-05-17 - upgrade jest 
 - pr: https://github.com/dendronhq/dendron/pull/2918
