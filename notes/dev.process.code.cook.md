@@ -2,7 +2,7 @@
 id: jpuojtly83y7ehtjl9d4yrm
 title: Cook
 desc: ''
-updated: 1653630364064
+updated: 1653950396262
 created: 1653605798042
 ---
 
@@ -12,6 +12,8 @@ created: 1653605798042
 ### Adding a new command
 - [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
 
-
 ### Getting the file system path for a vault, note, or schema
 - [[Vault Path|dendron://dendron.docs/pkg.common-all.dev.cook.vault-path]]
+
+### Deprecating an existing command
+- [[Deprecate Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.deprecate-command]]
