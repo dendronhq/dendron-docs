@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1650125294937
+updated: 1654014651730
 created: 1640280816708
 ---
 
@@ -22,6 +22,7 @@ mv /tmp/nextjs-template/.git .
 
 These steps should be run **after** the weekly release has gone out. It is only needed to run these steps if we have changes to the `nextjs-template`
 
+### Deploy to dev branch
 1. Make sure your current workspace is clean and stash changes otherwise
 1. Get the release version (NOTE: this should be the release AFTER publishing the release. the `lerna.json` should be updated to the latest minor version at this point)
     ```sh
@@ -39,6 +40,9 @@ These steps should be run **after** the weekly release has gone out. It is only 
     echo "sync nextjs-template..."
     VERSION=$(cat lerna.json | jq -r ".version")
     pushd packages/nextjs-template/
+
+    echo "switch to dev branch..."
+    git checkout -b --track origin/dev
     
     echo "backup node_modules..."
     mv node_modules /tmp
@@ -50,8 +54,12 @@ These steps should be run **after** the weekly release has gone out. It is only 
     git add .
     git commit -m "chore(release): sync nextjs-template with dendron $VERSION"
     ```
+
+### Verify dev branch
 1. Verify nextjs works in dev branch
     - Follow steps in [[Testing in github actions pipeline|dendron://dendron.docs/pkg.nextjs-template.qa.test#testing-in-github-actions-pipeline]]
+
+### Deploy
 1. Push nextjs-template
     ```sh
     git push

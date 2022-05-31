@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1652805002037
+updated: 1654015161659
 created: 1638063942917
 ---
 
@@ -60,7 +60,7 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
 [[Dev Wiki Endpoint|dendron://dendron.docs/ref.dev-wiki-endpoint]]. 
 
 ### Testing locally using dev template
-1. Checkout [[Publish Gh Action|dendron://dendron.handbook/ext.github.repo.publish-gh-action]]
+1. Checkout [[Publish Gh Action Dev|dendron://dendron.handbook/ext.github.repo.publish-gh-action-dev]]
 1. Do the following
 
 ```sh
@@ -78,47 +78,7 @@ dendron publish dev
 ```
 
 ### Testing in github actions using dev template
-
-#### Prerequisites
-1. Have `origin/dev` checked out
-
-    ```sh
-    git checkout --track origin/dev
-    ```
-
-#### Steps
-1. Commit changes to the dev branch in `nextjs-template`
-    ```sh
-    git checkout dev
-    git merge main -X theirs
-    git push
-    ```
-    - NOTE: if git push fails, you can `git push -f`. the `dev` branch is only used for testing
-1. Checkout [[Publish Gh Action|dendron://dendron.handbook/ext.github.repo.publish-gh-action]]
-    ```
-    git clone https://github.com/dendronhq/template.publish.github-action-dev.git
-    ```
-1. Make an update to `vault/root.md`, updating `version`, `date` and `hash` (git commit) values 
-    ```md
-    Last updated: 
-    - version: v0.95
-    - date: 2022-05-17
-    - hash: f2411b5
-    ```
-1. If there is new functionality, add it to the vault so that we can test the functionality on the published page
-1. Push
-    ```
-    git push
-    ```
-1. Manually run the following actions:
-    - [update packages](https://github.com/dendronhq/template.publish.github-action-dev/actions/workflows/update-deps.yml)
-    - [build dendron site](https://github.com/dendronhq/template.publish.github-action-dev/actions/workflows/publish.yml)
-1. Verify page is live and that the changes show up -> https://dendronhq.github.io/template.publish.github-action-dev/
-1. Cleanup
-    - run the following in `nextjs-template`
-    ```
-    git checkout master
-    ```
+- [[Gh Actions|dendron://dendron.docs/pkg.nextjs-template.qa.test.gh-actions]]
 
 ## Cook
 

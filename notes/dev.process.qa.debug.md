@@ -2,7 +2,7 @@
 id: yhpcSlIpwsBX2iHjfyutP
 title: Debug
 desc: ''
-updated: 1631385135929
+updated: 1654034159571
 created: 1630441590786
 ---
 
@@ -16,7 +16,7 @@ You can put a breakpoint directly in any code that's part of `plugin-core` and i
 
 ### Non Plugin Code
 
-To test non-plugin code, run the `debug one test (engine-test-utils)` task while having the test file open. Note that breakpoints won't break a lot of the times so if the test isn't breaking, manually add a `debugger` statement in the code. 
+To test non-plugin code, run the `debug one test (root)` task while having the test file open. Note that breakpoints won't break a lot of the times so if the test isn't breaking, manually add a `debugger` statement in the code. 
 
 
 ### Git Related Tests
