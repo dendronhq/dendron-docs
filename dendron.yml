@@ -82,7 +82,7 @@ publishing:
     enablePrettyRefs: true
     enableKatex: true
     copyAssets: true
-    logoPath: vault/assets/images/logo.png
+    logoPath: notes/assets/images/logo.png
     siteHierarchies:
         - home
         - dev
