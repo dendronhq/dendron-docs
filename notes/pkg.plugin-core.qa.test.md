@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1649865556081
+updated: 1654220226490
 created: 1627140509315
 ---
 
@@ -69,6 +69,26 @@ has a lot of configuration options, see
 and
 [here](https://github.com/dendronhq/dendron/blob/c87a049185eb9712b4b26f04922315ae1d102d02/packages/engine-test-utils/src/engine.ts#L44-L63).
 The most common ones used are the following ones:
+
+### Skipping or limiting which tests run temporarily
+
+When writing new tests, it's useful to only run a single test, or to skip a test.
+`describe` allows you to do this with `describe.only` and `describe.skip`, e.g.
+you just add `.only` or `.skip` to the function name.
+
+```ts
+suite("GIVEN thing", function () {
+  describe.only("This one will run", () => {
+    // ...
+  });
+
+  describe("This one won't", () => {
+
+  });
+});
+```
+
+`describe*WS` functions also support this, allowing you to skip or limit which tests run temporarily.
 
 ## Arguments
 
