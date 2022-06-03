@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ""
-updated: 1653950014006
+updated: 1654298596011
 created: 1632347495097
 ---
 
@@ -141,8 +141,14 @@ Use [NoteTestUtils](https://github.com/dendronhq/dendron/blob/16b0e5c59e3ee11530
 
 We make frequent use of jest [snapshots](https://jestjs.io/docs/snapshot-testing) in our testing. These snapshots will fail the test if the output of a command changes. If you intend to change the output, run the following command:
 
-1. Go to $WORKSPACE_ROOT
-1. Run ` yarn test:cli:update-snapshots`
+```sh
+cd $WS_ROOT
+# update all snapshots
+yarn test:cli:update-snapshots
+
+# update a single snapshot
+yarn test:cli:update-snapshots -- {path-to-test}
+```
 
 ### Stubbing setTimeout
 
