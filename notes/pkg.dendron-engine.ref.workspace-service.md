@@ -2,7 +2,7 @@
 id: e3ldftyacjxwuaiimmbpb1d
 title: Workspace Service
 desc: ""
-updated: 1649717953093
+updated: 1654309641261
 created: 1649717574541
 schema: "[[dendron://dendron.docs/ref.module-schema]]"
 ---
@@ -39,7 +39,83 @@ cloneWorkspace {
 }
 ```
 
+## Create Workspace
+
+- loc: [[../packages/engine-server/src/workspace/service.ts]]
+- calledBy:
+  - x [[../packages/plugin-core/src/commands/SetupWorkspace.ts]]
+  - [[../packages/engine-test-utils/src/engine.ts]]
+  - x [[../packages/engine-server/src/seed/service.ts]]
+  - [[../packages/dendron-cli/src/commands/devCLICommand.ts]]
+
+```ts
+createWorkspace {
+	if useSelfContainedVault {
+		createSelfContainedVaultWorkspace
+	}
+}
+```
+
+```ts
+createSelfContainedVaultWorkspace(wsRoot, vaults) {
+	ws = new WorkspaceService(wsRoot)
+	if vaults {
+		...
+		vaults.map v {standardToSelfContainedVault }
+
+		selfContainedVaults.forEach v {
+			ws.createSelfContainedVaultv {
+				addToCodeWorkspace: false,
+				addToConfig: false
+			}
+		}
+	}
+}
+```
+
+```ts
+createSelfContainedVault {
+	...
+	note := createRoot
+	schema := ...
+	vaultPath :=
+	...
+	// create dendron.yml
+	DConfig.getOrCreate(vaultPath)
+	WorkspaceConfig.write(vaultPath)
+	createGitIgnore
+	if addToConfig {
+		this.addVault
+	}
+	if addToCodeWorkspace {
+		this.addVaultToCodeWorkspace
+	}
+}
+```
+
+```ts
+addVault(vault) {
+	vaults := getVaults
+	vaults.unshift vault
+	ConfigUtils.setVaults(vaults)
+}
+```
+
 ## Reference
+
+### standardToSelfContainedVault
+
+```ts
+if vault.isSelfContained return vault
+
+if vault.remote {
+	...
+} else {
+	vault.fsPath = DEPENDENCIES, LOCAL_DEPENDENCY, basename(vault.fsPath)
+	vault.selfContained = true
+}
+return vault
+```
 
 ## Cook
 

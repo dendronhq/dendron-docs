@@ -2,7 +2,7 @@
 id: PZ3IzgdeZBbFRvalzI9fp
 title: Note Lookup
 desc: ""
-updated: 1637203158354
+updated: 1654298808749
 created: 1630426129273
 ---
 
@@ -214,6 +214,15 @@ onUpdatePickerItems {
 
 }
 
+```
+
+#### fetchpPickerResults
+
+- [[../packages/plugin-core/src/components/lookup/NotePickerUtils.ts]]
+
+```ts
+resp = engine.queryNotes;
+nodes = filterPickerResults;
 ```
 
 ### OnAccept

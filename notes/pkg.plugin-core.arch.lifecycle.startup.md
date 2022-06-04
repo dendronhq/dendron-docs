@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1650468068262
+updated: 1654299259584
 created: 1610160007286
 ---
 
@@ -17,6 +17,10 @@ created: 1610160007286
   - NOTE: if in DEV mode (when launching plugin using vscode build task), we do not spawn a separate process
 - reload workspace (connect to the local server)
 - activate file watchers
+
+## Components
+
+- [[Engine API Service|dendron://dendron.docs/pkg.plugin-core.ref.engine-api-service]]
 
 ## Steps
 
@@ -77,11 +81,11 @@ _activate {
         wsService.writeMeta
 
         // ---
-        showInitProgress { 
+        showInitProgress {
             port = startServerProcess
             updateEngineAPI(port)
 
-            if !webUI { 
+            if !webUI {
                 treeView = new NativeTreeView
                 context.subscriptions.push treeView
             }
@@ -98,7 +102,7 @@ _activate {
             togglePluginActiveContext
 
         }
-    } else { 
+    } else {
         autoInit = new FileAddWatcher
     }
 
@@ -109,7 +113,7 @@ _activate {
 
     showWelcomeOrWhatsNew
 
-    if DendronExtension.isActive { 
+    if DendronExtension.isActive {
         HistoryService.instance().add(extension, activate)
         // If automaticallyShowPreview = true, display preview panel on start up
     }
@@ -155,7 +159,7 @@ postReloadWorkspace {
 
 ```
 
-## showWelcome
+### showWelcome
 
 ```ts
 showWelcomeOrWhatsNew {
@@ -202,26 +206,28 @@ constructor {
 ```
 
 ### activator.activate
+
 - [[../packages/plugin-core/src/workspace/workspaceActivater.ts]]
 
 ```ts
 if (NATIVE) {
-    activateNativeWorkspace
-} else { 
-    activateCodeWorkspace
+  activateNativeWorkspace;
+} else {
+  activateCodeWorkspace;
 }
 ```
 
 ```ts
-activateCodeWorkspace { 
+activateCodeWorkspace {
     new DendronCodeWorkspace
 }
 ```
 
 - [[../packages/plugin-core/src/workspace/baseWorkspace.ts]]
+
 ```ts
-class DendronCodeWorkspace extends DendronBaseWorkspace { 
-    constructor { 
+class DendronCodeWorkspace extends DendronBaseWorkspace {
+    constructor {
     }
 }
 ```

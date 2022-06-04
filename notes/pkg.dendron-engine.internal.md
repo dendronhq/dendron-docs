@@ -1,17 +1,10 @@
 ---
 id: 26be950a-eaf3-4684-bddd-64be52273b73
 title: Internal
-desc: ''
-updated: 1620440064777
+desc: ""
+updated: 1654301852636
 created: 1608527496774
 ---
-
-## Initializing a new workspace
-- engine-server/src/workspace.ts
-
-```ts
-WorkspaceService.createWorkspace
-```
 
 ## Initializing dendron.yml
 
@@ -82,6 +75,7 @@ createVault(vault, noAddToConfig):
 # Sync Vault
 
 - src/workspace.ts
+
 ```ts
 sync {
     emptyRemoteVaults.map {
@@ -90,7 +84,7 @@ sync {
 }
 
 cloneVault {
-    
+
 }
 
 ```

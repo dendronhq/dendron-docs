@@ -1,16 +1,17 @@
 ---
 id: 4b8f0470-dacb-433b-8d0c-f5a7d8f5245d
 title: Lookup
-desc: ''
-updated: 1624833521188
+desc: ""
+updated: 1654301530081
 created: 1608838048476
 ---
-
 
 ## Preview
 
 ### VSCode LifeCycle
-- WindowWatcher 
+
+- WindowWatcher
+
 ```ts
 onDidChangeActiveTextEditor {
   ...
@@ -22,6 +23,7 @@ onDidChangeActiveTextEditor {
 ```
 
 - ShowPreview
+
 ```ts
 updateMarkdown {
   @webview.post {
@@ -35,7 +37,9 @@ updateMarkdown {
 ```
 
 ### Webview LifeCycle
+
 - WebView
+
 ```ts
 onDidReceiveMessage(msg) {
   switch(msg.type) {
@@ -49,9 +53,8 @@ onDidReceiveMessage(msg) {
 }
 ```
 
-
-
 ## Bucket
+
 ```ts
 show {
     quickpick := create
@@ -158,10 +161,6 @@ showWelcomeOrWhatsNew {
 
 ```
 
-## SetupWorkspace
-
-- note: `dendron.code-workspace` is completely overwritten when running setup
-
 # Reload Index
 
 ```ts
@@ -170,4 +169,3 @@ engine.vaultsv3.map {
 
 }
 ```
-
