@@ -2,7 +2,7 @@
 id: q2xr0dnbwqgs1j7wqcsckx6
 title: Advanced Cookbook
 desc: ''
-updated: 1649188112663
+updated: 1654548104888
 created: 1645741586641
 ---
 
@@ -40,3 +40,63 @@ The recipes here shouldn't need to be used except in very rare circumstances (if
 
 - This may make minor (`*.*.X`) upgrades to other packages as well, but that
   should be harmless.
+
+### Adding a new package
+
+Example PR here: https://github.com/dendronhq/dendron/pull/3048
+
+1. Create the new package
+   - NOTE: naming scheme is usually `dendron-{name}`
+   ```sh
+   cd packages
+   cp -R _pkg-template dendron-viz
+   ```
+1. Update the names
+   - in package.json
+      - replace `$PKG_NAME` with package name
+      - replace `$CURRENT_VERSION` with current version in monorepo
+1. Add package to `dendron-main.code-workspace`
+   ```json
+    {
+      "path": "packages/dendron-viz"
+    },
+   ```
+1. Add new package to [[../package.json]]
+   ```diff
+   "workspaces": {
+      "packages": [
+         ...
+         "packages/common-test-utils",
+   +      "packages/dendron-viz",
+         "packages/engine-server",
+         ...
+   ```
+1. Add new package to [[../bootstrap/scripts/watch.sh]]
+   - NOTE: order matters. make sure that the package is added to that any package it depends on comes before and that packages that depend on it come after 
+      ```diff
+      npx lerna run watch --parallel 
+         \ --scope @dendronhq/common-all 
+         \ --scope @dendronhq/common-server 
+      +    \ --scope @dendronhq/dendron-viz
+         \ --scope @dendronhq/engine-server 
+         \ --scope @dendronhq/plugin-core 
+         \ --scope @dendronhq/dendron-cli 
+      ```
+1. Add new package to [[../bootstrap/scripts/buildAll.js]]
+   ```diff
+   $(`npx lerna run build --scope @dendronhq/common-all`);
+   $(`npx lerna run build --scope @dendronhq/common-server `);
+   +$(`npx lerna run build --scope @dendronhq/dendron-viz `);
+   $(`npx lerna run build --scope @dendronhq/engine-server `);
+   $(`npx lerna run build --scope @dendronhq/pods-core `);
+   ```
+1. Add to [[../bootstrap/scripts/buildAllForTest.js]]
+
+#### Verify New package
+1. Run `yarn setup`
+1. Run `ts-node packages/dendron-viz/src/index.ts`
+```sh
+ts-node packages/dendron-viz/src/index.ts
+# hello world
+```
+
