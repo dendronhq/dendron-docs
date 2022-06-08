@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ""
-updated: 1654298596011
+updated: 1654709218369
 created: 1632347495097
 ---
 
@@ -28,6 +28,10 @@ For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.
 
 - NOTE: Dendron has automated tests that run on every pull request - if you are unable to run tests locally, you can also wait for the pull request to finish running the test
 - NOTE: If you running MacOS or Linux, pay special attention to the Windows output and vice versa if you are developing on Windows
+
+## Snapshot Testing
+
+See [[Snapshot Testing|dendron://dendron.docs/dev.process.qa.test.snapshot-testing]]
 
 ## Manual Testing
 
