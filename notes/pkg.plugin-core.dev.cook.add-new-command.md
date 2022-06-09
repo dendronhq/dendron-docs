@@ -2,7 +2,7 @@
 id: ajxrv6ojg1hlx1y31ajrkte
 title: Add New Command
 desc: ""
-updated: 1653517985866
+updated: 1654783394204
 created: 1651425940926
 ---
 
@@ -35,6 +35,9 @@ The execution in pseudocode
 ![[dendron://dendron.docs/pkg.plugin-core.t.commands#initialization,1:#*]]
 
 ## Steps
+
+### Decide on a name
+1. Dendron commands follow a `VERB + NOUN` convention (eg. Go to Note) 
 
 ### Add new command
 
