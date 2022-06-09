@@ -2,7 +2,7 @@
 id: QN46JTSWpEkDkr94TJ85w
 title: Submitting Code for Review
 desc: ''
-updated: 1653065879446
+updated: 1654754914921
 created: 1644173493342
 ---
 
@@ -19,7 +19,15 @@ We recommend using the github cli to work on pull requests (not required but hel
 ### Submitting
 1. Open up a pull request 
 1. Make sure the title of the pull request mirrors the [[Commit Style|dendron://dendron.docs/dev.process.review#commit-style]]
+1. If the PR contains multiple features, break it down in the description below the title (example provided below this section)
 1. If you are a team member, you can copy the full checklist from [[Dendron Extended PR Checklist - Markdown|dendron://dendron.docs/dev.process.review.checklist.extended.export]], otherwise, follow the instructions in the pull request template
+
+```
+{feat}({structure}): {updated hierarchies, added new note-traits}
+
+{feat}({structure}): {updated hierarchies}
+{feat}({structure}): {added new note-traits}
+```
 
 ### For Team members
 1. When an area of the checklist (eg. Instrumentation), does not apply to your PR, you can remove the checkboxes and just add `NA` for not applicable
@@ -67,7 +75,7 @@ Use cached version of notes to generate metadata instead of building from scratc
 
 ### Pull Request title
 
-When writing the pull request title, write it from the users point of view. What tangible benefit will the user have after this commit is shipped?
+**1. When writing the pull request title, write it from the users point of view. What tangible benefit will the user have after this commit is shipped?**
 
 - bad: talks about work done vs result achieved
 ```
@@ -77,4 +85,16 @@ Update engine to cache notes on read
 - good: directly talks about benefit to end users
 ```
 Improved performance when using lookup to read notes
+```
+
+**2. Write the title in lowercase**
+- bad: any word in the title starts with an uppercase letter
+```
+Improved Performance When Using Lookup to Read Notes
+Improved performance when using lookup to read notes
+```
+
+- good: every word in the title starts with a lowercase letter
+```
+improved performance when using lookup to read notes
 ```
