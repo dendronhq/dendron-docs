@@ -2,7 +2,7 @@
 id: ONVyX9yIBTHO5BjZwJ56I
 title: 41 Standard Feature Documentation
 desc: ''
-updated: 1643651799790
+updated: 1655134836635
 created: 1643251210715
 category: RFCs/Ideas
 discussionID: D_kwDOEF_3Vs4AOosB
@@ -89,12 +89,12 @@ Note the format: the header is a wikilink to the source documentation. this has 
 - this still resolves to a clean url, both inside dendron as a URL: [[Rename Note|dendron://private/task.2022.01.26.on-structuring-dendron-docs.rfc#rename-note]]
 - since this is an actual header, it shows up in the outline view inside vscode as well as in the TOC of the published site
 -->
-### [[Rename Note|dendron://dendron.dendron-site/dendron.topic.refactoring#rename-note]]
+### [[Rename Note|dendron://dendron.dendron-site/dendron.topic.refactoring.commands.rename-note]]
 
 <!-- 
 This is a wiki link that shows the content of the section
 -->
-![[dendron://dendron.dendron-site/dendron.topic.refactoring#rename-note,1:#*]]
+![[dendron://dendron.dendron-site/dendron.topic.refactoring.commands.rename-note#summary,1:#*]]
 ```
 
 Essentially, this is proposing that `dendron.topic.{feature}` is the main source of truth for a feature and `reference.*` documentation is generated as note references from topic notes. 

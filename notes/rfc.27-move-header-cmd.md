@@ -2,7 +2,7 @@
 id: MalAg4S7TIJU4gYCn7ZFR
 title: 27 Move Header Cmd
 desc: ''
-updated: 1631474835608
+updated: 1655134303024
 created: 1631474060570
 ---
 
@@ -41,4 +41,4 @@ Introduce `Dendron: Move Header` command. This will be able to move a header fro
 <!-- https://github.com/dendronhq/dendron/discussions/new -->
 
 ## Lookup
-[^rename]: [[Rename Header|dendron.topic.refactoring#rename-header]]. 
+[^rename]: [[Rename Header|dendron.topic.refactoring.commands.rename-header]]. 
