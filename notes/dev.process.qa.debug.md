@@ -2,9 +2,15 @@
 id: yhpcSlIpwsBX2iHjfyutP
 title: Debug
 desc: ''
-updated: 1655001662199
+updated: 1655155321778
 created: 1630441590786
 ---
+
+## VSCode
+Some vscode specific debugging tips
+
+- [[Set Plugin Log Level|dendron://dendron.docs/dev.process.qa.debug.cook.set-plugin-log-level]]
+- [[Diagnosing Completion Issues|dendron://dendron.docs/dev.process.qa.debug.cook.diagnosing-completion-issues]]
 
 ## Components
 
