@@ -29,7 +29,7 @@ export type DEngine = DCommonProps &
       id: string,
       opts?: EngineDeleteOptsV2
     ) => Promise<DEngineDeleteSchemaResp>;
-    info: () => Promise<RespRequired<EngineInfoResp>>;
+    info: () => Promise<RespV2<EngineInfoResp>>;
     sync: (opts?: DEngineSyncOpts) => Promise<DEngineInitResp>;
 
     getNoteByPath: (opts: GetNoteOptsV2) => Promise<RespV2<GetNotePayload>>;
