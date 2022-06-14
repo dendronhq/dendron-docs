@@ -2,7 +2,7 @@
 id: PZ3IzgdeZBbFRvalzI9fp
 title: Note Lookup
 desc: ""
-updated: 1654298808749
+updated: 1654362787484
 created: 1630426129273
 ---
 
@@ -110,33 +110,7 @@ gatherInputs {
 
 #### NoteLookup Provider
 
-- src/components/lookup/LookupProviderV3.ts
-
-```tsx
-
-create {
-    @_onAcceptHooks = [];
-}
-
-provide {
-}
-
-onDidAccept {
-
-    selectedItems := picker
-
-    ...
-    resp = @_onAcceptHooks.map hooks {
-        hook(picker, selectedItems)
-    }
-
-    HistoryService.add(
-        source: lookupProvider,
-        action: done,
-        data: resp
-    )
-}
-```
+- [[onDidAccept|dendron://dendron.docs/pkg.plugin-core.ref.note-lookup-provider#ondidaccept]]
 
 ### Prepare Quickpick
 
@@ -177,44 +151,7 @@ refreshPickerBehavior {
 
 ### OnUpdatePickerItems
 
-- [[../packages/plugin-core/src/components/lookup/LookupProviderV3.ts#^hlj1vvw48s2v]]
-
-```ts
-onUpdatePickerItems {
-
-    // modify for just activated behavior
-    if picker.justActivated && !picker.nonInteractive  {
-        pickerValue = getQsForCurrentLevel
-    }
-
-    // normalize query
-    transformQueryString
-    queryOrig :=
-    ...
-
-    querystring := pickerValue
-    ...
-    items = [...picker.items]
-    updatedItems = fetchPickerResults(querystring)
-    ...
-
-    shouldAddCreateNew = @allowNewNote && !queryOrig.endsWith(".") && !picker.canSelectMany && vaultsHaveSpaceForExactMatch
-    if (shouldAddCreateNew) {
-        entryCreateNew = createNoActiveItem
-        if shouldBubbleUpCreateNew {
-            ...
-        } else {
-            ...
-        }
-
-    }
-
-    ...
-    picker.items = updatedItems
-
-}
-
-```
+- [[onUpdatePickerItems|dendron://dendron.docs/pkg.plugin-core.ref.note-lookup-provider#onupdatepickeritems]]
 
 #### fetchpPickerResults
 
