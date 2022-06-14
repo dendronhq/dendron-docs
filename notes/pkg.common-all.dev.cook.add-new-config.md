@@ -2,7 +2,7 @@
 id: aqn9kf61clk64dcdutv1kni
 title: Add New Config
 desc: ""
-updated: 1653518794805
+updated: 1655168859155
 created: 1646420172968
 ---
 
@@ -37,4 +37,4 @@ Dendron configuration is defined in [[../packages/common-all/src/types/configs/d
   - These default generating methods will be used by the `ConfigUtils` that are used to get and set configs later, so it is important to define a default here to simplify the process down the line.
 
 1. Update tests and json schema
-   ![[dendron://dendron.docs/pkg.common-all.dev.cook#modifying-config,1]]
+![[Modify Dendron Config|dendron://dendron.docs/pkg.common-all.dev.cook.modify-dendron-config]]

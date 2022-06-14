@@ -2,7 +2,7 @@
 id: ajxrv6ojg1hlx1y31ajrkte
 title: Add New Command
 desc: ""
-updated: 1654783394204
+updated: 1655168381587
 created: 1651425940926
 ---
 
@@ -41,10 +41,13 @@ The execution in pseudocode
 
 ### Add new command
 
+#### Add constant key
 1. Add command to `DENDRON_COMMANDS` under `plugin-core/src/constants.ts`
    - NOTE: if you want to add a keyboard binding, see [[Keyboard Shortcut|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command#keyboard-shortcut]]
-1. Open the command prompt, enter `Run Task`, and run `gen:config`
-   - this will add the command to `package.json`
+1. Update the plugin config
+![[dendron://dendron.docs/pkg.plugin-core.dev.cook.update-plugin-config#steps,1]]
+
+#### Create new command
 1. Create the new command in `plugin-core/src/commands/{COMMAND_NAME}.ts`
    - you can copy the contents of an existing command (eg. `src/commands/ShowHelp.ts`) to help you get started
 1. Write command logic

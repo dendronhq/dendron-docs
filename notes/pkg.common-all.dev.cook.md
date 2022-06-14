@@ -2,7 +2,7 @@
 id: 1jIkH5R6W3pM8IYR2gOji
 title: Cookbook
 desc: ""
-updated: 1653519946541
+updated: 1655168869644
 created: 1634737110155
 ---
 
@@ -79,14 +79,3 @@ In VSCode, you can use the "Goto symbol in workspace" command and type the funct
 4. In `DNodeUtils.getCustomProps` add prop name to `blacklist`.
 5. In `SchemaUtils.TEMPLATE_COPY_PROPS` add prop name if the prop should be copied over when a template note is used.
 6. **If and only if** it's a prop that's required (mandatory) for all notes, in `foundation.ts` add prop name to `REQUIRED_DNODEPROPS`. Again, most props don't have to be mandatory.
-
-## Common
-
-### Modifying Config
-
-<!-- This should be run whenever the config is updated -->
-
-1. Update the json schema
-   - Run `yarn gen:data` at the root of the monorepo before submitting a PR
-1. Update snapshots
-   ![[dendron://dendron.docs/dev.process.qa.test#updating-test-snapshots,1:#*]]
