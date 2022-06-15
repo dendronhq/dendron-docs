@@ -2,7 +2,7 @@
 id: 773e0b5a-510f-4c21-acf4-2d1ab3ed741e
 title: Code Conventions
 desc: ''
-updated: 1647462977546
+updated: 1655279596565
 created: 1609550314371
 nav_order: 2.1
 ---
@@ -23,6 +23,31 @@ We use [`luxon`](https://moment.github.io/luxon/api-docs/index.html#datetime) fo
 
 ## Conventions
 
+The general guideline is to follow Airbnb's [Javascript Style Guide](https://github.com/airbnb/javascript). There may be a few differences since we're using Typescript instead of Javascript. Any differences or particular points of emphasis are covered in the below sections.
+
+### one export per file
+
+_See Airbnb guide [10.6](https://github.com/airbnb/javascript#modules--prefer-default-export
+)_
+
+Prefer to only have one export per file, and to break functionality into different files. Classes should generally always be in their own files.
+
+
+### file name should match the default export exactly
+
+_See Airbnb guide [23.6](https://github.com/airbnb/javascript#naming--filename-matches-export)_
+
+This file should be called `makeStyleGuide.ts`
+```ts
+function makeStyleGuide() {
+  // ...
+}
+
+export default makeStyleGuide;
+```
+
+_Note: We currently have a lot of utility files that have multiple exports, which means they can't follow this rule. For those files, pick as descriptive of a name as possible, and avoid having utility files with multiple exports in the future._
+
 ### prefer capital snake case for constants
 
 ```ts
@@ -30,7 +55,7 @@ We use [`luxon`](https://moment.github.io/luxon/api-docs/index.html#datetime) fo
 A_SNAKE = "PYTHON"
 
 // bad
-ANSAKE = "python
+ASNAKE = "python"
 ```
 
 ### prefer using camelCase for variables
@@ -187,6 +212,32 @@ This is more concise and avoids some [unexpected behaviors](https://thecodebarba
 // good
 [1,2,3].forEach(elem => console.log(elem))
 
+```
+
+### prefer TS getter and setter syntax
+
+When possible, use getter and setter syntax.
+
+```typescript
+private _foo: string;
+
+// bad
+getMyProperty(): string {
+    return this._foo;
+}
+
+setMyProperty(val: string) {
+    this._foo = val;
+}
+
+// good
+get myProperty(): string {
+    return this._foo;
+}
+
+set myProperty(val: string) {
+    this._foo = val;
+}
 ```
 
 ## Regular Expressions
