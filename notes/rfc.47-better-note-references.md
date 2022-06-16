@@ -28,7 +28,7 @@ All examples use the [[sample note|dendron://dendron.docs/rfc.47-better-note-ref
 
 ### referencing starting and ending positions
 - context: currently impossible to reference just the beginning or end of a doc without headers
-- proposal: introduce syntax for front of the doc `![[#^]]` aned end of the doc `![[#$]]`
+- proposal: introduce syntax for front of the doc `![[#^]]` and end of the doc `![[#$]]`
 - eg: ![[#positional-reference,1:#*]]
 
 ### referencing frontmatter
