@@ -18,7 +18,7 @@ published: false
 All examples use the [[sample note|dendron://dendron.docs/rfc.47-better-note-references#^vi9z5bwe03pf]] as the basis for referencing
 
 ### smart header references
-- context: current behavior is to transclude everything starting from the header to the next header
+- context: current behavior is to transclude everything starting from the header to the end of the page
 - proposal: transclude from the header to the next header that is **equal or less in level**
 - eg: ![[#header-reference:#*]]
   - migration:
