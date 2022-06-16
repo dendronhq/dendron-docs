@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1654014651730
+updated: 1655218586975
 created: 1640280816708
 ---
 
@@ -89,6 +89,10 @@ These steps should be run **after** the weekly release has gone out. It is only 
 
     Last updated: 
     - version: {RELEASE_VERSION}
+    ```
+1. Push
+    ```
+    git add . && git commit -m "bump version" && git push
     ```
 1. Go to https://github.com/dendronhq/template.publish.github-action/actions
     - make sure deployment succeeds
