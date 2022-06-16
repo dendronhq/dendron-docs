@@ -24,7 +24,7 @@ All examples use the [[sample note|dendron://dendron.docs/rfc.47-better-note-ref
   - migration:
   - to migrate, introduce a new setting `enableSmartHeaderReferences` 
     - unless enabled, will keep current behavior
-    - doctor command to transform all `![[#one]]` references to `[[#one:#*]]`
+    - doctor command to transform all `![[#one]]` references to `[[#one:#$]]` 
 
 ### referencing startinig and ending positions
 - context: currently impossible to reference just the beginning or end of a doc without headers
