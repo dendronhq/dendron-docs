@@ -2,9 +2,9 @@
 id: 9hoksdbfuv0a1vaffla7dv0
 title: 47 Better Note References
 desc: ''
-updated: 1655546339692
+updated: 1655546417625
 created: 1655411869181
-published: false
+published: true
 ---
 <!-- Remove the following warning once you are done writing the RFC. -->
 > ⚠️ This proposal is currently a draft and is not yet finalized.
