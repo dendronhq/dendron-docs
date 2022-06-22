@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1654220226490
+updated: 1655924520843
 created: 1627140509315
 ---
 
@@ -90,6 +90,20 @@ suite("GIVEN thing", function () {
 
 `describe*WS` functions also support this, allowing you to skip or limit which tests run temporarily.
 
+## Gotchas
+- check that tests pass not just locally but also in the pipeline (usually runs on much worse hardware). the main discrepancy you'll see timeout issues in the pipeline. a common value to set for long running tests is 5e3 (5ms). see [[timeout|dendron://dendron.docs/pkg.plugin-core.qa.test#timeout]]
+- if you create disposables, remember to clean them up
+    ```ts
+    const disposable = vscode.workspace.onDidSaveTextDocument(() => {
+      assert(false, "Callback not expected");
+    });
+    ...
+    disposable.dispose()
+    done();
+    ```
+
+
+
 ## Arguments
 
 - NOTE: up to date docs are in [[../packages/plugin-core/src/test/testUtilsV3.ts#^eq30h1lt0zat]]
@@ -125,6 +139,7 @@ and may have small differences in behavior.
 You can use this callback to modify the `dendron.yml` configuration for the test workspace. See [here for an example](https://github.com/dendronhq/dendron/blob/1c734daa45cc1e655638d754267c6bdf5bdcab90/packages/plugin-core/src/test/suite-integ/CreateDailyJournalNote.test.ts#L115-L118).
 
 ### timeout
+- default: 2e3
 
 Custom timeout for test in milleseconds
 You will need to set this when stepping through mocha tests using a debugger,
