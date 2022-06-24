@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1655924520843
+updated: 1656041635515
 created: 1627140509315
 ---
 
@@ -91,7 +91,7 @@ suite("GIVEN thing", function () {
 `describe*WS` functions also support this, allowing you to skip or limit which tests run temporarily.
 
 ## Gotchas
-- check that tests pass not just locally but also in the pipeline (usually runs on much worse hardware). the main discrepancy you'll see timeout issues in the pipeline. a common value to set for long running tests is 5e3 (5ms). see [[timeout|dendron://dendron.docs/pkg.plugin-core.qa.test#timeout]]
+- check that tests pass not just locally but also in the pipeline (usually runs on much worse hardware). the main discrepancy you'll see timeout issues in the pipeline. a common value to set for long running tests is 5e3 (5s). see [[timeout|dendron://dendron.docs/pkg.plugin-core.qa.test#timeout]]
 - if you create disposables, remember to clean them up
     ```ts
     const disposable = vscode.workspace.onDidSaveTextDocument(() => {
