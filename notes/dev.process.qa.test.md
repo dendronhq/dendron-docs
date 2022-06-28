@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ""
-updated: 1654709218369
+updated: 1656374392975
 created: 1632347495097
 ---
 
@@ -75,6 +75,7 @@ This happens when you reload the _extension host_ when working on the plugin. To
 See example in [here](https://www.loom.com/share/797f2e13cc9a46e4a0973b3ad26f6ed7)
 
 ## Cook
+- [[Update a Snapshot|dendron://dendron.docs/dev.process.qa.test.cook.update-a-snapshot]]
 
 ### Stubs
 
@@ -141,18 +142,6 @@ static mockHomeDir(dir?: string): SinonStub {
 
 Use [NoteTestUtils](https://github.com/dendronhq/dendron/blob/16b0e5c59e3ee11530199b5c9a11a58f05e14a93/packages/common-test-utils/src/noteUtils.ts#L63-L63)
 
-### Updating test snapshots
-
-We make frequent use of jest [snapshots](https://jestjs.io/docs/snapshot-testing) in our testing. These snapshots will fail the test if the output of a command changes. If you intend to change the output, run the following command:
-
-```sh
-cd $WS_ROOT
-# update all snapshots
-yarn test:cli:update-snapshots
-
-# update a single snapshot
-yarn test:cli:update-snapshots -- {path-to-test}
-```
 
 ### Stubbing setTimeout
 
