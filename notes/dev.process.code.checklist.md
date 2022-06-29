@@ -2,15 +2,13 @@
 id: qWXlqj6y2YVvP0JIOJClT
 title: Checklist
 desc: ''
-updated: 1644788544235
+updated: 1656469684578
 created: 1644174577131
 ---
 
 ### Basics
 - [ ] code should follow [[Code Conventions|dendron://dendron.docs/dev.process.code]]
-- [ ] circular dependency check: make sure your code is not introducing new circular dependencies in plugin-core.  See [[Avoiding Circular Dependencies|dendron://dendron.docs/dev.process.code.best-practices#avoiding-circular-dependencies]].
 - [ ] sticking to existing conventions instead of creating new ones 
-    - eg: [if configuration for utilities are already in one module or package, add future utilities there as well](https://github.com/dendronhq/dendron/pull/1960#discussion_r786228021)
 
 ### Extended
 - General

@@ -2,10 +2,11 @@
 id: nxu3wpej92v6i0utwb1m2s4
 title: Snapshot Testing
 desc: ''
-updated: 1654709245384
+updated: 1656469889534
 created: 1654709227525
 ---
 
+## Summary
 Snapshot testing lets us assert that certain outputs of a piece of code is staying the same after changes. This is a very powerful tool because it lets us easily test for outputs that we know that will (should) be constant.
 
 That being said, snapshot tests should not be considered part of unit testing, or testing for a certain functional aspect of code. It also shouldn't replace end-to-end testing, since snapshot tests are only verifying the output, and not the behavior. The output can look the same at the end but could have gotten there in a way that you did not intend to. 

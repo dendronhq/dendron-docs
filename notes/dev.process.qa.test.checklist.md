@@ -2,7 +2,7 @@
 id: oxuqSKl1R2nzElml6esj3
 title: Checklist
 desc: ''
-updated: 1654709278258
+updated: 1656469917974
 created: 1640801276723
 ---
 
@@ -12,10 +12,8 @@ created: 1640801276723
 - [ ] [[Confirm manual testing|dendron://dendron.docs/dev.process.qa.test#manual-testing]] 
 - [ ] Common cases tested
 - [ ] 1-2 Edge cases tested
-- [ ] If your tests changes an existing snapshot,
-  - [ ] snapshots have been [[updated|dendron://dendron.docs/dev.process.qa.test#updating-test-snapshots]]
-  - [ ] check that updated snapshots are updated as intended
-- [ ] If you write new snapshot tests, double check that snapshot testing make sense as per [[Snapshot Testing|dendron://dendron.docs/dev.process.qa.test.snapshot-testing]]
+- [ ] If your tests changes an existing [[snapshot|dendron://dendron.docs/dev.process.qa.test#snapshot-testing]]
+  - [ ] [[Update the Snapshot|dendron://dendron.docs/dev.process.qa.test.cook.update-a-snapshot]]
 
 ### Extended
 - [ ] If you are adding a new language feature (graphically visible in VS Code/preview/publishing), an example is included in the [[test workspace|dendron://dendron.docs/dev.ref.test-workspace]]

@@ -1,0 +1,23 @@
+---
+id: ZyN7HawRBYbd0bUPbGR3x
+title: Assign Scope to Feature
+desc: ''
+updated: 1656470300756
+created: 1636474565810
+---
+
+## Summary
+How we assign scopes to features. 
+
+## Prerequisites
+None
+
+## Steps
+1. Read over the different [[scopes|dendron://dendron.dendron-site/tags.scope]] and use your best judgement to apply the correct type
+1. When in doubt, add a question in `#dendron-team` channel 
+
+## Reference
+- [[Scope|dendron://dendron.dendron-site/tags.scope]]
+
+## Related
+- [[Assign Category to Task|dendron://dendron.docs/dev.process.review.sop.assign-scope-to-feature]]

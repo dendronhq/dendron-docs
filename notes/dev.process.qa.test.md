@@ -2,7 +2,7 @@
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
 desc: ""
-updated: 1656374392975
+updated: 1656469893611
 created: 1632347495097
 ---
 
@@ -31,7 +31,7 @@ For all tests, we use the `GIVEN-WHEN-THEN` style described in [[dev.process.qa.
 
 ## Snapshot Testing
 
-See [[Snapshot Testing|dendron://dendron.docs/dev.process.qa.test.snapshot-testing]]
+![[dendron://dendron.docs/dev.process.qa.test.snapshot-testing#summary,1:#*]]
 
 ## Manual Testing
 

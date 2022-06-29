@@ -2,7 +2,7 @@
 id: adc39825-77a6-46cf-9c49-2642fcb4248e
 title: Committing Code
 desc: ''
-updated: 1647219197116
+updated: 1656472144903
 created: 1623430616135
 config:
   global:
@@ -20,7 +20,7 @@ This goes into how we commit code
 
 To start work on a new feature, clone the dendron repo and checkout a new branch. This should be in the format of `{category}/{feature-description}`
 
-See [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]] for picking out the category
+See [[Assign Category to Task|dendron://dendron.docs/dev.process.review.sop.assign-category-to-task]] for picking out the category
 
 ### Work in Progress
 - if your still iterating on your pull request or if your working on feedback but its not ready yet, put your PR into `draft` mode until it is ready

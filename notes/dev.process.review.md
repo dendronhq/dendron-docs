@@ -2,7 +2,7 @@
 id: QN46JTSWpEkDkr94TJ85w
 title: Submitting Code for Review
 desc: ''
-updated: 1654754914921
+updated: 1656470280698
 created: 1644173493342
 ---
 
@@ -67,34 +67,29 @@ enhance(publish): speed up publishing by 500%
 Use cached version of notes to generate metadata instead of building from scratch
 ```
 
-* To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.dendron-site/area.product.sop.assign-category-to-task]]
-* To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.dendron-site/area.product.sop.assign-scope-to-feature]]
+* To figure out the category for a commit, see [[Assign Category to Task|dendron://dendron.docs/dev.process.review.sop.assign-category-to-task]]
+* To figure out the scope, see [[Assign Scope to Feature|dendron://dendron.docs/dev.process.review.sop.assign-scope-to-feature]]
 * When writing the title, follow the [[Pull Request title|dendron://dendron.docs/dev.process.review#pull-request-title]]
 * When applicable, include any unique testing steps taken in the commit message. This will help future people looking back at this PR understand how to test similar changes.
 
 
 ### Pull Request title
-
-**1. When writing the pull request title, write it from the users point of view. What tangible benefit will the user have after this commit is shipped?**
-
-- bad: talks about work done vs result achieved
-```
-Update engine to cache notes on read
-```
-
-- good: directly talks about benefit to end users
-```
-Improved performance when using lookup to read notes
-```
-
-**2. Write the title in lowercase**
-- bad: any word in the title starts with an uppercase letter
-```
-Improved Performance When Using Lookup to Read Notes
-Improved performance when using lookup to read notes
-```
-
-- good: every word in the title starts with a lowercase letter
-```
-improved performance when using lookup to read notes
-```
+- When writing the pull request title, write it from the users point of view. What tangible benefit will the user have after this commit is shipped?
+    - bad: talks about work done vs result achieved
+    ```
+    Update engine to cache notes on read
+    ```
+    - good: directly talks about benefit to end users
+    ```
+    Improved performance when using lookup to read notes
+    ```
+- Write the title in lowercase
+    - bad: any word in the title starts with an uppercase letter
+    ```
+    Improved Performance When Using Lookup to Read Notes
+    Improved performance when using lookup to read notes
+    ```
+    - good: every word in the title starts with a lowercase letter
+    ```
+    improved performance when using lookup to read notes
+    ```
