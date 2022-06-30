@@ -2,7 +2,7 @@
 id: tMdsz0dYNj3VgOvNAuEUY
 title: Note Preview
 desc: ""
-updated: 1640632253407
+updated: 1656523492361
 created: 1637109406387
 ---
 
@@ -18,7 +18,7 @@ How the Dendron Note Preview gets launched
 
 ## Lifecycle
 
-![[dendron://dendron.docs/pkg.dendron-plugin-views.ref.note-preview.lifecycle]]
+![[dendron://dendron.docs/pkg.dendron-plugin-views.ref.note-preview.lifecycle]] ^fw9g8dj805z8
 
 ## Lookup
 

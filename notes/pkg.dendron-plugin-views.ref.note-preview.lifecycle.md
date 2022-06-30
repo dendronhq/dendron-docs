@@ -2,7 +2,7 @@
 id: zYn03NQuLgwmvK8Dfoe0L
 title: Lifecycle
 desc: ''
-updated: 1650647889116
+updated: 1656523908901
 created: 1640632235031
 ---
 
@@ -67,6 +67,19 @@ useRenderedNoteBody(id) {
 
 renderNote(id) {
 	api.noteRender(id)
+}
+```
+
+## hide
+```ts
+hide { 
+    dispose
+}
+
+dispose {
+    if _panel {
+        this._panel.dispose();
+    }
 }
 ```
 

@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1654015161659
+updated: 1656513546800
 created: 1638063942917
 ---
 
@@ -60,7 +60,7 @@ To test nextjs-template with the contents of dendron, push to the `dev` branch o
 [[Dev Wiki Endpoint|dendron://dendron.docs/ref.dev-wiki-endpoint]]. 
 
 ### Testing locally using dev template
-1. Checkout [[Publish Gh Action Dev|dendron://dendron.handbook/ext.github.repo.publish-gh-action-dev]]
+1. Checkout [[Publish Gh Action Dev|dendron://dendron.docs/ext.github.repo.publish-gh-action-dev]]
 1. Do the following
 
 ```sh
@@ -78,6 +78,8 @@ dendron publish dev
 ```
 
 ### Testing in github actions using dev template
+- #star
+
 - [[Gh Actions|dendron://dendron.docs/pkg.nextjs-template.qa.test.gh-actions]]
 
 ## Cook

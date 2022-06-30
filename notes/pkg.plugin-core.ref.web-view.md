@@ -2,7 +2,7 @@
 id: XZWT8WQSrNbbFdTZcRZir
 title: Web View
 desc: ""
-updated: 1650560141509
+updated: 1656528412977
 created: 1640661462882
 ---
 
@@ -25,6 +25,7 @@ getLocalResourceRoots {
 - in production, this is the same as [[getAssetUri|dendron://dendron.docs/pkg.plugin-core.ref.web-view#getasseturi]]
 
 ### getAssetUri
+- [[../packages/plugin-core/src/vsCodeUtils.ts]]
 
 ```ts
 getAssetUri {

@@ -2,7 +2,7 @@
 id: j1bamcfegu6jqg8f52oo8vi
 title: Init View
 desc: ''
-updated: 1650647822905
+updated: 1656523805265
 created: 1650647458936
 ---
 
@@ -19,7 +19,24 @@ vscode.registerCommand(
 
 ### Initialize Preview Factory
 - [[PreviewFactory|../packages/plugin-core/src/components/views/PreviewViewFactory.ts]]
-#todo
+
+```ts
+create {
+    if !PreviewPanelFactory._preview { 
+        PreviewPanelFactory._preview = new PreviewPanel
+    }
+
+}
+```
+
+### Initialize a Panel
+- [[../packages/plugin-core/src/components/views/PreviewPanel.ts]]
+
+```ts
+new PreviewPanel {
+    // write up 
+}
+```
 
 ### Show Panel
 Panel is created. Handles messages from the webview and will update the editor on certain preview events

@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1655218586975
+updated: 1656513423398
 created: 1640280816708
 ---
 
@@ -50,7 +50,7 @@ These steps should be run **after** the weekly release has gone out. It is only 
     echo "generating lockfile..."
     yarn
 
-    echo "commit and push..."
+    echo "commit..."
     git add .
     git commit -m "chore(release): sync nextjs-template with dendron $VERSION"
     ```

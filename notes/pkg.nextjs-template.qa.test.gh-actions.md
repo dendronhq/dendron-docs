@@ -7,7 +7,7 @@ created: 1654015138563
 ---
 
 ## Pre-requisites
-1. Checkout [[Publish Gh Action Dev|dendron://dendron.handbook/ext.github.repo.publish-gh-action-dev]]
+1. Checkout [[Publish Gh Action Dev|dendron://dendron.docs/ext.github.repo.publish-gh-action-dev]]
     ```
     git clone https://github.com/dendronhq/template.publish.github-action-dev.git
     ```
