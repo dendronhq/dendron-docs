@@ -2,7 +2,7 @@
 id: j1bamcfegu6jqg8f52oo8vi
 title: Init View
 desc: ''
-updated: 1656523805265
+updated: 1656610164847
 created: 1650647458936
 ---
 
@@ -36,6 +36,7 @@ create {
 new PreviewPanel {
     // write up 
 }
+
 ```
 
 ### Show Panel
