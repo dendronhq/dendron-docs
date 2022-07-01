@@ -2,7 +2,7 @@
 id: 8289cf77-51fa-4644-96c6-b5b2c2ef62fc
 title: Note Refs
 desc: ''
-updated: 1631839987446
+updated: 1656545467212
 created: 1613752938733
 ---
 
@@ -43,7 +43,13 @@ convertNoteRefHelperAST(link, note) {
     ...
     anchorStart, anchorEnd, anchorStartOffset := link
     bodyAST = noteRefProc.parse(note.body) as DendronASTNode;
-    prepareNoteRefIndices(anchorStart, anchorEnd)
+    start, end = prepareNoteRefIndices(anchorStart, anchorEnd)
+
+    ...
+      bodyAST.children.slice(
+        (start ? start.index : 0) + anchorStartOffset,
+        end ? end.index + 1 : undefined
+      )
 }
 ```
 
