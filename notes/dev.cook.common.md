@@ -2,7 +2,7 @@
 id: qdfa7PG6X0kbXJuMX86h3
 title: Common
 desc: ''
-updated: 1631232655996
+updated: 1656691974919
 created: 1631232243783
 ---
 
@@ -35,8 +35,6 @@ CTRL+C
 . bootstrap/scripts/helpers.sh
 # change registry to local endpoint
 setRegLocal
-# run local endpoint
-verdaccio
 ```
 
 

@@ -2,42 +2,38 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ""
-updated: 1647377918935
+updated: 1656697810384
 created: 1635532194153
 ---
+
+## Steps
+
 
 ## Cook
 
 ### Manual bump and publish plugin only
 
 If you need to manually bump the current package version number for any reason without updating NPM
+- switch to local npm ![[dendron://dendron.docs/dev.cook.common#switch-to-local-npm,1:#*]]
 
-- setup local npm registry
-  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#setup-local-npm-registry,1:#*]]
+- setup local npm registry ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#setup-local-npm-registry,1:#*]]
 
-- bump plugin version
-  ![[Bump Plugin Version|dendron://dendron.docs/pkg.plugin-core.dev.deploy#bump-plugin-version]]
+- bump plugin version ![[Bump Plugin Version|dendron://dendron.docs/pkg.plugin-core.dev.deploy#bump-plugin-version]]
 
-- publish dependencies to npm
-  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-node-dependencies-to-npm,1:#*]]
+- publish dependencies to npm ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-node-dependencies-to-npm,1:#*]]
 
-- prepare package.json
-  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#prep-packagejson,1:#*]]
+- prepare package.json ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#prep-packagejson,1:#*]]
 
-- package plugin
-  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#package-plugin,1:#*]]
+- package plugin ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#package-plugin,1:#*]]
 
-- publish to market place
-  ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-from-artifact,1:#*]]
+- publish to market place ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#publish-from-artifact,1:#*]]
 
 - reset
-
 ```sh
 git reset --hard
 ```
 
-- publish to nextjs
-  ![[Steps|dendron://dendron.docs/pkg.nextjs-template.dev.deploy#steps]]
+- publish to nextjs ![[Steps|dendron://dendron.docs/pkg.nextjs-template.dev.deploy#steps]]
 
 - sync back to master
 
@@ -49,8 +45,7 @@ git commit -m "chore(release): publish $VERSION"
 git push
 ```
 
-- clean up repo
-  ![[dendron://dendron.docs/pkg.plugin-core.dev.build#fast-re-build,1:#*]]
+- clean up repo ![[dendron://dendron.docs/pkg.plugin-core.dev.build#fast-re-build,1:#*]]
 
 ## Common Cook Steps
 
@@ -80,7 +75,7 @@ export DENDRON_RELEASE_VERSION=
 
 ```sh
 # values are "patch|minor"
-UPGRADE_TYPE=
+UPGRADE_TYPE=minor
 
 echo "bumping..."
 dendron dev bump_version --upgradeType $UPGRADE_TYPE
