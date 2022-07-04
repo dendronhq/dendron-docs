@@ -2,12 +2,26 @@
 id: rg6i2lnec75cmhe1tz0ua4z
 title: Note Traits
 desc: ''
-updated: 1648248856881
+updated: 1656966088149
 created: 1648248856881
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
 
 ## Summary
+
+## Gotchas
+- the `traits` property is represented as `traitIds` on disk
+    - [[../code/dendron/packages/common-all/src/dnode.ts]]
+    ```ts
+    serializeExplicitProps {
+        if (cleanProps.traits) {
+        propsWithTrait = {
+            ...cleanProps,
+            traitIds: cleanProps.traits.map((value) => value),
+        };
+        }    
+    }
+    ```
 
 ## Lifecycle
 

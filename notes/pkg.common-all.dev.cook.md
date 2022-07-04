@@ -1,7 +1,7 @@
 ---
 id: 1jIkH5R6W3pM8IYR2gOji
 title: Cookbook
-desc: ""
+desc: ''
 updated: 1655171115694
 created: 1634737110155
 ---
@@ -14,7 +14,7 @@ created: 1634737110155
 
 ### Deprecating Existing Config
 
-![[Deprecating Existing Config|dendron://dendron.docs/pkg.common-all.dev.cook.deprecating-existing-config]]
+![[dendron://dendron.docs/pkg.common-all.dev.cook.remove-existing-config]]
 
 ### Accessing config values from `dendron.yml`
 
