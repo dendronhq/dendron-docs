@@ -2,7 +2,7 @@
 id: 8d09cc3f-25e3-42a2-ac86-82806c0c8c65
 title: Startup
 desc: ""
-updated: 1654299259584
+updated: 1656951370416
 created: 1610160007286
 ---
 
@@ -69,7 +69,7 @@ _activate {
         setupTraits
         setupSegmentWithCacheFlush
 
-        // see [[Run Migration|dendron://dendron.docs/pkg.dendron-engine.t.upgrade.arch.lifecycle#run-migration]]
+        // see [[Migration|dendron://dendron.docs/pkg.dendron-engine.t.migration]]
         changes = runMigrationsIfNecessary
 
         if !changes {
@@ -179,7 +179,7 @@ showWelcome {
 
         switch(msg {
             case initializeWorkspace {
-                SetupWorkspaceCommand().run(workspaceInitializer: TutorialInitializer)
+                LaunchTutorialWorkspaceCommand.run
             }
         })
 
@@ -247,8 +247,6 @@ startServer {
 ```
 
 ### updateEngineAPI
-
-- [[workspace.vaults|pkg.plugin-core.internal#workspacevaults]]
 
 - src/utils.ts
 
