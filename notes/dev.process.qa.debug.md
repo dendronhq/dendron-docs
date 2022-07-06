@@ -2,7 +2,7 @@
 id: yhpcSlIpwsBX2iHjfyutP
 title: Debug
 desc: ''
-updated: 1655155321778
+updated: 1657065788338
 created: 1630441590786
 ---
 
@@ -19,6 +19,8 @@ Some vscode specific debugging tips
 You can put a breakpoint directly in any code that's part of `plugin-core` and it'll break at those points
 
 > Kevin's Aside: If you need to debug a related package, I haven't found a good way to put a break point. Instead, I manually insert a `debugger` statement and vscode will break. Don't forget to remove the `debugger` statement 
+
+Example [video](https://www.loom.com/share/01eb536118934d96b3f16cdb7698e84f)
 
 ### Non Plugin Code
 

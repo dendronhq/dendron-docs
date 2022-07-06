@@ -2,7 +2,7 @@
 id: 7aFrHnTNespaRzhlTwftM
 title: Development Process
 desc: ''
-updated: 1650659164300
+updated: 1657065808641
 created: 1637876733365
 config:
   global:
@@ -34,6 +34,7 @@ Writing code
 - Foundational: read this before you start working
   - [[Dev Env|dendron://dendron.docs/dev.process.code.dev-env]]: Setting up your dev environment
   - [[Monorepo|dendron://dendron.docs/dev.process.code.monorepo]] (NOTE: read this if its your first time working in a monorepo)
+  - [[Tips|dendron://dendron.docs/dev.process.tips]]
 - Process
   - [[Code Conventions|dendron://dendron.docs/dev.process.code]]
   - [[Best Practices When Coding|dendron://dendron.docs/dev.process.code.best-practices]]
