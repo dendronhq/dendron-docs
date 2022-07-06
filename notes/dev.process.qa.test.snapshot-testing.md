@@ -2,7 +2,7 @@
 id: nxu3wpej92v6i0utwb1m2s4
 title: Snapshot Testing
 desc: ''
-updated: 1656469889534
+updated: 1657150256497
 created: 1654709227525
 ---
 
@@ -60,7 +60,7 @@ When adding a snapshot test, consider writing comments about
 As a corollary to [[Give ample context of why we are testing the snapshot|dendron://dendron.docs/dev.process.qa.test.snapshot-testing#give-ample-context-of-why-we-are-testing-the-snapshot]], if your comments that describe the context of the snapshot test is getting too long, it means that it probably will also be hard for other people to understand it as well. At this point, the context described as a comment may be more clear if it could be expressed as code. i.e) in smaller chunks of unit tests that are testing for very specific things. At the very least, snapshot tests should be accompanied with unit tests that test for the same thing, but in a more explicit manner for just a portion of the snapshot that is crucial.
 
 ### Take time to verify before updating all snapshots
-If you are certain that the code you are pushing will change some output, and you can easily verify it visually, you can simply run `yarn run test:updateSnapshots` to update all the failing tests. However, snapshots are often very long and you can easily miss a very small part of the snapshot that changed if you don't actively look for them. It is always a good practice to slow down and verify that each snapshot you are updating is something you really want to do.
+If you are certain that the code you are pushing will change some output, and you can easily verify it visually, you can simply run `yarn run test:updateSnapshots` from the `engine-test-utils` directory or run `test:updateSnapshots` task to update all the failing tests. However, snapshots are often very long and you can easily miss a very small part of the snapshot that changed if you don't actively look for them. It is always a good practice to slow down and verify that each snapshot you are updating is something you really want to do.
 
 ### Write small snapshots, only when you need to
 As a corollary to [[Take time to verify before updating all snapshots|dendron://dendron.docs/dev.process.qa.test.snapshot-testing#take-time-to-verify-before-updating-all-snapshots]], it would be easier for the future you, or the next developer down the line that has to troubleshoot, to have bite-sized snapshots that could easily be verified what it's testing for visually. Snapshots that span multiple scrolls may need to be split up, or you may want to write explicit unit tests that are smaller in size.
