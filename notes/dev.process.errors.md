@@ -2,7 +2,7 @@
 id: 2b87ceb3-2a90-4dee-ab8e-980172ecaef1
 title: Errors
 desc: ''
-updated: 1652029666533
+updated: 1657228637334
 created: 1620879891784
 ---
 
@@ -37,8 +37,26 @@ type RespV3 = {
 ```
 
 This type signature says that that the result can either contain an `error` property or a `data` property but never both at the same time.
-
 This is useful when an error shortcircuits the calling function. 
+
+- NOTE: typescript isn't very smart about destructuring. for type narrowing to work, you can't destructure the argument
+  - bad
+  ```ts
+  const {error, data} = someFunc
+  if (error) {
+    throw 
+  }
+  // COMPILE ERROR
+  data.value
+  ```
+  - good
+  ```ts
+  const resp = someFunc
+  if (resp.error) {
+    throw 
+  }
+  resp.data.value
+  ```
 
 ### Example
 
