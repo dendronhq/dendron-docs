@@ -2,7 +2,7 @@
 id: ajxrv6ojg1hlx1y31ajrkte
 title: Add New Command
 desc: ""
-updated: 1655168381587
+updated: 1657156975196
 created: 1651425940926
 ---
 
@@ -75,6 +75,9 @@ Some other notes:
 
    - tests are in `plugin-core/src/test/suite-integ/{COMMAND}`
    - testing instructions are [[here|dev.process.qa]]
+
+### Update package.json
+![[dendron://dendron.docs/pkg.plugin-core.dev.cook.update-pkg-json]]
 
 ### Submit a pull request
 
