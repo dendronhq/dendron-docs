@@ -2,7 +2,7 @@
 id: 8ptvd8img1jeiak5ujo3jpy
 title: Note Ref
 desc: ''
-updated: 1656458411810
+updated: 1657251709233
 created: 1656353365950
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
@@ -11,6 +11,7 @@ schema: '[[dendron://dendron.docs/ref.module-schema]]'
 
 ## Lifecycle
 
+### Parse
 - [[../packages/engine-server/src/markdown/remark/noteRefsV2.ts]]
 ```ts
 inlineTokenizer {
@@ -20,47 +21,113 @@ inlineTokenizer {
 }
 ```
 
-### attachCompiler
+### Render
+- loc: [[../packages/engine-server/src/markdown/remark/dendronPub.ts]]
 
 ```ts
-attachCompiler { 
-    refLinkV2 {
-        convertNoteRef
-    }
+case node.type = REF_LINK {
+    convertNoteRefASTV2 
 }
 
-convertNoteRef {
-    if refLvl >= MAX_REF_LVL {
-        return error
-    }
-    ...
-    noteRefs = []
-    if link.from.fname.endsWith("*") {
+convertNoteRefASTV2 {
+    if link.endsWith("*") {
         ...
     } else {
-        noteRefs.push(link.from)
+        ...
     }
-    noteRefs.map {
-        data = convertNoteRefHelper
 
-        if prettyRefs {
-            renderPretty(data)
-        } else {
-            return data
-        }
+    noteRefs.map {
+        processRef(ref, note, fname)
     }
 }
 
-convertNoteRefHelper {
-    noteRefProc = proc()
-    extractFootnoteDefs
-    start, end = prepareNoteRefIndices
+processRef {
+    data = convertNoteRefHelperAST
+    if prettyRef {
 
-    bodyAST.children = bodyAST.children.slice(start?.index, end?.index)
-    bodyAST.children.push(...footnotes)
-    procTree = noteRefProc.runSync(bodyAST)
-    noteRefProc.stringify(procTree)
+        id = genRefId
+        addRefToProc(id, data)
+        return renderPrettyAST(id)
+    } else {
+        return paragraph(data)
+    }
 
+}
+
+convertNoteRefHelperAST(link, note) {
+    ...
+    anchorStart, anchorEnd, anchorStartOffset := link
+    bodyAST = noteRefProc.parse(note.body) as DendronASTNode;
+    start, end = prepareNoteRefIndices(anchorStart, anchorEnd)
+
+    ...
+      bodyAST.children.slice(
+        (start ? start.index : 0) + anchorStartOffset,
+        end ? end.index + 1 : undefined
+      )
+}
+```
+
+#### Sample JSON
+```json
+{
+  type: "root",
+  children: [
+    {
+      type: "paragraph",
+      children: [
+        {
+          type: "wikiLink",
+          value: "bar",
+          data: {
+            alias: "Bar",
+            permalink: "bar.html",
+            exists: true,
+            hName: "a",
+            hProperties: {
+              className: undefined,
+              style: undefined,
+              href: "bar.html",
+            },
+            hChildren: [
+              {
+                type: "text",
+                value: "Bar",
+              },
+            ],
+          },
+          position: {
+            start: {
+              line: 1,
+              column: 1,
+              offset: 0,
+            },
+            end: {
+              line: 1,
+              column: 8,
+              offset: 7,
+            },
+            indent: [
+            ],
+          },
+        },
+      ],
+      position: {
+        start: {
+          line: 1,
+          column: 1,
+          offset: 0,
+        },
+        end: {
+          line: 1,
+          column: 8,
+          offset: 7,
+        },
+        indent: [
+        ],
+      },
+    },
+  ],
 }
 ```
 
