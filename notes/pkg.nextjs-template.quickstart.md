@@ -1,9 +1,9 @@
 ---
 id: PgwAXFfotfgpFVqHQRlBl
-title: Quickstart
+title: Nextjs Template Quickstart
 desc: |
   Development related
-updated: 1643305896755
+updated: 1657558102378
 created: 1628376960868
 ---
 
