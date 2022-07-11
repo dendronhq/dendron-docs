@@ -2,7 +2,7 @@
 id: aqn9kf61clk64dcdutv1kni
 title: Add New Config
 desc: ""
-updated: 1655168859155
+updated: 1657518904513
 created: 1646420172968
 ---
 
@@ -38,3 +38,11 @@ Dendron configuration is defined in [[../packages/common-all/src/types/configs/d
 
 1. Update tests and json schema
 ![[Modify Dendron Config|dendron://dendron.docs/pkg.common-all.dev.cook.modify-dendron-config]]
+
+1. Update UI preview for config : This process is currently manual
+- Update the new config in : [[..\packages\dendron-plugin-views\src\utils\dendronConfig.ts]].
+  - the key is the entire nested path of the newly added config. for example: `dev.enableSelfContainedVaults`
+  - add the type, description and group of the config.
+   - if the config has enum, update the type to be`select`. eg: `workspace.journal.addBehavior`
+   - if the config value is in `key:value` pair, update the type to `list`. eg: `workspace.task.prioritySymbols`
+   - for complicated values of config, update the type to be : `object`, this will add a `edit in dendron.yml` link in UI. eg: `workspace.vaults`
