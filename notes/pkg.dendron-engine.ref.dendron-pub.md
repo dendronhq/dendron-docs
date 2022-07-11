@@ -2,7 +2,7 @@
 id: y6np7cmixseqsr42f4rtlvc
 title: Dendron Pub
 desc: ''
-updated: 1657558319232
+updated: 1657558378701
 created: 1656354087062
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
@@ -29,3 +29,6 @@ root.children.splice(
     HEADING, note.title
 )
 ```
+
+## Tests
+- See https://github.com/dendronhq/dendron/blob/master/packages/engine-test-utils/src/__tests__/engine-server/markdown/dendronPub.spec.ts#L56:L56
