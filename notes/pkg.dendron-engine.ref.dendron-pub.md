@@ -2,7 +2,7 @@
 id: y6np7cmixseqsr42f4rtlvc
 title: Dendron Pub
 desc: ''
-updated: 1657558378701
+updated: 1657570059343
 created: 1656354087062
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
@@ -28,6 +28,21 @@ _.findIndex(root.children, ent.type != yaml)
 root.children.splice(
     HEADING, note.title
 )
+```
+
+### Convert wikilinks for publishing
+
+```ts
+transformer {
+    visit(node) {
+        if(node.type === WIKI_LINK) { 
+            ...
+            isPublished := SiteUtils.isPublished
+            if !isPublished value = _.toString(StatusCodes.FORBIDDEN)
+
+        }
+    }
+}
 ```
 
 ## Tests
