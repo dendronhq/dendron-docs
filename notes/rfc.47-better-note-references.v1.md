@@ -1,11 +1,14 @@
 ---
-id: 9hoksdbfuv0a1vaffla7dv0
-title: 47 Better Note References
+id: 3l9zjos1m6pazmiyv682km7
+title: V1
 desc: ''
-updated: 1657590483227
-created: 1655411869181
-published: true
+updated: 1657590385886
+created: 1657590379266
 ---
+
+<!-- Remove the following warning once you are done writing the RFC. -->
+> ⚠️ This proposal is currently a draft and is not yet finalized.
+
 ## Goals
 
 1. Deliver an improved experience for note references, with increased functionality 
@@ -34,11 +37,19 @@ All examples use the [[sample note|dendron://dendron.docs/rfc.47-better-note-ref
   - to migrate, introduce a new setting `enableSmartHeaderReferences` 
     - unless enabled, will keep current behavior
     - doctor command to transform all `![[#one]]` references to `[[#one:#$]]` 
+- 
 
 ### referencing starting and ending positions
 - context: currently impossible to reference just the beginning or end of a doc without headers
-- proposal: introduce syntax for front of the doc `![[#^begin]]` and end of the doc `![[#^end]]`
+- proposal: introduce syntax for front of the doc `![[#^]]` and end of the doc `![[#$]]`
 - eg: ![[#positional-reference,1:#*]]
+
+### referencing frontmatter
+- context: not possible to reference frontmatter
+- proposal: introduce syntax for frontmatter reference `![[#>foo]]`
+- eg: ![[#frontmatter-reference:#*]]
+- NOTE: this is only useful when referencing frontmatter of a note from another note, otherwise, users could use frontmatter variable substitution to reference frontmatter of the same note
+
 
 ## Example
 
@@ -97,7 +108,7 @@ End Text
 
 - example of referencing from beginning of doc
   ```md
-  ![[#^begin]]
+  ![[#^]]
 
   <!-- Output -->
   Pre-amble text
@@ -105,7 +116,7 @@ End Text
 
 - example of referencing to end of doc
   ```md
-  ![[#two:#end]]
+  ![[#two:#$]]
 
   <!-- Output: -->
   ## Two
@@ -117,12 +128,23 @@ End Text
   End Text
   ```
 
+### frontmatter reference
+
+- sample2.md
+```md
+![[sample#>secret]]
+
+<!-- Output -->
+42
+```
+
 ## Tradeoffs
-- ~~Some overlap with [[22 Queries|dendron://dendron.docs/rfc.22-queries]] - whereas 22 are meant for advanced logic, note references are meant to make "common things simple" by providing a flexible mechanism to reference parts of a note~~
-- ~~There is already a usage for `^` for block anchors within notes - an argument could be made this extends that concept by just imagining a blank anchor at the top of the note (and also allows for refernece between top and a specific block anchor) ~~
+- Some overlap with [[22 Queries|dendron://dendron.docs/rfc.22-queries]] - whereas 22 are meant for advanced logic, note references are meant to make "common things simple" by providing a flexible mechanism to reference parts of a note
+- There is already a usage for `^` for block anchors within notes - an argument could be made this extends that concept by just imagining a blank anchor at the top of the note (and also allows for refernece between top and a specific block anchor) 
 - This doesn't allow for some specific cases e.g. referencing from a level 2 header until the first subsequent level 4 header - these use cases seem rare and unlikely but possible
 - Another setting gets added to the config which leads to more complexity and having to provide parralel documentation if/until a full switch over is made - similar to self-contained vaults approach.
 
 ## Discussion
 <!-- Click the link and create new discussion -->
 https://github.com/dendronhq/dendron/discussions/new
+
