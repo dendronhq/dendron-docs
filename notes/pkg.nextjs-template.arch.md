@@ -2,7 +2,7 @@
 id: LAUb8WcM8rmjxJrR
 title: Architecture
 desc: ""
-updated: 1641681263461
+updated: 1657672732314
 created: 1627859879590
 ---
 
@@ -21,3 +21,6 @@ The NextJS pod serializes the subset of notes that the user wants to publish. Ru
 A published Dendron site is a hybrid of static site and dynamic web app. Each page is statically generated but any subsequent page navigation (via menu or lookuup) is then dynamically fetched using javascript.
 
 - NOTE: currently, the published site is not optimzied and will load ALL notes before rendering to fill out the nav bar and other UI elements. we are aware of this issue and are implementing a fix so that the initial page load can render without any external fetches
+
+## Children
+- [[Lifecycle|dendron://dendron.docs/pkg.nextjs-template.arch.lifecycle]]
