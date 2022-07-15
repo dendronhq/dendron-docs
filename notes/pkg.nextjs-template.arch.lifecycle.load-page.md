@@ -2,7 +2,7 @@
 id: tyf578aqzw8l6o36tth8u4v
 title: Load Page
 desc: ''
-updated: 1651777498209
+updated: 1657917281795
 created: 1651777492898
 ---
 
@@ -43,7 +43,6 @@ DendronApp {
 ```tsx
 Note {
   id = getActiveNoteId
-
   // render note based on id
 }
 ```
