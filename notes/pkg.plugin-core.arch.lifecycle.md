@@ -2,7 +2,7 @@
 id: d410c0d6-9ede-42ef-9c96-662902e4f488
 title: Lifecycle
 desc: ""
-updated: 1640042919574
+updated: 1657923056132
 created: 1609714449234
 ---
 
@@ -34,3 +34,6 @@ When a command is executed, it runs the following functions in order. Source cod
 
 - other
   - extension, not_initialized: error with starting engine
+
+## Related
+- [[Lookup|dendron://dendron.docs/pkg.plugin-core.t.lookup]]

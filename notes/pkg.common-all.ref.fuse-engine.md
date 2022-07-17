@@ -2,7 +2,7 @@
 id: 4cjmu4wm5vsi2a9fwlk08g8
 title: Fuse Engine
 desc: ""
-updated: 1654299802573
+updated: 1658016680382
 created: 1654299188693
 schema: "[[dendron://dendron.docs/ref.module-schema]]"
 ---
@@ -12,6 +12,16 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
 - loc: [[../packages/common-all/src/fuse.ts]]
 
 ## Lifecycle
+
+### init
+```ts
+constructor { 
+    createFuse { 
+
+    }
+
+}
+```
 
 ### queryNote
 
