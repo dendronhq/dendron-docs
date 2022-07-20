@@ -2,7 +2,7 @@
 id: gxr4cualojk5n0niohjxa3e
 title: Debug
 desc: ''
-updated: 1655001660263
+updated: 1658331836466
 created: 1655001600000
 ---
 
@@ -12,5 +12,12 @@ See https://github.com/dendronhq/dendron/blob/master/packages/dendron-cli/.vscod
 
 Create a custom task in [[task.json|../packages/dendron-cli/.vscode/tasks.json]]
 Run the task. This should trigger the vscode debugger
+
+### Debug Dendron Publishing
+```sh
+node --inspect  /usr/local/bin/dendron-cli buildSiteV2 --wsRoot /Users/kevinlin/Dropbox/Apps/Noah  --stage dev --enginePort `cat /Users/kevinlin/Dropbox/Apps/Noah/.dendron.port` --serve 
+
+```
+
 
 ##
