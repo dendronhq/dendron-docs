@@ -2,7 +2,7 @@
 id: vaayztb0ba5g1v8zz86y3zm
 title: Seq Diagram
 desc: ''
-updated: 1648577675100
+updated: 1658338795128
 created: 1648577675100
 ---
 
@@ -33,3 +33,21 @@ sequenceDiagram
     lookupCommand ->> lookupCommand: calls command.execute()
 ```
 
+
+## Code
+
+- [[../packages/plugin-core/src/commands/NoteLookupCommand.ts]]
+
+
+```ts
+/**
+ * Executed after user accepts a quickpick item
+ */
+execute {
+  selected := getSelected
+  ...
+  notesToShow :=
+
+  notesToShow.map showNote(note)
+}
+```
