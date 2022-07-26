@@ -2,11 +2,9 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ""
-updated: 1656697810384
+updated: 1658861485764
 created: 1635532194153
 ---
-
-## Steps
 
 
 ## Cook
