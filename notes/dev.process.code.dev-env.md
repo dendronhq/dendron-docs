@@ -2,7 +2,7 @@
 id: gI6BwB1PJOfe9nMQQAN7a
 title: Dev Env
 desc: ''
-updated: 1642730586688
+updated: 1658849540384
 created: 1642729891501
 ---
 
@@ -42,3 +42,12 @@ All packages in the repo use a standard base configuration found at [.eslintrc.j
 
 If you are using vscode, download and enable the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 If you are using another editor, make sure you have eslint enabled.
+
+### Setup Git
+
+Make sure your git client is configured with a stable username and address
+
+```sh
+git config --global user.name "Johny Apple"
+git config --global user.email "johny@dendron.so
+```
