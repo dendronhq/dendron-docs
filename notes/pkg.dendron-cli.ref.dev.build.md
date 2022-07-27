@@ -2,7 +2,7 @@
 id: Z1rOzDCvQyN7yaibtatks
 title: Build
 desc: ""
-updated: 1658870992140
+updated: 1658936051007
 created: 1642274303182
 ---
 
@@ -14,17 +14,26 @@ Building Dendron for publication
 
 <!-- Startup process for this module -->
 
-- [[../packages/dendron-cli/src/utils/build.ts]]
-
+- [[../packages/dendron-cli/src/commands/devCLICommand.ts]]
+	- see [[#prepPluginPkg]]
+	- see [[#installPluginDependencies]]
 ```ts
 build {
-	...
+	// set npm endpoint
+	prepPublishLocal || prepPublishRemote
+	runTypeCheck
+	bumpVersion
+	// publish all packages
 	publishVersion
 	syncAssets
+	prepPluginPkg
 	installPluginDependencies
+	compilePlugin
+	packagePluginDependencies
 }
 ```
 
+### prepPluginPkg
 - update `package.json` metadata for `plugin-core`
 	- see [[prep_plugin|dendron://dendron.dendron-site/dendron.topic.dev.cli#prep_plugin]]
 ```ts
@@ -39,8 +48,8 @@ prepPluginPkg {
 
 ```
 
-- installing dependencies
 
+### installPluginDependencies
 ```ts
 installPluginDependencies {
 	rm "$root/package.json"
@@ -48,7 +57,13 @@ installPluginDependencies {
 }
 ```
 
-## Common
+### compilePlugin
+
+```
+yarn build:prod  {
+	yarn webpack:prod && ./scripts/varSub.sh
+}
+```
 
 ### packagePluginDependencies
 
