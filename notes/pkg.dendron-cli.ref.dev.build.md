@@ -2,7 +2,7 @@
 id: Z1rOzDCvQyN7yaibtatks
 title: Build
 desc: ""
-updated: 1647377346113
+updated: 1658870992140
 created: 1642274303182
 ---
 
@@ -26,7 +26,7 @@ build {
 ```
 
 - update `package.json` metadata for `plugin-core`
-
+	- see [[prep_plugin|dendron://dendron.dendron-site/dendron.topic.dev.cli#prep_plugin]]
 ```ts
 // change name to target name (eg. nightly vs regular release)
 // update display name
