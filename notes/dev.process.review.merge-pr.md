@@ -2,7 +2,7 @@
 id: uGw7LNxBtIT4tgd4icFOT
 title: Merge Pr
 desc: ''
-updated: 1653066771760
+updated: 1659541480692
 created: 1634081151578
 ---
 
@@ -20,7 +20,7 @@ PRs are merged by the same individual that submitted the PR
     - eg. `enhance(publish): speed up publishing by 500%`
 1. Move the commit to ready to ship by following the corresponding sop [^ship]
 ![[dendron://dendron.handbook/area.product.sop.ready-to-ship.notice-release-schedule]]
-1. Move any [[Analytics|dendron://private/area.metrics.sop.feature-instrumentation#document]] from [[Upcoming Release Record|dendron://private/ext.airtable.record.upcoming-release]] to the proper release version
+1. Create [[Analytics|dendron://private/area.metrics.sop.feature-instrumentation#document]]  entries in the proper release version
 1. If the change is going out in the current release, merge in any doc changes. Otherwise, create a task to merge in docs after the current release is pushed
 
 
