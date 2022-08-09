@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ""
-updated: 1658861485764
+updated: 1660080204622
 created: 1635532194153
 ---
 
@@ -42,6 +42,7 @@ git merge --squash release/$VERSION
 git commit -m "chore(release): publish $VERSION"
 git push
 ```
+test1345
 
 - clean up repo ![[dendron://dendron.docs/pkg.plugin-core.dev.build#fast-re-build,1:#*]]
 
