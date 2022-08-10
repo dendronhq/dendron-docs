@@ -2,7 +2,7 @@
 id: 69746008-2fa0-4036-b443-b15076a3d6bf
 title: Dendron Markdown
 desc: ''
-updated: 1637808225091
+updated: 1660148635940
 created: 1618848143084
 nav_exclude: true
 ---
@@ -58,3 +58,6 @@ sequenceDiagram
 	- REGULAR_MD: regular markdown
 	- PREVIEW_ENHANCED: hack for preview
 	- HTML: for publishing, make transformations in HTML
+
+## Next
+- [[pkg.dendron-markdown.arch]]
