@@ -2,11 +2,11 @@
 id: ZB2Rkb66lLlw1adVKiSXj
 title: Run
 desc: ''
-updated: 1640798361402
+updated: 1660295829098
 created: 1637876951989
 ---
 
-## Running via Launch Task from source
+## Running Local Dendron Extension via Launch Task from source
 - Prerequisites: Clone and install dependencies for the plugin as described in [[pkg.plugin-core.quickstart]]
 
 To start an instance of the Dendron with debugging capabilities, Run `Extension: Local (plugin-core)` from the debug panel in vscode
@@ -27,6 +27,27 @@ _Note: To have the changes reflected as you edit the code you need to run the `.
 
 When developing in VSCode, you can use its [remote development](https://code.visualstudio.com/docs/remote/ssh) to ssh into another machine but keep VSCode as your development frontend.
 
-While installation intsructions are the same, there are some differences when running and testing code which are documented here.
+While installation instructions are the same, there are some differences when running and testing code which are documented here.
 
 Use the `Run Extension:Remote` launch task to start the extension. 
+
+## Running Dendron in Web Extension Host
+
+This can be done in two ways:
+
+### Inside Deskop VS Code (use for debugging)
+
+Run the `launch.json` task called `Run Web Extension in VS Code`. This will launch the web extension flavor in Dendron but in a local VS Code instance.
+
+**Note: Several Gotchas while running in this mode:**
+- If you're using VSCode Insiders and having issues, use regular VS Code instead. There have been some environment issues when running on Insiders.
+- Some vscode environment variables will be different in this mode than on true browser experiences like `vscode.dev` or `github.dev`.  Particularly, `shellExecutionSupported` and `virtualWorkspace` may be different, which may cause some commands to show up when they regularly shouldn't. These variables are used inside `package.json` to hide commands which aren't supported in the web version. See [vscode docs here](https://code.visualstudio.com/api/extension-guides/web-extensions#migrate-extension-with-code) for more info.
+- If you change workspaces while debugging, stop the debugger instance and restart it. It appears there's a bug where upon reload the _Local_ version of Dendron will launch instead of the Web Extension.
+
+### In a Browser Window
+
+In plugin-core, first run the yarn task `yarn compile-web`, followed by `yarn open-in-browser`. This should launch a browser window with Dendron loaded.
+
+### Additional Info
+
+For more info, see [VS Code Docs - Test your Web Extension](https://code.visualstudio.com/api/extension-guides/web-extensions#test-your-web-extension).
