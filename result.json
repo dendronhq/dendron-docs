@@ -1,0 +1,18 @@
+[
+  {
+    "epoch": "1660366036",
+    "timestamp": "04:47:16",
+    "cluster": "elasticsearch",
+    "status": "green",
+    "node.total": "1",
+    "node.data": "1",
+    "shards": "0",
+    "pri": "0",
+    "relo": "0",
+    "init": "0",
+    "unassign": "0",
+    "pending_tasks": "0",
+    "max_task_wait_time": "-",
+    "active_shards_percent": "100.0%"
+  }
+]
