@@ -2,7 +2,7 @@
 id: RDHf7KfANPuAAYbNhyiQI
 title: Cook
 desc: ''
-updated: 1636754962987
+updated: 1660709959395
 created: 1636746418602
 ---
 
@@ -98,6 +98,40 @@ export class SomeCommand extends BasicCommand<...> {
     ...
   }
 }
+```
+
+### Adding a validator to lookup
+- When creating lookup-derived commands, we sometimes have to limit the users from performing certain types of lookup.
+  - e.g.) disallowing lookup on the currently active note during merge note 
+- When creating a lookup provider for the [[new command that uses lookup|dendron://dendron.docs/pkg.plugin-core.t.lookup.cook#add-a-new-command-that-uses-lookup]], you can pass in an array of `preAcceptValidator`s, which will run sequentially when a lookup accept happens. If any of the passed in validator predicates return false, the lookup will not be accepted and the user has to change the selection.
+- The note lookup provider class simply runs the predicates before accepting, so if you need to add warning prompts to notify that the predicate failed, you should do it within the predicate itself.
+  - See an example in [Merge Note Command](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/commands/MergeNoteCommand.ts#L74)
+
+
+```ts
+// in SomeLookupCommand.ts
+...
+  private createLookupProvider() {
+    return this.extension.noteLookupProviderFactory.create(this.key, {
+      ...
+      preAcceptValidators: [
+        // disallow note with id foo
+        (selectedItems) => {
+          const maybeFooItem = selectedItems.find((item) => {
+            return item.id === "foo";
+          });
+          if (maybeFooItem) {
+            vscode.window.showErrorMessage(
+              "You cannot select notes with id `foo`"
+            );
+          }
+          return !maybeFooItem;
+        },
+      ],
+      ...
+    });
+  }
+...
 ```
 
 ### Tuning Lookup
