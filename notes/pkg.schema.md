@@ -2,12 +2,11 @@
 id: DxucQoYEzu9VnBoYuFiqN
 title: Schema
 desc: ''
-updated: 1637876147922
+updated: 1660929135677
 created: 1634749668693
 nav_order: 1
 ---
 
-## Schema
 - for module schema, see [[ref.module-schema]]
 
 ```yml
