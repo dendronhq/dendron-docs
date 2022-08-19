@@ -2,7 +2,7 @@
 id: dde0d05d-3e4c-498b-90bb-de4e902f02d6
 title: Troubleshooting
 desc: ''
-updated: 1637878713594
+updated: 1660906640420
 created: 1620686948200
 nav_order: 5.1
 ---
@@ -15,7 +15,7 @@ nav_order: 5.1
 Sometimes we will add new dependencies to master. In order to pick them up, run the following from the workspace root.
 
 ```sh
-bootstrap/scripts/bootstrap.sh
+yarn bootstrap:bootstrap
 ```
 
 ### Relative import to an inter-workspace dependency
