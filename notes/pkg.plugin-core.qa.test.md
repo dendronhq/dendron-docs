@@ -2,7 +2,7 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1656041635515
+updated: 1660946053273
 created: 1627140509315
 ---
 
@@ -227,17 +227,4 @@ To manually test new changes, launch an instance of the test workspace.
 ![[dev.ref.test-workspace]]
 
 ## Cook
-
-### subscribeToEngineStateChange
-
-Use this method to subscribe to engine state event changes when working with tests in `plugin-core`. This can be used in situations where the engine state changes asynchorously from test logic (such as from vscode event callbacks)
-
-### Upating the cursor position
-
-- see [this](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/test/suite-integ/NoteLookupCommand.test.ts)
-
-### Creating notes after engine is started
-
-If your test cases involve creating notes that cannot be done in the hooks of `describeSingleWS`, use `NoteTestUtilsV4.createNoteWithEngine` or `CreateNoteFactory.createWithEngine` in the test methods themselves
-
-- see [this](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/test/suite-integ/CopyNoteLink.test.ts)
+![[dendron://dendron.docs/pkg.plugin-core.qa.test.cook]]
