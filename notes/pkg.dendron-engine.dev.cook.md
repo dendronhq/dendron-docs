@@ -2,10 +2,17 @@
 id: 1bce1c33-c14b-4e5e-b493-45683c8cf54f
 title: Cook
 desc: ''
-updated: 1639011636235
+updated: 1660929207412
 created: 1610469139531
 ---
 ## General
+
+### Updating the prisma schema
+
+```sh
+cd packages/engine-server
+make db-gen
+```
 
 ### Note Response
 
