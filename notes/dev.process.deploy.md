@@ -2,7 +2,7 @@
 id: WmBgdjNJqOfiQ4NNnctuG
 title: Deploy
 desc: ''
-updated: 1637876045540
+updated: 1660956234513
 created: 1631029844001
 nav_exclude: true
 ---
@@ -66,5 +66,5 @@ env FAST=1 yarn build:$VERSION_UPGRADE:$ENDPOINT
 ```
 
 ## Related
-- [[CLI|etc.cli]]
 - [[Dev|dendron://dendron.docs/pkg.dendron-cli.ref.dev]]
+- [[dendron://dendron.dendron-site/dendron.topic.dev.cli]]

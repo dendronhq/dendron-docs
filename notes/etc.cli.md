@@ -2,44 +2,13 @@
 id: Y0cZsmfUdytwajRGeylMZ
 title: CLI
 desc: ''
-updated: 1650643094887
+updated: 1660962465461
 created: 1631473249667
 ---
 
 Dendron has a [[CLI|dendron.ref.cli]] command to help with development.
 
-```sh
-dendron dev <cmd>
-
-commands related to development of Dendron
-
-Positionals:
-  cmd  a command to run
-      [string] [required] [choices: "generate_json_schema_from_config", "build",
-      "bump_version", "publish", "sync_assets", "prep_plugin", "package_plugin",
-    "install_plugin", "enable_telemetry", "disable_telemetry", "show_telemetry",
-                                             "show_migrations", "run_migration"]
-
-Options:
-  --version           Show version number                              [boolean]
-  --help              Show help                                        [boolean]
-  --wsRoot            root directory of the Dendron workspace
-  --vault             name of vault
-  --quiet             don't print output to stdout
-  --upgradeType       how to do upgrade
-                              [choices: "major", "minor", "patch", "prerelease"]
-  --publishEndpoint   where to publish              [choices: "local", "remote"]
-  --extensionTarget   extension name to publish in the marketplace
-                                                 [choices: "dendron", "nightly"]
-  --fast              skip some checks
-  --migrationVersion  migration version to run
-```
-
 ## Common Options
-
-### upgradeType
-
-What next semver version to upgrade to
 
 ## Commands
 
@@ -81,20 +50,6 @@ Re-built static HTML used in plugin and sync them to plugin
 Format `package.json` of plugin to make it compatible with `vsce package`
 
 
-### package_plugin
-
-Equivalent to running the following
-
-Options:
-- --fast: when set, skip installing packages, skip uploading to sentry
-
-Env:
-- ANALYZE_BUNDLE: if set, create a treemap of dependencies using [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
-
-```sh
-yarn 
-vsce package --yarn
-```
 
 ### install_plugin
 

@@ -2,7 +2,7 @@
 id: n32ibr6okxgpw1ki9hksbtl
 title: Advanced Cookbook
 desc: ""
-updated: 1647377902657
+updated: 1660955031349
 created: 1647377581391
 ---
 
@@ -10,7 +10,7 @@ created: 1647377581391
 
 If you're not sure you need to follow these steps, you probably don't
 
-### Bump plugin version only without updating npm dependencies
+### Bump plugin version only without updating npm dependen![[Webpack|dendron://dendron.docs/pkg.plugin-core.ref.webpack]]ies
 
 Use this for a quicker way to update the plugin
 

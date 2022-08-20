@@ -2,7 +2,7 @@
 id: mwDT040wz5nBKtctjvNrQ
 title: Build
 desc: ""
-updated: 1650642925992
+updated: 1660956223308
 created: 1635705939396
 ---
 
@@ -64,5 +64,5 @@ Layout of build folder
 ## Related
 
 - [[Build|dendron://dendron.docs/pkg.plugin-core.ref.build]]
-- [[Dev CLI|dendron://dendron.docs/etc.cli]]
+- [[dendron://dendron.dendron-site/dendron.topic.dev.cli]]
 - [[Investigating a build step|dendron://dendron.docs/dev.process.code.monorepo#investigating-a-build-step]]
