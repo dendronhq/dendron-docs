@@ -2,9 +2,42 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ""
-updated: 1660080204622
+updated: 1661126633720
 created: 1635532194153
 ---
+
+## Steps
+
+- publish regular build
+
+```sh
+EXT_TARGET=dendron
+DENDRON_CLI=dendron
+UPGRADE_TYPE=minor
+PUBLISH_ENDPOINT=local
+
+SKIP_SENTRY=1 LOG_LEVEL=info $DENDRON_CLI dev build --upgradeType $UPGRADE_TYPE --publishEndpoint $PUBLISH_ENDPOINT --fast --extensionTarget $EXT_TARGET
+```
+
+- see [[dendron://dendron.dendron-site/dendron.topic.dev.cli.build.internal]]
+
+## CI
+
+### create-release-image
+- .github/workflows/create-release-image.yml
+
+- BUILD_ENV=ci ensures that we use a local version of the ci to build
+```
+yarn build:minor:local:ci
+"build:minor:local:ci": "cross-env UPGRADE_TYPE=minor PUBLISH_ENDPOINT=local BUILD_ENV=ci USE_IN_MEMORY_REGISTRY=1 ./bootstrap/scripts/buildPatch.sh",
+```
+
+### publish extension
+- .github/workflows/publish-extension-dendron-minor.yml
+
+```
+yarn build:minor:remote:ci
+```
 
 
 ## Cook
@@ -79,6 +112,13 @@ UPGRADE_TYPE=minor
 echo "bumping..."
 dendron dev bump_version --upgradeType $UPGRADE_TYPE
 ```
+
+### Modify engine-server
+- file: scripts/build-modify-engine.sh
+
+The `generated-prisma-client` has special `.node` files that is not compiled by webpack which is why we copy it over into the webpack `dist` folder when building the package. 
+
+Unfortunately, importing a missing file is not handled well by webpack. 
 
 ### Publish Node Dependencies to NPM
 

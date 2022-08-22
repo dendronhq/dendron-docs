@@ -2,7 +2,7 @@
 id: Y0cZsmfUdytwajRGeylMZ
 title: CLI
 desc: ''
-updated: 1660962465461
+updated: 1661122150454
 created: 1631473249667
 ---
 
@@ -15,18 +15,6 @@ Dendron has a [[CLI|dendron.ref.cli]] command to help with development.
 ### generate_json_schema_from_config
 
 Update json schema for `dendron.yml`
-
-### build
-
-Build vsix for a given upgradeType [^upgrade]
-Runs the build from end to run
-
-Options:
-- --fast: when building fast mode, the following is skipped:
-  - initial type checking
-  - restoring `package.json` and `plugin-core` to original state
-  - do not rebuild assets when running [[sync_assets|dendron://dendron.docs/etc.cli#sync_assets]]
-  - do not upload source map to sentry
 
 ### bump_version
 
