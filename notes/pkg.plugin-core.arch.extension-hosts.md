@@ -2,7 +2,7 @@
 id: foqwuv3ihg2fxzo3ksr1y7a
 title: Extension Hosts
 desc: ''
-updated: 1660894126176
+updated: 1661162952996
 created: 1660292391197
 ---
 
@@ -45,5 +45,11 @@ E---|Config 4|H
 - Node JS Engine provides the best performance, but can only be used in a Node JS environment. In Memory provides the worst performance, but is the simplest implementation. It currently is the environment we use for our test pass. Webworker thread provides better performance for the Plugin-Web variant than the In-Memory option.
 - We can use a Dependency Injection framework to help us compose the right configuration for the given environment. We can detect the environment we're in during extension activate via [`ExtensionKind` API from VSCode](https://code.visualstudio.com/api/advanced-topics/remote-extensions#varying-behaviors-when-running-remotely-or-in-the-codespaces-browser-editor) 
 - Prefer using `vscode-uri`'s `Utils` method over `path`. The `path-browserify` lib does not extends support for windows currently. See [Windows support · Issue #1 · browserify/path-browserify](https://github.com/browserify/path-browserify/issues/1)
+
+```js
+const txtPath = document.uri.fsPath;
+const bad = path.basename(txtPath); //bad
+const good = Utils.basename(txtPath); //good
+```
 
 https://code.visualstudio.com/api/extension-guides/web-extensions#update-existing-extensions-to-web-extensions
