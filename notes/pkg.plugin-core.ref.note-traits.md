@@ -2,7 +2,7 @@
 id: rg6i2lnec75cmhe1tz0ua4z
 title: Note Traits
 desc: ''
-updated: 1656966088149
+updated: 1661266213094
 created: 1648248856881
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
@@ -60,6 +60,5 @@ gatherInputs {
 ## Reference
 - Note Trait Interface: [[../packages/common-all/src/types/noteTrait.ts#^fgscb0hek3bg]]
 
-## Cook
-
 ## Past Tasks
+- [enhance(structure): support xvault template in note traits by Harshita-mindfire · Pull Request #3329 · dendronhq/dendron](https://github.com/dendronhq/dendron/pull/3329/files)
