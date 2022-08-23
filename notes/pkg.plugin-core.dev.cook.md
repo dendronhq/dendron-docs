@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ''
-updated: 1652893368592
+updated: 1661280845940
 created: 1634590309804
 ---
 
@@ -23,6 +23,13 @@ See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-conf
 ### Only show view or command while Developing
 
 Register the view or command with `when: DendronContext.DEV_MODE`
+
+### Opening a note programatically in the current editor
+
+```ts [src/test/suite-integ/GoToSibling.test.ts](https://github.com/dendronhq/dendron/blob/d536cf34e3b5cdbea5e095126485194cbcdcd809/packages/plugin-core/src/test/suite-integ/GoToSibling.test.ts#L385)
+const ext = ExtensionProvider.getExtension();
+await new WSUtilsV2(ext).openNote(note);
+```
 
 ## Commands
 
