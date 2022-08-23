@@ -3,7 +3,7 @@ id: PgwAXFfotfgpFVqHQRlBl
 title: Nextjs Template Quickstart
 desc: |
   Development related
-updated: 1657672395883
+updated: 1661242414952
 created: 1628376960868
 ---
 
@@ -35,7 +35,7 @@ curl -LO https://artifacts-prod-artifactb7980f61-19orqnnuurvwy.s3.us-west-2.amaz
 unzip dendron-site.zip
 ```
 
-1. Run the nextj sapp
+1. Run the nextjs app
 
 ```sh
 yarn dev
