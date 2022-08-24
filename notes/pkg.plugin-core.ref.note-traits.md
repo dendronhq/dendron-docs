@@ -2,7 +2,7 @@
 id: rg6i2lnec75cmhe1tz0ua4z
 title: Note Traits
 desc: ''
-updated: 1661266213094
+updated: 1661355185051
 created: 1648248856881
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
@@ -25,8 +25,50 @@ schema: '[[dendron://dendron.docs/ref.module-schema]]'
 
 ## Lifecycle
 
-- NOTE: code here is written in [[Dendron Pseudocode|dendron://dendron.docs/ref.pseudocode]]
 
+### Activate
+- [[../packages/plugin-core/src/workspace/workspaceActivator.ts]]
+
+```ts
+init {
+    traitRegistrar.initialize
+}
+```
+
+- [[../packages/plugin-core/src/services/NoteTraitManager.ts]]
+```ts
+initialize {
+    setupSavedTraitsFromFS
+}
+
+setupSavedTraitsFromFS {
+    asyncLoopOneAtATime {
+        setupTraitFromJSFile
+    }
+}
+
+setupTraitFromJSFile {
+    newNoteTrait = new UserDefinedTraitV1
+    newNoteTrait.initialize
+    registerTrait(newNoteTrait)
+}
+
+registerTrait {
+    // map of traits
+    registeredTraits.set(trait.id, trait)
+    cmdRegistar.registerCommandForTrait(trait)
+}
+```
+
+- [[../packages/plugin-core/src/services/CommandRegistrar.ts]]
+```ts
+registerCommandForTrait {
+    cmd = new CreateNoteWithTraitCommand(commandId, trait)
+}
+```
+
+
+## Lifecycle Old
 ### Registering a trait
 - [[../packages/plugin-core/src/workspace.ts]]
 
