@@ -2,9 +2,12 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ""
-updated: 1661126633720
+updated: 1661378807463
 created: 1635532194153
 ---
+
+## Lookup
+- [[dendron://private/area.product.sop.patch-release]]
 
 ## Steps
 
