@@ -2,7 +2,7 @@
 id: eMcjzkqYCRdxggs7o7nqm
 title: Common Assets
 desc: ""
-updated: 1650642062755
+updated: 1661526921303
 created: 1637163989716
 ---
 
@@ -12,6 +12,14 @@ This packages hold assets for Dendron Views. During the [[build step|dendron://d
 
 - NOTE: we are currently moving away from `dendron-next-server` and transferring all css and assets from it to `common-assets`
   - last updated: 2021-11-18
+
+## Details
+- this will copy over
+  - antd styles
+  - prism styles
+  - primary fonts
+  - katex fonts
+  - misc javascript
 
 ## Layout
 
@@ -28,6 +36,30 @@ This packages hold assets for Dendron Views. During the [[build step|dendron://d
 
 ## LifeCycle
 
+### Build Styles
+- [[../packages/common-assets/scripts/buildStyles.js]]
+
+```ts
+antdThemes
+prismThemes
+katex
+fontello
+
+writeStyles(...)
+copy(katex)
+copy(topRooto)
+copy(fontello)
+```
+
+```ts gen:theme
+gulp("assets/js/*.js")
+```
+
+```ts build:js
+gulp("assets/js/*.js")
+```
+
+### Sync
 1. User runs `yarn setup` in Dendron monorepo
 1. The last step after all packages are build, is running
    ```sh
@@ -44,7 +76,27 @@ This packages hold assets for Dendron Views. During the [[build step|dendron://d
    }
    ```
    - syncStaticAssets: [[../packages/dendron-cli/src/utils/build.ts#^gg4woyhxe1xn]]
+   ```ts
+   pluginStatic = "plugin-core/assets/static"
+   
+   ensureDir(pluginStatic)
+   emptyDir(pluginStatic)
+   copy("common-assets/assets/css", pluginStatic)
+   copy("common-assets/build/assets/css/font", pluginStatic + "css/themes/fonts")
+   copy("common-assets/assets/js", pluginStatic + "js)
+
+   copy("plugin-views/build/static/css", pluginStatic + "css")
+   copy("plugin-views/build/static/js", pluginStatic + "js")
+   
+   ```
    - syncStaticAssetsToNextjsTemplate: [[../packages/dendron-cli/src/utils/build.ts#^gxyyk2p87a5z]]
+   ```ts
+   templateAssetPath = "nextjs-template/public/assets-dendron"
+   ensureDir(templateAssetPath)
+   emptyDir(templateAssetPath)
+   copy("common-assets/build/assets", templateAssetPath)
+   copy("common-assets/build/top", "nextjs-template/public")
+   ```
 
 ## Related
 
