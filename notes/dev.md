@@ -2,13 +2,13 @@
 id: 3489b652-cd0e-4ac8-a734-08094dc043eb
 title: Development
 desc: ''
-updated: 1650934108796
+updated: 1661563170079
 created: 1598645869692
 ---
 
 ## Summary
 
-This is a guide of how to develop code for Dendron.
+This is the end to end guide of how code is developed at Dendron.
 
 You can follow the setup instructions [[here|dendron://dendron.docs/dev.quickstart]] to get started.
 
