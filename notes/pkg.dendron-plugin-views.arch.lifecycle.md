@@ -2,22 +2,29 @@
 id: lZSr7StwPU5ukltzLg4mL
 title: Plugin View Lifecycle
 desc: ''
-updated: 1650722658768
+updated: 1661983069632
 created: 1636432981026
 ---
 
+- entry point: [[App|../packages/dendron-plugin-views/src/App.tsx]]
+
 ## IDE Mode 
 
-![[Ide Mode|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle.ide-mode]]
+Render plugin views inside of VSCode. See [[IDE Mode|dendron://dendron.docs/pkg.dendron-plugin-views.concepts#ide-mode]] for more details.
+
+![[dendron://dendron.docs/pkg.plugin-core.ref.web-view.editor.init-view#lifecycle:#*]]
 
 ## Browser Mode - Startup
 
-The following diagram summarizes the startup of Dendron in [[Browser Mode|dendron://dendron.docs/pkg.dendron-plugin-views.concepts#browser-mode]]. It's divided into three phases:
+Render plugin views inside of chrome.
+See [[Browser Mode|dendron://dendron.docs/pkg.dendron-plugin-views.concepts#browser-mode]] for more details. 
+
+### Lifecycle
 - compile: starting webpack dev server, creating the index.html page based on `REACT_APP_VIEW_NAME`
 - renderIndex: dynamically loading `REACT_APP_VIEW_NAME` component
 - renderDendronVsCodeApp: rendering of `REACT_APP_VIEW_NAME` component
 
-```mermaid
+```mermaid ^x4g3p7wm6cpc
 stateDiagram-v2
     [*] --> yarnStart
     yarnStart --> compile
@@ -63,7 +70,7 @@ The following discusses each phase in more detail with pseudocode
 #### load webpack
 
 1. Webpack loads
-    - [[../packages/dendron-plugin-views/scripts/start.js]]
+[[../packages/dendron-plugin-views/scripts/start.js]]
     ```ts
     config = configFactory
     createCompiler(config)

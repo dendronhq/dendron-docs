@@ -2,9 +2,17 @@
 id: j1bamcfegu6jqg8f52oo8vi
 title: Init View
 desc: ''
-updated: 1656610164847
+updated: 1661983087205
 created: 1650647458936
 ---
+
+## Lifecycle 
+- [Lifecycle](#lifecycle)
+  - [Register command](#register-command)
+  - [Initialize Preview Factory](#initialize-preview-factory)
+  - [Initialize a Panel](#initialize-a-panel)
+  - [Show Panel](#show-panel)
+  - [Rendering](#rendering)
 
 ### Register command
 - [[extension|../packages/plugin-core/src/_extension.ts#L1051]]
