@@ -2,22 +2,28 @@
 id: 1e6c8b49-ef88-4e79-b2df-e9d614c38a53
 title: Labels
 desc: ''
-updated: 1633389425304
+updated: 1662057434674
 created: 1610468038819
 ---
 
 This describes how Dendron [issues](https://github.com/dendronhq/dendron/labels?page=1&sort=name-asc) are laid out in github.
 
+## size
+
+### small
+
+![[tags.size.small]]
+
+### medium
+
+![[tags.size.medium]]
+
+### big
+
+![[tags.size.big]]
+
 ## scope
 Scope refers to specific feature verticals
-
-<!-- ### frontend
-
-Frontend related tasks
-
-### backend
-
-Backend related tasks -->
 
 ### commands
 
@@ -84,19 +90,6 @@ Will this make it easier to use Dendron in the common case
 ### crop
 This makes a good CROP issue
 
-## size
-
-### small
-
-![[tags.size.small]]
-
-### medium
-
-![[tags.size.medium]]
-
-### big
-
-![[tags.size.big]]
 
 ## status
 
