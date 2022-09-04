@@ -2,7 +2,7 @@
 id: WicXmkqoMPiRJCqN0zbO6
 title: Internal
 desc: ''
-updated: 1637166742000
+updated: 1662254264878
 created: 1637166004371
 ---
 
@@ -58,3 +58,4 @@ execute {
 
 ## Related
 - [[pkg.pods-core.ref.nextjs]]
+- [[dendron://dendron.docs/pkg.nextjs-template.arch.lifecycle]]
