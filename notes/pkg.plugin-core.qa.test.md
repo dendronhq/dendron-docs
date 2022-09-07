@@ -2,12 +2,12 @@
 id: veJtAvr1gSMu50Mp
 title: Test
 desc: ""
-updated: 1662057725625
+updated: 1662581419500
 created: 1627140509315
 ---
 
 
-## Writing Tests
+## Writing Te![[Testing|dendron://dendron.docs/dev.process.qa]]ts
 
 > Note: You may see references to older test utilities such as `runLegacyMultiWorkspaceTest`. Please use latest test functions as described below
 
