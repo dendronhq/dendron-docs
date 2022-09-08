@@ -11,7 +11,7 @@ created: 1637874014405
 This describes the lifecycles of various Dendron functions
 
 - Frontend
-    - Plugin startup: [[Summary|pkg.plugin-core.arch.lifecycle.startup#summary]]
+    - Plugin startup: [[Summary|pkg.plugin-core\.lifecycle\.startup#summary]]
     - Running a plugin command: [[Base Command Lifecycle|pkg.plugin-core.t.commands#base-command-lifecycle]]
     - Performing a lookup: [[Note Lookup|pkg.plugin-core.ref.note-lookup]]
 - Backend

@@ -1,7 +1,7 @@
 ---
 id: evk47kctzy5hyer068o3gyv
 title: On First Install
-desc: ""
+desc: ''
 updated: 1647523849714
 created: 1645661814246
 ---
@@ -28,4 +28,4 @@ On `InstallStatus.INITIAL_INSTALL`, the following happens:
 
 ## Lookup
 
-- [[Startup|dendron://dendron.docs/pkg.plugin-core.arch.lifecycle.startup]]
+- [[Startup|dendron://dendron.docs/pkg.plugin-core\.lifecycle\.startup]]

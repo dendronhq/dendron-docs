@@ -1,7 +1,7 @@
 ---
 id: ifbh1he9qcckevtffbvh7pk
 title: Startup
-desc: ""
+desc: ''
 updated: 1645661819509
 created: 1645661785153
 ---
@@ -16,4 +16,4 @@ What happens when the plugin first activates
 
 ## Lookup
 
-- [[Startup|dendron://dendron.docs/pkg.plugin-core.arch.lifecycle.startup]]
+- [[Startup|dendron://dendron.docs/pkg.plugin-core\.lifecycle\.startup]]

@@ -10,7 +10,7 @@ created: 1640042538687
 
 ### Extension starts up
 
-- follow until [[Reload Workspace|dendron://dendron.docs/pkg.plugin-core.arch.lifecycle.startup#reload-workspace]]
+- follow until [[Reload Workspace|dendron://dendron.docs/pkg.plugin-core\.lifecycle\.startup#reload-workspace]]
 
 ### Run Migration
 - check semver versioin of previous workspace ^m92tdciuq9ge

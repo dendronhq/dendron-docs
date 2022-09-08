@@ -83,7 +83,7 @@ class PreviewPanel {
 ```
 
 ### Rendering
-![[dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle.render]]
+![[dendron://dendron.docs/pkg.dendron-plugin-views\.lifecycle\.render]]
 
 - related:
   - [[getLocalResourceRoots|dendron://dendron.docs/pkg.plugin-core.ref.web-view#getlocalresourceroots]]

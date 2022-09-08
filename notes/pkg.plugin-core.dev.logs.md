@@ -1,7 +1,7 @@
 ---
 id: dpCnjhyzVVjYZqKQ3wPA4
 title: Logs
-desc: ""
+desc: ''
 updated: 1639595750501
 created: 1628345272665
 ---
@@ -33,7 +33,7 @@ This describes the expected logs for certain Dendron operations
 
 You can control the log level in the workspace settings using `dendron.logLevel`. This sets the log level for the plugin and well any server it launches. You will need to restart the workspace for the log level to take effect.
 
-### [[Startup|pkg.plugin-core.arch.lifecycle.startup#summary]]
+### [[Startup|pkg.plugin-core\.lifecycle\.startup#summary]]
 
 #### normal
 
