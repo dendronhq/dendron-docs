@@ -2,10 +2,12 @@
 id: 0nqtkapiv7hje6m30u6sknb
 title: Asset Prefix
 desc: ''
-updated: 1662591707616
+updated: 1662592300310
 created: 1662591527531
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
+
+![[dendron://dendron.dendron-site/dendron.topic.publish.config.assetsPrefix#description]]
 
 ## NextjsTemplate
 - [[../packages/pods-core/src/builtin/NextjsExportPod.ts]]
