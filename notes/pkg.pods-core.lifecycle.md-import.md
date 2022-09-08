@@ -1,17 +1,16 @@
 ---
 id: losscn1wvm8cqkj3g8iwpzk
-title: Md Pod
+title: Md Import
 desc: ''
-updated: 1650041207486
+updated: 1662659668237
 created: 1650041088877
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
 
-## Summary
-
 ## Lifecycle
+- extends from [[dendron://dendron.docs/pkg.pods-core.lifecycle.import-pod]]
 
-- NOTE: code here is written in [[Dendron Pseudocode|dendron://dendron.docs/ref.pseudocode]]
+- [[../packages/pods-core/src/builtin/MarkdownPod.ts]]
 
 ```ts
 plant { 

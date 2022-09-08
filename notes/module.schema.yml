@@ -53,6 +53,8 @@ schemas:
   desc: |
     Diagnose issues
 - id: quickstart
+- id: lifecycle
+  pattern: lifecycle
 - id: architecture
   desc: > 
     Explanations of architecture
@@ -62,7 +64,6 @@ schemas:
    - pattern: hacks
    - pattern: wip
    - pattern: internal
-   - pattern: lifecycle
 - id: internal
   desc: >
     Internal details of code
