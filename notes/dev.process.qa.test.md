@@ -1,7 +1,7 @@
 ---
 id: 99q7A73uGmCwu2KvSHZro
 title: Testing
-desc: ""
+desc: ''
 updated: 1662057679974
 created: 1632347495097
 config:
@@ -84,4 +84,6 @@ See example in [here](https://www.loom.com/share/797f2e13cc9a46e4a0973b3ad26f6ed
 - [[dendron://dendron.docs/dev.process.qa.test.cook.stubbing]]
 - [[Exposing Private Methods for Test|dev.process.qa.test.cook.exposing-private-methods-for-test]]
 - [[Stubbing Private Functions|dev.process.qa.test.cook.stubbing-private-functions]]
+
+
 
