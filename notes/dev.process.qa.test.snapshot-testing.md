@@ -2,7 +2,7 @@
 id: nxu3wpej92v6i0utwb1m2s4
 title: Snapshot Testing
 desc: ""
-updated: 1657753461351
+updated: 1662771605580
 created: 1654709227525
 ---
 
@@ -10,23 +10,21 @@ created: 1654709227525
 
 Snapshot testing lets us assert that certain outputs of a piece of code is staying the same after changes. This is a very powerful tool because it lets us easily test for outputs that we know that will (should) be constant.
 
-That being said, snapshot tests should not be considered part of unit testing, or testing for a certain functional aspect of code. It also shouldn't replace end-to-end testing, since snapshot tests are only verifying the output, and not the behavior. The output can look the same at the end but could have gotten there in a way that you did not intend to.
+That being said, snapshot tests should not be considered part of unit testing, or testing for a certain functional aspect of code. It also shouldn't replace end-to-end testing, since **snapshot tests are only verifying the output, and not the behavior**. The output can look the same at the end but could have gotten there in a way that you did not intend to.
 
 While snapshot tests provides us with some great power, it has drawbacks when we aren't mindful about using them.
 
-This note will go over when to write snapshot tests, some common pitfalls, and how to avoid them.
+This note will go over **when to write snapshot tests, some common pitfalls, and how to avoid them**.
 
 ## When to test snapshots
 
 Snapshot tests verify that some codes' _output_ is exactly the same as before.
 
-For Dendron, this is very useful when verifying the integrity of the `unified` processor outputs.
-
-- how markdown is converted to other formats for different destinations.
+For Dendron, this is very useful when verifying, for example, the integrity of the `unified` processor outputs.
 
 For this case, snapshots can act as a canary for any unintended changes that we may not notice just by testing part of the code, since snapshots will verify _everything_, down to the whitespace level, that the output stays the same.
 
-It is also advisable to test snapshots if the output we want to test for is very big. For example, generated HTML code can be very long and not readable (and writable) at all for the developer and would not be useful to be part of the test code.
+It is also advisable to **test snapshots if the output we want to test for is very big**. For example, **generated HTML** code can be very long and not readable (and writable) at all for the developer and would not be useful to be part of the test code.
 
 ## When not to test snapshots
 
@@ -38,11 +36,11 @@ There are ways of snapshot testing dynamic outputs (see [asymmetric property mat
 
 ### Hard to understand what went wrong
 
-Snapshot test failures don't tell us why it failed. It simply tells us that a certain output that we are checking for has been altered. With many moving parts involved, it makes debugging hard / take longer without knowing the full picture.
+Snapshot test failures don't tell us **why it failed**. It simply tells us that a certain output that we are checking for has been altered. With many moving parts involved, it makes debugging hard / take longer without knowing the full picture.
 
 ### Easy to update, hard to verify
 
-Currently, most of our snapshot tests coexist with some specific unit test that verifies that the behavior of a piece of code is correct.
+Currently, most of our **snapshot tests coexist with some specific unit test that verifies that the behavior of a piece of code is correct**.
 
 Often times, when working on a change, we will run into a giant list of failing snapshot tests.
 
