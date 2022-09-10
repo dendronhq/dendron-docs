@@ -2,7 +2,7 @@
 id: N4sCZWibsjlBtS8A9Yxxo
 title: Publishing
 desc: ""
-updated: 1640579506155
+updated: 1662749157401
 created: 1640579184040
 ---
 
@@ -20,7 +20,7 @@ See [[Ref|dendron://dendron.docs/ref.module-schema#ref]]
 
 The processor is called in when [[building site metadata|dendron://dendron.docs/pkg.nextjs-template.arch.lifecycle#building-metadata]]
 
-- [[../packages/engine-server/src/markdown/utilsv5.ts]]
+- [[../packages/unified/src/remark/dendronPub.ts]]
 
 ```ts
 procRehypeParse {
@@ -39,17 +39,13 @@ dendronPub(opts) {
 	prefix := opts
 	href =  prefix + value + maybeFileExtension
 
+	//
+	const href = SiteUtils.getSiteUrlPathForNote({
+		addPrefix: pOpts.flavor === ProcFlavor.PUBLISHING,
+		pathValue: value,
+		config,
+		pathAnchor: data.anchorHeader,
+		note,
+	});
 }
 ```
-
-## Reference
-
-<!-- Anything else that is useful to lookup -->
-
-## Cook
-
-<!-- How to do common operations with this code -->
-
-## Past Tasks
-
-<!-- Link to past pull requests and commits on this given module  -->
