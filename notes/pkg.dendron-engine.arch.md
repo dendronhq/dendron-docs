@@ -1,7 +1,7 @@
 ---
 id: ebf58a4a-18f8-498d-95eb-04d856c0a000
 title: Dendron Engine Architecture
-desc: ""
+desc: ''
 updated: 1650934150198
 created: 1619535999168
 ---
@@ -11,7 +11,7 @@ created: 1619535999168
 ![[dendron://dendron.docs/pkg.dendron-engine.t.engine#summary,1:#*]]
 
 ## Lifecycle
-![[dendron://dendron.docs/pkg.dendron-engine.arch.lifecycle]]
+![[dendron://dendron.docs/pkg.dendron-engine.lifecycle]]
 
 ## Layout
 

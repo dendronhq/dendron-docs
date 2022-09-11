@@ -1,7 +1,7 @@
 ---
 id: XRJHybINVagvRW3gAKmLN
 title: Lifecycle
-desc: ""
+desc: ''
 updated: 1640043015458
 created: 1637875451818
 ---

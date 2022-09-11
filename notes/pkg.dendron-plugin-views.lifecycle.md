@@ -175,7 +175,7 @@ View = require(VIEW_NAME)
 
 ## Change Active Editor
 
-When the active editor changes, the `useVSCodeMessage` hook in [[DendronVSCodeApp|dendron://dendron.docs/pkg.dendron-plugin-views.lifecycle#^MXu9QPtvmOvr]] will update the state with note(s) that have changed
+When the active editor changes, the `useVSCodeMessage` hook in [[DendronVSCodeApp|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#^MXu9QPtvmOvr]] will update the state with note(s) that have changed
 
 ```tsx
 useVSCodeMessage(msg) {

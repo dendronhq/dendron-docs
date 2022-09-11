@@ -1,7 +1,7 @@
 ---
 id: N4sCZWibsjlBtS8A9Yxxo
 title: Publishing
-desc: ""
+desc: ''
 updated: 1662749157401
 created: 1640579184040
 ---
@@ -18,7 +18,7 @@ See [[Ref|dendron://dendron.docs/ref.module-schema#ref]]
 
 ### Initialization
 
-The processor is called in when [[building site metadata|dendron://dendron.docs/pkg.nextjs-template.arch.lifecycle#building-metadata]]
+The processor is called in when [[building site metadata|dendron://dendron.docs/pkg.nextjs-template.lifecycle#building-metadata]]
 
 - [[../packages/unified/src/remark/dendronPub.ts]]
 

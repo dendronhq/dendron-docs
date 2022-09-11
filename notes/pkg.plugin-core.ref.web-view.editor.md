@@ -1,7 +1,7 @@
 ---
 id: tYCf6nhm7joy1chpSCtXj
 title: Editor View - Web View Implementation
-desc: ""
+desc: ''
 updated: 1650647505261
 created: 1638232297416
 ---
@@ -19,7 +19,7 @@ This describes the [[Web View Implementation|dendron://dendron.docs/pkg.plugin-c
 - [[Note Preview|dendron://dendron.docs/pkg.dendron-plugin-views.ref.note-preview]]
 
 ## Lookup
-- [[Plugin View Lifecycle|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle]]: Lifecycle of the view component of a web view
+- [[Plugin View Lifecycle|dendron://dendron.docs/pkg.dendron-plugin-views.lifecycle]]: Lifecycle of the view component of a web view
 
 ## Past Tasks
 

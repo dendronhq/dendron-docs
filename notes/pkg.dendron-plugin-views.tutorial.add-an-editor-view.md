@@ -13,7 +13,7 @@ This goes over how to add an [[Editor View|dendron://dendron.docs/pkg.dendron-pl
 ## Adding a new Editor View
 
 - NOTE: in the following, we show the example of adding a `HELLO_VIEW` editor view
-- details: see [[render|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#render]] to see explanation on how these components interact
+- details: see [[render|dendron://dendron.docs/pkg.dendron-plugin-views.lifecycle#render]] to see explanation on how these components interact
 
 ### Creating the view
 

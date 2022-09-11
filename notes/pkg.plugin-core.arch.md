@@ -1,7 +1,7 @@
 ---
 id: d1usLHSTfJc-3_JKuYLBr
 title: Dendron Plugin Architecture
-desc: ""
+desc: ''
 updated: 1655167848582
 created: 1624552964184
 ---
@@ -35,4 +35,4 @@ The reason we went with this design:
 
 ## Startup
 
-![[dendron://dendron.docs/pkg.dendron-engine.arch.lifecycle#initialization,1:#*]]
+![[dendron://dendron.docs/pkg.dendron-engine.lifecycle#initialization,1:#*]]

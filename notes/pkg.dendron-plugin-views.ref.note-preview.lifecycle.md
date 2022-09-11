@@ -54,7 +54,7 @@ showPreviewAndUpdate {
 
 ### View Logic
 
-App receives the [[Change Active Editor|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#change-active-editor]] event
+App receives the [[Change Active Editor|dendron://dendron.docs/pkg.dendron-plugin-views.lifecycle#change-active-editor]] event
 
 The Note Preview renders contents based on the active editor
 
@@ -98,6 +98,6 @@ sendRefreshMessage(note) {
 }
 ```
 
-This leads the view to execute [[Change Active Editor|dendron://dendron.docs/pkg.dendron-plugin-views.arch.lifecycle#change-active-editor]] hook
+This leads the view to execute [[Change Active Editor|dendron://dendron.docs/pkg.dendron-plugin-views.lifecycle#change-active-editor]] hook
 
 ##

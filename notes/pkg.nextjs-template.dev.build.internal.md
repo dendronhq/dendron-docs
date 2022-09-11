@@ -58,4 +58,4 @@ execute {
 
 ## Related
 - [[pkg.pods-core.ref.nextjs]]
-- [[dendron://dendron.docs/pkg.nextjs-template.arch.lifecycle]]
+- [[dendron://dendron.docs/pkg.nextjs-template.lifecycle]]

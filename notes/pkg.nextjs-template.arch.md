@@ -1,7 +1,7 @@
 ---
 id: LAUb8WcM8rmjxJrR
 title: Architecture
-desc: ""
+desc: ''
 updated: 1657672732314
 created: 1627859879590
 ---
@@ -23,4 +23,4 @@ A published Dendron site is a hybrid of static site and dynamic web app. Each pa
 - NOTE: currently, the published site is not optimzied and will load ALL notes before rendering to fill out the nav bar and other UI elements. we are aware of this issue and are implementing a fix so that the initial page load can render without any external fetches
 
 ## Children
-- [[Lifecycle|dendron://dendron.docs/pkg.nextjs-template.arch.lifecycle]]
+- [[Lifecycle|dendron://dendron.docs/pkg.nextjs-template.lifecycle]]
