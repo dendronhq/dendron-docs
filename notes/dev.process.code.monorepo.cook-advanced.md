@@ -2,7 +2,7 @@
 id: q2xr0dnbwqgs1j7wqcsckx6
 title: Advanced Cookbook
 desc: ''
-updated: 1654548104888
+updated: 1662994177624
 created: 1645741586641
 ---
 
@@ -12,7 +12,7 @@ The recipes here shouldn't need to be used except in very rare circumstances (if
 
 ### Upgrading all Dependencies
 
-- NOTE: this shouldn't be done but documented . ping `@Dendron Team` if you think you need to do this (you probably don't)
+- NOTE: this shouldn't be done but documented . ping `@DendronTeam` if you think you need to do this (you probably don't)
 
 1. [[Remove all build artifacts|dendron://dendron.docs/dev.process.code.monorepo#remove-all-build-artifacts]]
 1. Remove `yarn.lock` at the top of the monorepo

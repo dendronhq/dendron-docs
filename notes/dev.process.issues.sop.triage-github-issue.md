@@ -2,7 +2,7 @@
 id: F8cCg5iQH1KXmx4SGcEia
 title: Triage GitHub Issue
 desc: ''
-updated: 1644369367045
+updated: 1662994185045
 created: 1638139691294
 ---
 
@@ -23,7 +23,7 @@ How incoming github issues are triaged
         - #scope
         - [[type|dev.process.issues.ref.labels#type]]
         - [[size|dendron://dendron.docs/dev.process.issues.ref.labels#size]]
-            - NOTE: if unsure about size, ping `@Dendron Team`
+            - NOTE: if unsure about size, ping `@DendronTeam`
     - depending on priority, the issue can go into one of the following buckets
         - add #sprint.active label to the task
             - if item is **high priority**, repro immediately and assign an engineer and tag to current milestone for immediate investigation
