@@ -12,7 +12,7 @@ How Dendron migrates configuration
 
 ## Lifecycle
 
-1. Dendron activates if it detects a Dendron workspace. This is described in [[Startup|dendron://dendron.docs/pkg.plugin-core\.lifecycle\.startup]]
+1. Dendron activates if it detects a Dendron workspace. This is described in [[Startup|dendron://dendron.docs/pkg.plugin-core.lifecycle.startup]]
 1. During startup, Dendron calls `runMigrationsIfNecessary`. Process described in [[Run Migration|dendron://dendron.docs/pkg.dendron-engine.ref.migration#run-migration]]
 
 

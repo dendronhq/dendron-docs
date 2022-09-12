@@ -92,7 +92,7 @@ The following discusses each phase in more detail with pseudocode
     ```
 
 ## Render
-![[dendron://dendron.docs/pkg.dendron-plugin-views\.lifecycle\.render]]
+![[dendron://dendron.docs/pkg.dendron-plugin-views.lifecycle.render]]
 
 ### render
 

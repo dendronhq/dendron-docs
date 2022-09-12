@@ -16,4 +16,4 @@ What happens when the plugin first activates
 
 ## Lookup
 
-- [[Startup|dendron://dendron.docs/pkg.plugin-core\.lifecycle\.startup]]
+- [[Startup|dendron://dendron.docs/pkg.plugin-core.lifecycle.startup]]

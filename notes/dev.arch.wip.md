@@ -28,4 +28,4 @@ Work remaining:
 <!-- ## Markdown Parsing -->
 
 
-[^1]: [[Summary|pkg.plugin-core\.lifecycle\.startup#summary]]
+[^1]: [[Summary|pkg.plugin-core.lifecycle.startup#summary]]

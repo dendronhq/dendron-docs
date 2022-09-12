@@ -8,7 +8,7 @@ created: 1609714449234
 
 ## Initialization
 
-![[dendron://dendron.docs/pkg.plugin-core\.lifecycle\.startup]]
+![[dendron://dendron.docs/pkg.plugin-core.lifecycle.startup]]
 
 ## Workspace Creation
 

@@ -228,7 +228,7 @@ As part of the work to enable [[3 Standalone Vaults|rfc.3-standalone-vaults]], w
 
 The key change is introducing multiple types of `workspaces` to account for Dendron running inside a code workspace vs a native workspace (by detectinga `dendron.yml` file but not necessarily inside a vscode workspace). What used to be called `DendronWorkspace` is now a `DendronExtension`. The `DendronExtension` can contain a workspace, which can either be a `code` workspace or a `native` workspace.
 
-The new startup process is described [[here|pkg.plugin-core\.lifecycle\.startup#summary]]
+The new startup process is described [[here|pkg.plugin-core.lifecycle.startup#summary]]
 
 ### Changes
 

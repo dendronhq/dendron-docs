@@ -2,7 +2,7 @@
 id: 7MLCpIb0ITppTZ3qwMi1A
 title: Lifecycle
 desc: ''
-updated: 1662254279779
+updated: 1662940845867
 created: 1636642644504
 weight: 5
 ---
@@ -112,5 +112,39 @@ The compile phase generates the static HTML that is deployed to the server. This
 
 The bulk of the work is done by inside [the `[id]` page](https://github.com/dendronhq/nextjs-template/blob/main/pages/notes/%5Bid%5D.tsx#L1:L1) by making use of the [data fetching](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation) capabilities of NextJS that lets us compile all pages ahead of time during export.
 
+
+- [[../packages/nextjs-template/pages/notes/[id].tsx]]
+```ts
+getStaticPaths {
+  getNotePaths {
+    getNotes {
+      read DATA_DIR/notes.json
+    }
+  }
+}
+
+getStaticProps {
+  id := 
+  getNoteBody(id), getNoteMeta(id)
+  getNotes
+  getCustomHead
+}
+
+
+getNoteBody {
+  DATA_DIR/notes/{id}.html
+}
+
+getNoteMeta {
+  DATA_DIR/meta/{id}.json
+}
+
+getCustomHead {
+  config := 
+  ...
+  publicDir = getPublicDir
+}
+```
+
 ## Load
-![[dendron://dendron.docs/pkg.nextjs-template\.lifecycle\.load-page]]
+![[dendron://dendron.docs/pkg.nextjs-template.lifecycle.load-page]]

@@ -28,4 +28,4 @@ On `InstallStatus.INITIAL_INSTALL`, the following happens:
 
 ## Lookup
 
-- [[Startup|dendron://dendron.docs/pkg.plugin-core\.lifecycle\.startup]]
+- [[Startup|dendron://dendron.docs/pkg.plugin-core.lifecycle.startup]]
