@@ -2,12 +2,14 @@
 id: 0nqtkapiv7hje6m30u6sknb
 title: Asset Prefix
 desc: ''
-updated: 1662592300310
+updated: 1662953894928
 created: 1662591527531
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
 
 ![[dendron://dendron.dendron-site/dendron.topic.publish.config.assetsPrefix#description]]
+
+`assetsPrefix` is used in the following places
 
 ## NextjsTemplate
 - [[../packages/pods-core/src/builtin/NextjsExportPod.ts]]
