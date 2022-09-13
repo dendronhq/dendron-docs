@@ -2,7 +2,7 @@
 id: QN46JTSWpEkDkr94TJ85w
 title: Submitting Code for Review
 desc: ''
-updated: 1663084617149
+updated: 1663102342835
 created: 1644173493342
 ---
 
@@ -18,13 +18,14 @@ We recommend using the github cli to work on pull requests (not required but hel
 1. Make sure the title of the pull request mirrors the [[Commit Style|dendron://dendron.docs/dev.process.review#commit-style]]
 1. If the PR contains multiple features, break it down in the description below the title (example provided below this section)
 1. If you are a team member, you can copy the full checklist from [[Dendron Extended PR Checklist - Markdown|dendron://dendron.docs/dev.process.review.checklist.extended.export]], otherwise, follow the instructions in the pull request template
+    ```
+    {feat}({structure}): {updated hierarchies, added new note-traits}
 
-```
-{feat}({structure}): {updated hierarchies, added new note-traits}
-
-{feat}({structure}): {updated hierarchies}
-{feat}({structure}): {added new note-traits}
-```
+    {feat}({structure}): {updated hierarchies}
+    {feat}({structure}): {added new note-traits}
+    ```
+1. After submitting a pull request, make sure that the [[integrations tests|dendron://dendron.docs/dev.process.review.github-actions]] pass
+    - > NOTE: if you see failures, see [[github actions troubleshooting|dendron://dendron.docs/dev.process.review.github-actions#troubleshooting]]
 
 ### For Team members
 1. When an area of the checklist (eg. Instrumentation), does not apply to your PR, you can remove the checkboxes and just add `NA` for not applicable
