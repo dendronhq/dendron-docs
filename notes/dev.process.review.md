@@ -2,13 +2,10 @@
 id: QN46JTSWpEkDkr94TJ85w
 title: Submitting Code for Review
 desc: ''
-updated: 1656470280698
+updated: 1663084617149
 created: 1644173493342
 ---
 
-## Summary
-
-The Dendron code review process
 
 ## Prerequisites
 
@@ -39,7 +36,7 @@ A conversation should only be resolved when the comment has been addressed and i
 At that point, the conversation should be resolved by the person that made the pull request. 
 
 ### Merging
-See [[Merge Pr|dendron://dendron.docs/dev.process.review.merge-pr]]
+![[dendron://dendron.docs/dev.process.review.merge-pr#prerequisites:#related]]
 
 ## Checklist
 ![[dendron://dendron.docs/dev.process.review.checklist]]
