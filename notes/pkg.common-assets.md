@@ -2,7 +2,7 @@
 id: eMcjzkqYCRdxggs7o7nqm
 title: Common Assets
 desc: ""
-updated: 1661526921303
+updated: 1663171950208
 created: 1637163989716
 ---
 
@@ -10,8 +10,6 @@ created: 1637163989716
 
 This packages hold assets for Dendron Views. During the [[build step|dendron://dendron.docs/pkg.plugin-core.quickstart#^OI7k28ZBdX9W]], assets from this package are concatenated and copied into [[pkg.nextjs-template]] and [[pkg.dendron-plugin-views]] (TODO: need to refactor logic from `dendron-plugin-views`, currently assets are being built separately there).
 
-- NOTE: we are currently moving away from `dendron-next-server` and transferring all css and assets from it to `common-assets`
-  - last updated: 2021-11-18
 
 ## Details
 - this will copy over
@@ -101,3 +99,4 @@ gulp("assets/js/*.js")
 ## Related
 
 - [[Plugin Views - Build Styles|dendron://dendron.docs/pkg.dendron-plugin-views.ref.build-styles]]
+- [[dendron://dendron.docs/pkg.plugin-core.ref.assets-file-layout]]

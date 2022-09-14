@@ -2,7 +2,7 @@
 id: jpuojtly83y7ehtjl9d4yrm
 title: Cook
 desc: ''
-updated: 1659119882498
+updated: 1663172081626
 created: 1653605798042
 ---
 
@@ -23,3 +23,5 @@ You can use `LaunchTutorial` command to test the preview. note that when you lau
 
 ### Deprecating an existing command
 - [[Deprecate Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.deprecate-command]]
+
+### More cookbooks

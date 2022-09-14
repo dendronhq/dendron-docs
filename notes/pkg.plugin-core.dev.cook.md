@@ -2,69 +2,38 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ''
-updated: 1661280845940
+updated: 1663172675935
 created: 1634590309804
 ---
 
 ## Workspace
 
-### Modifying contributes in package.json
-
-The `contributes` in `package.json` is all generated. If you are planning on modifying it - don't add it directly in the json file but use `yarn gen:config` to do it instead
-
-### Add new Workspace State
-
-Use the [[State Service|pkg.plugin-core.arch.state]] when working with VSCode workspace related state.
-
-### Add a new Config
-
-See [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
-
-### Only show view or command while Developing
-
-Register the view or command with `when: DendronContext.DEV_MODE`
-
-### Opening a note programatically in the current editor
-
-```ts [src/test/suite-integ/GoToSibling.test.ts](https://github.com/dendronhq/dendron/blob/d536cf34e3b5cdbea5e095126485194cbcdcd809/packages/plugin-core/src/test/suite-integ/GoToSibling.test.ts#L385)
-const ext = ExtensionProvider.getExtension();
-await new WSUtilsV2(ext).openNote(note);
-```
+- [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.scope-a-command-or-view-for-dev-env]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.open-a-note-programatically]]
+- [[Bundle Files with Code Plugin|dendron://dendron.docs/pkg.plugin-core.dev.cook.bundle-files-with-code-plugin]]
 
 ## Commands
-
 - [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-internal-command]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.trigger-commands-in-webview]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.execute-a-command-programatically]]
 
-### Triggering commands in webview
 
-A number of our commands use simple webviews that are rendering Markdown content to show a preview of an operation. See [[fixKeybindingConflicts|dendron://dendron.dendron-site/dendron.topic.doctor#fixkeybindingconflicts]] for example.
+## Index
+- [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
+- [[Create Note from Arbitrary Text|dendron://dendron.docs/pkg.plugin-core.dev.cook.create-note-from-arbitrary-text]]
+- [[Deprecate Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.deprecate-command]]
+- [[Developing the Web Extension|dendron://dendron.docs/pkg.plugin-core.dev.cook.web-extension]]
+- [[Install Extension Using CLI|dendron://dendron.docs/pkg.plugin-core.dev.cook.install-extension-using-cli]]
+- [[Remove a Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.remove-a-command]]
+- [[Update Pkg Json|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-pkg-json]]
+- [[Update Plugin Config|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-plugin-config]]
 
-Sometimes we want to simulate a button click within the rendered markdown, and an easy way to do this is to utilze [command URIs](https://code.visualstudio.com/api/extension-guides/command#command-uris).
+## To Organize
+## Workspace
 
-This lets you link to arbitrary commands (built-in and extension-contributed) using a standard Markdown link.
-
-You can see an example usage in `KeybindingUtils.showKeybindingConflictPreview`, which uses command URIs to trigger `workbench.action.openGlobalKeybindingsFile`, `workbench.action.openDefaultKeybindingsFile`, and `dendron.copyToClipboard` commands.
-
-If you need to add a new command only to use it as described here, also make sure you [[set proper enablement of them|dendron://dendron.docs/pkg.plugin-core.dev.cook#^fk7pnjllh594]]
-
-### Adding internal commands
-
-There are cases where we need to add commands that VSCode recognizes, but not expose them to any of the VSCode's user facing UIs. Some good examples are [[Copy To Clipboard|../packages/plugin-core/src/commands/CopyToClipboardCommand.ts]], [[Convert Candidate Link|../packages/plugin-core/src/commands/ConvertCandidateLink.ts]], and [[Note Lookup Autocomplete|../packages/plugin-core/src/commands/NoteLookupAutoCompleteCommand.ts]]
-
-When adding these kinds of commands, make sure to set the proper enablement clause for them so that they do not show up in the command palette or in the contextual menu. ^fk7pnjllh594
-
-To illustrate, `CopyToClipboardCommand` is only used for simulating a button click within a rendered markdown preview, and the `when` clause is set to `false`.
-
-Note that setting `when` clauses do not stop you from executing this command through `vscode.commands.executeCommand` or through a command URI. It just hides them from user facing UIs.
-
-### Executing a command programatically
-
-```ts
-cmd = new {ExistingDendronCommand}()
-// logic to get args
-const args = ....
-cmd.execute(args)
-```
+## Commands
 
 ### Add a command in dev/preview
 
