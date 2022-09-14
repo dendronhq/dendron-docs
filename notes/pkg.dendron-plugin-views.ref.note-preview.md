@@ -2,7 +2,7 @@
 id: tMdsz0dYNj3VgOvNAuEUY
 title: Note Preview
 desc: ""
-updated: 1656612222897
+updated: 1663173574310
 created: 1637109406387
 ---
 
@@ -86,5 +86,3 @@ info {"ctx":"sendRefreshMessage:pre:postMessage"}
 - [[Editor Webview Lifecycle|dendron://dendron.docs/pkg.plugin-core.ref.web-view.editor#lifecycle]]
 - [[Toggle Preview|dendron://dendron.docs/pkg.dendron-plugin-views.ref.toggle-preview]]
 - [[../packages/plugin-core/src/components/views/PreviewPanel.ts]]
-
-##
