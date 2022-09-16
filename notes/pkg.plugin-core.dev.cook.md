@@ -2,23 +2,31 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ''
-updated: 1663172675935
+updated: 1663295250127
 created: 1634590309804
 ---
 
 ## Workspace
 
 - [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
-- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.scope-a-command-or-view-for-dev-env]]
-- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.open-a-note-programatically]]
 - [[Bundle Files with Code Plugin|dendron://dendron.docs/pkg.plugin-core.dev.cook.bundle-files-with-code-plugin]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-a-web-ui-component]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.executing-logic-on-editor-change]]
 
 ## Commands
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.scope-a-command-or-view-for-dev-env]]
 - [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-internal-command]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.trigger-commands-in-webview]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.execute-a-command-programatically]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-a-command-in-preview]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-doctor-command]]
 
+## Utilities
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.use-dendron-preview-for-regular-markdown]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.open-a-note-programatically]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.access-the-clipboard]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.check-if-file-is-in-vault]]
 
 ## Index
 - [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
@@ -30,118 +38,20 @@ created: 1634590309804
 - [[Update Pkg Json|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-pkg-json]]
 - [[Update Plugin Config|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-plugin-config]]
 
-## To Organize
-## Workspace
-
-## Commands
-
-### Add a command in dev/preview
-
-This section goes over adding a command in dev/preview. For an example, see this [command](https://github.com/dendronhq/dendron/pull/2190). It adds Export Pod V2 commands in dev.
-
-1. Add a new config option to dev namespace in `DendronDevConfig` under `packages/common-all/src/types/workspace.ts`, `packages/common-all/src/types/configs/dev/dev.ts` and `packages/common-all/src/constants/configs/dev.ts`.
-1. Add your own context to `DendronContext` in `packages/plugin-core/src/constants.ts` for enablement of the command. Set the Context with the config created in the first step in `packages/plugin-core/src/_extension.ts` In the example PR, see:
-
-```ts
-VSCodeUtils.setContext(
-  DendronContext.ENABLE_EXPORT_PODV2,
-  dendronConfig.dev?.enableExportPodV2 ?? false
-);
-```
-
-1. In `DENDRON_COMMANDS` under `plugin-core/src/constants.ts`, update the when/enablement clause of the desired command with the context created in above step.
-1. Open the command prompt, enter `Run Task`, and run `gen:config`
-   - this will update the command in `package.json`
-1. Manually test with test-workspace, the command should only be visible in command palette if config option is set to true.
-
-### Adding a new doctor command
-
-When adding a doctor command, do the following if the workspace needs to be reloaded:
-
-- add action to `RELOAD_BEFORE_ACTIONS` if workspace needs to be reloaded before running the action
-- add action to `RELOAD_AFTER_ACTIONS` if workspace needs to be reloaded after the action has run
-
-See [this pr](https://github.com/dendronhq/dendron/pull/2620/files) for an example
-
 ## Lookup
 
-- ![[dendron://dendron.docs/pkg.plugin-core.t.lookup.cook]]
+![[dendron://dendron.docs/pkg.plugin-core.t.lookup.cook]]
+
 
 ## Views
-
-### Using the Dendron Preview on arbitrary markdown
-
-You can use the Dendron Preview to show custom markdown. To do so:
-
-1. Use the `openNoteInPreview` from [[../packages/plugin-core/src/commands/ShowPreview.ts#L327]]
-1. See [[Create a pseudo-note for a non-note file|dendron://dendron.docs/pkg.plugin-core.dev.cook#create-a-pseudo-note-for-a-non-note-file]]
-
-### Adding a Web UI Component
-
-1. see [[Create a new Command|pro.dendron-plugin.cook#create-a-new-command]] for creating a new command
-2. Add a new entry to [DendronWebViewKey](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/types/typesv2.ts)
-3. in `execute`, create a new webview
-   ```ts
-     const title = //TODO: add panel title
-     const panel = window.createWebviewPanel(
-       "dendronIframe", // Identifies the type of the webview. Used internally
-       title, // Title of the panel displayed to the user
-       ViewColumn.One, // Editor column to show the new webview panel in.
-       {
-         enableScripts: true,
-         enableCommandUris: true,
-         enableFindWidget: true,
-         localResourceRoots: [],
-       }
-     );
-     resp = WebViewUtils.genHTMLForWebView({
-         title: "Dendron Config",
-         view: DendronWebViewKey[TODO]
-     });
-     panel.webview.html = resp;
-   ```
-
-Related:
-
-- See [[here|pkg.dendron-next-server.dev#development]] for how to preview and test your web ui.
 
 ### Listening for copy event in webview
 
 - See [Webview: Copy to clipboard within internal IFRAME does not work on macOS · Issue #135017 · microsoft/vscode](https://github.com/microsoft/vscode/issues/135017)
 
-### Getting a view
-
-- See all web view keys [here](https://github.com/dendronhq/dendron/blob/bea9b6501e7699afdecda2ee14ad37fb4415ab32/packages/common-all/src/types/typesv2.ts#L711)
-
-```ts
-const panel = getExtension().getWebView(DendronWebViewKey.{KEY});
-```
-
-### Executing logic when the current editor changes
-
-See [[Workspace Watcher|dendron://dendron.docs/pkg.plugin-core.ref.workspace-watcher]]
-
-## Other
-
-### Access Clipboard
-
-```ts
-import { clipboard } from "../utils";
-clipboard.writeText(link);
-```
 
 ### Check if file is in vault
 
-- see src/views/DendronTreeViewV2.ts
-
-```ts
-const uri = editor.document.uri;
-const basename = path.basename(uri.fsPath);
-const ws = getWS();
-if (!ws.workspaceService?.isPathInWorkspace(uri.fsPath)) {
-  return;
-}
-```
 
 ### Insert Text
 
