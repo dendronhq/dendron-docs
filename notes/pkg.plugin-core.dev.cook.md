@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ''
-updated: 1663295930881
+updated: 1663296013114
 created: 1634590309804
 ---
 
@@ -21,25 +21,28 @@ created: 1634590309804
 
 ## Commands
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.scope-a-command-or-view-for-dev-env]]
-- [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
-- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-internal-command]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.trigger-commands-in-webview]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.execute-a-command-programatically]]
-- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-a-command-in-preview]]
-- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-doctor-command]]
-- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.test-a-new-command]]
-- [[Deprecate Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.deprecate-command]]
+- new command
+  - [[Add New Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-command]]
+  - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-internal-command]]
+  - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.test-a-new-command]]
+  - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-new-doctor-command]]
+  - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-a-command-in-preview]]
+- removing a command
+  - [[Deprecate Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.deprecate-command]]
+  - [[Remove a Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.remove-a-command]]
 
 ## Utilities
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.use-dendron-preview-for-regular-markdown]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.access-the-clipboard]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.check-if-file-is-in-vault]]
 - [[Create Note from Arbitrary Text|dendron://dendron.docs/pkg.plugin-core.dev.cook.create-note-from-arbitrary-text]]
+- [[Install Extension Using CLI|dendron://dendron.docs/pkg.plugin-core.dev.cook.install-extension-using-cli]]
 
 ## Index
 - [[Developing the Web Extension|dendron://dendron.docs/pkg.plugin-core.dev.cook.web-extension]]
-- [[Install Extension Using CLI|dendron://dendron.docs/pkg.plugin-core.dev.cook.install-extension-using-cli]]
-- [[Remove a Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.remove-a-command]]
+
 - [[Update Pkg Json|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-pkg-json]]
 - [[Update Plugin Config|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-plugin-config]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.prompt-user-for-input]]
