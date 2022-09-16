@@ -2,7 +2,7 @@
 id: jtHIVXVpyHwRiq3tJBbfq
 title: Cook
 desc: ''
-updated: 1663295250127
+updated: 1663295504989
 created: 1634590309804
 ---
 
@@ -11,7 +11,11 @@ created: 1634590309804
 - [[Add New Config|dendron://dendron.docs/pkg.common-all.dev.cook#add-new-config]]
 - [[Bundle Files with Code Plugin|dendron://dendron.docs/pkg.plugin-core.dev.cook.bundle-files-with-code-plugin]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.add-a-web-ui-component]]
+
+## Editor
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.programatically-insert-text]]
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.executing-logic-on-editor-change]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.get-line-offset-of-frontmatter]]
 
 ## Commands
 - [[dendron://dendron.docs/pkg.plugin-core.dev.cook.scope-a-command-or-view-for-dev-env]]
@@ -37,6 +41,8 @@ created: 1634590309804
 - [[Remove a Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.remove-a-command]]
 - [[Update Pkg Json|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-pkg-json]]
 - [[Update Plugin Config|dendron://dendron.docs/pkg.plugin-core.dev.cook.update-plugin-config]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.prompt-user-for-input]]
+- [[dendron://dendron.docs/pkg.plugin-core.dev.cook.listening-for-copy-event-in-webview]]
 
 ## Lookup
 
@@ -45,48 +51,8 @@ created: 1634590309804
 
 ## Views
 
-### Listening for copy event in webview
-
-- See [Webview: Copy to clipboard within internal IFRAME does not work on macOS · Issue #135017 · microsoft/vscode](https://github.com/microsoft/vscode/issues/135017)
-
-
-### Check if file is in vault
-
-
-### Insert Text
-
-- src/commands/InsertNoteCommand.ts
-
-```ts
-const editor = VSCodeUtils.getActiveTextEditor()!;
-const pos = editor.selection.active;
-await editor.edit((builder) => {
-  const selection = new Selection(pos, pos);
-  builder.replace(selection, txt);
-});
-```
-
-### Prompt User for Input using Selection
-
-- see [this](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/commands/VaultAddCommand.ts)
-
-### Prompt User for Input using Free Text
-
-- see [this](https://github.com/dendronhq/dendron/blob/master/packages/plugin-core/src/commands/VaultAddCommand.ts)
-
-```ts
-let out = await VSCodeUtils.showInputBox({
-  prompt: "Path to your new vault (relative to your workspace root)",
-  placeHolder: localVaultPathPlaceholder,
-});
-if (PickerUtilsV2.isStringInputEmpty(out)) return;
-```
 
 ### Get the line offset of the frontmatter
-
-- A lot of the times you need to offset the line count of the file content of a markdown file so that it takes into account of the prepended frontmatter.
-- You can use the utility method `RemarkUtils.getNodePositionPastFrontmatter` to get the position where the first non-frontmatter text starts.
-- The return value of this can be converted to VSCode positions with `VSCodeUtils.point2VSCodePosition`
 
 ### Use DevTrigger Command for development
 
