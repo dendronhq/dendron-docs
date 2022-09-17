@@ -1,11 +1,10 @@
 ---
-id: af17fd9e-d7d7-4e6c-a2c2-a3bd9ee3be18
-title: Startup
+id: n282x6o1hopmvuyi4q9msyr
+title: Init
 desc: ''
-updated: 1626916008876
-created: 1619225744179
+updated: 1663455650003
+created: 1663455452883
 ---
-
 
 ## Engine Initialize - Store Logic
 - packages/engine-server/src/drivers/file/storev2.ts
@@ -14,16 +13,29 @@ created: 1619225744179
 FileStorage {
     init {
         ...
-        @initNotes
+        initNotes
     }
 
     initNotes {
-        @vaults.map {
-            notes, cacheUpdates = @_initNotes(vault)
+
+        if metadataStore {
+            new SQLiteMetadataStore
+            // download sqlite if not present
+            ...
+            if !isDBInitialized {
+                createAllTables
+                createWorkspace
+            }
+        }
+
+        // 532
+        vaults.map {
+            notes, cacheUpdates = _initNotes(vault)
             notesWithLinks notes.filter{ n.links }
             writeNotesToCache(cacheUpdates)
         }
 
+        // 565
         addBacklinks(notesWithLinks)
     }
 

@@ -2,7 +2,7 @@
 id: 446723ba-c310-4302-a651-df14ce6e002b
 title: Lifecycle
 desc: ''
-updated: 1652229230579
+updated: 1663455386050
 created: 1620614023632
 ---
 
@@ -53,6 +53,7 @@ These are some implementation details for further reading
 
 See the [Video walkthrough](https://youtu.be/nWJCP1DR5Io) that goes through initialization in detail
 
+It covers the following components:
 - vscodePlugin
 - EngineAPIService
   - created in [[../packages/plugin-core/src/_extension.ts#^9dr6chh7ah9v]]
@@ -65,7 +66,6 @@ See the [Video walkthrough](https://youtu.be/nWJCP1DR5Io) that goes through init
 - fileSystem
 - noteParser
 
-* [Video walkthrough](https://youtu.be/nWJCP1DR5Io)
+## Resources:
 * Entry Point: [[../packages/engine-server/src/enginev2.ts]]
-
-See [[Engine|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch]] for additional details
+- See [[Engine|dendron://dendron.docs/pkg.dendron-engine.t.engine.arch]] for additional details
