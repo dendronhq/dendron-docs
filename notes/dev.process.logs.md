@@ -2,7 +2,7 @@
 id: 94z8iDatFMSwl7cQRDcno
 title: Logs
 desc: ''
-updated: 1638886683660
+updated: 1663517238202
 created: 1638828630942
 ---
 
@@ -109,3 +109,6 @@ foo(opts: {engine: DEngine, wsRoot: string, vaults: DVault[]}) {
     Logger.info({wsRoot, vaults})
 }
 ```
+
+## Related
+- [[dendron://dendron.docs/dev.process.logs.testing]]

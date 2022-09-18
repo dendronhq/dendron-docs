@@ -2,7 +2,7 @@
 id: tYYZ6hpBMJcPv9qcwqZAh
 title: Decorations
 desc: ""
-updated: 1647104243170
+updated: 1663517818539
 created: 1638522039855
 ---
 
@@ -25,6 +25,7 @@ A few points of interest here:
   the note body known by the engine may be stale, which would cause the engine
   the generate stale decorations. It's better to get the text from the plugin
   which has access to the most up-to-date version of the note text.
+  - See [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.get-decorations]] for details
 
 ## Cook
 

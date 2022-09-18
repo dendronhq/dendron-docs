@@ -2,7 +2,7 @@
 id: n282x6o1hopmvuyi4q9msyr
 title: Init
 desc: ''
-updated: 1663456225482
+updated: 1663517653763
 created: 1663455452883
 ---
 
@@ -137,3 +137,6 @@ getAllFiles {
 
 }
 ```
+
+## Related
+- [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.init.v3]]
