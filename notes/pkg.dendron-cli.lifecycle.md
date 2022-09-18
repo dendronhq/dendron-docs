@@ -2,7 +2,7 @@
 id: lkryb7oixvjt0notkygzete
 title: Lifecycle
 desc: ''
-updated: 1663455061288
+updated: 1663455688408
 created: 1663373541106
 ---
 
@@ -25,13 +25,3 @@ setupEngine {
 }
 ```
 
-
-## enginev3
-
-- [[../packages/engine-server/src/DendronEngineV3.ts]]
-```ts
-init {
-    initSchema
-    initNotes
-}
-```

@@ -2,7 +2,7 @@
 id: n282x6o1hopmvuyi4q9msyr
 title: Init
 desc: ''
-updated: 1663455650003
+updated: 1663456225482
 created: 1663455452883
 ---
 
@@ -101,6 +101,15 @@ parseFile(files) {
         notes = meta[lvl]];
         notes.map {
             note = @parseNoteProps it
+        }
+    }
+
+    if useSQLiteMetadataStore {
+        if isVaultInitialized {
+            bulkInsertAllNotes
+        } else {
+            dVault.create
+            bulkInsertAllNotes
         }
     }
 }

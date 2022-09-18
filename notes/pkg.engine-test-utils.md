@@ -12,6 +12,6 @@ Used in testing the dendron monorepo. This contains the test for all packages ex
 
 ## Index
 - [[Cook|dendron://dendron.docs/pkg.engine-test-utils.cook]]
-- [[Internal|dendron://dendron.docs/pkg.engine-test-utils.internal]]
+- [[Lifecycle|dendron://dendron.docs/pkg.engine-test-utils.lifecycle]]
 - [[Qa|dendron://dendron.docs/pkg.engine-test-utils.qa]]
 - [[Ref|dendron://dendron.docs/pkg.engine-test-utils.ref]]
