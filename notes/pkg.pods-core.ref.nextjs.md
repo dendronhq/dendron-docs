@@ -2,7 +2,7 @@
 id: AlzFH3ol9ubQhagjAUqq1
 title: Nextjs
 desc: ""
-updated: 1643305966707
+updated: 1663555693405
 created: 1634255542869
 ---
 
@@ -10,8 +10,10 @@ Responsible for creating payloads and metadata for Dendron Publishing
 
 ## Pseudocode
 
-- [[../packages/pods-core/src/builtin/NextjsExportPod.ts]]
+Export Pod Logic
+- [[dendron://dendron.docs/pkg.pods-core.lifecycle.export-pod]]
 
+- [[../packages/pods-core/src/builtin/NextjsExportPod.ts]]
 ```ts
 
 plant(engine, config, dest) {
