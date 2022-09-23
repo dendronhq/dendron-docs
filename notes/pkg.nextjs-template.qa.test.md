@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1656513546800
+updated: 1663925775491
 created: 1638063942917
 ---
 
@@ -81,6 +81,27 @@ dendron publish dev
 - #star
 
 - [[Gh Actions|dendron://dendron.docs/pkg.nextjs-template.qa.test.gh-actions]]
+
+## E2E testing with Playwright
+
+1. To run all tests under /tests, `yarn test` from within the `nextjs-template` directory
+2. To run all tests without building application everytime, `yarn test:skipbuild`
+3. To run just this test file, `npx playwright test tests/example.spec.ts` from within the `nextjs-template` directory
+4. To skip build while testing this test file, `SKIP_BUILD=1 npx playwright test tests/example.spec.ts`
+
+### Sample test for playwright
+
+```typescript
+test("Test home page", async ({ page, port }) => {
+  await page.goto(`http://localhost:${port}/`);
+  const name = await page.innerText("h1");
+  expect(name).toBe("Dendron");
+});
+```
+
+### Cook/Hints
+
+- use `--debug` flag to tell playwright to start with debugger in which you can then step through each line in your test
 
 ## Cook
 
