@@ -83,7 +83,7 @@ See example in [here](https://www.loom.com/share/797f2e13cc9a46e4a0973b3ad26f6ed
 - [[Update a Snapshot|dendron://dendron.docs/dev.process.qa.test.cook.update-a-snapshot]]
 - [[dendron://dendron.docs/dev.process.qa.test.cook.stubbing]]
 - [[Exposing Private Methods for Test|dev.process.qa.test.cook.exposing-private-methods-for-test]]
-- [[Stubbing Private Functions|dev.process.qa.test.cook.stubbing-private-functions]]
+- [[Spying Private Functions|dev.process.qa.test.cook.spying-private-functions]]
 
 
 

@@ -1,6 +1,6 @@
 ---
 id: twsz6xcc1be8se9o0p3qa38
-title: Stubbing Private Functions
+title: Spying Private Functions
 desc: ''
 updated: 1662057644835
 created: 1662057637588
