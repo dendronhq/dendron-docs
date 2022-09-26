@@ -118,9 +118,10 @@ test("Test home page", async ({ page, port }) => {
 
 Notice the `test` import from `next-fixture`. This is a Playwright [feature](https://playwright.dev/docs/test-fixtures#fixtures-options) allowing to setup, in our case, options that are set for every test. You should use that instead of the default `test` from playwright.
 
-**VRT**
+### Visual Regression Testing
 
-To do visual regression testing use [`to`](https://playwright.dev/docs/test-snapshots)
+- To do visual regression testing use [`toHaveScreenshot`](https://playwright.dev/docs/test-snapshots) and provide the name parameter that will be used as the location for the image. Using an array you can apply a folder structure for organizational purposes.
+- To update snapshots use the `-u or --update-snapshots` flag, by appending it to the command like so `yarn ci:test:template:docker -u`
 
 ### Cook/Hints
 
