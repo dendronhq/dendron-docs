@@ -101,8 +101,6 @@ NOTE: Some tests do VRT(visual regression testing) whereby they take screenshots
 yarn ci:test:template:docker
 ```
 
-NOTE: this downloads the required docker image once and browsers everytime you execute.
-
 ### Creating a new e2e test
 
 Inside the `e2e` folder you find `example.spec.ts` that can be used to understand how a test is structured. Here an simple test case:
