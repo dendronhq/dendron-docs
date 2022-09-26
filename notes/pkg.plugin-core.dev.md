@@ -2,7 +2,7 @@
 id: 04dd9ad8-3d81-4098-a661-21b6acc6f443
 title: Dev
 desc: ''
-updated: 1641682683163
+updated: 1664223750969
 created: 1621721485330
 ---
 
@@ -77,7 +77,7 @@ cd packages/dendorn-cli
 npm link
 
 npm link -g @dendronhq/dendron-cli
-```
+``![[Cook|dendron://dendron.docs/pkg.plugin-core.dev.cook]]
 
 ### Working with Verdaccio 
 
