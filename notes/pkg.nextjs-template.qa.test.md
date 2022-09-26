@@ -82,7 +82,7 @@ dendron publish dev
 
 - [[Gh Actions|dendron://dendron.docs/pkg.nextjs-template.qa.test.gh-actions]]
 
-## E2E testing with Playwright
+## E2E testing
 
 [Playwright](https://playwright.dev/) is used for doing end-to-end testing. All tests of that kind are located under the `e2e` folder.
 
@@ -92,14 +92,16 @@ To run these tests the following options are available
 
 1. To run all tests under /e2e, `yarn test` from within the `nextjs-template` directory
 2. To run all tests without building application everytime, `yarn test:skipbuild`
-3. To run just this test file, `npx playwright test tests/example.spec.ts` from within the `nextjs-template` directory
-4. To skip build while testing this test file, `SKIP_BUILD=1 npx playwright test tests/example.spec.ts`
+3. To run just a single file, `npx playwright test tests/example.spec.ts` from within the `nextjs-template` directory
+4. To skip build while testing that test file, `SKIP_BUILD=1 npx playwright test tests/example.spec.ts`
 
-NOTE: Some tests do VRT(visual regression testing) whereby are taking screenshots from specific areas of the page. **These tests will probably fail**  since they are compared to previously done screenshots that where created under a specific environment. That environment must be the same as the one being created inside the CI pipeline. To close that gap we can create the environment locally using a docker container. The following command executed from the root of the project will run the `nextjs-template` e2e test inside that environment:
+NOTE: Some tests do VRT(visual regression testing) whereby they take screenshots from specific areas of the page. **These tests will probably fail**  since they are compared to previously done screenshots that where created under a specific environment. That environment must be the same as the one being created inside the CI pipeline. To close that gap we can create that environment locally using a docker container. The following command executed from the root of the project will run the `nextjs-template` e2e test inside that environment:
 
 ```bash
 yarn ci:test:template:docker
 ```
+
+NOTE: this downloads the required docker image once and browsers everytime you execute.
 
 ### Creating a new e2e test
 
@@ -117,6 +119,10 @@ test("Test home page", async ({ page, port }) => {
 ```
 
 Notice the `test` import from `next-fixture`. This is a Playwright [feature](https://playwright.dev/docs/test-fixtures#fixtures-options) allowing to setup, in our case, options that are set for every test. You should use that instead of the default `test` from playwright.
+
+**VRT**
+
+To do visual regression testing use [`to`](https://playwright.dev/docs/test-snapshots)
 
 ### Cook/Hints
 
