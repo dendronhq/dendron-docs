@@ -2,7 +2,7 @@
 id: IyBXeRrpHqUKg8OL5BQ4n
 title: Test
 desc: ''
-updated: 1663925775491
+updated: 1664193910145
 created: 1638063942917
 ---
 
@@ -84,14 +84,31 @@ dendron publish dev
 
 ## E2E testing with Playwright
 
-1. To run all tests under /tests, `yarn test` from within the `nextjs-template` directory
+[Playwright](https://playwright.dev/) is used for doing end-to-end testing. All tests of that kind are located under the `e2e` folder.
+
+### Running the e2e tests
+
+To run these tests the following options are available
+
+1. To run all tests under /e2e, `yarn test` from within the `nextjs-template` directory
 2. To run all tests without building application everytime, `yarn test:skipbuild`
 3. To run just this test file, `npx playwright test tests/example.spec.ts` from within the `nextjs-template` directory
 4. To skip build while testing this test file, `SKIP_BUILD=1 npx playwright test tests/example.spec.ts`
 
-### Sample test for playwright
+NOTE: Some tests do VRT(visual regression testing) whereby are taking screenshots from specific areas of the page. **These tests will probably fail**  since they are compared to previously done screenshots that where created under a specific environment. That environment must be the same as the one being created inside the CI pipeline. To close that gap we can create the environment locally using a docker container. The following command executed from the root of the project will run the `nextjs-template` e2e test inside that environment:
+
+```bash
+yarn ci:test:template:docker
+```
+
+### Creating a new e2e test
+
+Inside the `e2e` folder you find `example.spec.ts` that can be used to understand how a test is structured. Here an simple test case:
 
 ```typescript
+import test from "./next-fixture";
+import { expect } from "@playwright/test";
+
 test("Test home page", async ({ page, port }) => {
   await page.goto(`http://localhost:${port}/`);
   const name = await page.innerText("h1");
@@ -99,9 +116,11 @@ test("Test home page", async ({ page, port }) => {
 });
 ```
 
+Notice the `test` import from `next-fixture`. This is a Playwright [feature](https://playwright.dev/docs/test-fixtures#fixtures-options) allowing to setup, in our case, options that are set for every test. You should use that instead of the default `test` from playwright.
+
 ### Cook/Hints
 
-- use `--debug` flag to tell playwright to start with debugger in which you can then step through each line in your test
+- use `--debug` flag to tell playwright to start with debugger in which you can then step through each line in your test.
 
 ## Cook
 
