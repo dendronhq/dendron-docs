@@ -122,6 +122,7 @@ Notice the `test` import from `next-fixture`. This is a Playwright [feature](htt
 
 - To do visual regression testing use [`toHaveScreenshot`](https://playwright.dev/docs/test-snapshots) and provide the name parameter that will be used as the location for the image. Using an array you can apply a folder structure for organizational purposes.
 - To update snapshots use the `-u or --update-snapshots` flag, by appending it to the command like so `yarn ci:test:template:docker -u`
+  - Make sure you have build the project beforehand, in case your build files diverge from what your current branch would have.
 
 ### Cook/Hints
 
