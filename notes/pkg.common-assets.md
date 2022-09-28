@@ -95,6 +95,10 @@ gulp("assets/js/*.js")
    copy("common-assets/build/top", "nextjs-template/public")
    ```
 
+### Style changes
+
+When doing changes inside [[../packages/dendron-plugin-views/src/styles/scss]] or [[../packages/nextjs-template/styles/scss]] you must bring them back into the source-of-truth of these styles which is in [[../packages/common-assets/styles/scss/]]. Git then will recognize the changes in the latter location since the former two locations are gitignored.
+
 ## Related
 
 - [[Plugin Views - Build Styles|dendron://dendron.docs/pkg.dendron-plugin-views.ref.build-styles]]
