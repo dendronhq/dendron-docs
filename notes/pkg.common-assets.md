@@ -2,7 +2,7 @@
 id: eMcjzkqYCRdxggs7o7nqm
 title: Common Assets
 desc: ""
-updated: 1663171950208
+updated: 1664359953390
 created: 1637163989716
 ---
 
@@ -59,12 +59,11 @@ gulp("assets/js/*.js")
 
 ### Sync
 1. User runs `yarn setup` in Dendron monorepo
-1. The last step after all packages are build, is running
+2. The last step after all packages are build, is running
    ```sh
    dendron dev sync_assets --fast
    ```
-   - this runs the following
-   - loc: [[../packages/dendron-cli/src/commands/devCLICommand.ts#L388]]
+   - this runs `DevCommands.SYNC_ASSETS` command in [[../packages/dendron-cli/src/commands/devCLICommand.ts]]
    ```ts
    // Takes assets from different monorepo packages and copies them over to the plugin
    syncAssets {
