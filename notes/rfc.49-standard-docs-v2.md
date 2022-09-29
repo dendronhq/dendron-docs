@@ -22,12 +22,8 @@ This project aims to introduce one as well as a plan for refactoring the docs to
 - [ ] create a process to iteratively convert dendron wiki to new standard and keept track of: what has been converted, what still needs to be converted
 
 ## Proposal
-- Overall structure of docs: https://handbook.dendron.so/notes/ebpudfrf6rg5uut75d29lhg
-<!-- [[Standard Documentation|dendron://dendron.handbook/leaflet.journal.2022.05.10.standard-documentation]] -->
-- Structure of a topic: https://wiki.dendron.so/notes/ZljuAhFuNWEOUlFtPlC0h
-<!-- [[dendron://dendron.dendron-site/templates.topic]] -->
-- More details on structuring a topic: https://wiki.dendron.so/notes/vyjmifzlvu4w85suec4vd6x
-<!-- [[Top Level Feature|dendron://dendron.dendron-site/dendron.contribute.documentation.tutorial.top-level-feature]] -->
+- Overall structure of docs: [[Standard Documentation|dendron://dendron.handbook/leaflet.journal.2022.05.10.standard-documentation]] 
+- How to structure different kinds of pages: [[dendron://dendron.dendron-site/dendron.contribute.documentation.tutorial]]
 
 ## Details
 
