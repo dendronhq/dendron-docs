@@ -12,6 +12,27 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
 - loc: [[../packages/plugin-core/src/features/completionProvider.ts]]
 
 ## Lifecycle
+- [[../packages/plugin-core/src/_extension.ts]]
+```ts
+setupLanguageFeatures 
+	completionProvider.activate(context)
+```
+
+- [[../packages/plugin-core/src/features/completionProvider.ts]]
+```ts
+activate {
+	// tags
+	provideCompletionItems: debouncedProvideCompletionItems,
+	"[", // for wikilinks and references
+      "#", // for hashtags
+      "@", // for user tags
+      "" // for new levels in the hieirarchy
+}
+
+debouncedProvideCompletionItems {
+	
+}
+```
 
 ```ts
 provideCompletionItems {
@@ -19,4 +40,8 @@ provideCompletionItems {
 
 	}
 }
+```
+
+```ts
+provideCompletionsForTag
 ```
