@@ -15,11 +15,9 @@ author: 'https://github.com/dendron-bot'
 
 - NOTE: this note is exported from dendron. It is best viewed inside of the Dendron Community Workspace. See [here](https://github.com/dendronhq/vault.dendron.community/blob/master/root.md#L25:L25) on setup instructions
 
-This is a proposal to introduce a standard way to document features in Dendron while minimizing duplicate content
+This is a proposal to introduce a standard way to document features in Dendron.
 
 ## Context
-
-The past discussion about the dendron site is documented in [[Dendron Site Reorganization|dendron://dendron.community/discussion.2021.dendron-site-reorg]]
 
 This proposal talks specifically about [[Feature Anatomy|dendron://dendron.community/discussion.2021.dendron-site-reorg#feature-anatomy]] and gives explicit guidance on how to structure new features.
 It also outlines how we relate the various [[sections|dendron://dendron.docs/rfc.41-standard-feature-documentation#section]] of a feature to its [[reference|dendron://dendron.community/discussion.2021.dendron-site-reorg#reference]] documentation.
@@ -125,3 +123,5 @@ Currently, the process of generating references is quite manual. There are a few
 - Inspiration:
     - AWS Docs, eg: [What is Amazon EC2? - Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
     - Django Docs: [Django documentation | Django documentation | Django](https://docs.djangoproject.com/en/4.0/)
+- Past Discussions
+  - [[Dendron Site Reorganization|dendron://dendron.community/discussion.2021.dendron-site-reorg]]
