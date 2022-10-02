@@ -16,7 +16,7 @@ for the plugin side.
 
 ## Overview
 
-The main part of the decorations starts in [[../packages/engine-server/src/markdown/decorations/decorations.ts]]
+The main part of the decorations starts in [[../packages/unified/src/decorations/decorations.ts]]{func: runDecorator}
 A few points of interest here:
 
 - All decoration code is organized under this folder.
