@@ -24,4 +24,5 @@ setupEngine {
     engine.init
 }
 ```
+- engine initialization in [[dendron://dendron.docs/pkg.dendron-engine.ref.engine-connector]]
 
