@@ -24,4 +24,3 @@ You can use `LaunchTutorial` command to test the preview. note that when you lau
 ### Deprecating an existing command
 - [[Deprecate Command|dendron://dendron.docs/pkg.plugin-core.dev.cook.deprecate-command]]
 
-### More cookbooks
