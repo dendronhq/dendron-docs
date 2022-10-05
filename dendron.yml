@@ -25,7 +25,7 @@ workspace:
     vaults:
         -
             fsPath: .
-            name: dendron.dendron-docs
+            name: dendron.dendron.docs
             selfContained: true
     journal:
         dailyDomain: daily

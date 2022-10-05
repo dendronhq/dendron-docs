@@ -2,7 +2,7 @@
     "folders": [
         {
             "path": "notes",
-            "name": "dendron-docs"
+            "name": "dendron.docs"
         },
         {
             "path": "."
