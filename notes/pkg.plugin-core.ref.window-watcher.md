@@ -12,10 +12,18 @@ Watches changes in active window and notifies subscribers of changes
 
 ## Entry
 
-- [[../packages/plugin-core/src/windowWatcher.ts]]
 
 ## Lifecycle
 
+- [[../packages/plugin-core/src/workspace.ts]]
+```ts
+activateWatchers {
+  new WindowWatcher
+}
+```
+
+
+- [[../packages/plugin-core/src/windowWatcher.ts]]
 ```ts
 WindowWatcher.active {
 

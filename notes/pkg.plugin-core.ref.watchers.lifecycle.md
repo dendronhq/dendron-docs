@@ -16,6 +16,8 @@ activateWatchers {
 }
 ```
 
+- [[dendron://dendron.docs/pkg.plugin-core.ref.window-watcher]]
+
 ## Destruction
 
 ## todo

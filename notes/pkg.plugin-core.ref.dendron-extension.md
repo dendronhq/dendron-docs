@@ -27,8 +27,5 @@ getOrCreate {
 }
 ```
 
-## Reference
-
-## Cook
-
-## Past Tasks
+## Related
+- [[dendron://dendron.docs/pkg.plugin-core.ref.watchers.lifecycle]]
