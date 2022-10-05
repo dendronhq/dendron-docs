@@ -30,14 +30,14 @@ Dendron configuration is defined in [[../packages/common-all/src/types/configs/d
   - This is an object that holds every possible config key's label and description that will later be used to automatically generate a configuration view.
   - If this step is omitted, Typescript will complain that `DendronConfigEntryCollection` is missing a key.
 
-1. Decide on the default
+1. Decide on the default ^e38rlomwy9oq
 
 - As per the [[configuration conventions|dev.process.code.config]], consider adding a sensible default of the newly introduced config key in the appropriate `genDefault{namespace}Config` method.
   - Each namespace is divided into separate modules [here](https://github.com/dendronhq/dendron/tree/master/packages/common-all/src/types/configs), and the namespace type and default generating methods live in the same module.
   - These default generating methods will be used by the `ConfigUtils` that are used to get and set configs later, so it is important to define a default here to simplify the process down the line.
 
 1. Update tests and json schema
-![[Modify Dendron Config|dendron://dendron.docs/pkg.common-all.dev.cook.modify-dendron-config]]
+![[dendron://dendron.docs/pkg.common-all.dev.cook.modify-dendron-config#update-json]]
 
 1. Update UI preview for config : This process is currently manual
 - Update the new config in : [[..\packages\dendron-plugin-views\src\utils\dendronConfig.ts]].
