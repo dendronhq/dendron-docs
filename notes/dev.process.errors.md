@@ -93,7 +93,7 @@ function main() {
 
 ## Result (`neverthrow`)
 
-The `Result` is an alternative to `RespV3` and should be considered as the new way to handle errors. They are similar in the way that both provide an error and value/data container but are different in `Result` having properties that allows for more precision and accuracy while also improve the ergomonics then handling with errors. Main differences are that `Result`:
+The `Result` is an alternative to `RespV3` and should be considered as the new way to handle errors. They are similar in the way that both provide an failure and success type but are different in `Result` having properties that allows for more precision and accuracy while also improve the ergomonics then handling with errors. Main differences are that `Result`:
   - is a [discriminated union](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#discriminated-unions) type, therefor allows for type narrowing and more
   - treats errors as a first-class citizen by which errors are not treated as an exception and rather a form of data/information like any other data within the data-flow structures.
   - allows for utils to easily wrap/unrwap, map and capture/ensure/safeguard.
