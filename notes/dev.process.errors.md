@@ -2,7 +2,7 @@
 id: 2b87ceb3-2a90-4dee-ab8e-980172ecaef1
 title: Errors
 desc: ''
-updated: 1665059350992
+updated: 1665059577797
 created: 1620879891784
 ---
 
@@ -250,6 +250,8 @@ type MyContextResult<T> = Result<T, IDendronError>;
   - how to distinguish between "Expected Errors" and "Unexpected, or Irrecoverable Errors"
     - https://github.com/supermacro/neverthrow/issues/113#issuecomment-680070531
     - https://github.com/supermacro/neverthrow/wiki/Error-Handling-Best-Practices#distinguish-between-expected-errors-and-unexpected-or-irrecoverable-errors
+  - Thinking in Types and Pipelines
+    - [https://vimeo.com/113707214](https://vimeo.com/113707214)
 
 
 ## Sentry
