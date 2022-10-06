@@ -6,6 +6,7 @@ updated: 1663518867314
 created: 1663517808252
 ---
 
+### getDecoration
 [[../packages/engine-server/src/enginev2.ts]]{key: getDecorations}
 
 ```ts
@@ -55,4 +56,21 @@ linkedNoteType(note, fnamem vaultName) {
     matchingNotes = note
 
 }
+```
+
+## ref
+
+### task note
+
+- [[../packages/unified/src/decorations/taskNotes.ts]]
+```ts
+  const decoration: DecorationTaskNote = {
+    type: DECORATION_TYPES.taskNote,
+    range,
+    beforeText: status ? `${status} ` : undefined,
+    afterText:
+      decorationString.length > 0
+        ? ` ${decorationString.join(" ")}`
+        : undefined,
+  };
 ```

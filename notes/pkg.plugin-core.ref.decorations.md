@@ -21,7 +21,9 @@ for the engine side.
 This shows a brief example of how VSCode, plugin, and engine interact with each
 other to display the decorations. A few points of importance:
 
-- The plugin ignores the engine response if the user did something like typing that made the decorations stale. This is because applying stale decorations can cause them to appear in the wrong places inside the document, but not applying decorations at least retains the old decorations at the correct places. This is especially an issue if the user adds new lines in the middle of a note.
+- The **plugin ignores the engine response if the user did something like typing that made the decorations stale**. 
+  - This is because **applying stale decorations can cause them to appear in the wrong places inside the document**, but not applying decorations at least retains the old decorations at the correct places. 
+  - This is especially an issue if the user adds new lines in the middle of a note.
 - Engine sends plain objects, which the plugin converts to VSCode objects. This is necessary because the engine API can't pass VSCode objects, and we want to keep the engine more independent from the plugin.
 - The plugin converts the the plain objects into the objects VSCode expects and applies them.
 
@@ -32,6 +34,9 @@ other to display the decorations. A few points of importance:
 ## LifeCycle
 
 - called by: [[Window Watcher|dendron://dendron.docs/pkg.plugin-core.ref.window-watcher]]
+```
+WindowWatcher
+```
 - calls: [[Decorations|dendron://dendron.docs/pkg.dendron-engine.ref.decorations]]
 
 ```ts
@@ -53,6 +58,7 @@ updateDecorations(editor) {
   delayedFrontmatterWarning allWarnings
 }
 
+// applies colors
 mapDecoration(decorator) {
     switch decorator.type
         case type:
