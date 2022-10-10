@@ -2,7 +2,7 @@
 id: 2b87ceb3-2a90-4dee-ab8e-980172ecaef1
 title: Errors
 desc: ''
-updated: 1665059577797
+updated: 1665393165017
 created: 1620879891784
 ---
 
@@ -11,7 +11,7 @@ created: 1620879891784
 This page describes how we handle errors in Dendron.
 
 - Any error that is throw by Dendron should extend from [`DendronError`](https://github.com/dendronhq/dendron/blob/master/packages/common-all/src/error.ts). 
-- In [[user.sam.journal.2022.09.20.introduce-neverthrow]] a new approach has been introduced when dealing with errors. See [[dendron://dendron.docs/dev.process.errors#result-neverthrow]] for details.
+- In [[user.sam.journal.2022.09.20.introduce-neverthrow]] a new approach has been introduced when dealing with errors. See [[Result|dendron://dendron.docs/dev.process.errors#result-neverthrow]] for details.
 
 ### Details
 
@@ -25,6 +25,8 @@ For an example see [errorTypes.ts](https://github.com/dendronhq/dendron/blob/mas
 
 
 ## RespV3
+
+Note: This is depricated! Use [[Result|dendron://dendron.docs/dev.process.errors#result-neverthrow]]
 
 Use this when working with functions that return data or an error
 
@@ -91,21 +93,20 @@ function main() {
 
 ```
 
-## Result (`neverthrow`)
+## Result (using `neverthrow` package)
 
-The `Result` is an alternative to `RespV3` and should be considered as the new way to handle errors. They are similar in the way that both provide an failure and success type but are different in `Result` having properties that allows for more precision and accuracy while also improve the ergomonics then handling with errors. Main differences are that `Result`:
-  - is a [discriminated union](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#discriminated-unions) type, therefor allows for type narrowing and more
-  - treats errors as a first-class citizen by which errors are not treated as an exception and rather a form of data/information like any other data within the data-flow structures.
-  - allows for utils to easily wrap/unrwap, map and capture/ensure/safeguard.
+The `Result` is an alternative to `RespV3` and should be considered as the new way to handle errors. They are similar in the way that both provide an failure and success track but are different in `Result` having properties that allows for more precision and accuracy while also improve the ergomonics when working with errors. Main differences are that `Result`:
+  - is a [discriminated union](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#discriminated-unions) type, therefor allows for type narrowing.
+  - treats errors even more as a first-class citizen by which errors are not treated as an exception but rather a form of data/information like any other data. This is done using a two-tack system
+  - provides for utils to easily wrap/unrwap, map and capture/ensure/safeguard.
   - is `thenable` meaning it behaves exactly like a native `Promise<Result>` (`ResultAsync` in this case)
 
-For a better grasp of the concept read https://github.com/supermacro/neverthrow/wiki/Introduction:-Type-Safe-Errors-in-JS-&-TypeScript-(10-minute-read) (recommended)
+For a better grasp of the concept read https://github.com/supermacro/neverthrow/wiki/Introduction:-Type-Safe-Errors-in-JS-&-TypeScript-(10-minute-read)
 
 
 ### Examples
 
 #### Basic
-
 
 ##### Synchronous API
 
