@@ -92,7 +92,7 @@ This is necessary for actions that require pulling latest packages from NPM duri
 
 ```sh
 setRegLocal
-npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
+npx verdacio -c ./bootstrap/data/verdaccio/config.yaml
 ```
 
 ### Setup Environment Variables
