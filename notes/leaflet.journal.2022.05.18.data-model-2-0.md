@@ -6,7 +6,10 @@ updated: 1653837025104
 created: 1652890304262
 documentId: 133blpKIJuWL2nBar3rgQdnQMEOuqs2gCgf9fqluyNUI
 revisionId: >-
-  ALm37BXhcNudCJt-EEMnLm0LFaZ32ZtVEzMVEmn6CfjGn_S1giHQuGy4Kl0caQnawwhZ9pHTUni7PtnipsZeGg
+  AA7UxwO3CVeEDiXcTJV-XUkGvhotr4qsAHg5FenkoMtLh_UvsQzLrNbHGfG_veeScW-_Fjy9NyJCQHVfg3iB6A
+uri: >-
+  https://docs.google.com/document/d/133blpKIJuWL2nBar3rgQdnQMEOuqs2gCgf9fqluyNUI/edit
+parentFolderId: 1A0T3-s7RCHFX5FwuqOyBrD7amV8R3YJq
 ---
 
 ## Summary
