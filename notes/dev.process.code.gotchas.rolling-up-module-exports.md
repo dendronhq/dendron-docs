@@ -2,7 +2,7 @@
 id: d5xgy1lrehvrbjsabq1dglk
 title: Rolling up Module Exports
 desc: ''
-updated: 1665467520219
+updated: 1665467986275
 created: 1665465282032
 ---
 
@@ -13,6 +13,31 @@ When we are rolling up multiple lower level modules using a barrel (`index.ts`),
 This is especially important in a package that is mostly used in other packages as a dependency and does not execute code on its own (i.e. `@dendronhq/common-all`)
 
 A real case of this happening can be found in this commit: https://github.com/dendronhq/dendron/pull/3618/commits/5c93f4d7ecb5b59c29c01de2a2d539a634ebf05c
+
+## Symptom
+- You exported something from a module correctly, but when you try to import it from some other package, you get a runtime error that says something like below.
+
+```bash
+Cannot read property of undefined (reading "someProperty")
+```
+
+## Remedy
+- Go to the package that you are importing from.
+- Find within all the modules that are rolled up and exported, any import statement that looks like so:
+
+```js
+import { something } from ".."; // or
+import { somethingElse } from "../.."
+...
+```
+
+- Fix them so that they look like this:
+
+```js
+import { something } from "./something";
+import { somethingElse } from "../somethingElse";
+...
+```
 
 ## Example
 
