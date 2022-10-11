@@ -2,7 +2,7 @@
 id: a60F3At8Hb2jBBSV8tgPW
 title: Deploying NextJS Template for Release
 desc: ''
-updated: 1656513423398
+updated: 1665505103728
 created: 1640280816708
 ---
 
@@ -42,7 +42,7 @@ These steps should be run **after** the weekly release has gone out. It is only 
     pushd packages/nextjs-template/
 
     echo "switch to dev branch..."
-    git checkout -b --track origin/dev
+    git checkout --track -b origin/dev
     
     echo "backup node_modules..."
     mv node_modules /tmp
