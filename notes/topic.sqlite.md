@@ -6,6 +6,11 @@ updated: 1665593964845
 created: 1665593964845
 ---
 
+## Logs
+```
+checking if sql
+```
+
 ## Related
 - public docs: [[dendron://dendron.dendron-site/dendron.topic.workspace.sqlite]]
 
