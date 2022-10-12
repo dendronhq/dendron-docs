@@ -45,6 +45,19 @@ stateDiagram-v2
 - SQLiteMetadataStore: [[../packages/engine-server/src/drivers/SQLiteMetadataStore.ts]] - this provides metada via SQLite ^sx51483htt71
 - Prisma Schema: [[../packages/engine-server/prisma/schema.prisma]] - what is currently indexed at startup 
 
+## Dependencies
+- [[node-sqlite3|scratch.2022.10.12.112545.node-sqlite3]]
+
+## Details
+
+### Download Binaries
+If prisma binaries aren't in place and `sqlite` is enabled, Dendron will download them to `~/.dendron/`. Some implementation details to consider:
+- download happens in the constructore of the `SQLiteMetadataStore` (this is not ideal especially if it gets instaitated multiple times - we do this because the `IDataStore` interface doesn't have an `init` method): https://github.com/dendronhq/dendron/blob/master/packages/engine-server/src/drivers/SQLiteMetadataStore.ts#L56:L56
+    - in case there is a network issue with the download, we have a [circuit breaker](https://github.com/dendronhq/dendron/blob/master/packages/engine-server/src/drivers/file/storev2.ts#L527:L527) that will kill the download
+    - the actual binaries are uploaded to an S3 bucket that is fronted by cloudfront (s3 download speed too slow otherwise, 20MB = 10min)
+
+- > NOTE: in order for this to work with webpack, we also implement various shims which are detailed in this [pull request](https://github.com/dendronhq/dendron/pull/3489) ^7ffjqoa2grrv
+
 ## Cookbook
 
 ### Check if SQLite is enabled
