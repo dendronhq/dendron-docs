@@ -6,25 +6,58 @@ updated: 1665593964845
 created: 1665593964845
 ---
 
+## Quickstart
+- to enable sqlite, see [[dendron://dendron.dendron-site/dendron.topic.workspace.sqlite]]
+- > NOTE: this **only** works for enginev2 today and not enginev3
+
 ## Architecture
 
+### Store initialization Diagram
+> NOTE: this is implemented for `enginev2`. it has not yet been implemented for `enginev3`
+```mermaid
+stateDiagram-v2
+    state sqlDependenciesState <<choice>>
+    state sqlFileState <<choice>>
+    state notesSyncedState <<choice>>
 
-- > NOTE: currently, we bulk add everything at the beginning
-
-
-## Schema
-- [[../packages/engine-server/prisma/schema.prisma]]
-
-## Logs
+    [*] --> init
+    init --> sqlDependenciesPresent?
+    sqlDependenciesPresent? --> sqlDependenciesState
+    sqlDependenciesState --> downloadSQLDependencies : if false
+    downloadSQLDependencies --> sqliteFilePresent?
+    sqlDependenciesState --> sqliteFilePresent? : if true
+    sqliteFilePresent? --> sqlFileState
+    sqlFileState --> createFileAndTables : if false
+    createFileAndTables --> parseNotes
+    sqlFileState --> parseNotes : if true
+    parseNotes --> notesSyncedBefore?
+    notesSyncedBefore? --> notesSyncedState
+    notesSyncedState --> syncAllNotes : if false
+    notesSyncedState --> syncUpdatedNotes: if true
+    syncAllNotes --> [*]
+    syncUpdatedNotes --> [*]
 ```
-checking if sql
-```
+
+### Code Flow
+- How enginev2 initializes with SQLite: [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.init]]
+
+### Relevant Files
+- SQLiteMetadataStore: [[../packages/engine-server/src/drivers/SQLiteMetadataStore.ts]] - this provides metada via SQLite ^sx51483htt71
+- Prisma Schema: [[../packages/engine-server/prisma/schema.prisma]] - what is currently indexed at startup 
+
+## Cookbook
+
+### Check if SQLite is enabled
+- you can verify that sqlite is enabled by checking for some of the following cues:
+    - `metadata.db` exists in your workspace root
+    - checking for the following in `dendron.server.log`: `checking if sql is initialized...`
+        - this will only print if `sqlite` is enabled
+        - > NOTE: this won't be available when developing because we don't output the `dendron.server.log` file in the dev environment
 
 ## Related
 - public docs: [[dendron://dendron.dendron-site/dendron.topic.workspace.sqlite]]
 
 - init logic: 
-    - v2: [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.init]]
     - v3: [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.init.v3]]
 
 - prisma logic: [[dendron://dendron.docs/pkg.dendron-engine.ref.prisma]]

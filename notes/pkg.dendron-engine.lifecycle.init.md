@@ -19,7 +19,8 @@ FileStorage {
     initNotes {
 
         if metadataStore {
-            new SQLiteMetadataStore
+            // #sqlite
+            new SQLiteMetadataStore 
             // download sqlite if not present
             ...
             if !isDBInitialized {
@@ -104,9 +105,10 @@ parseFile(files) {
         }
     }
 
+    // SQLiteMetadataStore
     if useSQLiteMetadataStore {
         if isVaultInitialized {
-            bulkInsertAllNotes
+            bulkInsertAllNotes(cacheUpdates)
         } else {
             dVault.create
             bulkInsertAllNotes
