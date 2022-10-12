@@ -6,6 +6,15 @@ updated: 1665593964845
 created: 1665593964845
 ---
 
+## Architecture
+
+
+- > NOTE: currently, we bulk add everything at the beginning
+
+
+## Schema
+- [[../packages/engine-server/prisma/schema.prisma]]
+
 ## Logs
 ```
 checking if sql
@@ -18,6 +27,7 @@ checking if sql
     - v2: [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.init]]
     - v3: [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.init.v3]]
 
+- prisma logic: [[dendron://dendron.docs/pkg.dendron-engine.ref.prisma]]
 - data model: [[dendron://dendron.docs/leaflet.journal.2022.05.18.data-model-2-0]]
 - query: [[dendron://private/leaflet.journal.2022.10.12.engine-query-architecture]]
 - browser store: [[dendron://private/proj.2022.06-store-refactor.design.browser-node-env]]
