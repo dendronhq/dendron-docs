@@ -26,10 +26,16 @@ dendron dev prep_plugin && rm package.json
 ```
 
 - install
-```
+```sh
+cd packages/plugin-core
 yarn install --no-lockfile
+
 export SKIP_SENTRY=1
+# this is a file with the following
 source ~/.secrets/dendron.build-env
+# export GOOGLE_OAUTH_CLIENT_ID=
+# export GOOGLE_OAUTH_CLIENT_SECRET=
+# export SENTRY_AUTH_TOKEN=
 vsce package --yarn
 code --install-extension dendron-0.110.1.vsix
 ```
