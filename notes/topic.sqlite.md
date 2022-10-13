@@ -14,6 +14,7 @@ created: 1665593964845
 
 ### Store initialization Diagram
 > NOTE: this is implemented for `enginev2`. it has not yet been implemented for `enginev3`
+
 ```mermaid
 stateDiagram-v2
     state sqlDependenciesState <<choice>>
