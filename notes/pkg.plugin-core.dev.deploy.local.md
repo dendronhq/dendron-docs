@@ -39,3 +39,5 @@ source ~/.secrets/dendron.build-env
 vsce package --yarn
 code --install-extension dendron-0.110.1.vsix
 ```
+
+- > NOTE: to do this iteration again with changes, make changes, cancel out of verdaccio, and repeat again from step 1
