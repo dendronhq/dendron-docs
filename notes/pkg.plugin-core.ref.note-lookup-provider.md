@@ -11,6 +11,20 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
 
 - loc: [[../packages/plugin-core/src/components/lookup/NoteLookupProvider.ts]]
 
+## setup
+```ts
+provide {
+    onUpdateDebounced = debounce(onUpdatePickerItems)
+    quickpick.onDidChangeValue onUpdateDebounced
+    quickpick.onDidAccept {
+        onUpdateDebounced.flush
+        ...
+        // see ^i1x08f7myl2v
+        onDidAccept(quickpick, cancellationToken)
+    }
+}
+```
+
 ## onUpdatePickerItems
 
 - loc: [[../packages/plugin-core/src/components/lookup/LookupProviderV3.ts#^hlj1vvw48s2v]]
@@ -22,7 +36,7 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
     }
     // normalize query
     transformQueryString
-    queryOrig :=
+    queryOrig := slashToDot(picker.value)
     ...
 
     querystring := pickerValue
@@ -50,10 +64,13 @@ schema: "[[dendron://dendron.docs/ref.module-schema]]"
 ```
 
 ## onDidAccept
-
+- ^i1x08f7myl2v
+- [[../packages/plugin-core/src/components/lookup/NoteLookupProvider.ts]]
 ```ts
 // handle
-selectedItems := picker
+selectedItems := getSelection(picker)
+
+debug(selectedItems)
 
 // implies user pressed <enter>, need to get selected item based on raw text value
 if selectedItems = "" {
@@ -68,5 +85,14 @@ if hasNextPicker(picker) {
 // run all hooks
 onAcceptHookResp = this._onAcceptHooks.map { hooks
 	hook(picker, selectedItems)
+}
+```
+
+## 
+[[../packages/plugin-core/src/components/lookup/NotePickerUtils.ts]]
+
+```ts
+fetchPickerResultsNoInput {
+    NoteLookupUtils.lookup(picker.value)
 }
 ```
