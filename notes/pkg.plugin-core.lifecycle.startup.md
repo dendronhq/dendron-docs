@@ -24,7 +24,7 @@ created: 1610160007286
 
 ## Steps
 
-### Create Dendron Workspace
+### Dendron Workspace Created
 
 An instance of DendronWorkspace is created near the beginning of activation. This is a singleton god object that exists as long as Dendron is running. The only requirement for initialization is the location of Dendron's workspace root. Example initilization below
 

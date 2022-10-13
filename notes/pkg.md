@@ -1,7 +1,7 @@
 ---
 id: 32cdd4aa-d9f6-4582-8d0c-07f64a00299b
 title: Packages
-desc: ""
+desc: ''
 updated: 1644783815770
 created: 1596684856906
 nav_order: 10
@@ -88,3 +88,6 @@ Some Logic is split across multiple packages. The following splits out logic by 
 
 ### Markdown
 ![[pkg.dendron-markdown#summary,1:#*]] -->
+
+## Legacy
+- [[dendron://private/pkg.dendron-mpe]]

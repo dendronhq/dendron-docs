@@ -16,7 +16,6 @@ How Dendron migrates configuration
 1. During startup, Dendron calls `runMigrationsIfNecessary`. Process described in [[Run Migration|dendron://dendron.docs/pkg.dendron-engine.ref.migration#run-migration]]
 
 
-
 - [[../packages/plugin-core/src/utils/StartupUtils.ts]]
 ```ts
 changes = runMigrationsIfNecessary
@@ -35,3 +34,10 @@ maybePromptConfigMigration {
     }
 }
 ```
+
+## When migrations are skipped
+- testing
+
+
+## Related
+- [[dendron://dendron.docs/pkg.dendron-engine.ref.migration]]
