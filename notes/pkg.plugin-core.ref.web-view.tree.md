@@ -12,7 +12,7 @@ This describes the [[Web View Implementation|dendron://dendron.docs/pkg.plugin-c
 
 ## Lifecycle
 
-![[dendron://dendron.docs/pkg.plugin-core.ref.views#lifecycle,1:#*]]
+![[dendron://dendron.docs/pkg.plugin-core.ref.views#lifecycle]]
 
 ### Initialize
 
