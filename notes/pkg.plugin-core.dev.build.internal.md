@@ -2,7 +2,7 @@
 id: UjTt1I0h5VOY98f4vP4HN
 title: Internal
 desc: ""
-updated: 1640107720479
+updated: 1665874479633
 created: 1638207204507
 ---
 
@@ -14,7 +14,6 @@ Dendron uses webpack to bundle all dependencies before creating a VSIX file.
   - applies minimizer
 
 Assets:
-
 - assets/static -> dist/static
 
 ## Static Assets
@@ -49,3 +48,21 @@ cp assets/dendron-ws dendron-ws
 cp ../dendron-yml.validator.json dendron-yml.validator.json
 ...
 ```
+
+## FAST Mode
+- skip sentry
+  ```
+  SKIP_SENTRY=1
+  ```
+- installPluginDependencies false
+  ```
+  (`yarn install --no-lockfile --update-checksums`, {
+        cwd: this.getPluginRootPath(),
+      })
+  ```
+- skip type check
+- skip restore package.json after packaging plugin
+- skip building plugin-views
+
+## Wrapper Script
+- [[../bootstrap/scripts/buildPatch.sh]]
