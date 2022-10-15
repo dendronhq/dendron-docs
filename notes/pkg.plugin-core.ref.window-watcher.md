@@ -2,7 +2,7 @@
 id: 5oM2CLbCmglg1napALx6R
 title: Window Watcher
 desc: ""
-updated: 1647104034644
+updated: 1665763106468
 created: 1639770147490
 ---
 
@@ -27,6 +27,7 @@ activateWatchers {
 ```ts
 WindowWatcher.active {
 
+  // for logging only
 	window.onDidChangeVisibleTextEditors
 			- log "WindowWatcher:onDidChangeVisibleTextEditors", editorPaths
 
@@ -50,7 +51,9 @@ onDidChangeActiveTextEditor(doc) {
 
 onDidChangeTextEditorVisibleRanges {
 		...
-    @triggerUpdateDecorations
+    @triggerUpdateDecorations {
+      // calls updateDecorations
+    }
 }
 ```
 

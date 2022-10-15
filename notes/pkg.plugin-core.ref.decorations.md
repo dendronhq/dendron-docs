@@ -2,7 +2,7 @@
 id: 74UyCLyLvCxFTQNgGgSRW
 title: Decorations
 desc: ""
-updated: 1647104203399
+updated: 1665763890831
 created: 1630915066783
 ---
 
@@ -32,14 +32,9 @@ other to display the decorations. A few points of importance:
 - [[../packages/plugin-core/src/features/windowDecorations.ts]]
 
 ## LifeCycle
-
 - called by: [[Window Watcher|dendron://dendron.docs/pkg.plugin-core.ref.window-watcher]]
-```
-WindowWatcher
-```
-- calls: [[Decorations|dendron://dendron.docs/pkg.dendron-engine.ref.decorations]]
 
-```ts
+```ts packages/plugin-core/src/features/windowDecorations.ts
 updateDecorations(editor) {
   ctx = "updateDecorations"
 

@@ -2,7 +2,7 @@
 id: tYYZ6hpBMJcPv9qcwqZAh
 title: Decorations
 desc: ""
-updated: 1663517818539
+updated: 1665764017224
 created: 1638522039855
 ---
 
@@ -26,6 +26,24 @@ A few points of interest here:
   the generate stale decorations. It's better to get the text from the plugin
   which has access to the most up-to-date version of the note text.
   - See [[dendron://dendron.docs/pkg.dendron-engine.lifecycle.get-decorations]] for details
+
+
+## Note Reference
+
+```ts src/decorations/decorations.ts
+runDecorator {
+  case DendronASTTypes.REF_LINK_V2: {
+    decorateReference
+  }
+}
+```
+
+```ts src/decorations/references.ts
+decorateReference {
+  linkedNoteType
+}
+```
+
 
 ## Cook
 
