@@ -2,7 +2,7 @@
 id: aqn9kf61clk64dcdutv1kni
 title: Add New Config
 desc: ""
-updated: 1657538178140
+updated: 1665957301562
 created: 1646420172968
 ---
 
@@ -26,7 +26,7 @@ Dendron configuration is defined in [[../packages/common-all/src/types/configs/d
    - Consult the [[configuration conventions|dev.process.code.config]] note for naming
 1. Add config description
 
-- When adding a config key to the new namespace type(s), you also have to add a corresponding entry in the [[DendronConfigEntryCollection|../packages/common-all/src/constants/configs/dendronConfig.ts]]
+- When adding a config key to the new namespace type(s), you also have to add a corresponding entry in the [[../packages/common-all/src/constants/configs/dendronConfig.ts]]
   - This is an object that holds every possible config key's label and description that will later be used to automatically generate a configuration view.
   - If this step is omitted, Typescript will complain that `DendronConfigEntryCollection` is missing a key.
 
