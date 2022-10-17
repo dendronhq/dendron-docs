@@ -2,7 +2,7 @@
 id: 2h2y3s7d4txzokez4xza0uq
 title: Schemas
 desc: ''
-updated: 1666004218336
+updated: 1666005611978
 created: 1666000002744
 schema: '[[dendron://dendron.docs/ref.module-schema]]'
 ---
@@ -15,7 +15,7 @@ This way all data enters your code through typed boundaries and nothing gets exi
 ## Cook
 
 ```ts
-import { z, schemaForType } from "../../../utils";
+import { z, schemaForType } from "@dendronhq/common-all";
 
 export const aSchema = schemaForType<ASchemaType>()(
   z
@@ -25,7 +25,23 @@ export const aSchema = schemaForType<ASchemaType>()(
 )
 ```
 
-The `schemaForType` function allows us the define the type outside of the library (`zod` in our case). The reason is that most type now exist outside of the library and to keep types seperate from dependencies seems like a good thing.
+The `schemaForType` function allows us the define the type outside of the library (`zod` in our case). The reason is that most types currently exist outside of the library and to keep types seperate from dependencies seems like a good thing. Note that when 
+
+### parsing
+
+To parse a schema use the `parse` function which will return a [[`Result` type|dendron://dendron.docs/dev.process.errors#result-using-neverthrow-package]].
+
+```ts
+import { parse, z } from "@dendronhq/common-all";
+
+const schema = z.object({ /* some schema */ })
+const input = /* some unknown (from typescript POV) data */
+const outputResult = parse(schema, input, "Optional error message")
+if (outputResult.isOk()) {
+    outputResult.value // do something with the parsed/valid input
+}
+
+```
 
 ### optional vs default
 
