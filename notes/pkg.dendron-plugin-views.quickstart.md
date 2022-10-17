@@ -2,7 +2,7 @@
 id: SuyIgH44sJD5P3dRVBaVZ
 title: Dendron Plugin Views Quickstart
 desc: ""
-updated: 1649002081737
+updated: 1666042774505
 created: 1635701411866
 ---
 
@@ -53,7 +53,7 @@ When working on plugin views, there are two modes of development: browser and ID
 
 1. After you have made code changes, export all assets by running
    ```sh
-   yarn build:dev
+   yarn build:dev ^w6jviyyunzqw
    ```
 1. After assets are compiled, follow the [[Run|dendron://dendron.docs/pkg.plugin-core.dev#run]] extension for [[pkg.plugin-core]]
 

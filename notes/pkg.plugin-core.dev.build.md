@@ -1,54 +1,56 @@
 ---
 id: mwDT040wz5nBKtctjvNrQ
 title: Build
-desc: ""
-updated: 1660956223308
+desc: ''
+updated: 1666042672086
 created: 1635705939396
 ---
 
-## Steps
+## Prerequisites
 
-Regular build process inside the monorepo is described in [[pkg.plugin-core.quickstart]]
+Build all dependencies of plugin. See [[pkg.plugin-core.quickstart]]
 
-## Webpack
+## Build
 
-You can build Dendron with Webpack
-
-### Options
-
-You can pass environmental variables to set the following options while building
-
-- SKIP_SENTRY: don't upload source maps to sentry
-- USE_IN_MEMORY_REGISTRY: this uses local in memory npm registry to do builds
-- FAST: instead of building everything from scratch, assumes that all sub packages are already built
-    - skip type check 
-    - don't restore package.json
-- LOG_LEVEL: set to `debug|info|error`, controls verbosity of log output
-
-### Steps
+> NOTE1: as a side effect of building, lerna will create a patch release and commit it to your current branch as well as bump the monorepo version up. This is required for building but you don't want to check it in
+> NOTE2: this does not build updates to `dendron-plugin-views`. If the view code has changed, follow the [[views build steps|dendron://dendron.docs/pkg.dendron-plugin-views.build]] to compile and sync
 
 ```sh
-env USE_IN_MEMORY_REGISTRY=1 LOG_LEVEL=info FAST=1 yarn build:patch:local
+cd $MONO_ROOT
+yarn setup:cli
+env LOG_LEVEL=info FAST=1 yarn build:patch:local 2>&1 | tee /tmp/out.txt
 ```
 
-### Fast Re-build
+After you have verified the changes, don't forget to revert the patch
+![[dendron://dendron.docs/pkg.plugin-core.dev.build#remove-version-bump,1]]
 
-This is if you've already build the plugin locally and need to re-built it (you ran a `yarn build:{version}:local`).
-The regular [[cleanup script|#cleanup]] will remove all `node_modules` across all packges.
-The fast rebuild will only remove `node_modules` from packages where it needs to be removed.
+![[dendron://dendron.docs/pkg.plugin-core.dev.build#rebuild-dependencies]]
+
+## Cleanup
+
+### Remove version bump
+```sh
+git reset --hard 'HEAD^'
+```
+
+### Rebuild Dependencies
+
+When building dependencies locally, you remove the symlinks inside `plugin-core` and `dendron-plugin-views`. This restores your development environment
 
 ```sh
 $DENDRON_WORKSPACE/bootstrap/scripts/fastRebuild.sh
 ```
 
-## Cleanup
+## Options
 
-```sh
-echo "removing all deps..."
-./bootstrap/scripts/cleanup.sh
-echo "re-installing..."
-yarn setup
-```
+You can pass environmental variables to set the following options while building
+
+- SKIP_SENTRY: don't upload source maps to sentry (this is enabled when you use `FAST`)
+- USE_IN_MEMORY_REGISTRY: this uses local in memory npm registry to do builds
+- FAST: instead of building everything from scratch, assumes that all sub packages are already built
+    - skip type check 
+    - don't restore package.json
+- LOG_LEVEL: set to `debug|info|error`, controls verbosity of log output
 
 ## Layout
 
