@@ -18,6 +18,7 @@ Build all dependencies of plugin. See [[pkg.plugin-core.quickstart]]
 ```sh
 cd $MONO_ROOT
 yarn setup:cli
+pushd packages/plugin-core && yarn download-sqlite-binary && popd
 env LOG_LEVEL=info FAST=1 yarn build:patch:local 2>&1 | tee /tmp/out.txt
 ```
 
