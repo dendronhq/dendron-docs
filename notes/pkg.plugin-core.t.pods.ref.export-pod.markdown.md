@@ -32,3 +32,5 @@ convertWikiLinkToNoteUrl {
 
 convertLinksFromDotNotation
 ```
+
+Feedback
