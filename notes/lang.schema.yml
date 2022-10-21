@@ -12,6 +12,7 @@ schemas:
       children: 
         - pattern: "changelog"
         - pattern: "config"
+        - pattern: "rfc"
     - pattern: quickstart
       desc: "get to hello world"
     - pattern: op
