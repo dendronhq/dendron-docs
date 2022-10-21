@@ -104,6 +104,7 @@ schemas:
         - pattern: parser
           title: parsing
         - pattern: security
+        - pattern: macros
     - pattern: files
       desc: "working with file system"
       children:
