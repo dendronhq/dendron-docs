@@ -2,7 +2,7 @@
 id: 38ar40gdgri390hkd4ckimp
 title: Get Decorations
 desc: ''
-updated: 1663518867314
+updated: 1666389583474
 created: 1663517808252
 ---
 
@@ -37,6 +37,7 @@ runDecorator(node, note, noteText) {
 ```
 
 
+### wikiLink
 - [[../packages/unified/src/decorations/wikilinks.ts]]{key: decorateWikilink}
 ```ts
 decorateWikilink {
