@@ -4,5 +4,6 @@ title: Create Release Branch
 desc: ''
 updated: 1666661121350
 created: 1666661118135
-uri: https://github.com/dendronhq/dendron/actions/workflows/create-release-branch.yml
+uri: >-
+  https://github.com/dendronhq/dendron/actions/workflows/create-release-branch.yml
 ---
