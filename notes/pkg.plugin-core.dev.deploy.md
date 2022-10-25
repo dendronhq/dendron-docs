@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ""
-updated: 1661378807463
+updated: 1666732787375
 created: 1635532194153
 ---
 
@@ -44,6 +44,12 @@ yarn build:minor:remote:ci
 
 
 ## Cook
+
+### Manual publish npm packages
+
+```
+
+```
 
 ### Manual bump and publish plugin only
 

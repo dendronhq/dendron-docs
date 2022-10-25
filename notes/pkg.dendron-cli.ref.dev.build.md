@@ -2,7 +2,7 @@
 id: Z1rOzDCvQyN7yaibtatks
 title: Build
 desc: ""
-updated: 1658936051007
+updated: 1666736217518
 created: 1642274303182
 ---
 
@@ -31,6 +31,22 @@ build {
 	compilePlugin
 	packagePluginDependencies
 }
+```
+
+### bumpVersion
+
+- [[../packages/dendron-cli/src/utils/build.ts]]
+```ts
+lerna version ${version} --no-git-tag-version
+$(`git add .`);
+$(`git commit -m "chore: publish ${version}"`);
+```
+
+### publishVersion
+
+- [[../packages/dendron-cli/src/utils/build.ts]]
+```ts
+lerna publish from-package --ignore-scripts --registry ${url}
 ```
 
 ### prepPluginPkg

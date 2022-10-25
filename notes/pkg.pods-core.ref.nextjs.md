@@ -2,7 +2,7 @@
 id: AlzFH3ol9ubQhagjAUqq1
 title: Nextjs
 desc: ""
-updated: 1663555693405
+updated: 1666727830863
 created: 1634255542869
 ---
 
@@ -76,6 +76,20 @@ copyAssets(opts) {
 
 }
 ```
+
+### renderBodyToHTML
+
+```ts
+renderBodyToHTML {
+    _renderNote
+}
+
+_renderNote {
+    getParsingDependencyDicts
+    procRehypeFull
+}
+```
+
 
 ## Related
 
