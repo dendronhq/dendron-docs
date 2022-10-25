@@ -1,8 +1,8 @@
 ---
 id: aqn9kf61clk64dcdutv1kni
 title: Add New Config
-desc: ""
-updated: 1666621063857
+desc: ''
+updated: 1666695134227
 created: 1646420172968
 ---
 
@@ -50,5 +50,3 @@ Dendron configuration is defined in [[../packages/common-all/src/types/configs/d
    - if the config has enum, update the type to be`select`. eg: `workspace.journal.addBehavior`
    - if the config value is in `key:value` pair, update the type to `list`. eg: `workspace.task.prioritySymbols`
    - for complicated values of config, update the type to be : `object`, this will add a `edit in dendron.yml` link in UI. eg: `workspace.vaults`
-
-   
