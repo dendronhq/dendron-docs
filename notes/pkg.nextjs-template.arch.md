@@ -2,13 +2,19 @@
 id: LAUb8WcM8rmjxJrR
 title: Architecture
 desc: ''
-updated: 1657672732314
+updated: 1666745272682
 created: 1627859879590
 ---
 
 ## Summary
 
 You can see a video walkthrough of how we generate notes for publishing and the static export [here](https://youtu.be/Uyyb_s74lzM)
+
+## Gotchas
+
+The `nextjs-template` should not have any non-package dependencies to the rest of the monorepo (for example, `tsconfig.json` should not extend `../../tsconfig.build.json`). 
+
+This is because `nextjs-template` is released as a [standalone package](https://github.com/dendronhq/nextjs-template). 
 
 ## Design
 
