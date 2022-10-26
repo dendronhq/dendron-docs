@@ -2,7 +2,7 @@
 id: ne815290s6kvahp8us5zb2u
 title: Render Note
 desc: ''
-updated: 1665870383634
+updated: 1666814723157
 created: 1652286767361
 ---
 
@@ -13,7 +13,17 @@ Pass in a note and get resulting HTML
 renderNote: (opts: RenderNoteOpts) => Promise<RespV2<RenderNotePayload>>
 ```
 
+## Code
+- [[../packages/engine-server/src/enginev2.ts]]
+```
+_renderNote {
+    procRehypeFull ...
+
+}
+```
+
 ## Flavor
+
 ### flavor: ProcFlavor.PREVIEW
 
 
@@ -24,3 +34,4 @@ renderNote: (opts: RenderNoteOpts) => Promise<RespV2<RenderNotePayload>>
     - makeImageUrlFullPath
     - modifyWikilinkValueToCommandUri
     - modifyTagValueToCommandUri
+
