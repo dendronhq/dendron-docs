@@ -2,7 +2,7 @@
 id: pKRMaVeLAW1mHKaT3kFGL
 title: Init
 desc: ""
-updated: 1642271362269
+updated: 1667520743092
 created: 1642271198299
 ---
 
@@ -42,4 +42,10 @@ _initialize {
 	_cloneTemplate
 	_installDependencies
 }
+```
+
+
+build
+```json [[../packages/nextjs-template/package.json]]
+"build": "npm run copy:robotstxt && next build",
 ```

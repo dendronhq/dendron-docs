@@ -2,7 +2,7 @@
 id: pZYzLe7dFiRNkfYa4xhdF
 title: Publish
 desc: ""
-updated: 1646157316666
+updated: 1667520879095
 created: 1641075542639
 ---
 
@@ -11,6 +11,9 @@ created: 1641075542639
 Publishing via the CLI
 
 ## Lifecycle
+
+## Base
+- [[../packages/dendron-cli/src/commands/publishCLICommand.ts]]
 
 ### Build
 
