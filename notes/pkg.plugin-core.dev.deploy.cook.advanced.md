@@ -2,7 +2,7 @@
 id: n32ibr6okxgpw1ki9hksbtl
 title: Advanced Cookbook
 desc: ""
-updated: 1666810395990
+updated: 1667523255944
 created: 1647377581391
 ---
 
@@ -22,6 +22,8 @@ Use this for a quicker way to update the plugin
 1. Merge changes back in master
 
 ### Manual publish npm packages
+
+> NOTE: current git branch needs to exist in `origin`
 
 ```sh
 lerna publish patch
