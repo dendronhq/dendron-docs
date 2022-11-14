@@ -5,6 +5,7 @@ desc: ''
 updated: 1667892219066
 created: 1662057637588
 ---
+
 In case you are only exposing the private methods to stub / spy on with SinonJS, you can keep the method private and do the following instead:
 ```ts
 export class SomeClassYouWantToTest {
