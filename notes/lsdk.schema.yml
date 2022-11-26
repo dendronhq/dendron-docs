@@ -1,0 +1,12 @@
+version: 1
+imports: []
+schemas:
+  - id: lsdk
+    namespace: true
+    title: lsdk
+    parent: root
+    children: 
+      - pattern: limits
+      - pattern: res
+        namespace: true
+        title: resource
