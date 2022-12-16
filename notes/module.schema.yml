@@ -127,3 +127,5 @@ schemas:
   desc: how to debug an application
 - id: test
   desc: how to test an application
+- id: integ
+  namespace: true
