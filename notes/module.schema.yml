@@ -27,7 +27,6 @@ schemas:
   desc: |
     Extending the module
 - id: ref
-  template: templates.module.ref
   namespace: true
 - id: best
   desc: | 
