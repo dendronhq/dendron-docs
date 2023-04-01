@@ -2,7 +2,7 @@
 id: u7ZLlCe2H9JFstV9CLjBD
 title: Architecture
 desc: ""
-updated: 1648635042673
+updated: 1680366832257
 created: 1639533375004
 ---
 
@@ -12,10 +12,59 @@ Lookup command lifecycle
 
 ## Lifecycle
 
+### Lookup
+- [[pkg.dendron-engine.t.lookup.internal]]
+
+- src/web/commands/lookup/NoteLookupProvider.ts:fetchPickerResults
+    - @engine.queryNotesMeta
+        - src/enginev2.ts:queryNotesMeta
+            - src/engineClient.ts: queryNotesMeta
+                - SQLiteMetadataStore.search if config.workspace.metadataStore === "sqlite"  ^wegk01mpsdcv
+                    - src/drivers/PrismaSQLiteMetadataStore.ts:search
+- src/engineClient.ts:queryNotes
+    - ConfigService.readConfig
+    - if sqlite:
+        - SQLiteMetadataStore.search
+        - noteProps.filter { vault }
+        - return
+
 ### Initialization
+- src/workspace.ts:DendronExtension { new LookupControllerV3Factory }
+    - src/components/lookup/LookupControllerV3Factory.ts { new LookupControllerV3 }
+        - ...
+        - src/components/lookup/LookupControllerV3:show
+            - @prepareQuickPick
+                - PickerUtilsV2.createDendronQuickPick -> DendronQuickPickerV2
+                - ...
+            - @showQuickPick
+                - quickpick.show
+                - provider.onUpdatePickerItems
+                    - src/components/lookup/NoteLookupProvider.ts:onUpdatePickerItems
+                        - ...
+                        - pickerValue = NoteLookupUtils.getQsForCurrentLevel(pickerValue)
+                        - queryOrig = NoteLookupUtils.slashToDot(picker.value)
+                        - return NotePickerUtils.fetchRootQuickPickResults if queryString == ""
+
+                        - items: NoteQuickInputV2[] = [...picker.items]
+                        - updatedItems = PickerUtilsV2.filterDefaultItems(items)
+                        - updatedItems = await NotePickerUtils.fetchPickerResults
+                        - ... schema logic
+                        - ... filter middleware
+                        - ... other logic
+                        - picker.items = updatedItems
+                - provider.provide
+                    - quickpick.onDidChangeValue(onUpdateDebounced)
+                    - quickpick.onDidAccept
+                        - quickpick.selectedItems[0].fname = quickpick.value
+                        - @onDidAccept
+                            - selectedItems = NotePickerUtils.getSelection
+                            - ...
+                            - this._onAcceptHooks.map(...)
+
 
 1. Lookup factory created as part of dendron extension on startup
 
+#### Code Snippets
 - [[../packages/plugin-core/src/workspace.ts]]
 ```ts
 class DendronExtension { 
@@ -71,3 +120,10 @@ The views in this case are not true views as typically found in MVVM - rather, t
 
 ## Related
 - [[History Service|dendron://dendron.docs/pkg.dendron-engine.arch.history-service]]
+
+## Questions
+
+### How to switch to sqlite mode?
+
+metadataStore = "sqlite"
+see [[pkg.plugin-core.t.lookup.arch#^wegk01mpsdcv]]

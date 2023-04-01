@@ -2,7 +2,7 @@
 id: DxucQoYEzu9VnBoYuFiqN
 title: Schema
 desc: ''
-updated: 1660929135677
+updated: 1680365457452
 created: 1634749668693
 nav_order: 1
 ---
@@ -39,6 +39,7 @@ Wildcards are nodes that can be put as the children of anything. They can also l
 
 ### Nodes
 - Cook: Guide on how to accomplish a specific task
+    - alias: howto
     - eg: [[Cook|dendron://dendron.docs/pkg.plugin-core.dev.cook]]
 - Tip: Optimizations on doing things better
     - eg: [[Tips|dendron://dendron.docs/pkg.plugin-core.dev#tips]]

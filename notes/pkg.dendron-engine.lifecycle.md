@@ -2,7 +2,7 @@
 id: 446723ba-c310-4302-a651-df14ce6e002b
 title: Lifecycle
 desc: ''
-updated: 1663455386050
+updated: 1680362923793
 created: 1620614023632
 ---
 
@@ -46,6 +46,13 @@ sequenceDiagram
     EngineAPIService->>vscodePlugin: return resp
     end
 ```
+
+## Trace
+
+- src/extension.ts: activate {
+    Logger.configure(context, "debug")
+}
+    - src/_extension:activate
 
 ## Details
 
