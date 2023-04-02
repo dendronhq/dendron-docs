@@ -2,7 +2,7 @@
 id: u7ZLlCe2H9JFstV9CLjBD
 title: Architecture
 desc: ""
-updated: 1680366832257
+updated: 1680383280353
 created: 1639533375004
 ---
 
@@ -16,7 +16,27 @@ Lookup command lifecycle
 - [[pkg.dendron-engine.t.lookup.internal]]
 
 - src/web/commands/lookup/NoteLookupProvider.ts:fetchPickerResults
-    - @engine.queryNotesMeta
+    - @engine.queryNotesMeta  (EngineAPIService) -> src/services/EngineAPIService.ts 
+        - > EngineAPIService constructor - wrapper around API and event emitter
+            - EngineAPIService.cons(
+                engineClient: DEngineClient (api proxy)
+                engineEvents: EngineEventEmitter
+                )
+        - @_internalEngine.queryNotesMeta({qs})  (DendronEngineClient) -> src/engineClient.ts // calls API
+            - calls API which calls DendronEngineV3 extending EngineV3Base
+            - EngineV3Base.queryNotesMeta > src/engine/EngineV3Base.ts
+                - @noteStore.queryMetadata
+                    - > NoteStore init at src/DendronEngineV3Factory.ts
+                        - defined in src/store/NoteStore.ts
+                    - @_metadataStore.query
+
+--------------------------
+- src/DendronEngineV3.ts 
+
+            - SQLiteMetadataStore.search(qs) if (config.workspace.metadataStore === "sqlite")
+
+
+--------------------------
         - src/enginev2.ts:queryNotesMeta
             - src/engineClient.ts: queryNotesMeta
                 - SQLiteMetadataStore.search if config.workspace.metadataStore === "sqlite"  ^wegk01mpsdcv
@@ -47,7 +67,8 @@ Lookup command lifecycle
 
                         - items: NoteQuickInputV2[] = [...picker.items]
                         - updatedItems = PickerUtilsV2.filterDefaultItems(items)
-                        - updatedItems = await NotePickerUtils.fetchPickerResults
+                        - updatedItems = await NotePickerUtils.fetchPickerResults > src/components/lookup/NotePickerUtils.ts
+                            - engine.queryNotesMeta
                         - ... schema logic
                         - ... filter middleware
                         - ... other logic

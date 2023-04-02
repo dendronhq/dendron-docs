@@ -53,6 +53,8 @@ sequenceDiagram
     Logger.configure(context, "debug")
 }
     - src/_extension:activate
+        - ...
+        - startServerProcess
 
 ## Details
 
