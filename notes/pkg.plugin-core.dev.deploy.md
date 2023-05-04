@@ -2,7 +2,7 @@
 id: OJwaDZjuGYaBSShHmDaSf
 title: Deploy
 desc: ""
-updated: 1666810200078
+updated: 1683157735143
 created: 1635532194153
 ---
 
@@ -42,6 +42,7 @@ yarn build:minor:local:ci
 yarn build:minor:remote:ci
 ```
 
+verdaccio
 
 ## Cook
 
@@ -50,7 +51,6 @@ yarn build:minor:remote:ci
 
 If you need to manually bump the current package version number for any reason without updating NPM
 - switch to local npm ![[dendron://dendron.docs/dev.cook.common#switch-to-local-npm,1:#*]]
-
 - setup local npm registry ![[dendron://dendron.docs/pkg.plugin-core.dev.deploy#setup-local-npm-registry,1:#*]]
 
 - bump plugin version ![[Bump Plugin Version|dendron://dendron.docs/pkg.plugin-core.dev.deploy#bump-plugin-version]]
@@ -93,7 +93,7 @@ This is necessary for actions that require pulling latest packages from NPM duri
 
 ```sh
 setRegLocal
-npx verdacio -c ./bootstrap/data/verdaccio/config.yaml
+npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
 ```
 
 ### Setup Environment Variables
@@ -146,6 +146,7 @@ dendron dev prep_plugin && rm package.json
 - `package_plugin` creates the vsix
 
 ```sh
+# NOTE: use `env SKIP_SENTRY=1` if not building with sentry support
 dendron dev package_plugin
 ```
 
