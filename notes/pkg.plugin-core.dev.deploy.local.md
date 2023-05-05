@@ -9,19 +9,19 @@ created: 1665626887048
 This goes over doing local deployments
 
 - startup verdaccio
-```
+```sh
 source bootstrap/scripts/helpers.sh
 setRegLocal
 npx verdaccio -c ./bootstrap/data/verdaccio/config.yaml
 ```
 
 - publish all dependencies
-```
+```sh
 lerna publish from-package --ignore-scripts
 ```
 
 - prep plugin
-```
+```sh
 dendron dev prep_plugin && rm package.json
 ```
 

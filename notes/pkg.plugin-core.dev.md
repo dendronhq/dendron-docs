@@ -77,8 +77,20 @@ cd packages/dendorn-cli
 npm link
 
 npm link -g @dendronhq/dendron-cli
-``![[Cook|dendron://dendron.docs/pkg.plugin-core.dev.cook]]
+```
 
 ### Working with Verdaccio 
 
 ![[dev.cook.common#verdaccio,1:#*]]
+
+
+<!-- ## Index
+- [[Best|pkg.plugin-core.dev.debug]]
+- [[Best|pkg.plugin-core.dev.best]]
+- [[Build|pkg.plugin-core.dev.build]]
+- [[Cook|pkg.plugin-core.dev.cook]]
+- [[Deploy|pkg.plugin-core.dev.deploy]]
+- [[Errors Encountered|pkg.plugin-core.dev.errors]]
+- [[Logs|pkg.plugin-core.dev.logs]]
+- [[Run|pkg.plugin-core.dev.run]]
+- [[Troubleshooting|pkg.plugin-core.dev.trouble]] -->
