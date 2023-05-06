@@ -172,3 +172,11 @@ yarn deploy:ovsx:vsix $PLUGIN_PKG
 ##
 
 [^build]: [[Build|dendron://dendron.docs/pkg.dendron-cli.ref.dev.build]]
+
+## Index
+
+<!-- - [[Local|pkg.plugin-core.dev.deploy.local]]
+- [[Old|pkg.plugin-core.dev.deploy.old]]
+- [[Cook|pkg.plugin-core.dev.deploy.cook]] 
+- [[pkg.plugin-core.dev.deploy.cook.manual-deploy]] 
+-->

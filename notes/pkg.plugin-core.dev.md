@@ -7,7 +7,6 @@ created: 1621721485330
 ---
 
 
-
 ## Gotchas
 
 ### Dependency Management of IDendronExtension
@@ -93,4 +92,5 @@ npm link -g @dendronhq/dendron-cli
 - [[Errors Encountered|pkg.plugin-core.dev.errors]]
 - [[Logs|pkg.plugin-core.dev.logs]]
 - [[Run|pkg.plugin-core.dev.run]]
-- [[Troubleshooting|pkg.plugin-core.dev.trouble]] -->
+- [[Troubleshooting|pkg.plugin-core.dev.trouble]] 
+-->
